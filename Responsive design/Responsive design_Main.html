@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reszponzív dizájn</title>
+  </head>
+  <body>
+    <h1>📱 Reszponzív oldalak kialakítása</h1>
+
+    <div>
+      Mit jelent?
+      <br /><br />
+      A reszponzív weboldal olyan honlap, ami minden eszközön jól néz ki és
+      használható marad: asztali gépen, laptopon, tableten és mobiltelefonon is.
+      Miért fontos? Mert ma már sokan mobilról böngésznek. Ha egy oldal csak
+      nagy képernyőre van optimalizálva, mobilon nehéz olvasni, sokat kell
+      zoomolni vagy görgetni. A reszponzív design ezt oldja meg.
+      <br /><br />
+      📏Reszponzív weboldalak kialakításának elve A reszponzivitás kulcsa:
+      <ul>
+        <li>
+          Rugalmas elrendezés, arányok használata, médiakérdések (media
+          queries), és rugalmas képek
+        </li>
+        <li>
+          Rugalmas elrendezés: a méretek százalékos arányokkal vannak megadva,
+          nem fix pixelben.
+        </li>
+        <li>Rugalmas képek: a képek mérete is alkalmazkodik a képernyőhöz.</li>
+        <li>
+          Media Query: olyan CSS szabály, ami azt mondja meg, hogy adott
+          képernyőméret esetén hogyan változzon a stílus.
+        </li>
+      </ul>
+
+      <br />
+      Rugalmas képek: a képek mérete is alkalmazkodik a képernyőhöz. Media
+      Query: olyan CSS szabály, ami azt mondja meg, hogy adott képernyőméret
+      esetén hogyan változzon a stílus.
+      <br /><br />
+      📚 Weboldal megjelenési helyének kiválasztása — Media Query A media query
+      a CSS egyik eszköze. Segít meghatározni, hogy adott képernyőméret esetén
+      milyen stílust használjon az oldal.
+      <br />
+      <br />
+    </div>
+    Példa: css<br />
+    <br />/* Alapértelmezett stílus */ <br />body { background: white; } /*
+    Mobiltelefonokra */
+    <br />
+    @media (max-width: 600px) { body { background: lightblue; } }
+    <p>
+      /* Nagy kijelzőkre */
+      <br />@media (min-width: 1200px) { body { background: lightgreen; } }
+    </p>
+
+    📐 Felépítési típusok magyarázata Most nézzük a konkrét layout típusokat:
+    <br />
+    1️⃣ Single Column Egyoszlopos elrendezés. Minden tartalom egymás alatt
+    helyezkedik el. Mobilon gyakori, de blogoknál, cikkeknél is elterjedt.
+    <br />
+    2️⃣ Split Screen Képernyő két részre van osztva (függőlegesen vagy
+    vízszintesen). Gyakran használják landing page-eknél: egyik oldalon kép,
+    másikon szöveg vagy CTA (Call To Action). <br />
+    3️⃣ Aszimmetrikus Layout Nem szimmetrikus elrendezés. Képek, szövegek
+    aszimmetrikusan helyezkednek el. Modern, dinamikus hatást kelt. <br />
+    4️⃣ Grid Rácsszerű elrendezés. A tartalmat sorokba és oszlopokba rendezi. A
+    CSS Grid segít ezt könnyen kialakítani. <br />
+    5️⃣ Masonry Layout Tégla-szerű, szabálytalan rács. A dobozok (például képek)
+    nem egyforma magasak, mégis szépen illeszkednek egymás mellé. Pinterest
+    tipikus példa. <br />
+    6️⃣ Magazine Magazin jellegű: nagy képek, kiemelt cikkek, szövegdobozok
+    kombinációja. Gyakran összetett gridre épül. <br />
+    7️⃣ Boxes Dobozokból álló elrendezés. Minden tartalom egy-egy „kártyán”
+    jelenik meg. Kártya design a Material Design-ból is ismert. <br />
+    8️⃣ Fixed Sidebar Fix oldalsáv. Az oldalsáv helyben marad görgetés közben is.
+    Gyakran menü vagy navigáció kerül ide. <br />
+    9️⃣ Featured Image Nagyméretű kiemelt kép a tartalom tetején. Főleg
+    blogoknál, cikkeknél használatos. <br />🔤 F-shape Layout Kutatások szerint
+    az emberek „F” alakban olvassák a tartalmat: balról jobbra, majd lejjebb bal
+    oldalon újra. Ennek megfelelően a fontos tartalmak bal oldalon és a felső
+    sorban vannak. <br />🔠 Z-shape Layout A szem mozgása „Z” alakot ír le: bal
+    felső sarok → jobb felső sarok → bal alsó sarok → jobb alsó sarok. Landing
+    page-eknél és reklám oldalakon gyakori. <br />
+    <br />
+    📝 Összegzés
+    <br />
+    ✅ A reszponzív design rugalmas, alkalmazkodik a képernyőhöz. <br />
+    ✅ A media query a CSS-ben segít különböző stílust beállítani különböző
+    eszközökhöz. <br />
+    ✅ A layoutok különböző célokra alkalmasak — attól függően választják ki
+    őket, milyen élményt akarnak nyújtani.
+  </body>
+</html>
