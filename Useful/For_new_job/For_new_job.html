@@ -15,27 +15,321 @@
       </h2>
       <ul>
         <li>
-          <b>Szoftvertesztelés alapjai:</b> Kézi tesztelés (funkcionális 28.
-          oldal, regressziós 29. oldal, integrációs tesztek 25. oldal).
-          <a href="ISTQB-CTFL-Syllabus-4.0-magyar.pdf"
-            >ISTQB CTFL Syllabus 4.0</a
-          >
-        </li>
-        <li>
-          <b>Bug report írás:</b> Tanuld meg pontosan dokumentálni a hibát
-          (lépések, elvárt vs. tényleges eredmény, környezet). <a href="Test_case_and_bug_report.html"
-            >Részletek</a
-        </li>
-        <li>
-          <b>Hibakövető rendszerek:</b> Jira vagy Azure DevOps (TFS) – próbálj
-          ki egy ingyenes verziót, tanulj meg hibát rögzíteni és státuszt
-          kezelni.
-        </li>
-        <li>
-          <b>Teszttervezés:</b> Egyszerű tesztesetek írása (Excelben vagy
-          dedikált eszközben).
+          <b>Szoftvertesztelés alapjai:</b>
+          <span>
+            Kézi tesztelés (<b>funkcionális</b>, <b>regressziós</b> ,
+            <b>integrációs tesztek</b> ).
+          </span>
         </li>
       </ul>
+      <h3>1.1 A tesztelés, mint a szoftverfejlesztés hajtóereje</h3>
+      <div>
+        <p>
+          A TDD, ATDD és BDD hasonló fejlesztési megközelítések, ahol a tesztek
+          meghatározása a fejlesztés irányításának eszközeként szolgál.
+          Mindegyik megközelítés megvalósítja a korai tesztelés elvét és követi
+          a shift left megközelítést, mivel a tesztek meghatározása előbb
+          történik, mint a kód megírásra. Ezek a megközelítések az iteratív
+          fejlesztési modellt támogatják és az alábbiak szerint lehet jellemezni
+          őket:
+        </p>
+        <p><b>Tesztvezérelt fejlesztés (TDD):</b></p>
+        <ul>
+          <li>
+            A kódolást tesztesetek irányítják (az átfogó szoftvertervek helyett)
+            (Beck 2003)
+          </li>
+          <li>
+            Először a tesztek kerülnek megírásra, majd azt követően a kód, olyan
+            módon, hogy a teszteknek megfeleljen. Végül a teszteket és a kódot
+            is refaktorálják.
+          </li>
+        </ul>
+
+        <p><b>Elfogadásiteszt-vezérelt fejlesztés (ATDD):</b></p>
+        <ul>
+          <li>
+            A teszteket elfogadási feltételekből származtatja a
+            rendszertervezési folyamat részeként (Gärtner 2011)
+          </li>
+          <li>
+            A teszteket az előtt írják meg, hogy lefejesztésre kerülne az
+            alkalmazás azon része, mely kielégíti ezeket a teszteket.
+          </li>
+        </ul>
+
+        <p><b>Viselkedésvezérelt fejlesztés (BDD):</b></p>
+        <ul>
+          <li>
+            Kifejezi az alkalmazás kívánt viselkedését olyan tesztesetekkel,
+            melyek egyszerű formában, természetes nyelven vannak megírva, és így
+            könnyen érthető az érdekelt felek számára – általában a
+            "Given/When/Then" formát használva (Chelimsky 2010).
+          </li>
+          <li>
+            A teszteseteket ezután automatikusan végrehajtható tesztekké
+            alakítják.
+          </li>
+        </ul>
+
+        <p>
+          A fent említett megközelítések alkalmazása során, a tesztek
+          megmaradhatnak automatizált tesztek formájában, hogy biztosítsák a kód
+          minőségét jövőbeli módosítások esetén.
+        </p>
+
+        <h3>1.2 DevOps és tesztelés</h3>
+        <p>
+          DevOps egy szervezeti megközelítés, melynek célja a szinergia
+          létrehozása a fejlesztés (beleértve a tesztelést) és az üzemeltetés
+          között, hogy közös célokat érjenek el. A DevOps egy kulturális
+          változást igényel a szervezeten belül, hogy áthidalja a fejlesztés
+          (beleértve a tesztelést) és az üzemeltetés közötti réseket, miközben
+          azok szerepét egyenértékűnek tekinti. A DevOps támogatja a csapat
+          önállóságát, a gyors visszajelzést, az integrált eszközrendszerrel
+          való munkát, valamint olyan technikai gyakorlatokat, mint a folyamatos
+          integráció (CI) és a folyamatos szállítás (CD). Ez lehetővé teszi a
+          csapatok számára, hogy a DevOps szállítási folyamatláncon (delivery
+          pipeline) keresztül gyorsabban készítsenek, teszteljenek és adjanak ki
+          magas minőségű kódot (Kim 2016).
+        </p>
+        <p>A tesztelés szempontjából nézve a DevOps néhány előnye:</p>
+        <ul>
+          <li>
+            Gyors visszajelzés a kód minőségéről és arról, hogy a változtatások
+            hogyan befolyásolják a már meglévő kódot.
+          </li>
+          <li>
+            A folyamatos integráció elősegíti a shift left megközelítést a
+            tesztelésben , mivel bátorítja a fejlesztőket, hogy jó minőségű
+            kódot adjanak át, komponenstesztekkel és statikus elemzéssel
+            kísérve.
+          </li>
+          <li>
+            Támogatja az automatizált folyamatokat, mint például a folyamatos
+            integrációt/szállítást, amelyek segítik a stabil tesztkörnyezetek
+            kialakítását.
+          </li>
+
+          <li>
+            Növeli a fókuszt a nemfunkcionális jellemzőkön (pl. teljesítmény,
+            megbízhatóság).
+          </li>
+          <li>
+            Az automatizálás a szállítási folyamatláncon keresztül csökkenti az
+            ismétlődő manuális tesztek szükségességét.
+          </li>
+          <li>
+            Minimális a regresszió okozta kockázat az automatizált regressziós
+            tesztek méretének és hatókörének köszönhetően.
+          </li>
+        </ul>
+        <p>A DevOps sem mentes a kockázatoktól és kihívásoktól, például:</p>
+        <ul>
+          <li>
+            A DevOps szállítási folyamatláncot (delivery pipeline) meg kell
+            tervezni és meg kell valósítani.
+          </li>
+          <li>
+            A folyamatos integrációs/szállítási eszközöket be kell vezetni és
+            karban kell tartani.
+          </li>
+          <li>
+            A tesztautomatizálás további erőforrásokat igényel, illetve nehéz
+            lehet kialakítani és karbantartani.
+          </li>
+        </ul>
+        <p>
+          Bár a DevOps megköveteli egy magasabb fokú automatizált tesztelés
+          megvalósítását, a manuális tesztelés – különösen a felhasználó
+          szempontjából – továbbra is szükséges.
+        </p>
+
+        <h3>1.3 A shift left megközelítés</h3>
+        <p>
+          Az korai tesztelés elve éha <b>shift left</b> néven is említésre
+          kerül. A shift left esetén az a cél, hogy a szoftverfejlesztés
+          életciklusának folyamatában a tesztelés minél korábban legyen
+          elvégezve (pl. nem várni a kód megvalósítására vagy a komponensek
+          integrálására). Viszont ez nem jelenti azt, hogy a szoftverfejlesztés
+          életciklusának későbbi szakaszaiban a tesztelés elhanyagolható lenne.
+        </p>
+        <p>
+          A tesztelésben a shift left megvalósítását elősegítő számos jó
+          gyakorlat létezik, mint például:
+        </p>
+        <ul>
+          <li>
+            Specifikációk felülvizsgálata a tesztelés szempontjából. Ezek a
+            felülvizsgálatok gyakran fedeznek fel lehetséges hibákat, amik
+            például félreértésekből, hiányosságokból vagy ellentmondásokból
+            származnak.
+          </li>
+          <li>
+            Tesztesetek megírása a kód létrejötte előtt, majd a kód futtatása
+            egy teszttámogató szoftverkörnyezetben a kód implementálása közben.
+          </li>
+          <li>
+            Folyamatos integráció és még jobb esetben folyamatos szállítás
+            alkalmazása, mivel ezek gyors visszajelzést adnak, illetve
+            automatizált komponensteszteket biztosítanak a kód mellé, amikor
+            azok tárolóba (repository) kerülnek.
+          </li>
+          <li>
+            A forráskód statikus elemzése a dinamikus tesztelés előtt, vagy egy
+            automatizált folyamat részeként.
+          </li>
+          <li>
+            Nemfunkcionális tesztelés megvalósítása, lehetőség szerint
+            komponensteszt-szinten kezdve. Ez egy formája a shift left
+            megvalósításának, mert a nemfunkcionális teszttípus általában a
+            szoftverfejlesztési életciklus későbbi részeiben történik, mikor a
+            teljes rendszer és egy reprezentatív tesztkörnyezet már a
+            rendelkezésünkre áll.
+          </li>
+        </ul>
+        <p>
+          A shift left megközelítés extra képzést, költségeket eredményezhet a
+          folyamat korai szakaszaiban, de várható, hogy a későbbiekben
+          megtakarításhoz vezet.<br />
+          A shift left megközelítéshez fontos, hogy az érdekelt felek
+          elkötelezettek legyenek a koncepció irányában.
+        </p>
+        <h3>1.4 Tesztelési típusok</h3>
+        <ul>
+          <li>
+            <div style="margin: 0.5em 0 0.5em 1em">
+              Számos teszttípus létezik és alkalmazható egy projektben. Ebben a
+              tantervben a következő négy teszttípust említjük meg:
+              <ul style="margin-top: 0.5em">
+                <li>
+                  <b>Funkcionális tesztelés:</b>
+                  <span>
+                    A komponens vagy rendszer működését vizsgáljuk abból a
+                    szempontból, hogy elvégzi-e a meghatározott funkcióit.<br />
+                    A fő céljai: funkcionális teljesség, helyesség, megfelelőség
+                    ellenőrzése.
+                  </span>
+                </li>
+                <li>
+                  <b>Nemfunkcionális tesztelés:</b>
+                  <span>
+                    Olyan tulajdonságokat ellenőrzünk, amelyek nem a komponens
+                    vagy rendszer funkcionális jellemzői.<br />
+                    A fő cél: nemfunkcionális szoftver-minőségjellemzők
+                    ellenőrzése (ISO/IEC 25010 szabvány szerint):
+                    <ul style="margin-top: 0.3em">
+                      <li>Teljesítményhatékonyság</li>
+                      <li>Kompatibilitás</li>
+                      <li>Használhatóság</li>
+                      <li>Megbízhatóság</li>
+                      <li>Biztonság</li>
+                      <li>Karbantarthatóság</li>
+                      <li>Hordozhatóság</li>
+                    </ul>
+                    <span>
+                      Előfordulhat, hogy a nemfunkcionális tesztelés az
+                      életciklus korai szakaszában kezdődik (például a
+                      felülvizsgálatok, a komponenstesztelés vagy a
+                      rendszertesztelés részeként). Számos nemfunkcionális teszt
+                      származtatható funkcionális tesztekből, mivel egy már
+                      létező funkcionális teszt futtatása során ellenőrizhetünk
+                      nemfunkcionális jellemzőket is (például ellenőrizhetjük,
+                      hogy egy funkció végrehajtásához szükséges idő
+                      megfelelő-e, vagy végrehajtódik-e egy eltérő
+                      keretrendszeren belül). A későn megtalált nemfunkcionális
+                      hibák nagyban befolyásolhatják egy projekt sikerét.
+                      Nemfunkcionális tesztelés esetén néha szükségünk lehet
+                      specifikus tesztkörnyezetre, mint például használhatósági
+                      teszt esetén egy használhatósági laborra.
+                    </span>
+                    <br /><br />
+                  </span>
+                </li>
+                <li>
+                  <b>Feketedoboz tesztelés:</b>
+                  <span
+                    >Specifikációalapú teszttípus, ahol a teszteseteket a
+                    rendszer specifikációiból származtatjuk. Fő cél: a rendszer
+                    viselkedésének ellenőrzése a rendszer specifikációinak
+                    szempontjából.</span
+                  >
+                </li>
+                <li>
+                  <b>Fehérdoboz tesztelés:</b>
+                  <span>
+                    Struktúraalapú teszttípus, ahol a rendszer belső szerkezete
+                    vagy az implementációja (például: kód, architektúra,
+                    munkafolyamat, adatfolyam) alapján származtatjuk a
+                    teszteseteket. A fehérdoboz tesztelés fő célja, hogy
+                    tesztekkel elfogadható szinten lefedjük a rendszer alapvető
+                    struktúráját.
+                  </span>
+                </li>
+              </ul>
+              <p>
+                Mind a négy teszttípus alkalmazható minden tesztszinten, bár a
+                fókusz minden szinten más lesz. Számos különböző teszttechnika
+                használható a tesztfeltételek és tesztesetek származtatására
+                minden teszttípus esetében.
+              </p>
+            </div>
+          </li>
+        </ul>
+        <h3>1.5 Ellenőrző és regressziós tesztelés</h3>
+        <div>
+          <div>
+            Változásokat tipikusan akkor eszközölünk egy komponensen vagy
+            rendszeren, mikor új funkcionalitásokat szeretnénk bevezetni vagy
+            hibákat szeretnénk javítani. A tesztelésnek ebben az esetben
+            ellenőrző és regressziós tesztelést is tartalmaznia kell.
+            <br /><br />
+            Az ellenőrző tesztelés megerősíti, hogy az adott hiba sikeresen
+            javítva lett. A kockázattól függően, a javított szoftververziót több
+            módon is tesztelhetjük:
+            <ul>
+              <li>
+                újrafuttatva az összes tesztesetet, amelyek korábban elbuktak az
+                adott hiba miatt, vagy
+              </li>
+              <li>
+                kiegészítve a tesztfuttatást új tesztekkel, amelyek lefedik a
+                javítás által bevezetett módosításokat is
+              </li>
+            </ul>
+            Azonban, mikor hibajavítás során a rendelkezésre álló erőforrások
+            (idő és pénz) nem elegendőek, az ellenőrző tesztelés korlátozódhat
+            csak a meghibásodást előhozó lépések megismétlésére, és annak
+            ellenőrzésére, hogy a meghibásodás nem történik meg.
+            <br /><br />
+            A regressziós tesztelés megerősíti, hogy egy változtatásnak
+            nincsenek kedvezőtlen következményei. A változtatások közé értjük a
+            javításokat is, amelyek már átestek az ellenőrző tesztelésen. Ezek a
+            kedvezőtlen következmények hatással lehetnek az adott komponensre,
+            ahol a javítást végeztük, más komponensekre a rendszeren belül vagy
+            akár más kapcsolódó rendszerekre. A regressziós tesztelés nem
+            feltétlenül korlátozódik magára a teszt tárgyára, lehetséges, hogy a
+            tesztkörnyezet változása miatt szükséges a tesztelés. Annak
+            érdekében, hogy optimalizálni lehessen a szükséges regressziós
+            tesztelés mértékét, javasolt először egy hatáselemzés elvégzése. A
+            hatáselemzés megmutatja, hogy a szoftver mely részei lehetnek
+            érintettek a módosítás által.
+            <br /><br />
+            A regressziós tesztkészletek számos alkalommal futnak és
+            általánosságban a regressziós tesztek száma növekedik minden
+            iterációval vagy kiadással, ezért remek választás ezeket a teszteket
+            automatizálni. Ezen tesztek automatizációját a projekt korai
+            szakaszában ajánlatos elkezdeni. Ahol folyamatos integrációt
+            használnak, például DevOps esetén, ott jó gyakorlat az automatizált
+            regressziós tesztek alkalmazása. Ezért, a szituációtól függően,
+            regressziós tesztelés akár különböző tesztszinteken is alkalmazható.
+            <br /><br />
+            Az ellenőrző tesztelés és/vagy a regressziós tesztelés szükséges
+            minden tesztszinten, ha hibák kerülnek kijavításra és/vagy
+            változtatások történnek ezeken a tesztszinteken.
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="section">
@@ -44,16 +338,21 @@
       </h2>
       <ul>
         <li>
-          <b>Windows rendszergazdai ismeretek:</b> Telepítés, partíciókezelés,
-          hálózati beállítások, szolgáltatások kezelése.
+          <b>Windows rendszergazdai ismeretek:</b> Telepítés, partíciókezelés
+          (Win + R → diskmgmt.msc), hálózati beállítások, szolgáltatások
+          kezelése.
         </li>
         <li>
           <b>Alap Linux:</b> Parancssori alapok (<code>cd</code>,
           <code>ls</code>, <code>cp</code>, <code>chmod</code>, <code>ps</code>,
           <code>systemctl</code>).
-          <a href=" https://bellard.org/jslinux/">Linux Online Terminal</a>
+          <a
+            href="https://bellard.org/jslinux/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Linux Online Terminal</a
+          >
         </li>
-
         <li>
           <b>Egyszerű szoftvertelepítés:</b> <code>apt</code>, <code>yum</code>.
         </li>
@@ -66,6 +365,38 @@
           (Android Debug Bridge – ADB).
         </li>
       </ul>
+
+      <h3>Diskpart parancssori eszköz</h3>
+      <p>
+        Ez egy <strong>haladó, parancssoros eszköz</strong>, amivel részletesen
+        vezérelhetjük a lemezeket.
+      </p>
+      <p>
+        <strong>Elindítása:</strong> Futtatás rendszergazdaként:
+        <code>cmd</code> → <code>diskpart</code>
+      </p>
+
+      <h4>Gyakori parancsok:</h4>
+      <ul>
+        <li><code>list disk</code> – megjeleníti a lemezeket.</li>
+        <li><code>select disk X</code> – kiválasztja az X számú lemezt.</li>
+        <li>
+          <code>list partition</code> – a kiválasztott lemez partícióit
+          listázza.
+        </li>
+        <li>
+          <code>create partition primary size=10240</code> – új elsődleges
+          partíció létrehozása (pl. 10 GB).
+        </li>
+        <li><code>format fs=ntfs quick</code> – NTFS formázás gyors módban.</li>
+        <li><code>assign letter=E</code> – meghajtóbetűjel kiosztása.</li>
+        <li><code>delete partition</code> – partíció törlése.</li>
+      </ul>
+
+      <p>
+        <strong>Előnye:</strong> Olyan műveletek is elérhetők vele, amiket a
+        Lemezkezelő GUI nem enged (pl. MBR/GPT konverzió, teljes lemez törlése).
+      </p>
     </div>
 
     <div class="section">
@@ -148,7 +479,7 @@
     </div>
 
     <div class="section">
-      <h2>8. Angol szakmai olvasás</h2>
+      <h2>8. Szakmai algol</h2>
       <ul>
         <li>
           <b>Angol technikai dokumentáció olvasása:</b> (pl. Microsoft Docs,
@@ -172,9 +503,40 @@
       </ul>
     </div>
 
-    <button onclick="location.href='../Main.html'">
+    <button type="button" onclick="location.href='../Main.html'">
       <!-- onclick esemény: kattintásra átirányít a főoldalra -->
       Vissza
     </button>
+    <br />
+    <div class="section">
+      <h3>Források</h3>
+      <ul style="list-style: none; padding-left: 0">
+        <li style="margin-bottom: 0.7em">
+          <a
+            href="ISTQB-CTFL-Syllabus-4.0-magyar.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="text-decoration: none; color: #2a4d7a; font-weight: bold"
+          >
+            📄 ISTQB-CTFL Syllabus 4.0 (magyar, PDF)
+          </a>
+        </li>
+        <li style="margin-bottom: 0.7em">
+          <span style="color: #1b3556; font-weight: bold"
+            >📝 Saját jegyzetek</span
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.youtube.com/watch?v=x75rST1j2Oc&list=PLih210Tv6IOTG2SCA9W6zOPyE21k4t86a"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="text-decoration: none; color: #2a4d7a; font-weight: bold"
+          >
+            ▶️ YouTube: Hálózati alapismeretek playlist
+          </a>
+        </li>
+      </ul>
+    </div>
   </body>
 </html>

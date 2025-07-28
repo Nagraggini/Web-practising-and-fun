@@ -13,6 +13,13 @@ h2 {
   font-size: 1.2rem;
   margin-top: 2rem;
 }
+
+h3 {
+  color: #1b3556;
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
 ul,
 ol {
   margin-bottom: 1rem;
@@ -35,4 +42,57 @@ li {
 }
 b {
   color: #1b3556;
+}
+button,
+.back-btn {
+  background: #2a4d7a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6em 1.5em;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 1em 0 2em 0;
+  box-shadow: 0 2px 8px #0001;
+  transition: background 0.2s;
+}
+button:hover,
+.back-btn:hover {
+  background: #1b3556;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 1em 0;
+  background: #fff;
+  width: 100%;
+  max-width: 600px;
+}
+th,
+td {
+  border: 1px solid #bbb;
+  padding: 8px 14px;
+  text-align: left;
+}
+th {
+  background: #e3eaf2;
+  color: #1b3556;
+  font-weight: bold;
+}
+@media (max-width: 700px) {
+  .section,
+  .extra {
+    padding: 1em 0.5em;
+  }
+  table,
+  th,
+  td {
+    font-size: 0.95em;
+    padding: 6px 6px;
+  }
+  button,
+  .back-btn {
+    width: 100%;
+    font-size: 1em;
+  }
 }
