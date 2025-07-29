@@ -345,7 +345,7 @@
         <li>
           <b>Alap Linux:</b> Parancssori alapok (<code>cd</code>,
           <code>ls</code>, <code>cp</code>, <code>chmod</code>, <code>ps</code>,
-          <code>systemctl</code>).
+          <code>systemctl</code>) ,<code>ifconfig</code>.
           <a
             href="https://bellard.org/jslinux/"
             target="_blank"
@@ -469,13 +469,338 @@
       <ul>
         <li>
           <b>IP-címzés, DHCP, DNS:</b> Ismerd meg az alapokat (pl. hogyan
-          ellenőrzöd <code>ipconfig</code>/<code>ifconfig</code> paranccsal).
+          ellenőrzöd <code>ipconfig /all</code> (Windows)/<code>ifconfig</code>
+          (Linux) paranccsal).
         </li>
         <li>
           <b>Tesztelés hálózaton:</b> <code>ping</code>, <code>tracert</code>,
           portellenőrzés (<code>telnet</code>, <code>nc</code>).
         </li>
       </ul>
+
+      <h3>IP cím</h3>
+      <ul>
+        <li><b>Teljes nevén:</b> Internet Protocol (szabványos azonosító)</li>
+        <li>
+          Egyedi számsor, ami minden hálózatra csatlakozó eszközt azonosít (pl.
+          számítógép, telefon, nyomtató).
+        </li>
+        <li>
+          Olyan, mint egy lakcím: ezen keresztül találják meg egymást az
+          eszközök a hálózaton.
+        </li>
+        <li>
+          <b>Két fajtája van:</b>
+          <ul>
+            <li>
+              <b>IPv4:</b> pl. <code>192.168.1.5</code> (32 bit, 4 db 0-255
+              közötti szám, oktet)
+            </li>
+            <li>
+              <b>IPv6:</b> hosszabb, 128 bit, 8 db 4-es blokkból áll (hextet)
+            </li>
+          </ul>
+        </li>
+        <li>
+          Az IP cím logikai cím, ami változhat (pl. router újraindítás után).
+        </li>
+        <li>
+          <b>Külső IP:</b>
+          <a href="https://whatismyipaddress.com/" target="_blank"
+            >What is my IP</a
+          >
+          oldalon nézhető.
+        </li>
+        <li>
+          <b>Belső IP:</b> Windows parancssorban: <code>ipconfig /all</code>
+        </li>
+      </ul>
+      <h3>Hogyan lehet IP címe egy gépnek?</h3>
+      <ul>
+        <li><b>Statikus IP:</b> Kézzel állítod be a gépen.</li>
+        <li>
+          <b>DHCP </b> szervertől kapja. (A szerver lehet egy router.)
+          <ul>
+            <li>
+              Ha nincs a hálózaton DHCP, akkor kézzel kell megadni az IP címet.
+            </li>
+            <li>
+              Ha van DHCP, akkor a gép automatikusan kap egy IP címet, amikor
+              csatlakozik a hálózathoz.
+            </li>
+            <li>
+              Alapvetően igyekszik ugyanannak a gépnek ugyanazt az IP címet
+              adni, van memóriája, de ha az IP cím már foglalt, akkor másikat
+              ad.
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>Mi az a netmaszk?</h4>
+      A netmaszk (vagy alhálózati maszk) egy 32 bites bitmaszk, amely IPv4-cím
+      esetén megmutatja, hogy az adott IP cím hány bitje azonosítja a hálózatot
+      és hány bit a gazdagépet.<br />
+      A bitmaszk bináris formában egymás után következő 1-esekből (hálózati
+      rész) és 0-ásokból (hoszt rész) áll. Például a 255.255.255.0 maszk
+      binárisan 11111111.11111111.11111111.00000000 és jelöli a /24
+      címtartományt.
+      <br />
+      <br />
+      <img src="netmask.png" alt="Subnet mask"
+      align=""https://www.fourfaith.com/industry-news/what-is-netmask.html"/>
+
+      <h3>MAC cím</h3>
+      <ul>
+        <li><b>Teljes nevén:</b> Media Access Control cím</li>
+        <li>Fizikai azonosító, amit a hálózati kártya gyártásakor kap.</li>
+        <li>
+          Egyedi az egész világon (mint egy sorozatszám): pl.
+          <code>00:1A:2B:3C:4D:5E</code>
+        </li>
+        <li>
+          A hálózaton belül segít eldönteni, melyik adatcsomag melyik eszközhöz
+          menjen.
+        </li>
+        <li>Általában nem változik (de vannak technikák a módosítására).</li>
+      </ul>
+
+      <h3>DHCP</h3>
+      <ul>
+        <li><b>Teljes nevén:</b> Dynamic Host Configuration Protocol</li>
+        <li>
+          Szolgáltatás/protokoll, ami automatikusan ad IP címet az eszközödnek.
+        </li>
+        <li>
+          Ha csatlakozol egy Wi-Fi-hez, nem kell kézzel beírnod az IP címet – a
+          DHCP szerver kiosztja neked.
+        </li>
+        <li>
+          Egy router gyakran DHCP szerverként működik otthoni hálózatokban.
+        </li>
+        <li>
+          Nemcsak IP címet ad, hanem más beállításokat is: pl. alapértelmezett
+          átjáró (gateway), DNS szerver címe.
+        </li>
+      </ul>
+
+      <h3>Fogalmak röviden</h3>
+      <table>
+        <tr>
+          <th>Fogalom</th>
+          <th>Jelentés</th>
+        </tr>
+        <tr>
+          <td>IP cím</td>
+          <td>
+            Egyedi hálózati cím, ami az eszközöket az interneten vagy helyi
+            hálózaton azonosítja.
+          </td>
+        </tr>
+        <tr>
+          <td>MAC cím</td>
+          <td>
+            Egyedi hardverazonosító cím, amit a hálózati eszköz gyártásakor kap.
+          </td>
+        </tr>
+        <tr>
+          <td>DHCP</td>
+          <td>
+            Egy protokoll, ami automatikusan kiosztja az IP címeket és egyéb
+            hálózati beállításokat.
+          </td>
+        </tr>
+      </table>
+
+      <h3>Internet nélkül is működik a helyi hálózat?</h3>
+      <div class="tip">
+        Internet <b>nem kell</b> ahhoz, hogy számítógépek kommunikáljanak
+        egymással egy helyi hálózaton (LAN) belül.
+      </div>
+      <h3>Hogyan köss össze 3 gépet internet nélkül?</h3>
+      <ol>
+        <li>
+          <b>Router / switch / hub használatával</b>
+          <ul>
+            <li>
+              Kell: 1 router vagy switch, Ethernet kábelek, 3 számítógép LAN
+              kártyával
+            </li>
+            <li>
+              Lépések:
+              <ol>
+                <li>
+                  Minden gépet kábellel csatlakoztatsz a routerhez vagy
+                  switchhez.
+                </li>
+                <li>
+                  A gépek automatikusan láthatják egymást (ha a tűzfal nem
+                  tiltja).
+                </li>
+                <li>Ha van DHCP a routeren: kioszt IP-címeket.</li>
+                <li>
+                  Ha nincs DHCP: állíts be statikus IP-címet kézzel (pl.
+                  192.168.1.2, 192.168.1.3, 192.168.1.4).
+                </li>
+              </ol>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <b>Közvetlen összekötés</b>
+          <ul>
+            <li>
+              Régen cross-over kábel kellett, ma már a legtöbb hálózati kártya
+              automatikusan érzékeli.
+            </li>
+            <li>
+              3 géphez bonyolult, mert csak 2 gépet lehet közvetlenül összekötni
+              egy kábellel.
+            </li>
+            <li>Több géphez mindenképp kell egy switch vagy router!</li>
+          </ul>
+        </li>
+        <li>
+          <b>Wi-Fi Ad-hoc</b>
+          <ul>
+            <li>
+              Egy gép létrehoz egy Wi-Fi hotspotot (Access Point), a másik 2 gép
+              rácsatlakozik.
+            </li>
+            <li>Ez is csak helyi kapcsolat, nincs internet.</li>
+          </ul>
+        </li>
+      </ol>
+      <h4>Példa statikus IP-vel:</h4>
+      <ul>
+        <li>Gép 1 IP: <code>192.168.1.2</code></li>
+        <li>Gép 2 IP: <code>192.168.1.3</code></li>
+        <li>Gép 3 IP: <code>192.168.1.4</code></li>
+        <li>Alhálózati maszk: <code>255.255.255.0</code></li>
+        <li>Átjáró: hagyható üresen (nincs internet)</li>
+      </ul>
+      <h3>Mire jó?</h3>
+      <ul>
+        <li>Fájlmegosztás</li>
+        <li>Lokális játékok (LAN game)</li>
+        <li>Szerver–kliens tesztelés</li>
+        <li>Nyomtató megosztás</li>
+      </ul>
+
+      <h3>Összefoglaló táblázat</h3>
+      <table>
+        <tr>
+          <th>Kellék</th>
+          <th>Mit csinálj?</th>
+        </tr>
+        <tr>
+          <td>Switch/Router</td>
+          <td>Minden gépet kábellel csatlakoztass.</td>
+        </tr>
+        <tr>
+          <td>Ethernet kábel</td>
+          <td>3 géphez mindenképp switch/router kell.</td>
+        </tr>
+        <tr>
+          <td>Wi-Fi Ad-hoc</td>
+          <td>Egy gép hoz létre hotspotot, a többiek csatlakoznak.</td>
+        </tr>
+        <tr>
+          <td>IP-címek</td>
+          <td>Ha nincs DHCP, kézzel add meg a címeket.</td>
+        </tr>
+      </table>
+
+      <h3>Helyi hálózat (LAN) kialakítása (internet nélkül)</h3>
+      <ol>
+        <li>
+          <b>Mi az, hogy hálózat?</b>
+          <div>
+            Egy hálózat (LAN) összeköti az eszközöket, hogy tudjanak egymással
+            adatot cserélni (pl. fájlmegosztás, közös nyomtató, LAN játék, helyi
+            szerver).
+          </div>
+        </li>
+        <li>
+          <b>Miket kell hozzá kitalálni?</b>
+          <ul>
+            <li>
+              <b>Milyen eszközök lesznek?</b> (PC-k, laptopok, nyomtató stb.)
+            </li>
+            <li>
+              <b>Hogy kötöd össze őket?</b>
+              <ul>
+                <li>
+                  Vezetékes LAN: Ethernet kábellel (UTP) → routerhez vagy
+                  switchhez dugod az eszközöket.
+                </li>
+                <li>
+                  Vezeték nélküli LAN (Wi-Fi): Egy router biztosítja a Wi-Fi-t
+                  vagy létrehozol egy Ad-hoc Wi-Fi hálózatot.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Kell IP-cím terv!</b>
+              <ul>
+                <li>DHCP-vel: router automatikusan kiosztja.</li>
+                <li>
+                  Statikus IP-vel: kézzel állítod be (pl. 192.168.1.2 –
+                  192.168.1.254)
+                </li>
+                <li>Alhálózati maszk: 255.255.255.0</li>
+                <li>Átjáró: lehet üres (nincs internet)</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <b>Példa: 3 gépes LAN routerrel</b>
+          <pre>
+PC1 ──┐
+       │
+PC2 ──┼─ Router/Switch ── (esetleg nyomtató)
+       │
+PC3 ──┘
+          </pre>
+          <ol>
+            <li>
+              Csatlakoztasd a gépeket kábellel a routerhez vagy switchhez.
+            </li>
+            <li>
+              Ellenőrizd, hogy ugyanabban a hálózatban vannak (pl. minden gép
+              IP-je 192.168.1.x).
+            </li>
+            <li>
+              Engedélyezd a fájlmegosztást, ha szeretnél fájlokat átküldeni.
+            </li>
+            <li>
+              Próbáld ki: <code>ping</code> paranccsal ellenőrizd, látják-e
+              egymást (pl. <code>ping 192.168.1.3</code>).
+            </li>
+          </ol>
+        </li>
+        <li>
+          <b>Wi-Fi-s megoldás</b>
+          <ul>
+            <li>
+              Egy gép is csinálhat hotspotot (Ad-hoc), a többiek erre
+              csatlakoznak.
+            </li>
+            <li>
+              IP-cím kiosztás lehet automatikus (ha van DHCP szoftver) vagy
+              manuális.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <b>Tűzfal</b>
+          <div class="warn">
+            Gyakori hiba: a Windows tűzfal vagy vírusirtó blokkolja a
+            fájlmegosztást! Helyi hálózatnál engedélyezd a helyi forgalmat.
+          </div>
+        </li>
+      </ol>
     </div>
 
     <div class="section">
@@ -516,22 +841,20 @@
             href="ISTQB-CTFL-Syllabus-4.0-magyar.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            style="text-decoration: none; color: #2a4d7a; font-weight: bold"
+            style="text-decoration: none; color: #fff; font-weight: bold"
           >
             📄 ISTQB-CTFL Syllabus 4.0 (magyar, PDF)
           </a>
         </li>
         <li style="margin-bottom: 0.7em">
-          <span style="color: #1b3556; font-weight: bold"
-            >📝 Saját jegyzetek</span
-          >
+          <span style="color: #fff; font-weight: bold">📝 Saját jegyzetek</span>
         </li>
         <li>
           <a
             href="https://www.youtube.com/watch?v=x75rST1j2Oc&list=PLih210Tv6IOTG2SCA9W6zOPyE21k4t86a"
             target="_blank"
             rel="noopener noreferrer"
-            style="text-decoration: none; color: #2a4d7a; font-weight: bold"
+            style="text-decoration: none; color: #fff; font-weight: bold"
           >
             ▶️ YouTube: Hálózati alapismeretek playlist
           </a>
