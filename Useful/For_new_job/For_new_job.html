@@ -345,7 +345,147 @@
         <li>
           <b>Alap Linux:</b> Parancssori alapok (<code>cd</code>,
           <code>ls</code>, <code>cp</code>, <code>chmod</code>, <code>ps</code>,
-          <code>systemctl</code>) ,<code>ifconfig</code>.
+          <code>systemctl</code>, <code>ifconfig</code>, <code>clear</code>,
+          <code>pwd</code>) <br />
+          <br />
+          <ul>
+            <li>
+              <b><code>cd</code> – könyvtárváltás</b>
+              <ul>
+                <li>Belép egy másik mappába.</li>
+                <li><code>cd Dokumentumok</code></li>
+                <li><code>cd /home/felhasznalo/Asztal</code></li>
+                <li><code>cd ..</code> – eggyel visszalép (szülőmappába).</li>
+              </ul>
+            </li>
+            <li>
+              <b><code>clear</code> és <code>pwd</code> – alapok</b>
+              <ul>
+                <li><code>clear</code> - képernyő törlése</li>
+                <li><code>pwd</code> - aktuális könyvtár megjelenítése</li>
+              </ul>
+            </li>
+
+            <li>
+              <b><code>ls</code> – fájlok és mappák listázása</b>
+              <ul>
+                <li>
+                  Kilistázza az aktuális könyvtár tartalmát. A - után érzékeny a
+                  kis és nagy betűkre.
+                </li>
+                <li><code>ls</code> – egyszerű lista</li>
+                <li>
+                  <code>ls -l</code> – részletes (méret, jogosultság, dátum)
+                </li>
+                <li><code>ls -a</code> – rejtett fájlokat is mutatja</li>
+                <li>
+                  <code>ls -la</code> – részletes (méret, jogosultság, dátum) és
+                  a rejtett fájlokat is mutatja
+                </li>
+                <li>
+                  <code>ls -R</code> – listázza az aktuális könyvtár tartalmát
+                  és minden almappát is — rekurzívan, azaz „belülről kifelé”
+                  végigmegy minden könyvtáron
+                </li>
+                <li>
+                  <code>ls -laR</code> – részletes (méret, jogosultság, dátum)
+                  és a rejtett fájlokat is mutatja, listázza az aktuális
+                  könyvtár tartalmát és minden almappát is — rekurzívan, azaz
+                  „belülről kifelé” végigmegy minden könyvtáron.
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <b><code>mkdir</code> – könyvtár (mappa) létrehozása</b>
+              <ul>
+                <li>Új mappát hoz létre az aktuális könyvtárban.</li>
+                <li>
+                  <code>mkdir tesztek</code> – létrehoz egy "tesztek" nevű
+                  mappát.
+                </li>
+                <li>
+                  <code>mkdir /home/felhasznalo/projekt</code> – létrehoz egy
+                  mappát a megadott elérési úton
+                </li>
+                <li>
+                  <code>mkdir -v ujmappa</code> – a "-v" kapcsoló: tájékoztat,
+                  hogy létrejött-e a könyvtár (részletes kimenet).
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b><code>cp</code> – másolás</b>
+              <ul>
+                <li>Fájlokat vagy mappákat másol.</li>
+                <li><code>cp fajl.txt /home/felhasznalo/Asztal</code></li>
+                <li>
+                  <code>cp -r mappa /home/felhasznalo/</code> – mappát
+                  rekurzívan (tartalommal együtt).
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b><code>chmod</code> – jogosultságok módosítása</b>
+              <ul>
+                <li>
+                  Átállítja, hogy ki olvashatja, írhatja vagy futtathatja a
+                  fájlt.
+                </li>
+                <li>
+                  <code>chmod 755 script.sh</code> – tulajdonos futtathatja,
+                  mások csak olvashatják.
+                </li>
+                <li><code>chmod +x script.sh</code> – futtathatóvá teszi.</li>
+              </ul>
+            </li>
+            <li>
+              <b><code>ps</code> – folyamatok listázása</b>
+              <ul>
+                <li>Megmutatja a futó programokat (processzeket).</li>
+                <li><code>ps</code> – egyszerű lista</li>
+                <li><code>ps aux</code> – minden folyamat részletesen.</li>
+              </ul>
+            </li>
+            <li>
+              <b><code>systemctl</code> – szolgáltatások kezelése</b>
+              <ul>
+                <li>
+                  Elindít, leállít vagy újraindít rendszer-szolgáltatásokat (pl.
+                  webserver, adatbázis).
+                </li>
+                <li>
+                  <code>systemctl start apache2</code> – szolgáltatás indítása
+                </li>
+                <li>
+                  <code>systemctl stop apache2</code> – szolgáltatás leállítása
+                </li>
+                <li><code>systemctl restart apache2</code> – újraindítás</li>
+                <li>
+                  <code>systemctl status apache2</code> – állapot lekérdezése.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b><code>ifconfig</code> – hálózati beállítások megtekintése</b>
+              <ul>
+                <li>
+                  Megmutatja a számítógép hálózati interfészeinek (pl. Wi-Fi,
+                  Ethernet) IP-címét és beállításait.
+                </li>
+                <li><code>enp0s3</code> – Ethernet (vezetékes) kártya</li>
+                <li><code>wlp2s0</code> – Wi-Fi kártya</li>
+                <li><code>lo</code> – loopback (sajátgép, localhost)</li>
+                <li><code>ping 127.0.0.1</code> – sajátgép pinnelése</li>
+                <li><code>ifconfig</code> – hálózati interfészek állapota.</li>
+                <li>
+                  <small
+                    >(Újabb rendszereken helyette: <code>ip a</code>)</small
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
           <a
             href="https://bellard.org/jslinux/"
             target="_blank"
@@ -544,7 +684,8 @@
       A bitmaszk bináris formában egymás után következő 1-esekből (hálózati
       rész) és 0-ásokból (hoszt rész) áll. Például a 255.255.255.0 maszk
       binárisan 11111111.11111111.11111111.00000000 és jelöli a /24
-      címtartományt.
+      címtartományt. Ha azonos a gépet netmaszkja, akkor látják egymást a
+      hálózaton. Ha különböző switch-en vannak, akkor is látják egymást.<br />
       <br />
       <br />
       <img src="netmask.png" alt="Subnet mask"
