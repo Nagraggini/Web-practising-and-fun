@@ -473,15 +473,34 @@
                   Megmutatja a számítógép hálózati interfészeinek (pl. Wi-Fi,
                   Ethernet) IP-címét és beállításait.
                 </li>
+                <li><code>ifconfig</code> – hálózati interfészek állapota</li>
                 <li><code>enp0s3</code> – Ethernet (vezetékes) kártya</li>
                 <li><code>wlp2s0</code> – Wi-Fi kártya</li>
                 <li><code>lo</code> – loopback (sajátgép, localhost)</li>
                 <li><code>ping 127.0.0.1</code> – sajátgép pinnelése</li>
-                <li><code>ifconfig</code> – hálózati interfészek állapota.</li>
+
                 <li>
                   <small
                     >(Újabb rendszereken helyette: <code>ip a</code>)</small
                   >
+                </li>
+                <li>
+                  <code>route n</code> – átjáró megjelenítése, ezen kommunikál a
+                  gépünk azokkal akik nincsenek vele egy hálózaton
+                </li>
+
+                <li>
+                  <code>arp -a </code> – segítségével felderíteni a hálózaton
+                  lévő eszközöket
+                </li>
+
+                <li>
+                  <code>traceroute 8.8.8.8 </code> – Windows-on
+                  <code>tracert</code>
+                  paranccsal segítségével meg tudjuk nézni, hogy a gépünk milyen
+                  útvonalon keresztül éri el a megadott IP-címet, és mennyi
+                  időbe telik az egyes útvonalpontok elérése. (8.8.8.8 ->
+                  dns.google)
                 </li>
               </ul>
             </li>
@@ -605,7 +624,7 @@
     </div>
 
     <div class="section">
-      <h2>7. Alap hálózati ismeretek</h2>
+      <h2>7. Hálózati alapismeretek</h2>
       <ul>
         <li>
           <b>IP-címzés, DHCP, DNS:</b> Ismerd meg az alapokat (pl. hogyan
@@ -997,10 +1016,18 @@ PC3 ──┘
           <a
             href="https://www.youtube.com/watch?v=x75rST1j2Oc&list=PLih210Tv6IOTG2SCA9W6zOPyE21k4t86a"
             target="_blank"
-            rel="noopener noreferrer"
             style="text-decoration: none; color: #fff; font-weight: bold"
           >
             ▶️ YouTube: Hálózati alapismeretek playlist
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.youtube.com/watch?v=ZyQELacHYzU&list=PLX7PhJYdwFyD3q6J3LZhIz-Xx46ybBDvr"
+            target="_blank"
+            style="text-decoration: none; color: #fff; font-weight: bold"
+          >
+            ▶️ YouTube: Linux parancssor alapok playlist
           </a>
         </li>
       </ul>
