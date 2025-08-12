@@ -17,8 +17,8 @@
         <li>
           <b>Szoftvertesztelés alapjai:</b>
           <span>
-            Kézi tesztelés (<b>funkcionális</b>, <b>regressziós</b> ,
-            <b>integrációs tesztek</b> ).
+            Kézi tesztelés (<b>funkcionális</b>, <b>regressziós</b>,
+            <b>integrációs tesztek</b>).
           </span>
         </li>
       </ul>
@@ -45,7 +45,6 @@
             is refaktorálják.
           </li>
         </ul>
-
         <p><b>Elfogadásiteszt-vezérelt fejlesztés (ATDD):</b></p>
         <ul>
           <li>
@@ -57,7 +56,6 @@
             alkalmazás azon része, mely kielégíti ezeket a teszteket.
           </li>
         </ul>
-
         <p><b>Viselkedésvezérelt fejlesztés (BDD):</b></p>
         <ul>
           <li>
@@ -71,13 +69,11 @@
             alakítják.
           </li>
         </ul>
-
         <p>
           A fent említett megközelítések alkalmazása során, a tesztek
           megmaradhatnak automatizált tesztek formájában, hogy biztosítsák a kód
           minőségét jövőbeli módosítások esetén.
         </p>
-
         <h3>1.2 DevOps és tesztelés</h3>
         <p>
           DevOps egy szervezeti megközelítés, melynek célja a szinergia
@@ -101,16 +97,14 @@
           </li>
           <li>
             A folyamatos integráció elősegíti a shift left megközelítést a
-            tesztelésben , mivel bátorítja a fejlesztőket, hogy jó minőségű
-            kódot adjanak át, komponenstesztekkel és statikus elemzéssel
-            kísérve.
+            tesztelésben, mivel bátorítja a fejlesztőket, hogy jó minőségű kódot
+            adjanak át, komponenstesztekkel és statikus elemzéssel kísérve.
           </li>
           <li>
             Támogatja az automatizált folyamatokat, mint például a folyamatos
             integrációt/szállítást, amelyek segítik a stabil tesztkörnyezetek
             kialakítását.
           </li>
-
           <li>
             Növeli a fókuszt a nemfunkcionális jellemzőkön (pl. teljesítmény,
             megbízhatóság).
@@ -144,7 +138,6 @@
           megvalósítását, a manuális tesztelés – különösen a felhasználó
           szempontjából – továbbra is szükséges.
         </p>
-
         <h3>1.3 A shift left megközelítés</h3>
         <p>
           Az korai tesztelés elve éha <b>shift left</b> néven is említésre
@@ -248,12 +241,12 @@
                 </li>
                 <li>
                   <b>Feketedoboz tesztelés:</b>
-                  <span
-                    >Specifikációalapú teszttípus, ahol a teszteseteket a
+                  <span>
+                    Specifikációalapú teszttípus, ahol a teszteseteket a
                     rendszer specifikációiból származtatjuk. Fő cél: a rendszer
                     viselkedésének ellenőrzése a rendszer specifikációinak
-                    szempontjából.</span
-                  >
+                    szempontjából.
+                  </span>
                 </li>
                 <li>
                   <b>Fehérdoboz tesztelés:</b>
@@ -347,7 +340,6 @@
           <code>ls</code>, <code>cp</code>, <code>chmod</code>, <code>ps</code>,
           <code>systemctl</code>, <code>ifconfig</code>, <code>clear</code>,
           <code>pwd</code>)
-          
           <ul>
             <li>
               <b><code>cd</code> – könyvtárváltás</b>
@@ -505,12 +497,6 @@
               </ul>
             </li>
           </ul>
-          <a
-            href="https://bellard.org/jslinux/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Linux Online Terminal</a
-          >
         </li>
         <li>
           <b>Egyszerű szoftvertelepítés:</b> <code>apt</code>, <code>yum</code>.
@@ -707,8 +693,11 @@
       hálózaton. Ha különböző switch-en vannak, akkor is látják egymást.<br />
       <br />
       <br />
-      <img src="netmask.png" alt="Subnet mask"
-      align="https://www.fourfaith.com/industry-news/what-is-netmask.html"/>
+      <img
+        src="netmask.png"
+        alt="Subnet mask"
+        align="https://www.fourfaith.com/industry-news/what-is-netmask.html"
+      />
 
       <h3>MAC cím</h3>
       <ul>
@@ -1100,31 +1089,61 @@ PC3 ──┘
           <strong>Rugalmas</strong> – kisebb és nagyobb csapatoknak is működik.
         </li>
       </ul>
-<div class="section">
+    </div>
+
+    <div class="section">
       <h3>9.2 Alapfogalmak, kifejezések</h3>
 
-   
-  A DevOps alapfogalmak és kulcselemek a következők:
+      A DevOps alapfogalmak és kulcselemek a következők:
 
-  <ul>
-    <li><strong>Folyamatos integráció (CI):</strong> A fejlesztés során a kód változtatásait rendszeresen egy közös tárba integrálják, automatikus teszteléssel biztosítva a minőséget.</li>
+      <ul>
+        <li>
+          <strong>Folyamatos integráció (CI):</strong> A fejlesztés során a kód
+          változtatásait rendszeresen egy közös tárba integrálják, automatikus
+          teszteléssel biztosítva a minőséget.
+        </li>
 
-    <li><strong>Folyamatos szállítás (Continuous Delivery, CD):</strong> Olyan folyamat, amely biztosítja, hogy a kód mindig telepíthető állapotban legyen, de a kiadás manuális jóváhagyáshoz kötött.</li>
+        <li>
+          <strong>Folyamatos szállítás (Continuous Delivery, CD):</strong> Olyan
+          folyamat, amely biztosítja, hogy a kód mindig telepíthető állapotban
+          legyen, de a kiadás manuális jóváhagyáshoz kötött.
+        </li>
 
-    <li><strong>Folyamatos bevezetés (Continuous Deployment):</strong> A kódváltoztatások automatikus, kézi beavatkozás nélküli élesítését jelenti.</li>
+        <li>
+          <strong>Folyamatos bevezetés (Continuous Deployment):</strong> A
+          kódváltoztatások automatikus, kézi beavatkozás nélküli élesítését
+          jelenti.
+        </li>
 
-    <li><strong>Infrastruktúra mint kód (Infrastructure as Code, IaC):</strong> Az IT infrastruktúra programozott, automatizált kezelése, mely biztosítja az állandóan azonos környezeteket fejlesztés és éles rendszer között.</li>
+        <li>
+          <strong
+            >Infrastruktúra mint kód (Infrastructure as Code, IaC):</strong
+          >
+          Az IT infrastruktúra programozott, automatizált kezelése, mely
+          biztosítja az állandóan azonos környezeteket fejlesztés és éles
+          rendszer között.
+        </li>
 
-    <li><strong>Automatizálás:</strong> Az ismétlődő feladatok automatizálása a hibák minimalizálása és a gyorsabb kiadás érdekében.</li>
+        <li>
+          <strong>Automatizálás:</strong> Az ismétlődő feladatok automatizálása
+          a hibák minimalizálása és a gyorsabb kiadás érdekében.
+        </li>
 
-    <li><strong>Megfigyelés és naplózás:</strong> A rendszerek folyamatos figyelése a megfelelő működés és a gyors problémakezelés érdekében.</li>
+        <li>
+          <strong>Megfigyelés és naplózás:</strong> A rendszerek folyamatos
+          figyelése a megfelelő működés és a gyors problémakezelés érdekében.
+        </li>
 
-    <li><strong>Együttműködés és kommunikáció:</strong> A fejlesztők, tesztelők és üzemeltetők szoros, folyamatos együttműködése a teljes szoftverfejlesztési életciklus során.</li>
-  </ul>
+        <li>
+          <strong>Együttműködés és kommunikáció:</strong> A fejlesztők,
+          tesztelők és üzemeltetők szoros, folyamatos együttműködése a teljes
+          szoftverfejlesztési életciklus során.
+        </li>
+      </ul>
 
-  
-    A DevOps életciklus jellemzően a következő fázisokat foglalja magában: tervezés, fejlesztés, integráció, tesztelés, bevezetés, megfigyelés és visszajelzés.
- 
+      A DevOps életciklus jellemzően a következő fázisokat foglalja magában:
+      tervezés, fejlesztés, integráció, tesztelés, bevezetés, megfigyelés és
+      visszajelzés.
     </div>
 
     <div class="section extra">
@@ -1138,8 +1157,7 @@ PC3 ──┘
       </ul>
     </div>
 
-    <button type="back-btn " onclick="location.href='../../Main.html'">
-      <!-- onclick esemény: kattintásra átirányít a főoldalra -->
+    <button type="button" onclick="location.href='../../Main.html'">
       Vissza
     </button>
     <br />
@@ -1187,7 +1205,7 @@ PC3 ──┘
             target="_blank"
             style="text-decoration: none; color: #fff; font-weight: bold"
           >
-            A DevOps állásinterjún kezdőknek feltett leggyakoribb kérdések
+            📄 DevOps állásinterjún kezdőknek feltett leggyakoribb kérdések
           </a>
         </li>
 
@@ -1196,7 +1214,8 @@ PC3 ──┘
             href="https://devopsakademia.com/course/devops-alapjai-eszkozkeszlet-kezdoknek/?order-complete=order-689ad3ed4e2ce"
             target="_blank"
             style="text-decoration: none; color: #fff; font-weight: bold"
-          >DevOps Alapjai Eszközkészlet Kezdőknek
+          >
+            📄 DevOps Alapjai Eszközkészlet Kezdőknek
           </a>
         </li>
       </ul>
