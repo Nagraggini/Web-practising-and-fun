@@ -964,7 +964,7 @@ PC3 ──┘
     </div>
 
     <div class="section">
-      <h2>8. Szakmai algol</h2>
+      <h2>8. Szakmai angol</h2>
       <ul>
         <li>
           <b>Angol technikai dokumentáció olvasása:</b> (pl. Microsoft Docs,
@@ -975,6 +975,133 @@ PC3 ──┘
           megértése.
         </li>
       </ul>
+    </div>
+
+    <div class="section">
+      <h2>9. Microsoft DevOps Server</h2>
+
+      <ul>
+        <li>Ingyenes verzió: Azure DevOps Server</li>
+      </ul>
+      <h3>9.1 Alapok</h3>
+      <h4>9.1.1 Mi az az Azure DevOps Server?</h4>
+      <p>
+        Egy Microsoft által fejlesztett eszköz, amivel a fejlesztőcsapatok meg
+        tudják tervezni, fejleszteni, tesztelni és kiadni a szoftvereiket.
+      </p>
+      <p>Régi nevén <em>Team Foundation Server (TFS)</em>.</p>
+      <p>
+        Cégek belső hálózatán is telepíthető (nem csak felhőben, mint az Azure
+        DevOps Services).
+      </p>
+
+      <h4>9.1.2 Mire való?</h4>
+      <p>Fő célja, hogy minden fejlesztési lépést egy helyen kezeljetek:</p>
+      <ul>
+        <li>
+          <strong>Tervezés</strong> – feladatok, hibajegyek, user story-k
+          nyilvántartása.
+        </li>
+        <li>
+          <strong>Kódkezelés</strong> – verziókövetés Git vagy TFVC (Team
+          Foundation Version Control) segítségével.
+        </li>
+        <li>
+          <strong>Automatizált build</strong> – a kód lefordítása, tesztek
+          futtatása.
+        </li>
+        <li>
+          <strong>Release (kiadás)</strong> – a kész szoftver telepítése teszt
+          vagy éles környezetbe.
+        </li>
+        <li>
+          <strong>Tesztelés</strong> – manuális és automatizált tesztek
+          kezelése.
+        </li>
+      </ul>
+
+      <h3>9.1.3 Fő részei (moduljai)</h3>
+      <ul>
+        <li>
+          <strong>Azure Boards</strong>
+          <ul>
+            <li>Feladatkezelő rendszer.</li>
+            <li>
+              Láthatod, ki mit csinál, milyen hibák vannak, hol tart a projekt.
+            </li>
+            <li>Kanban-tábla vagy Scrum sprintek formájában.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Azure Repos</strong>
+          <ul>
+            <li>Kód tárolása és verziókezelése Git vagy TFVC segítségével.</li>
+            <li>Itt vannak a pull requestek, branchek, merge-ek.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Azure Pipelines</strong>
+          <ul>
+            <li>
+              Automatizált folyamatok, amik a kódot:
+              <ul>
+                <li>Build-elik (lefordítják, csomagolják)</li>
+                <li>Tesztelik</li>
+                <li>Deploy-olják (telepítik)</li>
+              </ul>
+            </li>
+            <li>
+              CI/CD (Continuous Integration / Continuous Delivery)
+              megvalósítására.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Azure Test Plans</strong>
+          <ul>
+            <li>Manuális és automatizált tesztek nyilvántartása, futtatása.</li>
+            <li>Tesztelési eredmények követése.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Azure Artifacts</strong>
+          <ul>
+            <li>
+              Különböző csomagok (NuGet, npm, Maven stb.) tárolása és megosztása
+              a csapaton belül.
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>9.1.4 Hogyan illeszkedik a munkába?</h4>
+      <ol>
+        <li>A projektvezető beírja a feladatokat a Boards-ba.</li>
+        <li>A fejlesztő a Repos-ban dolgozik a kódon, commitol, pushol.</li>
+        <li>A Pipelines automatikusan buildel és tesztel.</li>
+        <li>A sikeres build után Release Pipeline telepíti a kódot.</li>
+        <li>
+          A tesztelők a Test Plans-ben rögzítik a hibákat, amiket visszadobnak a
+          fejlesztőknek.
+        </li>
+      </ol>
+
+      <h4>9.1.5 Miért jó?</h4>
+      <ul>
+        <li><strong>Átlátható</strong> – mindenki látja, mi történik.</li>
+        <li>
+          <strong>Automatizált</strong> – nem kell kézzel telepítgetni vagy
+          fordítani.
+        </li>
+        <li>
+          <strong>Biztonságos</strong> – verziókezelés, jogosultságok, naplózás.
+        </li>
+        <li>
+          <strong>Rugalmas</strong> – kisebb és nagyobb csapatoknak is működik.
+        </li>
+      </ul>
+
+      <h3>9.2 Alapfogalmak, kifejezések</h3>
     </div>
 
     <div class="section extra">
