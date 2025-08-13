@@ -30,3 +30,9 @@ button {
   border-radius: 5px; /* Lekerekített sarkok */
   cursor: pointer; /* Mutató kéz kurzor */
 }
+
+/* Gomb hover animáció */
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+}
