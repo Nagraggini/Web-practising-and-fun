@@ -1,0 +1,32 @@
+a {
+  /* Linkek stílusa */
+  color: #ffffff;
+  text-decoration: none;
+}
+
+body {
+  background-color: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #ffffff;
+}
+ul,
+ol,
+li {
+  padding: 3px; /* Lista elemek párnázása */
+  margin: 1px; /*Bal és jobb margó */
+}
+button {
+  background-color: #a34caf; /*Háttér */
+  color: white; /* Fehér szöveg */
+  padding: 10px 20px; /* Párnázás */
+  border: none; /* Nincs keret */
+  border-radius: 5px; /* Lekerekített sarkok */
+  cursor: pointer; /* Mutató kéz kurzor */
+}
