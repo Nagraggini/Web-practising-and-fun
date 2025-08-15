@@ -25,7 +25,7 @@ li {
 button {
   background-color: #a34caf; /*Háttér */
   color: white; /* Fehér szöveg */
-  padding: 10px 20px; /* Párnázás */
+  padding: 9px 20px; /* Párnázás */
   border: none; /* Nincs keret */
   border-radius: 5px; /* Lekerekített sarkok */
   cursor: pointer; /* Mutató kéz kurzor */
