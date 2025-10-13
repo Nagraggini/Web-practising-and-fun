@@ -1,25 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
+    <!--A meta tagek leírást adnak a weboldalaknak. -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="blog">
+    <meta name="keywords" content="blog teszt"> <!--Kicsit előrébb sorolja emiatt a böngésző keresői.-->
+    <meta name="author" content="Nagraggini">
+
+    <link rel="stylesheet" href="1-HTML Practising_Styles.css">
+    <link rel=" stylesheet" href="2-Blog_Styles.css">
+
+    <!--F12-es fejlesztői módban lehet betű méretet is növelni, de nem lesz elmentve, csak vizuális effekt.-->
+    <title>Első blogom</title>
 </head>
 
+
 <body>
-    <header> <!--HTML5-ben jött be ez.-->
+    <header id="headerID"> <!--HTML5-ben jött be ez.-->
+
+
         <h1>Saját blogom</h1>
     </header>
+    <aside>
+        <h3>Kategóriák</h3>
+        <nav>
+            <ul>
+                <li><a href="categoria1.html">Kategória 1</a></li>
+                <li><a href="categoria2.html">Kategória 2</a></li>
+                <li><a href="categoria3.html">Kategória 3</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <section> <!--HTML5-ben jött be ez.-->
+        <!--Egy logikai „szakasz” az oldalon belül.-->
+        <article> <!--Egy group.-->
+            <h2>Azure 1. fejezet</h2>
+            <small>
+                A DevOps alapjai és változatai
+            </small>
+            <p>
+                A szoftverfejlesztési folyamatok és a kiadási követelmények időről időre változhatnak annak érdekében,
+                hogy a vállalatok továbbra is értéket nyújtsanak az ügyfeleknek, és piaci elfogadottságot érjenek el.
+                A méretezhetőség és a korai visszajelzés megszerzése érdekében számos szervezet gyakori kiadási
+                módszertant alkalmaz az új funkciók vagy hibajavítások bevezetésére. Ezek a kiadások olyan gyakorisággal
+                kerülhetnek éles rendszerbe, mint hetente egyszer, de előfordulhat, hogy naponta, óránként, vagy akár
+                tíz másodpercenként is.
+                Annak érdekében, hogy a vállalatok megőrizzék piaci előnyüket vagy gyors visszajelzési ciklust
+                alakítsanak ki, egyre inkább bevezetik a DevOps gyakorlatokat, mint például a folyamatos kézbesítést
+                (Continuous Delivery) és a folyamatos telepítést (Continuous Deployment).
+                Ebben a fejezetben bevezetést kapsz a DevOps fogalmaiba és gyakorlataiba.
 
-    <section><!--HTML5-ben jött be ez.-->
-        <article><!--Egy groupnak lehet nevezni.-->
 
+            </p>
+        </article>
+
+
+        <article> <!--Egy group.-->
+            <h2>Azure 2. fejezet</h2>
+            <small>
+                Szoftverfejlesztés
+            </small>
+            <p>
+                A szoftverfejlesztési iparág hosszú éveken keresztül a vízesés modellt követte, majd fokozatosan áttért
+                az agilis modell alkalmazására. Az agilis fejlesztési modell lehetővé teszi, hogy a csapatok könnyebben
+                alkalmazkodjanak a változó követelményekhez, emellett elősegíti a jobb együttműködést a különböző
+                csapatok között, és növeli a termelékenységet.
+                A vízesés modellben az alkalmazásfejlesztés szigorúan egymást követő lépésekben zajlik, és a teljes
+                alkalmazás csak a projekt végén kerül kiadásra. Ez azonban gyakran azzal jár, hogy a fejlesztési
+                folyamat nagyon hosszú időt vesz igénybe, és mire a projekt befejeződik, sok olyan funkció, amelyet
+                eredetileg elképzeltek, már elveszíti az aktualitását, vagy egyszerűen nem hasznos a felhasználók
+                számára. További probléma, hogy ebben a megközelítésben hiányzik a végfelhasználói visszajelzés
+                folyamata: a felhasználók elvárásai és visszajelzései csak a teljes fejlesztési és telepítési folyamat
+                lezárása után jutnak el a fejlesztőkhöz.
+                Az agilis módszertan ezzel szemben megköveteli, hogy a kész funkciók – vagyis a gyártásra kész részek –
+                jóval gyakrabban kerüljenek kiadásra. Ennek célja, hogy a felhasználók minél korábban adhassanak
+                visszajelzést, amelyre a fejlesztőcsapat időben tud reagálni. Ugyanakkor, ha az agilitást nem egészíti
+                ki a DevOps szemlélet, a fejlesztési ciklus még mindig hosszabb időt vehet igénybe, és sok manuális
+                munkát igényel.
+                A DevOps éppen ezeket a hiányosságokat kezeli az agilis fejlesztési és telepítési gyakorlatokban:
+                lehetővé teszi az automatizált kiadásokat, gyakran beépített automatikus ellenőrzésekkel és
+                ellenőrzőpontokkal a különböző lépések között.
+
+
+
+
+            </p>
+        </article>
+
+
+        <article> <!--Egy group.-->
+            <h2>Azure 3. fejezet</h2>
+            <small>
+                DevOps
+            </small>
+            <p>
+                A DevOps napjaink egyik legfelkapottabb témája az IT világában, ugyanakkor számos különböző értelmezése
+                és változata létezik. Ha tíz ember elkezdene beszélgetni a DevOps-ról, jó eséllyel tíz eltérő
+                magyarázatot adnának rá.
+            </p>
         </article>
     </section>
 
 
+    <footer id="footerID">
+        Lábléc
+    </footer>
 </body>
+
 
 </html>

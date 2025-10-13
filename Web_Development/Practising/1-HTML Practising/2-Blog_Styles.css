@@ -1,0 +1,57 @@
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+td,
+tr {
+  color: magenta;
+}
+
+small,
+p {
+  color: blueviolet;
+}
+header,
+footer {
+  color: cyan;
+}
+
+/*Linkek stílusa.*/
+a:link {
+  color: cyan;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+#headerID {
+  text-align: center;
+  background-color: rgb(60, 77, 233);
+  color: white;
+  padding: 10px; /*Eltartás felülről és alulről is.*/
+}
+
+#footerID {
+  text-align: center;
+  font-size: 26px;
+}
