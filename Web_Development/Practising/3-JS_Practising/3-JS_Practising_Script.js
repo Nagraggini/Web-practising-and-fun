@@ -21,6 +21,8 @@ var g = true; //boolean
 var i = null; //null
 var j; //undefined
 
+//Ciklusok
+
 //If szerkezet
 var ageOfGyula = 17;
 
@@ -32,4 +34,38 @@ if (ageOfGyula == 17) {
   alert("Gyula még kiskorú.");
 } else {
   alert("Gyula már nagykorú.");
+}
+
+//Switch szerkezet
+var r = "Rudi4";
+switch (r) {
+  case "Rudi":
+    alert("Rudi egy kutya.");
+    break;
+  case "Mici":
+    alert("Mici egy macska.");
+    break;
+  default:
+    alert("Nem kutya, sem macska.");
+}
+
+switch (ageOfGyula) {
+  case ageOfGyula === 17:
+    /*== (egyenlőség, laza összehasonlítás)
+        Automatikus típusátalakítást végez.
+        Ha a két érték nem ugyanaz a típus, JavaScript megpróbálja átkonvertálni őket, hogy össze tudja hasonlítani.
+        Ezért néha váratlan eredményt ad.
+        */
+
+    /*=== (szigorú egyenlőség)
+        Nem végez típusátalakítást.
+        Csak akkor ad true-t, ha érték és típus is megegyezik.*/
+
+    alert("Majdnem nagykorú.");
+    break;
+  case ageOfGyula > 18:
+    alert("Gyula már nagykorú.");
+    break;
+  default:
+    alert("Gyula még kiskorú.");
 }
