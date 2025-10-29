@@ -6,7 +6,7 @@ a = 1;
 var b = 2;
 alert(a + b);
 
-//Adattípusok:
+//Adattípusok(primitívek)
 var c = 3; //number
 var d = 3.5; //float
 
@@ -59,7 +59,7 @@ switch (ageOfGyula) {
 
     /*=== (szigorú egyenlőség)
         Nem végez típusátalakítást.
-        Csak akkor ad true-t, ha érték és típus is megegyezik.*/
+        Csak akkor ad true-t, ha érték és adattípus is megegyezik.*/
 
     alert("Majdnem nagykorú.");
     break;
@@ -69,3 +69,18 @@ switch (ageOfGyula) {
   default:
     alert("Gyula még kiskorú.");
 }
+
+//Tömbök
+var fruits = ["grape", "apple", "banana"];
+fruits.sort(); //rendezés
+
+alert(fruits[0]); //első elem kiíratása
+
+//Primitívek, referenciák, objektumok
+var lista1 = ["alma", "körte", "makszem"];
+var lista2 = ["alma", "körte", "makszem"];
+
+//Objektumok=Összetett adattípusok, nem egyszerű számok, vagy szövegek.
+
+alert(lista1 == lista2); //false, mert két különböző objektumra mutatnak, különböző helyen vannak tárolva a memóriában
+alert(lista1 === lista2); //false, mert két különböző objektumra mutatnak, különböző helyen vannak tárolva a memóriában
