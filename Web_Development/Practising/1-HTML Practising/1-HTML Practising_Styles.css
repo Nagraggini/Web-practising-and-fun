@@ -7,8 +7,13 @@ h3,
 h4,
 h5,
 h6,
-p {
+p,
+div {
   color: deeppink;
+}
+
+div.quiz_answers {
+  font-size: large;
 }
 
 ul,
