@@ -1,3 +1,5 @@
+alert("Itt írtam a kódot: https://jsfiddle.net/");
+
 //Explicit érték adás.
 var a;
 a = 1;
@@ -74,7 +76,7 @@ switch (ageOfGyula) {
 var fruits = ["grape", "apple", "banana"];
 fruits.sort(); //rendezés
 
-//alert(fruits[0]); //első elem kiíratása
+//alert(fruits[0]); //első elem kiíratásahttps://chatgpt.com/c/6905e808-76e8-832c-a6ef-512381bb5c41
 
 //Primitívek, referenciák, objektumok
 var lista1 = ["alma", "körte", "makszem"];
