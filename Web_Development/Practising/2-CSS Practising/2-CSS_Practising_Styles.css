@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+
 h1,
 h2,
 h3,
@@ -11,10 +13,23 @@ td,
 tr,
 ul,
 ol,
-li {
+li,
+label,
+form {
   color: magenta;
+  font-family: "Special Elite", serif;
 }
 
 body {
   background-color: black;
+  font-family: "Special Elite", serif;
+  padding: 20px;
+}
+
+div {
+  background-color: black;
+  color: magenta;
+  padding: 20px; /* belső tér */
+  border: 3px solid magenta; /* keret */
+  margin: 40px; /* külső tér, a mi a borderen túl van. */
 }
