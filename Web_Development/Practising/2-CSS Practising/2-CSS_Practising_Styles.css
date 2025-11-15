@@ -34,7 +34,20 @@ div {
   margin: 40px; /* külső tér, a mi a borderen túl van. */
 }
 
-.contact_form{
+.contact_form {
   /*A jobb szélén szélesebb bordert állítottunk be. */
   border-right: 10px magenta solid;
+
+  /*Szagatott vonal lesz a bal szélén.*/
+  border-left: 10px magenta dotted;
+}
+
+/*Pszeudo osztályok:*/
+
+.test_link {
+  text-decoration: line-through;
+}
+
+.test_link:hover {
+  color: red;
 }

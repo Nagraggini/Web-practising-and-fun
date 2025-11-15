@@ -28,7 +28,7 @@ body {
   /*Sorok közötti magasság megadása:*/
   line-height: 1.6em;
   /*A sorok mekkora távolságra legyenek az oldal szélétől.*/
-  margin: 0;
+  margin: 10px;
   background-image: url("../../Assets/Images/guitar.jpg");
   background-repeat: no-repeat;
   background-position: center top;
@@ -48,6 +48,7 @@ body {
   /*A szélétől való távolság növelése. Felül, jobb szélen, alul, meg bal oldalt. */
   /* margin: 20px 20px 20px 20px ;*/
 
+  padding: 5 px;
   margin: auto;
 }
 
