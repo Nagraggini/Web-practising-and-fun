@@ -51,3 +51,7 @@ div {
 .test_link:hover {
   color: red;
 }
+
+.test_link:active {
+  color: white;
+}
