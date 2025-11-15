@@ -33,3 +33,8 @@ div {
   border: 3px solid magenta; /* keret */
   margin: 40px; /* külső tér, a mi a borderen túl van. */
 }
+
+.contact_form{
+  /*A jobb szélén szélesebb bordert állítottunk be. */
+  border-right: 10px magenta solid;
+}
