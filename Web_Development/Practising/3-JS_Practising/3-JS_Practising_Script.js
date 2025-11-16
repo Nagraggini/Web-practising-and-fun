@@ -139,6 +139,7 @@ minden lépésben kiírja a számot (alert vagy console.log),
 és 5-ig számol.
 De ha a szám 3, akkor írja ki: "Ez a kedvenc számom!"
 */
+
 var number = 0;
 
 while (number <= 5) {
@@ -153,4 +154,5 @@ while (number <= 5) {
   }
   number++;
 }
+
 

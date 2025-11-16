@@ -16,42 +16,46 @@ ol,
 li,
 label,
 form {
-  color: magenta;
-  font-family: "Special Elite", serif;
+    color: magenta;
+    font-family: "Special Elite", serif;
 }
 
 body {
-  background-color: black;
-  font-family: "Special Elite", serif;
-  padding: 20px;
+    background-color: black;
+    font-family: "Special Elite", serif;
+    padding: 20px;
 }
 
 div {
-  background-color: black;
-  color: magenta;
-  padding: 20px; /* belső tér */
-  border: 3px solid magenta; /* keret */
-  margin: 40px; /* külső tér, a mi a borderen túl van. */
+    background-color: black;
+    color: magenta;
+    padding: 20px; /* belső tér */
+    border: 3px solid magenta; /* keret */
+    margin: 40px; /* külső tér, a mi a borderen túl van. */
 }
 
 .contact_form {
-  /*A jobb szélén szélesebb bordert állítottunk be. */
-  border-right: 10px magenta solid;
+    /*A jobb szélén szélesebb bordert állítottunk be. */
+    border-right: 10px magenta solid;
 
-  /*Szagatott vonal lesz a bal szélén.*/
-  border-left: 10px magenta dotted;
+    /*Szagatott vonal lesz a bal szélén.*/
+    border-left: 10px magenta dotted;
 }
 
 /*Pszeudo osztályok:*/
 
 .test_link {
-  text-decoration: line-through;
+    text-decoration: line-through;
 }
 
 .test_link:hover {
-  color: red;
+    color: red;
 }
 
 .test_link:active {
-  color: white;
+    color: white;
+}
+
+a:visited {
+    color: rgb(0, 195, 255);
 }
