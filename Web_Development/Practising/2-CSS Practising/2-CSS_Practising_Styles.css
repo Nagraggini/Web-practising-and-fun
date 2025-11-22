@@ -26,15 +26,13 @@ body {
     padding: 20px;
 }
 
-div {
+.contact_form {
     background-color: black;
     color: magenta;
     padding: 20px; /* belső tér */
     border: 3px solid magenta; /* keret */
     margin: 40px; /* külső tér, a mi a borderen túl van. */
-}
 
-.contact_form {
     /*A jobb szélén szélesebb bordert állítottunk be. */
     border-right: 10px magenta solid;
 
@@ -58,4 +56,30 @@ div {
 
 a:visited {
     color: rgb(0, 195, 255);
+}
+
+.contact_form {
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: blueviolet;
+    padding: 8px 4px 2px;
+    font-family: "Special Elite", serif;
+}
+
+/*Megadjuk, hogy milyen típusú inputra vonatkozik a formázásunk. */
+.new_form input[type="text"],
+.new_form input[type="password"],
+.new_form textarea {
+    margin-top: 2px;
+    margin-bottom: 5px;
+    padding: 10px;
+    width: 100%;
+}
+
+.new_form input[type="submit"] {
+    font-family: "Special Elite", serif;
+    background-color: rgb(120, 25, 221);
+    color: rgb(247, 247, 252);
 }
