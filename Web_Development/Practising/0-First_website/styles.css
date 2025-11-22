@@ -46,6 +46,25 @@ body {
     background-position: center; /* A kép középre igazítása */
 }
 
+.myclass-1 {
+    border: 3px #116a2d solid;
+    margin-bottom: 20px;
+    background-color: rgb(44, 187, 99);
+    color: rgb(231, 231, 50);
+    padding: 5px;
+}
+
+.list {
+    border: 3px #4523a3 solid;
+    background-color: #6ec7d5;
+    padding: 5px;
+}
+
 .box-2 {
-    /*TODO*/
+    border: 3px #1a8a3d solid;
+    padding: 5px;
+    background-color: rgb(200, 222, 93);
+
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

@@ -1,197 +1,287 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="blog" />
+        <meta name="keywords" content="blog teszt" />
+        <meta name="author" content="Nagraggini" />
 
+        <link rel="stylesheet" href="1-HTML Practising_Styles.css" />
+        <link rel="stylesheet" href="2-Blog_Styles.css" />
 
-<head>
-    <!--A meta tagek leírást adnak a weboldalaknak. -->
-    <meta charset="UTF-8">
-    <meta name="description" content="blog">
-    <meta name="keywords" content="blog teszt"> <!--Kicsit előrébb sorolja emiatt a böngésző keresői.-->
-    <meta name="author" content="Nagraggini">
+        <title>Első blogom</title>
+    </head>
 
-    <link rel="stylesheet" href="1-HTML Practising_Styles.css">
-    <link rel=" stylesheet" href="2-Blog_Styles.css">
+    <body>
+        <header id="headerID">
+            <h1>Saját blogom</h1>
+        </header>
 
-    <!--F12-es fejlesztői módban lehet betű méretet is növelni, de nem lesz elmentve, csak vizuális effekt.-->
-    <title>Első blogom</title>
-</head>
+        <aside>
+            <h3>Kategóriák (Navigáció)</h3>
+            <nav>
+                <ul>
+                    <!--#1 -> Egy adott id-ra mutatnak.-->
+                    <li><a href="#azure">Azure</a></li>
+                    <li><a href="#html">HTML</a></li>
+                    <li><a href="#css">CSS</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+            <section>
+                <article>
+                    <h2 id="azure">Azure 1. fejezet</h2>
+                    <small>A DevOps alapjai és változatai</small>
+                    <p>
+                        A szoftverfejlesztési folyamatok és a kiadási
+                        követelmények időről időre változhatnak annak érdekében,
+                        hogy a vállalatok továbbra is értéket nyújtsanak az
+                        ügyfeleknek, és piaci elfogadottságot érjenek el. A
+                        méretezhetőség és a korai visszajelzés megszerzése
+                        érdekében számos szervezet gyakori kiadási módszertant
+                        alkalmaz az új funkciók vagy hibajavítások bevezetésére.
+                        Ezek a kiadások olyan gyakorisággal kerülhetnek éles
+                        rendszerbe, mint hetente egyszer, de előfordulhat, hogy
+                        naponta, óránként, vagy akár tíz másodpercenként is.
+                        Annak érdekében, hogy a vállalatok megőrizzék piaci
+                        előnyüket vagy gyors visszajelzési ciklust alakítsanak
+                        ki, egyre inkább bevezetik a DevOps gyakorlatokat, mint
+                        például a folyamatos kézbesítést (Continuous Delivery)
+                        és a folyamatos telepítést (Continuous Deployment).
+                        Ebben a fejezetben bevezetést kapsz a DevOps fogalmaiba
+                        és gyakorlataiba.
+                    </p>
+                </article>
 
+                <article>
+                    <h2>Azure 2. fejezet</h2>
+                    <small>Szoftverfejlesztés</small>
+                    <p>
+                        A szoftverfejlesztési iparág hosszú éveken keresztül a
+                        vízesés modellt követte, majd fokozatosan áttért az
+                        agilis modell alkalmazására. Az agilis fejlesztési
+                        modell lehetővé teszi, hogy a csapatok könnyebben
+                        alkalmazkodjanak a változó követelményekhez, emellett
+                        elősegíti a jobb együttműködést a különböző csapatok
+                        között, és növeli a termelékenységet. A vízesés
+                        modellben az alkalmazásfejlesztés szigorúan egymást
+                        követő lépésekben zajlik, és a teljes alkalmazás csak a
+                        projekt végén kerül kiadásra. Ez azonban gyakran azzal
+                        jár, hogy a fejlesztési folyamat nagyon hosszú időt vesz
+                        igénybe, és mire a projekt befejeződik, sok olyan
+                        funkció, amelyet eredetileg elképzeltek, már elveszíti
+                        az aktualitását, vagy egyszerűen nem hasznos a
+                        felhasználók számára. További probléma, hogy ebben a
+                        megközelítésben hiányzik a végfelhasználói visszajelzés
+                        folyamata: a felhasználók elvárásai és visszajelzései
+                        csak a teljes fejlesztési és telepítési folyamat
+                        lezárása után jutnak el a fejlesztőkhöz. Az agilis
+                        módszertan ezzel szemben megköveteli, hogy a kész
+                        funkciók – vagyis a gyártásra kész részek – jóval
+                        gyakrabban kerüljenek kiadásra. Ennek célja, hogy a
+                        felhasználók minél korábban adhassanak visszajelzést,
+                        amelyre a fejlesztőcsapat időben tud reagálni.
+                        Ugyanakkor, ha az agilitást nem egészíti ki a DevOps
+                        szemlélet, a fejlesztési ciklus még mindig hosszabb időt
+                        vehet igénybe, és sok manuális munkát igényel. A DevOps
+                        éppen ezeket a hiányosságokat kezeli az agilis
+                        fejlesztési és telepítési gyakorlatokban: lehetővé teszi
+                        az automatizált kiadásokat, gyakran beépített
+                        automatikus ellenőrzésekkel és ellenőrzőpontokkal a
+                        különböző lépések között.
+                    </p>
+                </article>
 
-<body>
-    <header id="headerID"> <!--HTML5-ben jött be ez.-->
+                <article>
+                    <h2>Azure 3. fejezet</h2>
+                    <small>DevOps</small>
+                    <p>
+                        A DevOps napjaink egyik legfelkapottabb témája az IT
+                        világában, ugyanakkor számos különböző értelmezése és
+                        változata létezik. Ha tíz ember elkezdene beszélgetni a
+                        DevOps-ról, jó eséllyel tíz eltérő magyarázatot adnának
+                        rá.
+                    </p>
+                </article>
+            </section>
 
+            <section>
+                <article>
+                    <h2 id="html">HTML</h2>
+                    <p>
+                        Melyik tag tartalmazza az
+                        <code>&lt;area&gt;</code> taget?<br />
+                        A helyes válasz: <code>&lt;map&gt;</code> tag.
+                    </p>
+                    <p>
+                        Melyik tag tartalmazhatja a
+                        <code>&lt;source&gt;</code> taget?<br />
+                        A helyes válasz: <code>&lt;video&gt;</code> és
+                        <code>&lt;audio&gt;</code> tagek.
+                    </p>
+                    <p>A <code>&lt;hr&gt;</code> tagnek nem kell záró tag.</p>
+                    <p>
+                        A <code>&lt;noscript&gt;</code> akkor jelenít meg
+                        tartalmat, ha a JavaScript ki van kapcsolva vagy nem
+                        támogatott.
+                    </p>
+                    <p>
+                        Ahhoz, hogy elküldjünk egy értéket az adatbázisba,
+                        ezekre kell figyelnünk: az input mező value
+                        attribútumára, a name attribútumra, valamint a submit
+                        gombra. A <code>&lt;label&gt;</code> maga nem küld
+                        adatot, csak feliratként szolgál.
+                    </p>
+                </article>
+            </section>
 
-        <h1>Saját blogom</h1>
-    </header>
-    <aside>
-        <h3>Kategóriák (Navigáció)</h3>
-        <nav>
-            <ul>
-                <li><a href="categoria1.html">Kategória 1</a></li>
-                <li><a href="categoria2.html">Kategória 2</a></li>
-                <li><a href="categoria3.html">Kategória 3</a></li>
-            </ul>
-        </nav>
-    </aside>
-    <section> <!--HTML5-ben jött be ez.-->
-        <!--Egy logikai „szakasz” az oldalon belül.-->
-        <article> <!--Egy group.-->
-            <h2>Azure 1. fejezet</h2>
-            <small>
-                A DevOps alapjai és változatai
-            </small>
-            <p>
-                A szoftverfejlesztési folyamatok és a kiadási követelmények időről időre változhatnak annak érdekében,
-                hogy a vállalatok továbbra is értéket nyújtsanak az ügyfeleknek, és piaci elfogadottságot érjenek el.
-                A méretezhetőség és a korai visszajelzés megszerzése érdekében számos szervezet gyakori kiadási
-                módszertant alkalmaz az új funkciók vagy hibajavítások bevezetésére. Ezek a kiadások olyan gyakorisággal
-                kerülhetnek éles rendszerbe, mint hetente egyszer, de előfordulhat, hogy naponta, óránként, vagy akár
-                tíz másodpercenként is.
-                Annak érdekében, hogy a vállalatok megőrizzék piaci előnyüket vagy gyors visszajelzési ciklust
-                alakítsanak ki, egyre inkább bevezetik a DevOps gyakorlatokat, mint például a folyamatos kézbesítést
-                (Continuous Delivery) és a folyamatos telepítést (Continuous Deployment).
-                Ebben a fejezetben bevezetést kapsz a DevOps fogalmaiba és gyakorlataiba.
+            <section>
+                <article>
+                    <h2 id="css">CSS</h2>
 
+                    <p>CSS szelektorok:</p>
+                    <ul>
+                        <li>
+                            Az univerzális szelektor (*) minden HTML-elemet
+                            kijelöl.
+                        </li>
+                        <li>Az #id szelektor csak egy elemet jelölhet.</li>
+                        <li>
+                            A csoportosított szelektor (h1, h2, p) több elemet
+                            is kijelöl.
+                        </li>
+                    </ul>
 
-            </p>
-        </article>
+                    <p>CSS tulajdonságok:</p>
+                    <ul>
+                        <li>padding: belső térköz</li>
+                        <li>width: szélesség</li>
+                        <li>margin: külső térköz</li>
+                        <li>font-weight: betűvastagság</li>
+                    </ul>
 
+                    <p>
+                        A
+                        <b style="color: greenyellow">position: fixed;</b>
+                        rögzíti az elemet a viewporthoz.
+                    </p>
+                </article>
 
-        <article> <!--Egy group.-->
-            <h2>Azure 2. fejezet</h2>
-            <small>
-                Szoftverfejlesztés
-            </small>
-            <p>
-                A szoftverfejlesztési iparág hosszú éveken keresztül a vízesés modellt követte, majd fokozatosan áttért
-                az agilis modell alkalmazására. Az agilis fejlesztési modell lehetővé teszi, hogy a csapatok könnyebben
-                alkalmazkodjanak a változó követelményekhez, emellett elősegíti a jobb együttműködést a különböző
-                csapatok között, és növeli a termelékenységet.
-                A vízesés modellben az alkalmazásfejlesztés szigorúan egymást követő lépésekben zajlik, és a teljes
-                alkalmazás csak a projekt végén kerül kiadásra. Ez azonban gyakran azzal jár, hogy a fejlesztési
-                folyamat nagyon hosszú időt vesz igénybe, és mire a projekt befejeződik, sok olyan funkció, amelyet
-                eredetileg elképzeltek, már elveszíti az aktualitását, vagy egyszerűen nem hasznos a felhasználók
-                számára. További probléma, hogy ebben a megközelítésben hiányzik a végfelhasználói visszajelzés
-                folyamata: a felhasználók elvárásai és visszajelzései csak a teljes fejlesztési és telepítési folyamat
-                lezárása után jutnak el a fejlesztőkhöz.
-                Az agilis módszertan ezzel szemben megköveteli, hogy a kész funkciók – vagyis a gyártásra kész részek –
-                jóval gyakrabban kerüljenek kiadásra. Ennek célja, hogy a felhasználók minél korábban adhassanak
-                visszajelzést, amelyre a fejlesztőcsapat időben tud reagálni. Ugyanakkor, ha az agilitást nem egészíti
-                ki a DevOps szemlélet, a fejlesztési ciklus még mindig hosszabb időt vehet igénybe, és sok manuális
-                munkát igényel.
-                A DevOps éppen ezeket a hiányosságokat kezeli az agilis fejlesztési és telepítési gyakorlatokban:
-                lehetővé teszi az automatizált kiadásokat, gyakran beépített automatikus ellenőrzésekkel és
-                ellenőrzőpontokkal a különböző lépések között.
+                <article>
+                    <p>HTML szemantikus formázó (inline) tagek</p>
+                    <table border="1" cellpadding="8">
+                        <thead>
+                            <tr>
+                                <th>Tag</th>
+                                <th>Jelentés magyarul</th>
+                                <th>Mire utal (szemantika)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>&lt;strong&gt;</td>
+                                <td>kiemelés, hangsúlyos szöveg</td>
+                                <td>
+                                    fontos információ (nem csak vastag betű)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&lt;em&gt;</td>
+                                <td>dőlt kiemelés</td>
+                                <td>
+                                    nyomatékosítás, hangsúlyváltás beszédben
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&lt;mark&gt;</td>
+                                <td>kiemelt, kiemelés sárgával</td>
+                                <td>
+                                    releváns szöveg jelölése (pl. keresési
+                                    találat)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&lt;small&gt;</td>
+                                <td>apróbetűs szöveg</td>
+                                <td>jogi, megjegyzés, mellékinformáció</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;cite&gt;</td>
+                                <td>mű címe</td>
+                                <td>könyv, film, zene, műalkotás neve</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;q&gt;</td>
+                                <td>idézet</td>
+                                <td>rövid idézet, automatikus idézőjel</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;blockquote&gt;</td>
+                                <td>hosszabb idézet</td>
+                                <td>külön bekezdésben idézett szöveg</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;abbr&gt;</td>
+                                <td>rövidítés</td>
+                                <td>
+                                    pl. HTML (title: HyperText Markup Language)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&lt;dfn&gt;</td>
+                                <td>definíció</td>
+                                <td>először bevezetett fogalom</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;time&gt;</td>
+                                <td>időpont, dátum</td>
+                                <td>gépek számára érthető dátum</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;code&gt;</td>
+                                <td>kód</td>
+                                <td>programkód jelölése</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;kbd&gt;</td>
+                                <td>billentyűzet bevitel</td>
+                                <td>pl. Ctrl + C</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;samp&gt;</td>
+                                <td>programkimenet</td>
+                                <td>parancssori eredmények</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;del&gt;</td>
+                                <td>törölt szöveg</td>
+                                <td>változtatás, verziózás</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;ins&gt;</td>
+                                <td>beszúrt szöveg</td>
+                                <td>új tartalom jelölése</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
 
-
-
-
-            </p>
-        </article>
-
-
-        <article> <!--Egy group.-->
-            <h2>Azure 3. fejezet</h2>
-            <small>
-                DevOps
-            </small>
-            <p>
-                A DevOps napjaink egyik legfelkapottabb témája az IT világában, ugyanakkor számos különböző értelmezése
-                és változata létezik. Ha tíz ember elkezdene beszélgetni a DevOps-ról, jó eséllyel tíz eltérő
-                magyarázatot adnának rá.
-            </p>
-        </article>
-
-    <section>
-
-        <article>
-            <h2>HTML</h2>
                 <p>
-                    Melyik tag tartalmazza az <code>&lt;area&gt;</code> taget?<br>
-                    A helyes válasz: <code>&lt;map&gt;</code> tag.
+                    <a href="https://www.w3schools.com/cssref/css_selectors.php"
+                        >CSS Selectors (W3 School)</a
+                    >
                 </p>
 
-                <p>
-                    Melyik tag tartalmazhatja a <code>&lt;source&gt;</code> taget?<br>
-                    A helyes válasz: <code>&lt;video&gt;</code> és <code>&lt;audio&gt;</code> tagek.
-                </p>
+                <img
+                    src="../../Assets/Images/HTML_Selector.png"
+                    alt="HTML Selector"
+                    width="70%"
+                    height="70%"
+                />
+            </section>
+        </main>
 
-                <p>
-                    A <code>&lt;hr&gt;</code> tagnek nem kell záró tag.
-                </p>
-
-                <p>
-                    Mire jó a <code>&lt;noscript&gt;</code> tag?<br>
-                    A <code>&lt;noscript&gt;</code> tag olyan tartalmat jelenít meg, amely akkor látható,
-                    ha a böngésző nem támogatja a JavaScriptet, vagy ha az ki van kapcsolva.
-                </p>
-        </article>
-
-    </section>
-
-    <section>
-        <article>
-            <h2>CSS</h2>
-            <p>
-                CSS szelektorok:
-                <br>
-            <ul>
-                <li>
-                    Az univerzális szelektor (*) valóban minden HTML-elemet kijelöl az oldalon.
-                </li>
-                <li>Az #id szelektor csak egyetlen elemet jelölhet ki, mert az azonosító (id) egyedi kell legyen az
-                    oldalon.</li>
-                <li>A csoportosított szelektoroknál (pl. h1, h2, p) a stílus mindhárom elemre érvényes, tehát
-                    egyszerre
-                    több
-                    elemet is
-                    kiválaszthatunk ugyanazzal a szabállyal.</li>
-            </ul>
-
-            </p>
-            <p>CSS tulajdonságok:
-                <br>
-            <ul>
-                <li>
-                    padding: közvetlenül befolyásolja az elem méretét, mert a belső térközt adja meg a tartalom és a
-                    határ között.
-                </li>
-                <li>width: kifejezetten az elem szélességét határozza meg, így közvetlenül befolyásolja a méretet.
-                </li>
-                <li>
-                    margin: az elem külső térközét állítja be, ami nem változtatja meg magának az elemnek a tényleges
-                    méretét, csak a
-                    környezetéhez való távolságát.
-                </li>
-                <li>
-                    font-weight: a betű vastagságát állítja be, de nem befolyásolja az elem dobozának méretét.
-                </li>
-            </ul>
-
-            </p>
-            <p>
-                A <b style="color:greenyellow;"">CSS position: fixed;</b> beállítás esetén az elem nem marad a dokumentum
-                áramlásában,
-                hanem
-                kiemelkedik
-                belőle, és a
-                böngésző nézőképernyőjéhez (viewport) rögzül. Ez azt jelenti, hogy az elem nem mozog együtt a többi
-                elemmel, hanem
-                mindig ugyanazon a helyen marad, függetlenül a görgetéstől.
-            </p>
-        </article>
-        <a href="https://www.w3schools.com/cssref/css_selectors.php">CSS Selectors (W3 School)</a>
-        <br>
-        <img src="../../Assets/Images/HTML Selector.png" alt="HTML Selector" width="70%" height="70%">
-    </section>
-
-  
-
-
-    <footer id=" footerID">
-                    Lábléc
-                    </footer>
-</body>
-
-
+        <footer id="footerID">Lábléc</footer>
+    </body>
 </html>
