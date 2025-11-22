@@ -1,4 +1,5 @@
 alert("Itt írtam a kódot: https://jsfiddle.net/");
+//clg -> console log hotkey
 
 //Explicit érték adás.
 var a;
