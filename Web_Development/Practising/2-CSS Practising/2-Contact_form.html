@@ -8,36 +8,74 @@
     </head>
 
     <body>
-        <h1>Contact Form</h1>
+        <h1>Contact Form version 1</h1>
         <div class="contact_form">
             <form>
                 <label for="name1">Name: </label>
-                <input type="text" /> <br />
-                <label>Mobile number:</label>
-                <input type="text" /><br />
-                <label>Email address:</label>
-                <input type="text" /> <br />
-                <textarea placeholder="You can write here!"></textarea>
-                <br /><button id="sumbit1">Send</button>
+                <input type="text" id="name1" name="name1" /> <br />
+                <label for="mobil">Mobile number:</label>
+                <input type="text" id="mobil" name="mobil" /><br />
+                <label for="email">Email address:</label>
+                <input type="email" id="email" name="email" /> <br />
+                <textarea
+                    name="message"
+                    placeholder="You can write here!"
+                ></textarea>
+                <br /><button id="sumbit1" type="submit">Send</button>
             </form>
         </div>
+        <h1>Contact Form version 2</h1>
         <div>
             <form action="#" method="post" class="new_form">
                 <div class="form-group">
                     <label>Name:</label>
-                    <input type="text" name="name2" />
+                    <input type="text" id="name" name="name2" />
                 </div>
                 <div class="form-group">
                     <label>Password:</label
-                    ><input type="password" name="name2" />
+                    ><input type="password" id="password" name="password" />
                 </div>
                 <div class="form-group"><label>Message:</label></div>
                 <textarea placeholder="You can write here!"></textarea>
                 <br />
-                <input type="submit" value="Send"></input>
+                <input type="submit" value="Send" />
             </form>
+
+            <div class="block">
+                <h1>Information version 1</h1>
+                <p>
+                    Feel free to send us a message using the form below. We’ll
+                    get back to you as soon as possible. Please make sure your
+                    email address is correct so we can reply.
+                </p>
+            </div>
+            <div class="block">
+                <h1>Information version 2</h1>
+                <p>
+                    Have a question? Send us a message through the form below —
+                    we will reply soon.
+                </p>
+            </div>
+
+            <div class="block">
+                <h1>Information version 3</h1>
+                <p>
+                    By submitting this form, you consent to the processing of
+                    your personal data (name, email, and message) for the
+                    purpose of responding to your inquiry. Your data will not be
+                    shared with third parties and will be stored only as long as
+                    necessary to handle your request.
+                </p>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+        <div class="motivation-box">
+            <h1>Motivation</h1>
         </div>
         <br />
         <a href="2-CSS_Practising_Main.html"> Back </a>
+        <br /><br />
+        <a class="fix_button">Fix</a>
     </body>
 </html>

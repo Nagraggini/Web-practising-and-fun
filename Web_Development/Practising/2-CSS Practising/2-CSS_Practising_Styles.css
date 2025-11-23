@@ -78,8 +78,46 @@ button {
     width: 100%;
 }
 
-.new_form input[type="submit"] {
+.new_form input[type="submit"],
+.fix_button {
     font-family: "Special Elite", serif;
     background-color: rgb(120, 25, 221);
-    color: rgb(247, 247, 252);
+    padding: 10px 15px;
+    border: none;
+}
+
+/*Egymás mellett lebegnek a szövegek.*/
+.block {
+    margin-top: 10px;
+    float: left;
+    /*
+    Float használat után clearfix-elni kell!
+    Html-be: <div class="clearfix"></div>;
+    */
+    width: 33.33%;
+
+    border: 1px solid #e514de;
+    padding: 10px;
+    box-sizing: border-box; /*Ezzel beleszámolja a 33 %-ba a bordert, meg a paddingot is.*/
+}
+
+.clearfix {
+    /*Összecsúszhatnak a boxok ezért kell.*/
+    clear: both;
+}
+
+.motivation-box {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #e514de;
+
+    margin-top: 10px;
+
+    position: relative; /*A dobozhoz mérjük a poziciót.*/
+}
+
+.motivation-box h1 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }
