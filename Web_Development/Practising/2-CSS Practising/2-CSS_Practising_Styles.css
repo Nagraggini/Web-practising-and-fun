@@ -38,6 +38,8 @@ body {
 
     /*Szagatott vonal lesz a bal szélén.*/
     border-left: 10px magenta dotted;
+
+    margin-bottom: 20px;
 }
 
 /*Pszeudo osztályok:*/
@@ -56,10 +58,6 @@ body {
 
 a:visited {
     color: rgb(0, 195, 255);
-}
-
-.contact_form {
-    margin-bottom: 20px;
 }
 
 button {
@@ -120,4 +118,12 @@ button {
     position: absolute;
     top: 10px;
     left: 10px;
+}
+
+.fix_button {
+    position: fixed; /*Bárhova tekered az oldalt ez a gomb fixen ott fog maradni.*/
+    left: 0px;
+    top: 200px;
+
+    border-top: 1px solid rgb(247, 243, 251);
 }

@@ -18,20 +18,22 @@
         </header>
 
         <aside>
-            <h3>Kategóriák (Navigáció)</h3>
+            <h3 id="navigaton">Kategóriák (Navigáció)</h3>
             <nav>
                 <ul>
                     <!--#1 -> Egy adott id-ra mutatnak.-->
                     <li><a href="#azure">Azure</a></li>
                     <li><a href="#html">HTML</a></li>
                     <li><a href="#css">CSS</a></li>
+                    <li><a href="#js">JavaScript</a></li>
                 </ul>
             </nav>
         </aside>
         <main>
             <section>
                 <article>
-                    <h2 id="azure">Azure 1. fejezet</h2>
+                    <h2>Azure</h2>
+                    <h3 id="azure">Azure 1. fejezet</h3>
                     <small>A DevOps alapjai és változatai</small>
                     <p>
                         A szoftverfejlesztési folyamatok és a kiadási
@@ -55,7 +57,7 @@
                 </article>
 
                 <article>
-                    <h2>Azure 2. fejezet</h2>
+                    <h3>Azure 2. fejezet</h3>
                     <small>Szoftverfejlesztés</small>
                     <p>
                         A szoftverfejlesztési iparág hosszú éveken keresztül a
@@ -94,7 +96,7 @@
                 </article>
 
                 <article>
-                    <h2>Azure 3. fejezet</h2>
+                    <h3>Azure 3. fejezet</h3>
                     <small>DevOps</small>
                     <p>
                         A DevOps napjaink egyik legfelkapottabb témája az IT
@@ -280,8 +282,46 @@
                     height="70%"
                 />
             </section>
-        </main>
 
+            <section>
+                <article>
+                    <h2 id="js">JavaScript</h2>
+
+                    <p>
+                        Objektum orientált, prototípus alapú szkript nyelv.
+                        Leginkább a weboldalak kliens oldali logikájára
+                        használják. Weboldal kliensen futó programja.
+                    </p>
+
+                    <p>
+                        Magas szintű programozási nylev. Nem kell foglalkozni a
+                        memória felszabadítással.
+                    </p>
+
+                    <p>
+                        Interpretált nyel, vagyis nem kell fordító, mint a
+                        javanál, hanem a kód alapól a böngészőben fog futni.
+                        <br />
+                        Hátránya, hogy hozzáférhető a kód idegenek számára is.
+                        Valamint a programozási hibák, csak futási időben
+                        derülnek ki.
+                    </p>
+                    <p>
+                        Multi-paradigma, vagyis többféleképpen is megírhatod a
+                        programodat, pl.: Objektum orientált módon.
+                    </p>
+                    <p>
+                        Régebben LiveScript volt a neve. Mocha → LiveScript →
+                        JavaScript (1995)
+                    </p>
+                    <p>
+                        <b>CMAScript = a nyelvi szabvány</b>; a JavaScript ennek
+                        a szabványnak egy implementációja.
+                    </p>
+                </article>
+            </section>
+        </main>
+        <a class="navigation_button">Kategóriák</a>
         <footer id="footerID">Lábléc</footer>
     </body>
 </html>

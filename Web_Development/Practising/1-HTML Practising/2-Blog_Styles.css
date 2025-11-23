@@ -6,51 +6,61 @@ h6,
 p,
 td,
 tr {
-  color: magenta;
+    color: magenta;
 }
 
 small,
 p {
-  color: blueviolet;
+    color: blueviolet;
 }
 header,
 footer {
-  color: cyan;
+    color: cyan;
 }
 
 /*Linkek stílusa.*/
 a:link {
-  color: cyan;
-  background-color: transparent;
-  text-decoration: none;
+    color: cyan;
+    background-color: transparent;
+    text-decoration: none;
 }
 
 a:visited {
-  color: pink;
-  background-color: transparent;
-  text-decoration: none;
+    color: rgb(51, 138, 238);
+    background-color: transparent;
+    text-decoration: none;
 }
 
 a:hover {
-  color: red;
-  background-color: transparent;
-  text-decoration: underline;
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
 }
 
 a:active {
-  color: yellow;
-  background-color: transparent;
-  text-decoration: underline;
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
 }
 
 #headerID {
-  text-align: center;
-  background-color: rgb(60, 77, 233);
-  color: white;
-  padding: 10px; /*Eltartás felülről és alulről is.*/
+    text-align: center;
+    background-color: rgb(60, 77, 233);
+    color: white;
+    padding: 10px; /*Eltartás felülről és alulről is.*/
 }
 
 #footerID {
-  text-align: center;
-  font-size: 26px;
+    text-align: center;
+    font-size: 26px;
+}
+
+.navigation_button {
+    position: fixed; /*Bárhova tekered az oldalt ez a gomb fixen ott fog maradni.*/
+    left: 0px;
+    top: 235px;
+
+    border-top: 2px solid magenta;
+
+    background-color: aquamarine;
 }
