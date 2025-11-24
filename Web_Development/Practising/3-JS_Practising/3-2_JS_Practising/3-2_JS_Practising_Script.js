@@ -49,7 +49,57 @@ null → te adod meg, hogy nincs értéke.
 undefined → alapértelmezett, ha egy változó létrejön, de nem kap értéket (pl. let z;).
 */
 
+/*
 console.log(x);
 console.log(y);
 
+console.log(typeof x); //Megadja a változó típusát.
+*/
 
+//Műveletek
+
+/*
+let szam1=10;
+console.log(szam1+=10); //+= módosítja a változót
+console.log(typeof szam1);
+let eredmeny=szam1+=10;
+szam1+='1';
+console.log(typeof szam1);
+console.log('szam1: '+szam1+'; eredmeny: '+eredmeny);
+szam1++;
+console.log(szam1);
+console.log(typeof szam1);
+*/
+
+/*
+let szoveg='Hello vilag';
+console.log(szoveg+'!'); //ES5 (ECMAScript) Konkatenáció (összefűzés)
+
+console.log(`${szoveg}!`); //Modernebb ES6. Ez a string interpoláció azt jelenti, hogy egy változó értékét közvetlenül beilleszted a szövegbe. JavaScriptben ezt template literal-lel (backtick) csináljuk.
+
+console.log('Hello'+' '+ nev+'!'); 
+console.log(`${szoveg} ${nev}!!!!`);
+
+console.log('Hasznos string függvény (metódus) JavaScriptben:');
+console.log(`Megmondja hány betűből áll a szöveg: ${szoveg.length}`);
+
+console.log(`Kis betűkre módosítja a stringet: ${szoveg.toLowerCase()}`); //Összehasonlításoknál jó ezt használni.
+
+console.log(`Ha, csak egy bizonyos része kell a szövegnek: ${szoveg.substring(1,5)}`);
+
+console.log(`Szétvágja: ${szoveg.split('')}`);
+console.log(szoveg.split(''));
+
+*/
+let lista   ='alma,korte,banan';
+console.log(lista.split(','));
+
+console.log(date.getDate()); //Hanyadika.
+
+console.log(date.getDay()); //A hét hanyadik napja.
+console.log(date.getMonth()); //0-tól kezdi a számolást.
+
+date.setHours(4);
+date.setFullYear(2026);
+console.log(date);
+console.log(date.toISOString()); // Ki írja ISO formátumban a dátumot.
