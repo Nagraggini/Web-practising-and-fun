@@ -91,6 +91,8 @@ console.log(`Szétvágja: ${szoveg.split('')}`);
 console.log(szoveg.split(''));
 
 */
+
+/*
 let lista   ='alma,korte,banan';
 console.log(lista.split(','));
 
@@ -103,3 +105,8 @@ date.setHours(4);
 date.setFullYear(2026);
 console.log(date);
 console.log(date.toISOString()); // Ki írja ISO formátumban a dátumot.
+*/
+
+// -- Feltételek
+
+const x1;
