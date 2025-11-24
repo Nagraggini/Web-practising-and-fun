@@ -109,4 +109,4 @@ console.log(date.toISOString()); // Ki írja ISO formátumban a dátumot.
 
 // -- Feltételek
 
-const x1;
+const x1=null;
