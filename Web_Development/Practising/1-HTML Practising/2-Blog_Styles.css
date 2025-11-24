@@ -61,6 +61,10 @@ a:active {
     top: 235px;
 
     border-top: 2px solid magenta;
-
+    font-size: 50px;
     background-color: aquamarine;
+}
+
+.container {
+    display: flex;
 }
