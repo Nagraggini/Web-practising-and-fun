@@ -68,3 +68,13 @@ a:active {
 .container {
     display: flex;
 }
+
+section {
+    border: 3px magenta solid;
+    margin-bottom: 20px;
+
+    color: rgb(231, 231, 50);
+    padding: 5px;
+
+    border-radius: 10px; /*Lekerekíti a sarkokat.*/
+}
