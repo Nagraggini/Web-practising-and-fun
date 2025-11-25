@@ -30,4 +30,10 @@ label {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 25px;
+}
+
+button,
+input {
+    font-size: 25px;
 }
