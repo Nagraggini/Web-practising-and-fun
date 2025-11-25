@@ -7,7 +7,8 @@ body {
     field-sizing: content;
 }
 
-.Counter_div {
+.Counter_div,
+.Description_div {
     padding-top: 20px; /* 20px térköz az elem tetején */
     padding: 10px;
     gap: 10px; /*Megnöveli a gombok közti távolságot.*/
@@ -25,7 +26,8 @@ Tehát a teljes sor a középre kerül a képernyőn.*/
 h1,
 h2,
 h3,
-label {
+label,
+p {
     color: pink;
     display: flex;
     justify-content: center;
