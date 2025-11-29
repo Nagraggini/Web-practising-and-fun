@@ -181,15 +181,74 @@ console.log(color);
 //Tömbök (vagyis objektumok, array-ek)
 
 //Mivel a js nem típusos nyelv, ezért lehet szám is a tömbben.
+
+/*
 const allatok = ["kutya", "macska", "ló", 10, true];
-console.log(allatok[0]);
+console.log(`A tömböm 0. eleme: ${allatok[0]}`);
 
 //console.log(Array.isArray(allatok));
-console.log(allatok.length);
+console.log(`Hány db elem van a tömbben: ${allatok.length}`);
 
 allatok[6] = "kacsa";
 
+*/
+
+/*
+allatok.push("kacsa1");
+console.log(allatok);
+allatok[allatok.length] = "kacsa2";
 console.log(allatok);
 
+//Beszúrja az adott értéket a tömb elejére.
+console.log(
+    `Unshift után (beszúrja az adott értéket a tömb elejére): ${allatok.unshift(
+        "kacsa3"
+    )}` + `\n A lista:`
+);
+
+//Végig menni a tömbön.
+for (let allat of allatok) {
+    console.log(allat);
+}
+
+//Elem törlés a végéről.
+let utolso_elem = allatok.pop();
+
+console.log(
+    `A pop után (töröltük az elemet a végéről). Utolsó elem: ${utolso_elem}`
+);
+
+//Végig menni a tömbön.
+for (let allat of allatok) {
+    console.log(allat);
+}
+*/
+
+/*
+console.log(`Hanyadik eleme a kutya a tömbnek:${allatok.indexOf("kutya")}`);
+*/
+
+/*
 const teszt = !null ? "igaz" : "hamis";
 console.log(Math.ceil(4.4));
+
+let gyumolcsok = ["alma", "banán", "szőlő"];
+
+gyumolcsok[1] = "körte"; // banán -> körte
+console.log(gyumolcsok);
+
+gyumolcsok.push("narancs"); //+1 elemet hozzárak a végére.
+
+console.log(gyumolcsok);
+*/
+
+//Objektumok
+const ember = {
+    name: "Zsolt",
+    age: 20,
+    hobbies: ["snowboard", "squash"], //Tömb.
+};
+console.log(ember);
+console.log(typeof ember);
+
+//Az objektum egységbe foglalja az adatokat és a műveleteket.
