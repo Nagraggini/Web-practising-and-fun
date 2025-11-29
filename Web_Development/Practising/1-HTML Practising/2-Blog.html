@@ -609,192 +609,192 @@ ul>li*5
 
                 <pre><code>
 
-                    /* Globális elemek / h1, h2, h3, h4, h5, h6, p, ul, li, ol {  /* Ezekre az elemekre egységes stílust adunk */
-                        color: rgb(45, 173, 228); /* Világoskék szöveg */
-                        text-shadow: 2px 2px #22096b; /* Sötétkék árnyék */
-                    } /* Globális elemek vége */
+    /* Globális elemek / h1, h2, h3, h4, h5, h6, p, ul, li, ol {  /* Ezekre az elemekre egységes stílust adunk */
+        color: rgb(45, 173, 228); /* Világoskék szöveg */
+        text-shadow: 2px 2px #22096b; /* Sötétkék árnyék */
+    } /* Globális elemek vége */
 
-                    /* Saját betűkészlet importálása */
-                    @font-face { /* Egyedi fontot töltünk be */
-                        font-family: "Momo Signature"; /* A betűkészlet neve */
-                        src: url("../../Assets/Fonts/Momo_Signature/MomoSignature-Regular.ttf") format("truetype"); /* Fizikai elérési út */
-                    }
+    /* Saját betűkészlet importálása */
+    @font-face { /* Egyedi fontot töltünk be */
+        font-family: "Momo Signature"; /* A betűkészlet neve */
+        src: url("../../Assets/Fonts/Momo_Signature/MomoSignature-Regular.ttf") format("truetype"); /* Fizikai elérési út */
+    }
 
-                    /* Body alapbeállítások */ 
-                    body {
-                        background-color: black; /* Az oldal háttere fekete */
-                        font: normal 16px "Momo Signature", "Special Elite", serif; /* Betűtípus beállítás: saját font + tartalékok */
-                        line-height: 1.6em; /* Sorok közti távolság */
-                        margin: 10px; /* Külső margó */
-                        padding: 20px; /* Belső térköz */
-                        background-image: url("../../Assets/Images/guitar.jpg"); /* Háttérkép */
-                        background-repeat: no-repeat; /* Ne ismételje a képet */
-                        background-position: center top; /* Kép középre igazítva felül */
-                    }
+    /* Body alapbeállítások */ 
+    body {
+        background-color: black; /* Az oldal háttere fekete */
+        font: normal 16px "Momo Signature", "Special Elite", serif; /* Betűtípus beállítás: saját font + tartalékok */
+        line-height: 1.6em; /* Sorok közti távolság */
+        margin: 10px; /* Külső margó */
+        padding: 20px; /* Belső térköz */
+        background-image: url("../../Assets/Images/guitar.jpg"); /* Háttérkép */
+        background-repeat: no-repeat; /* Ne ismételje a képet */
+        background-position: center top; /* Kép középre igazítva felül */
+    }
 
-                    /* Képek és dobozok */
-                    .box-2 img {
-                        margin: 10px; /* Kép körüli külső margó */
-                        border: 10px solid #875033; /* Barna keret a kép körül */
-                    }
+    /* Képek és dobozok */
+    .box-2 img {
+        margin: 10px; /* Kép körüli külső margó */
+        border: 10px solid #875033; /* Barna keret a kép körül */
+    }
 
-                    .box-1 {
-                        opacity: 0.9; /* Enyhén átlátszó doboz */
-                    }
+    .box-1 {
+        opacity: 0.9; /* Enyhén átlátszó doboz */
+    }
 
-                    /* Konténer elrendezés */
-                    .container {
-                        width: 960px; /* Fix szélesség */
-                        margin: auto; /* Középre igazítás */
-                        padding: 5px; /* Belső térköz */
-                        display: flex; /* Flexbox elrendezés */
-                    }
+    /* Konténer elrendezés */
+    .container {
+        width: 960px; /* Fix szélesség */
+        margin: auto; /* Középre igazítás */
+        padding: 5px; /* Belső térköz */
+        display: flex; /* Flexbox elrendezés */
+    }
 
-                    @media (max-width: 600px) { /* Mobilbarát szabály */
-                        .container {
-                            width: 100%; /* Teljes szélesség mobilon */
-                            margin: 20px; /* Nagyobb margó mobil nézetben */
-                        }
-                    }
+    @media (max-width: 600px) { /* Mobilbarát szabály */
+        .container {
+            width: 100%; /* Teljes szélesség mobilon */
+            margin: 20px; /* Nagyobb margó mobil nézetben */
+        }
+    }
 
-                    /* Header és Footer */
-                    #headerID {
-                        text-align: center; /* Középre igazított szöveg */
-                        background-color: rgb(60, 77, 233); /* Kék háttér */
-                        color: white; /* Fehér szöveg */
-                        padding: 10px; /* Belső térköz */
-                    }
+    /* Header és Footer */
+    #headerID {
+        text-align: center; /* Középre igazított szöveg */
+        background-color: rgb(60, 77, 233); /* Kék háttér */
+        color: white; /* Fehér szöveg */
+        padding: 10px; /* Belső térköz */
+    }
 
-                    #footerID {
-                        text-align: center; /* Középre igazítás */
-                        font-size: 26px; /* Nagy szöveg */
-                        color: cyan; /* Cián szín */
-                    }
+    #footerID {
+        text-align: center; /* Középre igazítás */
+        font-size: 26px; /* Nagy szöveg */
+        color: cyan; /* Cián szín */
+    }
 
-                    /* Linkek stílusai */
-                    a {
-                        color: cyan; /* Link szín (első szabály – felülíródik!) */
-                        text-decoration: none; /* Link aláhúzás kikapcsolása */
-                    }
+    /* Linkek stílusai */
+    a {
+        color: cyan; /* Link szín (első szabály – felülíródik!) */
+        text-decoration: none; /* Link aláhúzás kikapcsolása */
+    }
 
-                    a {
-                        color: rgb(51, 138, 238); /* Második szabály – ez írja felül az előzőt */
-                        text-decoration: none;
-                    }
+    a {
+        color: rgb(51, 138, 238); /* Második szabály – ez írja felül az előzőt */
+        text-decoration: none;
+    }
 
-                    a {
-                        color: red; /* Harmadik szabály – ismét felülírja */
-                        text-decoration: underline; /* Aláhúzott link */
-                    }
+    a {
+        color: red; /* Harmadik szabály – ismét felülírja */
+        text-decoration: underline; /* Aláhúzott link */
+    }
 
-                    a {
-                        color: yellow; /* Végső érvényes szín */
-                        text-decoration: underline; /* Végső érvényes stílus */
-                    }
+    a {
+        color: yellow; /* Végső érvényes szín */
+        text-decoration: underline; /* Végső érvényes stílus */
+    }
 
-                    /* Gombok */
-                    button, .new_form input[type="submit"], .fix_button {
-                        background-color: blueviolet; /* Lila gomb */
-                        font-family: "Special Elite", serif; /* Betűtípus */
-                        padding: 8px 15px; /* Belső térköz */
-                        border: none; /* Keret nélkül */
-                    }
+    /* Gombok */
+    button, .new_form input[type="submit"], .fix_button {
+        background-color: blueviolet; /* Lila gomb */
+        font-family: "Special Elite", serif; /* Betűtípus */
+        padding: 8px 15px; /* Belső térköz */
+        border: none; /* Keret nélkül */
+    }
 
-                    /* Űrlapok */
-                    .new_form input[type="text"], 
-                    .new_form input[type="password"], 
-                    .new_form textarea {
-                        margin-top: 2px; /* Felső margó */
-                        margin-bottom: 5px; /* Alsó margó */
-                        padding: 10px; /* Belső térköz */
-                        width: 100%; /* Teljes szélesség */
-                    }
+    /* Űrlapok */
+    .new_form input[type="text"], 
+    .new_form input[type="password"], 
+    .new_form textarea {
+        margin-top: 2px; /* Felső margó */
+        margin-bottom: 5px; /* Alsó margó */
+        padding: 10px; /* Belső térköz */
+        width: 100%; /* Teljes szélesség */
+    }
 
-                    /* Szekciók */
-                    section {
-                        border: 3px magenta solid; /* Magenta keret */
-                        margin-bottom: 20px; /* Alsó térköz */
-                        color: rgb(231, 231, 50); /* Sárgás szöveg */
-                        padding: 5px; /* Belső tér */
-                        border-radius: 10px; /* Lekerekített sarkok */
-                    }
+    /* Szekciók */
+    section {
+        border: 3px magenta solid; /* Magenta keret */
+        margin-bottom: 20px; /* Alsó térköz */
+        color: rgb(231, 231, 50); /* Sárgás szöveg */
+        padding: 5px; /* Belső tér */
+        border-radius: 10px; /* Lekerekített sarkok */
+    }
 
-                    /* Navigáció és fix gombok */
-                    .navigation_button, .fix_button {
-                        position: fixed; /* Fixen a viewporthoz rögzítve */
-                        left: 0px; /* Bal szél */
-                        top: 200px; /* Fentről 200px */
-                        font-size: 25px; /* Nagy betűméret */
-                        background-color: aquamarine; /* Kékeszöld háttér */
-                        border-top: 1px solid rgb(247, 243, 251); /* Felső keret */
-                    }
+    /* Navigáció és fix gombok */
+    .navigation_button, .fix_button {
+        position: fixed; /* Fixen a viewporthoz rögzítve */
+        left: 0px; /* Bal szél */
+        top: 200px; /* Fentről 200px */
+        font-size: 25px; /* Nagy betűméret */
+        background-color: aquamarine; /* Kékeszöld háttér */
+        border-top: 1px solid rgb(247, 243, 251); /* Felső keret */
+    }
 
-                    /* Lista stílus */
-                    ul, ol, li {
-                        color: blueviolet; /* Lila szöveg a listákban */
-                    }
+    /* Lista stílus */
+    ul, ol, li {
+        color: blueviolet; /* Lila szöveg a listákban */
+    }
 
-                    /* Táblázatok */
-                    tr, td, th {
-                        border: 1px solid white; /* Fehér keret cellák körül */
-                        color: white; /* Fehér szöveg */
-                    }
+    /* Táblázatok */
+    tr, td, th {
+        border: 1px solid white; /* Fehér keret cellák körül */
+        color: white; /* Fehér szöveg */
+    }
 
-                    /* Formázott dobozok */
-                    .block {
-                        margin-top: 10px; /* Felső margó */
-                        float: left; /* Egymás mellé igazítás */
-                        width: 33.33%; /* Három doboz fér ki egy sorba */
-                        border: 1px solid #e514de; /* Rózsaszín keret */
-                        padding: 10px; /* Belső tér */
-                        box-sizing: border-box; /* Padding is beleszámít */
-                    }
+    /* Formázott dobozok */
+    .block {
+        margin-top: 10px; /* Felső margó */
+        float: left; /* Egymás mellé igazítás */
+        width: 33.33%; /* Három doboz fér ki egy sorba */
+        border: 1px solid #e514de; /* Rózsaszín keret */
+        padding: 10px; /* Belső tér */
+        box-sizing: border-box; /* Padding is beleszámít */
+    }
 
-                    .clearfix {
-                        clear: both; /* Float törlése, elkerülve az összeomlást */
-                    }
+    .clearfix {
+        clear: both; /* Float törlése, elkerülve az összeomlást */
+    }
 
-                    /* Motivációs doboz */
-                    .motivation-box {
-                        width: 200px; /* Szélesség */
-                        height: 200px; /* Magasság */
-                        border: 1px solid #e514de; /* Rózsaszín keret */
-                        margin-top: 10px; /* Felső margó */
-                        position: relative; /* Gyerek elemek relatív pozicionálása */
-                    }
+    /* Motivációs doboz */
+    .motivation-box {
+        width: 200px; /* Szélesség */
+        height: 200px; /* Magasság */
+        border: 1px solid #e514de; /* Rózsaszín keret */
+        margin-top: 10px; /* Felső margó */
+        position: relative; /* Gyerek elemek relatív pozicionálása */
+    }
 
-                    .motivation-box h1 {
-                        position: absolute; /* A dobozon belül szabadság */
-                        top: 10px; /* Fentről 10px */
-                        left: 10px; /* Balról 10px */
-                    }
+    .motivation-box h1 {
+        position: absolute; /* A dobozon belül szabadság */
+        top: 10px; /* Fentről 10px */
+        left: 10px; /* Balról 10px */
+    }
 
-                    /* Contact form */
-                    .contact_form {
-                        background-color: black; /* Fekete háttér */
-                        color: magenta; /* Magenta betűszín */
-                        padding: 20px; /* Belső tér */
-                        border: 3px solid magenta; /* Külső keret */
-                        margin: 40px; /* Külső margó */
-                        border-right: 10px solid magenta; /* Jobb oldali vastag keret */
-                        border-left: 10px dotted magenta; /* Bal oldali pontozott keret */
-                        margin-bottom: 20px; /* Alsó margó */
-                    }
+    /* Contact form */
+    .contact_form {
+        background-color: black; /* Fekete háttér */
+        color: magenta; /* Magenta betűszín */
+        padding: 20px; /* Belső tér */
+        border: 3px solid magenta; /* Külső keret */
+        margin: 40px; /* Külső margó */
+        border-right: 10px solid magenta; /* Jobb oldali vastag keret */
+        border-left: 10px dotted magenta; /* Bal oldali pontozott keret */
+        margin-bottom: 20px; /* Alsó margó */
+    }
 
-                    /* Pszeudo-osztályok linkekhez */
-                    .test_link {
-                        text-decoration: line-through; /* Áthúzott link */
-                    }
+    /* Pszeudo-osztályok linkekhez */
+    .test_link {
+        text-decoration: line-through; /* Áthúzott link */
+    }
 
-                    .test_link {
-                        color: red; /* Piros link – felülíródik később */
-                    }
+    .test_link {
+        color: red; /* Piros link – felülíródik később */
+    }
 
-                    .test_link {
-                        color: white; /* Végső szín: fehér */
-                    }
+    .test_link {
+        color: white; /* Végső szín: fehér */
+    }
 
-                    </code></pre>
+    </code></pre>
             </section>
 
             <section>
