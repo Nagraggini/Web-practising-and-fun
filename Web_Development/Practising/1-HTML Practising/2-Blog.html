@@ -115,29 +115,347 @@
             <section>
                 <article>
                     <h2 id="html">HTML</h2>
+
                     <p>
-                        Melyik tag tartalmazza az
-                        <code>&lt;area&gt;</code> taget?<br />
-                        A helyes válasz: <code>&lt;map&gt;</code> tag.
+                        A HTML (HyperText Markup Language) a weboldalak alapját
+                        adó leíró nyelv. Minden, amit egy weboldalon látsz –
+                        címek, bekezdések, képek, listák, táblázatok, űrlapok –
+                        HTML tagek segítségével jelenik meg. A HTML nem
+                        programozási nyelv, hanem egy szerkezetet leíró nyelv,
+                        amely megmondja a böngészőnek, hogy melyik elem mit
+                        jelent és hogyan épül fel a dokumentum.
                     </p>
+
                     <p>
-                        Melyik tag tartalmazhatja a
-                        <code>&lt;source&gt;</code> taget?<br />
-                        A helyes válasz: <code>&lt;video&gt;</code> és
-                        <code>&lt;audio&gt;</code> tagek.
+                        A HTML tagek mindig valamilyen funkciót jelölnek: van,
+                        amelyik címsort hoz létre, van, amelyik egy szöveg
+                        bekezdést, listát vagy akár űrlapot. A tagek logikusan
+                        hierarchiába rendeződnek, így a böngésző és a
+                        keresőmotorok számára is érthetővé válik a dokumentum
+                        felépítése.
                     </p>
-                    <p>A <code>&lt;hr&gt;</code> tagnek nem kell záró tag.</p>
+
                     <p>
-                        A <code>&lt;noscript&gt;</code> akkor jelenít meg
-                        tartalmat, ha a JavaScript ki van kapcsolva vagy nem
-                        támogatott.
+                        Az alábbiakban áttekintjük a leggyakrabban használt HTML
+                        elemeket, amelyek az alapját képezik minden modern
+                        weboldalnak.
                     </p>
+
+                    <h3>Címsorok (Headings)</h3>
+                    <p>A HTML 6 különböző szintű címsort használ:</p>
+                    <ul>
+                        <li><code>&lt;h1&gt;</code> – a legnagyobb, főcím</li>
+                        <li><code>&lt;h2&gt;</code> – alcím</li>
+                        <li><code>&lt;h3&gt;</code> – kisebb alcím</li>
+                        <li>…</li>
+                        <li><code>&lt;h6&gt;</code> – a legkisebb címsor</li>
+                    </ul>
+
                     <p>
-                        Ahhoz, hogy elküldjünk egy értéket az adatbázisba,
-                        ezekre kell figyelnünk: az input mező value
-                        attribútumára, a name attribútumra, valamint a submit
-                        gombra. A <code>&lt;label&gt;</code> maga nem küld
-                        adatot, csak feliratként szolgál.
+                        A címsorok hierarchiát adnak a dokumentumnak, és
+                        segítenek a keresőmotoroknak is a tartalom
+                        értelmezésében.
+                    </p>
+
+                    <h3>Bekezdés</h3>
+                    <p>
+                        A <code>&lt;p&gt;</code> tag hozza létre a bekezdéseket.
+                        A böngésző automatikusan ad körülötte egy kis térközt,
+                        így tagoltabbá és olvashatóbbá válik a szöveg.
+                    </p>
+                    <h3>Listák</h3>
+                    <p><b>A HTML kétféle listát használ:</b></p>
+                    <p>Rendezetlen lista (unordered list)</p>
+                    <ul>
+                        <li>&lt;ul&gt; – felsorolás, általában pontokkal</li>
+                        <li>&lt;li&gt; – listaelem</li>
+                    </ul>
+                    <p>Rendezett lista (ordered list)</p>
+                    <ul>
+                        <li>&lt;ol> – számozott lista</li>
+                        <li>&lt;li&gt; – listaelem</li>
+                    </ul>
+
+                    <h3>Táblázatok</h3>
+                    <p>A táblázatok több részből állnak:</p>
+                    <ul>
+                        <li><code>&lt;table&gt;</code> – maga a táblázat</li>
+                        <li>
+                            <code>&lt;thead&gt;</code> – a fejléc sorait
+                            foglalja magába
+                        </li>
+                        <li>
+                            <code>&lt;tbody&gt;</code> – a tartalmi sorokat
+                            tartalmazza
+                        </li>
+                        <li><code>&lt;tr&gt;</code> – egy sor</li>
+                        <li>
+                            <code>&lt;th&gt;</code> – fejléc cella (általában
+                            félkövér és középre igazított)
+                        </li>
+                        <li><code>&lt;td&gt;</code> – normál adatcella</li>
+                    </ul>
+
+                    <h3>Div</h3>
+                    <p>
+                        A <code>&lt;div&gt;</code> egy általános blokk szintű
+                        konténer, amelynek önmagában nincs szemantikai
+                        jelentése. Főként a szerkezet kialakítására és CSS alapú
+                        stílusozásra használjuk.
+                    </p>
+
+                    <h3>Űrlapok (Forms)</h3>
+                    <p>
+                        Az űrlapokat felhasználói adatok bekérésére használjuk:
+                    </p>
+                    <ul>
+                        <li><code>&lt;form&gt;</code> – maga az űrlap</li>
+                        <li>
+                            <b>action</b> – ide küldi az adatokat a böngésző
+                            (pl. backend URL)
+                        </li>
+                    </ul>
+
+                    <p><b>Gyakori mezők:</b></p>
+                    <ul>
+                        <li><code>&lt;label&gt;</code> – a mező címkéje</li>
+                        <li>
+                            <code>&lt;input type="text"&gt;</code> – szöveg
+                            beviteli mező
+                        </li>
+                        <li>
+                            <code>&lt;input type="password"&gt;</code> – jelszó
+                            mező
+                        </li>
+                        <li>
+                            <code>&lt;input type="submit"&gt;</code> – küldés
+                            gomb
+                        </li>
+                    </ul>
+
+                    <h3>Gomb</h3>
+                    <p>
+                        A <code>&lt;button&gt;</code> tag egy kattintható gombot
+                        hoz létre. Lehet benne szöveg, ikon, vagy akár más HTML
+                        elem is.
+                    </p>
+
+                    <h3>Vízszintes vonal</h3>
+                    <p>
+                        A <code>&lt;hr&gt;</code> egy egyszerű vízszintes
+                        elválasztó vonal. Nincs záró tagje.
+                    </p>
+
+                    <h3>Kvízben előforduló speciális tagek</h3>
+                    <ul>
+                        <li>
+                            <code>&lt;area&gt;</code> – képtérkép része, mindig
+                            <code>&lt;map&gt;</code> tagben használjuk
+                        </li>
+                        <li>
+                            <code>&lt;source&gt;</code> – videókhoz vagy
+                            hangfájlokhoz (<code>&lt;audio&gt;</code>,
+                            <code>&lt;video&gt;</code>)
+                        </li>
+                        <li>
+                            <code>&lt;noscript&gt;</code> – akkor jelenik meg,
+                            ha a böngészőben le van tiltva a JavaScript
+                        </li>
+                    </ul>
+
+                    <h3>Kép</h3>
+                    <p>
+                        A képek megjelenítéséhez a következő taget használjuk:
+                    </p>
+                    <ul>
+                        <li><code>&lt;img src="..."&gt;</code> – maga a kép</li>
+                        <li><b>src</b> – a kép elérési útja</li>
+                        <li>
+                            Opcionális tulajdonságok: <b>width</b>,
+                            <b>height</b>
+                        </li>
+                    </ul>
+
+                    <h3>Link</h3>
+                    <p>
+                        A linkekhez az <code>&lt;a href="URL"&gt;</code> taget
+                        használjuk. A <b>href</b> tartalmazza a cél URL-t.
+                    </p>
+
+                    <h3>Szövegformázó tagek</h3>
+                    <ul>
+                        <li><code>&lt;b&gt;</code> – félkövér</li>
+                        <li><code>&lt;i&gt;</code> – dőlt</li>
+                        <li><code>&lt;u&gt;</code> – aláhúzott</li>
+                        <li>
+                            <code>&lt;code&gt;</code> – kód jelölésére szolgál
+                        </li>
+                    </ul>
+                    <h3>Kérdések és helyes válaszok</h3>
+                    <ol>
+                        <li>
+                            <strong
+                                >Melyik tag tartalmazza az &lt;area&gt;
+                                taget?</strong
+                            >
+                            <p>
+                                A helyes válasz: <code>&lt;map&gt;</code> tag.
+                            </p>
+                        </li>
+
+                        <li>
+                            <strong
+                                >Melyik tag tartalmazhatja a &lt;source&gt;
+                                taget?</strong
+                            >
+                            <p>
+                                A helyes válasz: <code>&lt;video&gt;</code> és
+                                <code>&lt;audio&gt;</code> tagek.
+                            </p>
+                        </li>
+
+                        <li>
+                            <strong
+                                >Kell-e záró tag a &lt;hr&gt; elemnek?</strong
+                            >
+                            <p>
+                                A <code>&lt;hr&gt;</code> tagnek nem kell záró
+                                tag.
+                            </p>
+                        </li>
+
+                        <li>
+                            <strong
+                                >Mikor jelenik meg a &lt;noscript&gt;
+                                tartalma?</strong
+                            >
+                            <p>
+                                A <code>&lt;noscript&gt;</code> akkor jelenít
+                                meg tartalmat, ha a JavaScript ki van kapcsolva
+                                vagy a böngésző nem támogatja.
+                            </p>
+                        </li>
+
+                        <li>
+                            <strong>
+                                Mit kell figyelembe venni, ha értéket akarunk
+                                elküldeni az adatbázisba?
+                            </strong>
+                            <p>
+                                Figyelni kell az input mező
+                                <code>value</code> attribútumára, a
+                                <code>name</code> attribútumra, valamint a
+                                submit gombra.
+                            </p>
+                            <p>
+                                A <code>&lt;label&gt;</code> nem küld adatot,
+                                csak feliratként szolgál.
+                            </p>
+                        </li>
+                    </ol>
+                </article>
+            </section>
+            <section>
+                <article>
+                    <h2>Emmet Cheat Sheet (HTML + CSS gyorsbillentyűk)</h2>
+                    <p>
+                        Az Emmet egy kódbővítő eszköz, amellyel rövid
+                        parancsokból automatikusan teljes HTML vagy CSS kódot
+                        tudsz generálni.
+                    </p>
+
+                    <h3>HTML Emmet parancsok</h3>
+                    <ul>
+                        <li><code>!</code> → teljes HTML5 alap sablon</li>
+                        <li><code>div</code> → &lt;div&gt;&lt;/div&gt;</li>
+                        <li>
+                            <code>.box</code> → &lt;div
+                            class="box"&gt;&lt;/div&gt;
+                        </li>
+                        <li>
+                            <code>#header</code> → &lt;div
+                            id="header"&gt;&lt;/div&gt;
+                        </li>
+                        <li><code>ul>li</code> → beágyazott listaelem</li>
+                        <li><code>ul>li*5</code> → 5 darab li elem</li>
+                        <li><code>div>p>span</code> → hierarchia</li>
+                        <li>
+                            <code>p{Hello}</code> → &lt;p&gt;Hello&lt;/p&gt;
+                        </li>
+                        <li><code>a[href="#"]</code> → attribútumos elem</li>
+                    </ul>
+
+                    <h3>Item numbering: $</h3>
+                    <p>Példa számozott listaelemre:</p>
+                    <pre>
+ul>li.item$*5
+&lt;ul&gt;
+    &lt;li class="item1"&gt;&lt;/li&gt;
+    &lt;li class="item2"&gt;&lt;/li&gt;
+    &lt;li class="item3"&gt;&lt;/li&gt;
+    &lt;li class="item4"&gt;&lt;/li&gt;
+    &lt;li class="item5"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre
+                    >
+
+                    <h3>Multiplication: *</h3>
+                    <p>Példa ismétlésre:</p>
+                    <pre>
+ul>li*5
+&lt;ul&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre
+                    >
+
+                    <h3>Speciális Emmet elemek</h3>
+                    <ul>
+                        <li>
+                            <code>a:link</code> → &lt;a
+                            href="http://"&gt;&lt;/a&gt;
+                        </li>
+                        <li>
+                            <code>a:mail</code> → &lt;a
+                            href="mailto:"&gt;&lt;/a&gt;
+                        </li>
+                        <li>
+                            <code>link:css</code> → &lt;link rel="stylesheet"
+                            href="style.css" /&gt;
+                        </li>
+                        <li>
+                            <code>script:src</code> → &lt;script
+                            src=""&gt;&lt;/script&gt;
+                        </li>
+                        <li><code>mg</code> → &lt;img src="" alt="" /&gt;</li>
+                    </ul>
+
+                    <h3>CSS Emmet parancsok</h3>
+                    <ul>
+                        <li><code>m10</code> → margin: 10px;</li>
+                        <li><code>p20</code> → padding: 20px;</li>
+                        <li><code>bd1-s</code> → border: 1px solid;</li>
+                        <li><code>fw700</code> → font-weight: 700;</li>
+                        <li><code>fs18</code> → font-size: 18px;</li>
+                        <li><code>bgc#333</code> → background-color: #333;</li>
+                        <li><code>c#fff</code> → color: #fff;</li>
+                        <li><code>d:f</code> → display: flex;</li>
+                        <li>
+                            <code>jc-sb</code> → justify-content: space-between;
+                        </li>
+                    </ul>
+
+                    <p>
+                        Forrás: Emmet hivatalos dokumentáció –
+                        <a
+                            href="https://docs.emmet.io/cheat-sheet/"
+                            target="_blank"
+                            >Cheat Sheet</a
+                        >
                     </p>
                 </article>
             </section>
@@ -288,7 +606,7 @@
             </section>
 
             <section>
-                <h2 id="js">JavaScript rövid összefoglaló</h2>
+                <h2 id="js">JavaScript</h2>
                 <p>
                     Objektum orientált, prototípus alapú szkript nyelv.
                     Leginkább a weboldalak kliens oldali logikájára használják.
