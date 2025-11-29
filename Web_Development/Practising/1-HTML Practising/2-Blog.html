@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="1-HTML Practising_Styles.css" />
         <link rel="stylesheet" href="2-Blog_Styles.css" />
 
-        <title>Első blogom</title>
+        <title>Blogom</title>
     </head>
 
     <body>
@@ -288,46 +288,177 @@
             </section>
 
             <section>
-                <article>
-                    <h2 id="js">JavaScript</h2>
+                <h2 id="js">JavaScript rövid összefoglaló</h2>
+                <p>
+                    Objektum orientált, prototípus alapú szkript nyelv.
+                    Leginkább a weboldalak kliens oldali logikájára használják.
+                    Weboldal kliensen futó programja.
+                </p>
+                <p>
+                    Magas szintű programozási nyelv. Nem kell foglalkozni a
+                    memória felszabadítással.
+                </p>
+                <p>
+                    Interpretált nyelv, vagyis nem kell fordító, mint a javanál,
+                    hanem a kód alapból a böngészőben fut. Hátránya, hogy
+                    hozzáférhető a kód idegenek számára is. Valamint a
+                    programozási hibák csak futási időben derülnek ki.
+                </p>
+                <p>
+                    Multi-paradigma, vagyis többféleképpen is megírhatod a
+                    programodat, pl.: objektum orientált módon.
+                </p>
+                <p>
+                    Régebben LiveScript volt a neve. Mocha → LiveScript →
+                    JavaScript (1995)
+                </p>
+                <p>
+                    <b>ECMAScript = a nyelvi szabvány</b>; a JavaScript ennek a
+                    szabványnak egy implementációja.
+                </p>
+                <p>
+                    A &lt;/body&gt; elé kell beírni a <code>script</code> taget,
+                    mert a böngésző fentről lefelé tölti be az oldalt.
+                </p>
 
-                    <p>
-                        Objektum orientált, prototípus alapú szkript nyelv.
-                        Leginkább a weboldalak kliens oldali logikájára
-                        használják. Weboldal kliensen futó programja.
-                    </p>
+                <h3>Kérdések és helyes válaszok</h3>
 
-                    <p>
-                        Magas szintű programozási nylev. Nem kell foglalkozni a
-                        memória felszabadítással.
-                    </p>
-
-                    <p>
-                        Interpretált nyel, vagyis nem kell fordító, mint a
-                        javanál, hanem a kód alapól a böngészőben fog futni.
-                        <br />
-                        Hátránya, hogy hozzáférhető a kód idegenek számára is.
-                        Valamint a programozási hibák, csak futási időben
-                        derülnek ki.
-                    </p>
-                    <p>
-                        Multi-paradigma, vagyis többféleképpen is megírhatod a
-                        programodat, pl.: Objektum orientált módon.
-                    </p>
-                    <p>
-                        Régebben LiveScript volt a neve. Mocha → LiveScript →
-                        JavaScript (1995)
-                    </p>
-                    <p>
-                        <b>CMAScript = a nyelvi szabvány</b>; a JavaScript ennek
-                        a szabványnak egy implementációja.
-                    </p>
-
-                    <p>
-                        A &lt;/body&gt; elé kell beírni a script tag-t, mert a
-                        böngésző fentről lefelé tölti be az oldalt.
-                    </p>
-                </article>
+                <ol>
+                    <li>
+                        <strong
+                            >Hogyan lehet egy szöveg hosszát lekérdezni?</strong
+                        >
+                        <p><code>szoveg.length</code></p>
+                    </li>
+                    <li>
+                        <strong>Melyik állítás igaz a JSON-re?</strong>
+                        <p>Nyelvfüggetlen.</p>
+                        <p>
+                            JSON (JavaScript Object Notation)
+                            adatcsere-formátum, ami bármilyen nyelven
+                            használható (Java, Python, C#, stb.), nem csak
+                            JavaScript-ben.
+                        </p>
+                        <p>
+                            Nem kompatibilis 100%-ban XML-lel, mert az teljesen
+                            más szintaxis.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Mely állítások igazak a BOM-ra?</strong>
+                        <p>
+                            Hierarchikus elrendezésű, a tetején a
+                            <code>window</code> object helyezkedik el.
+                        </p>
+                        <p>
+                            Segítségével elérjük a böngésző tulajdonságait,
+                            beállításait (ablakméret, előzmények, URL-ek stb.).
+                        </p>
+                        <p>
+                            A BOM (Browser Object Model) nem szabványos, de
+                            minden böngésző implementálja.
+                        </p>
+                        <p>
+                            Lehetővé teszi az ablak, előzmények, URL-ek,
+                            képernyőméret kezelését, a dokumentumon kívüli
+                            objektumokhoz fér hozzá.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Mi a kimenete?</strong>
+                        <pre>
+        let keresztNev = "Elek";
+        let csaladNev = null;
+        let beceNev = null;
+        console.log(keresztNev ?? csaladNev ?? beceNev ?? "Nem meghatározott");
+            </pre
+                        >
+                        <p>Megoldás: Elek</p>
+                        <p>
+                            Az ?? (nullish coalescing) a null vagy undefined
+                            ellenőrzi. keresztNev értéke "Elek", ami nem null
+                            vagy undefined, így az első érték kerül kiírásra.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Mi a kimenete?</strong>
+                        <pre>console.log(Math.ceil(4.4))</pre>
+                        <p>Megoldás: 5</p>
+                        <p>Mindig a következő egész számra kerekít felfelé.</p>
+                    </li>
+                    <li>
+                        <strong>Mely állítások igazak a JSON-re?</strong>
+                        <p>Nyelvfüggetlen.</p>
+                        <p>
+                            Adatok tárolására és az adatküldés
+                            leegyszerűsítésére használható.
+                        </p>
+                        <p>
+                            A JSON formátum adatcsere-formátum, kliens-szerver
+                            kommunikációban is gyakran használják.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Mit ír ki?</strong>
+                        <pre>
+                        let obj = {
+                            for: 1,
+                            let: 2,
+                            return: 3,
+                        }
+                        console.log(obj.let);
+                       </pre
+                        >
+                        <p>Megoldás: 2</p>
+                        <p>
+                            Objektumokban kulcsokat szabad szövegesen használni,
+                            így let itt egy érvényes property. obj.let pontosan
+                            a 2 értéket adja vissza.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Mi a kimenete?</strong>
+                        <pre>
+                    let nameSymbol2 = Symbol("name");
+                    console.log(Symbol.keyFor(nameSymbol2));
+                      </pre
+                        >
+                        <p>undefined</p>
+                        <p>
+                            Symbol("name") egy lokális szimbólum, ami nem
+                            regisztrált globális szimbólumként.
+                        </p>
+                        <p>
+                            A Symbol.keyFor() csak a globális szimbólumoknál ad
+                            vissza kulcsot.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Mi a kimenete?</strong>
+                        <pre>
+                    var foo = function teszt(){
+                        console.log(foo==foo)
+                    };
+                    foo();
+            </pre
+                        >
+                        <p>true</p>
+                        <p>
+                            foo mindig önmagára mutat a függvény scope-on belül,
+                            így a foo == foo mindig true.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Mi a kimenete?</strong>
+                        <pre>console.log(undefined > 0);</pre>
+                        <p>false</p>
+                        <p>
+                            undefined nem szám, így összehasonlításkor NaN-ra
+                            konvertálódik → minden összehasonlítás false lesz.
+                        </p>
+                        <p>Nem dob hibát, egyszerűen false az eredmény.</p>
+                    </li>
+                </ol>
             </section>
         </main>
         <a class="navigation_button">Kategóriák</a>
