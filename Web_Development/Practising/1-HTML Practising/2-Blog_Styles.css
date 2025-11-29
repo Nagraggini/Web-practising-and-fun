@@ -19,27 +19,16 @@ footer {
 }
 
 /*Linkek stílusa.*/
-a:link {
-    color: cyan;
-    background-color: transparent;
-    text-decoration: none;
-}
-
+a:link,
 a:visited {
-    color: rgb(51, 138, 238);
-    background-color: transparent;
+    color: cyan;
+
     text-decoration: none;
 }
 
 a:hover {
     color: red;
-    background-color: transparent;
-    text-decoration: underline;
-}
 
-a:active {
-    color: yellow;
-    background-color: transparent;
     text-decoration: underline;
 }
 
@@ -58,13 +47,12 @@ a:active {
 .navigation_button {
     position: fixed; /*Bárhova tekered az oldalt ez a gomb fixen ott fog maradni.*/
     left: 0px;
-    top: 235px;
+    top: 70px;
 
     border-top: 2px solid magenta;
     font-size: 25px;
-    background-color: aquamarine;
+    background-color: rgb(5, 23, 161); /* Módosítva fehérre */
 }
-
 .container {
     display: flex;
 }
