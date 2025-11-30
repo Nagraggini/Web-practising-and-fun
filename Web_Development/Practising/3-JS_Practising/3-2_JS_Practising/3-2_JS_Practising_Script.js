@@ -285,10 +285,17 @@ const todos = [
     {
         id: 1,
         text: "Ne felejtsd el feltölteni a blogra.",
+        completed: true,
+    },
+    {
+        id: 1,
+        text: "----",
+        completed: false,
     },
     {
         id: 2,
         text: "Tanulni, tanulni.",
+        completed: false,
     },
 ];
 
@@ -333,6 +340,42 @@ todos.forEach(function (todo) {
 //Tömb műveletek ciklusokkal.
 //Létrehozunk egy string tömböt, amibe belerakjuk az id-kat.
 const todoIDs = todos.map(function (todo) {
-    return todo.id;
+    return todo.text;
 });
+/*
 console.log(todoIDs);
+console.log(todoIDs[0]);
+console.log("Filtered (only false): ");
+*/
+
+/*
+Miért a map()?
+Mindig új tömböt ad vissza.
+Egyszerű, rövid, átlátható.
+Kifejezetten értékek kinyerésére van.
+*/
+
+//Létrehoztunk egy új tömbböt azokra szelektálva, amiknél a completed értéke false.
+const filtered = todos.filter(function (todo) {
+    return !todo.completed; //false-ra szűrünk.
+});
+
+//console.log(filtered);
+
+//Függvények (Funkcions)
+
+function osszeadas(szamx, szamy) {
+    //Visszatérési érték.
+    return szamx + szamy;
+}
+//Ha nem adsz meg semmit, akkor: NaN =Not a number.
+console.log(osszeadas(10, 25));
+
+function osszeadas0(szamx = 1, szamy = 2) {
+    //Visszatérési érték.
+    return szamx + szamy;
+}
+
+console.log(osszeadas0(10));
+//Mivel a JS nem típusos nyelv, ezért össze tudja fűzni a két stringet.
+console.log(osszeadas0("Hello ", "Zsolt!"));

@@ -35,7 +35,7 @@
                         <a href="#vscode_extension_list">VS code kiegészítők</a>
                     </li>
                     <li><a href="#html">HTML</a></li>
-                    <li><a href="#emmet">JavaScript</a></li>
+                    <li><a href="#emmet">Emmet</a></li>
                     <li><a href="#css">CSS</a></li>
                     <li><a href="#js">JavaScript</a></li>
                 </ul>
@@ -1140,6 +1140,175 @@ ul>li*5
                     mert a böngésző fentről lefelé tölti be az oldalt.
                 </p>
 
+                <p>
+                    A JavaScript a weboldalak működéséért felelős programozási
+                    nyelv. Segítségével dinamikus elemeket hozhatunk létre,
+                    adatokat dolgozhatunk fel, eseményeket kezelhetünk
+                    (kattintás, billentyűlenyomás), vagy akár teljes
+                    alkalmazásokat építhetünk.
+                </p>
+
+                <p>
+                    Míg a HTML a szerkezetet, a CSS a kinézetet adja, addig a
+                    JavaScript teszi interaktívvá a weboldalt. A böngésző minden
+                    JS sort sorban végrehajt.
+                </p>
+
+                <h3>Alap utasítások</h3>
+                <p>
+                    Egyszerű kiíratások, hibák, figyelmeztetések megjelenítése:
+                </p>
+                <ul>
+                    <li><code>alert('Hello!')</code> – felugró ablak</li>
+                    <li>
+                        <code>console.log()</code> – üzenet az ellenőrző
+                        konzolba
+                    </li>
+                    <li><code>console.error()</code> – hibaüzenet</li>
+                    <li><code>console.warn()</code> – figyelmeztetés</li>
+                </ul>
+
+                <h3>Változók</h3>
+                <p>
+                    A változókban adatokat tárolunk. JavaScriptben a
+                    leggyakoribb típusok:
+                </p>
+
+                <ul>
+                    <li>
+                        <code>let</code> – módosítható változó, csak a blokkon
+                        belül él (ajánlott)
+                    </li>
+                    <li>
+                        <code>const</code> – állandó, értéke nem módosítható
+                    </li>
+                    <li>
+                        <code>var</code> – régi változótípus, kerülendő
+                        (újradeklarálható, problémás)
+                    </li>
+                </ul>
+
+                <p>Példa:</p>
+                <pre><code>let kor = 20;
+kor = 21; // módosítható
+
+const szam = 10;
+// szam = 11;  // hiba: a const nem módosítható</code></pre>
+
+                <h3>Adattípusok</h3>
+                <p>
+                    Két nagy csoportjuk van: primitív típusok és objektum
+                    típusok.
+                </p>
+
+                <h4>Primitívek</h4>
+                <ul>
+                    <li><code>String</code> – szöveg</li>
+                    <li><code>Number</code> – szám (egész és tizedes is)</li>
+                    <li><code>Boolean</code> – igaz vagy hamis</li>
+                    <li><code>null</code> – szándékosan „nincs érték”</li>
+                    <li>
+                        <code>undefined</code> – létrehozott változó, de nincs
+                        értéke
+                    </li>
+                </ul>
+
+                <p>Példa:</p>
+                <pre><code>const nev = "Zsolt";
+const kor = 21;
+const suly = 80.5;
+const felnott = true;
+
+const x = null; 
+const y = undefined;</code></pre>
+
+                <p>
+                    A <code>null</code> és az <code>undefined</code> gyakran
+                    keveredik, de fontos a különbség:
+                </p>
+                <ul>
+                    <li><b>null</b> – Te állítod be, hogy „nincs érték”.</li>
+                    <li>
+                        <b>undefined</b> – A böngésző adja, ha nem kap értéket a
+                        változó.
+                    </li>
+                </ul>
+
+                <h4>Objektumok</h4>
+                <p>
+                    A JavaScript objektumok sok adatot tartalmazhatnak egy
+                    helyen.
+                </p>
+
+                <p>Példa dátum objektumra:</p>
+                <pre><code>const date = new Date();          // mai dátum
+const date2 = new Date("2025-11-24");</code></pre>
+
+                <h3>String műveletek</h3>
+                <p>A szövegekkel gyakran végzünk műveleteket:</p>
+
+                <ul>
+                    <li><code>text.length</code> – megadja a hosszát</li>
+                    <li>
+                        <code>text.toLowerCase()</code> – kisbetűssé alakítja
+                    </li>
+                    <li><code>text.substring(1,5)</code> – részlet kivágása</li>
+                    <li><code>text.split()</code> – darabolás</li>
+                </ul>
+
+                <p>Példa modern string írásra (interpoláció):</p>
+                <pre><code>const szoveg = "Hello világ";
+console.log(`${szoveg}!`);</code></pre>
+
+                <h3>Dátumok kezelése</h3>
+                <ul>
+                    <li><code>getDate()</code> – nap lekérése</li>
+                    <li><code>getDay()</code> – hét napja (0–6)</li>
+                    <li><code>getMonth()</code> – hónap (0–11)</li>
+                    <li><code>setHours()</code> – óra beállítása</li>
+                    <li><code>setFullYear()</code> – év beállítása</li>
+                    <li><code>toISOString()</code> – ISO formátumú dátum</li>
+                </ul>
+
+                <h3>Műveletek</h3>
+                <p>
+                    A JavaScript támogatja a matematikai műveleteket, például:
+                </p>
+
+                <ul>
+                    <li><code>+=</code> – növeli a változó értékét</li>
+                    <li><code>++</code> – egyesével növel</li>
+                </ul>
+
+                <pre><code>let szam = 10;
+        szam += 10;  // 20
+        szam++;      // 21</code></pre>
+
+                <h3>Feltételek</h3>
+                <p>
+                    Az <code>if</code> utasítással elágazásokat hozhatunk létre.
+                </p>
+
+                <p>Példa:</p>
+                <pre><code>const a = 14;
+        const b = 10;
+
+        if (a <= b) {
+            console.log("Igaz");
+        } else {
+            console.log("Hamis");
+        }
+
+        if (a === b) {  // szigorú összehasonlítás (típust is nézi)
+            console.log("Egyenlő");
+        } else {
+            console.log("Nem egyenlő");
+        }</code></pre>
+
+                <p>
+                    A <code>===</code> mindig ajánlott a
+                    <code>==</code> helyett, mert típust is ellenőriz.
+                </p>
                 <h3>Kérdések és helyes válaszok</h3>
 
                 <ol>
