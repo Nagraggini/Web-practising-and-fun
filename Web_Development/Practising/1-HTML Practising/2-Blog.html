@@ -914,7 +914,8 @@ ul>li*5
 
                 <pre><code>
 
-    /* Globális elemek / h1, h2, h3, h4, h5, h6, p, ul, li, ol {  /* Ezekre az elemekre egységes stílust adunk */
+    /* Globális elemek / h1, h2, h3, h4, h5, h6, p, ul, li, ol {  
+        /* Ezekre az elemekre egységes stílust adunk */
         color: rgb(45, 173, 228); /* Világoskék szöveg */
         text-shadow: 2px 2px #22096b; /* Sötétkék árnyék */
     } /* Globális elemek vége */
@@ -922,13 +923,16 @@ ul>li*5
     /* Saját betűkészlet importálása */
     @font-face { /* Egyedi fontot töltünk be */
         font-family: "Momo Signature"; /* A betűkészlet neve */
-        src: url("../../Assets/Fonts/Momo_Signature/MomoSignature-Regular.ttf") format("truetype"); /* Fizikai elérési út */
+        /* Fizikai elérési út */
+        src: url("../../Assets/Fonts/Momo_Signature/MomoSignature-Regular.ttf") format("truetype"); 
     }
 
     /* Body alapbeállítások */ 
     body {
         background-color: black; /* Az oldal háttere fekete */
-        font: normal 16px "Momo Signature", "Special Elite", serif; /* Betűtípus beállítás: saját font + tartalékok */
+        
+        /* Betűtípus beállítás: saját font + tartalékok */
+        font: normal 16px "Momo Signature", "Special Elite", serif; 
         line-height: 1.6em; /* Sorok közti távolság */
         margin: 10px; /* Külső margó */
         padding: 20px; /* Belső térköz */
