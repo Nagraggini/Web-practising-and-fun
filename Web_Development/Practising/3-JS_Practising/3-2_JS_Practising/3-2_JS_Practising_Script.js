@@ -247,8 +247,92 @@ const ember = {
     name: "Zsolt",
     age: 20,
     hobbies: ["snowboard", "squash"], //Tömb.
+    address: { street: "Valami utca", city: "Milanó" },
 };
-console.log(ember);
-console.log(typeof ember);
+
+//Más programnyelvben nem nagyon lehet utólag hozzáadni elemet egy objektumhoz.
+ember.email = "zsolt@info.hu";
+
+//console.log(ember);
+//console.log(typeof ember);
 
 //Az objektum egységbe foglalja az adatokat és a műveleteket.
+
+/*
+console.log(`Ember neve: ${ember.name}`);
+console.log(`Van-e hobbija: ${ember.hobbies.length > 0}`);
+console.log(`Az első hobbija: ${ember.hobbies[0]}`);
+
+console.log(`A lakcíme utcája: ${ember.address.street}`);
+*/
+
+//Alakítsd át az ember objektumot JSON szöveggé, amit már bárhova kiírhatsz, tárolhatsz (Tárolás helyileg (LocalStorage)) vagy továbbíthatsz (pl.: Küldés szerverre (API-hoz)).
+//A JavaScript nem tudja ezt natívan szépen kiírni egy stringben.
+//JSONal viszont igen:
+//console.log(`JSON formátumban való kiíratás: ${JSON.stringify(ember)}`);
+
+//Egyből egy változóban eltárolja az ember objektumból szerzett adatot. ES6-ban jött be ez.
+const {
+    name,
+    age,
+    address: { street },
+} = ember;
+/*
+console.log(`Neve: ${name}`);
+console.log(`Utcája: ${street}`);
+*/
+const todos = [
+    {
+        id: 1,
+        text: "Ne felejtsd el feltölteni a blogra.",
+    },
+    {
+        id: 2,
+        text: "Tanulni, tanulni.",
+    },
+];
+
+/*
+console.log(`To-do: ${todos}`);
+console.log(todos);
+
+console.log(`0. objektum: ${todos[0].id}`);
+*/
+
+//Ciklusok
+
+//for ciklus
+for (let i = 0; i < 10; i++) {
+    //console.log(`i értéke: ${i}`);
+}
+
+//while ciklus
+let index = 0;
+while (index < 10) {
+    //console.log(`index értéke: ${index}`);
+    index++;
+}
+
+//A tömböknél használjuk sokat a ciklusokat, mert nem tudjuk hány elem van benne.
+
+for (let i = 0; i < todos.length; i++) {
+    //console.log(todos[i]);
+}
+
+//console.log("ES6-os változat:");
+for (let todo of todos) {
+    //ES6-os modern. fof és tab
+    //console.log(todo);
+}
+
+//Ugyanazt csinálja, mint a fenti for és while ciklus. Végig megy a tömbön.
+todos.forEach(function (todo) {
+    //console.log(todo);
+});
+
+//Tömb műveletek ciklusokkal.
+//Létrehozunk egy string tömböt, amibe belerakjuk az id-kat.
+const todoIDs = todos.map(function (todo) {
+    return todo.id;
+});
+console.log(todoIDs);
