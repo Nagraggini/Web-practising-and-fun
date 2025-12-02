@@ -1,701 +1,767 @@
 <!DOCTYPE html>
 <html lang="hu">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="description" content="blog" />
-        <meta name="keywords" content="blog teszt" />
-        <meta name="author" content="Nagraggini" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, maximum-scale=1"
-        />
 
-        <link rel="stylesheet" href="1-HTML Practising_Styles.css" />
-        <link rel="stylesheet" href="2-Blog_Styles.css" />
+<head>
+    <meta charset="UTF-8" />
+    <!--Ez mondja meg a böngészőnek, hogy a weboldal szélessége igazodjon a kijelző méretéhez.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>Blogom</title>
-    </head>
+    <!-- Külső CSS fájl (tartsd külön a stílusokat) -->
+    <link rel="stylesheet" href="index_Styles.css" />
 
-    <body>
-        <header id="headerID">
-            <h1>Saját blogom</h1>
-        </header>
+    <!-- Fontos: a scriptet defer-rel töltsd be, hogy az DOM betöltődjön előtte -->
+    <script src="index_Scripts.js" defer></script>
+
+    <!-- Alap meta információk (SEO / accessibility) -->
+    <meta name="description" content="Emmet, HTML, CSS és JavaScript tippek — egyszerű, tiszta példaoldal." />
+
+    <title>Blog</title>
+</head>
+
+<body>
+
+    <header id="headerID" class="header_class">
+        <h1>Saját blogom</h1>
+    </header>
+
+    <aside>
+        <h3 id="navigation">Kategóriák (Navigáció)</h3>
+        <nav>
+            <ul>
+                <!--#1 -> Egy adott id-ra mutatnak.-->
+                <li><a href="#azure">Azure</a></li>
+                <li><a href="#useful_links">Hasznos linkek</a></li>
+                <li>
+                    <a href="#hotkeys_for_vscode">Hotkeys VS code-hoz</a>
+                </li>
+                <li>
+                    <a href="#vscode_extension_list">VS code kiegészítők</a>
+                </li>
+                <li><a href="#html">HTML</a></li>
+                <li><a href="#emmet">Emmet</a></li>
+                <li><a href="#css">CSS</a></li>
+                <li><a href="#js">JavaScript</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div id="grid-container">
+        <h2>Emmet tippek</h2>
+
+        <div id="top_main">
+            <h3>Alap dokumentum</h3>
+            <p><strong>!</strong> vagy <strong>html:5</strong> → teljes HTML5 sablon:</p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+        &lt;html lang="en"&gt;
+        &lt;head&gt;
+          &lt;meta charset="UTF-8"&gt;
+          &lt;title&gt;Document&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;&lt;/body&gt;
+        &lt;/html&gt;
+        </code></pre>
+
+            <h2>Szöveg és struktúra</h2>
+            <ul>
+                <li><code>p</code> → &lt;p&gt;&lt;/p&gt;</li>
+                <li><code>h1 … h6</code> → &lt;h1&gt;&lt;/h1&gt; … &lt;h6&gt;&lt;/h6&gt;</li>
+                <li><code>ul&gt;li*3</code> →
+                    &lt;ul&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;/ul&gt;
+                </li>
+                <li><code>ol&gt;li*3</code> →
+                    &lt;ol&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;/ol&gt;
+                </li>
+                <li><code>dl&gt;dt+dd</code> → &lt;dl&gt;&lt;dt&gt;&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;</li>
+            </ul>
+
+            <h2>Linkek</h2>
+            <ul>
+                <li><code>a</code> → &lt;a href=""&gt;&lt;/a&gt;</li>
+                <li><code>a:link</code> → &lt;a href="http://"&gt;&lt;/a&gt;</li>
+                <li><code>a:mail</code> → &lt;a href="mailto:"&gt;&lt;/a&gt;</li>
+            </ul>
+
+            <h2>Képek</h2>
+            <ul>
+                <li><code>img</code> → &lt;img src="" alt=""&gt;</li>
+                <li><code>img:s</code> → &lt;img srcset="" src="" alt=""&gt;</li>
+                <li><code>picture&gt;source:srcset+img</code> → &lt;picture&gt;&lt;source srcset=""&gt;&lt;img src=""
+                    alt=""&gt;&lt;/picture&gt;</li>
+            </ul>
+            <h2>Űrlapok</h2>
+            <ul>
+                <li><code>form</code> → &lt;form action=""&gt;&lt;/form&gt;</li>
+                <li><code>form:get</code> → &lt;form action="" method="get"&gt;&lt;/form&gt;</li>
+                <li><code>form:post</code> → &lt;form action="" method="post"&gt;&lt;/form&gt;</li>
+                <li><code>input</code> → &lt;input type="text"&gt;</li>
+                <li><code>input:s</code> → &lt;input type="submit" value=""&gt;</li>
+                <li><code>input:r</code> → &lt;input type="radio" name="" id=""&gt;</li>
+                <li><code>input:c</code> → &lt;input type="checkbox" name="" id=""&gt;</li>
+                <li><code>textarea</code> → &lt;textarea name="" id="" cols="30" rows="10"&gt;&lt;/textarea&gt;</li>
+                <li><code>select+</code> → &lt;select name="" id=""&gt;&lt;option
+                    value=""&gt;&lt;/option&gt;&lt;/select&gt;</li>
+            </ul>
+        </div>
 
         <aside>
-            <h3 id="navigation">Kategóriák (Navigáció)</h3>
-            <nav>
-                <ul>
-                    <!--#1 -> Egy adott id-ra mutatnak.-->
-                    <li><a href="#azure">Azure</a></li>
-                    <li><a href="#useful_links">Hasznos linkek</a></li>
-                    <li>
-                        <a href="#hotkeys_for_vscode">Hotkeys VS code-hoz</a>
-                    </li>
-                    <li>
-                        <a href="#vscode_extension_list">VS code kiegészítők</a>
-                    </li>
-                    <li><a href="#html">HTML</a></li>
-                    <li><a href="#emmet">Emmet</a></li>
-                    <li><a href="#css">CSS</a></li>
-                    <li><a href="#js">JavaScript</a></li>
-                </ul>
-            </nav>
+            <h3>Szekciók</h3>
+            <ul>
+                <li><code>header</code> → &lt;header&gt;&lt;/header&gt;</li>
+                <li><code>footer</code> → &lt;footer&gt;&lt;/footer&gt;</li>
+                <li><code>main</code> → &lt;main&gt;&lt;/main&gt;</li>
+                <li><code>section</code> → &lt;section&gt;&lt;/section&gt;</li>
+                <li><code>article</code> → &lt;article&gt;&lt;/article&gt;</li>
+                <li><code>aside</code> → &lt;aside&gt;&lt;/aside&gt;</li>
+                <li><code>nav</code> → &lt;nav&gt;&lt;/nav&gt;</li>
+            </ul>
+
+            <h2>Táblázatok</h2>
+            <ul>
+                <li><code>table+</code> → &lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</li>
+                <li><code>tr+</code> → &lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;</li>
+            </ul>
+
+            <h2>Import-ok</h2>
+            <ul>
+                <li>
+                    <code>link:css</code> → CSS importáláshoz.
+                </li>
+                <li>
+                    <code>script:src</code> → JS importáláshoz.
+                </li>
+            </ul>
         </aside>
-        <main id="container">
-            <section>
-                <article>
-                    <h2>Azure</h2>
-                    <h3 id="azure">Azure 1. fejezet</h3>
-                    <small>A DevOps alapjai és változatai</small>
-                    <p>
-                        A szoftverfejlesztési folyamatok és a kiadási
-                        követelmények időről időre változhatnak annak érdekében,
-                        hogy a vállalatok továbbra is értéket nyújtsanak az
-                        ügyfeleknek, és piaci elfogadottságot érjenek el. A
-                        méretezhetőség és a korai visszajelzés megszerzése
-                        érdekében számos szervezet gyakori kiadási módszertant
-                        alkalmaz az új funkciók vagy hibajavítások bevezetésére.
-                        Ezek a kiadások olyan gyakorisággal kerülhetnek éles
-                        rendszerbe, mint hetente egyszer, de előfordulhat, hogy
-                        naponta, óránként, vagy akár tíz másodpercenként is.
-                        Annak érdekében, hogy a vállalatok megőrizzék piaci
-                        előnyüket vagy gyors visszajelzési ciklust alakítsanak
-                        ki, egyre inkább bevezetik a DevOps gyakorlatokat, mint
-                        például a folyamatos kézbesítést (Continuous Delivery)
-                        és a folyamatos telepítést (Continuous Deployment).
-                        Ebben a fejezetben bevezetést kapsz a DevOps fogalmaiba
-                        és gyakorlataiba.
-                    </p>
-                </article>
+    </div>
 
-                <article>
-                    <h3>Azure 2. fejezet</h3>
-                    <small>Szoftverfejlesztés</small>
-                    <p>
-                        A szoftverfejlesztési iparág hosszú éveken keresztül a
-                        vízesés modellt követte, majd fokozatosan áttért az
-                        agilis modell alkalmazására. Az agilis fejlesztési
-                        modell lehetővé teszi, hogy a csapatok könnyebben
-                        alkalmazkodjanak a változó követelményekhez, emellett
-                        elősegíti a jobb együttműködést a különböző csapatok
-                        között, és növeli a termelékenységet. A vízesés
-                        modellben az alkalmazásfejlesztés szigorúan egymást
-                        követő lépésekben zajlik, és a teljes alkalmazás csak a
-                        projekt végén kerül kiadásra. Ez azonban gyakran azzal
-                        jár, hogy a fejlesztési folyamat nagyon hosszú időt vesz
-                        igénybe, és mire a projekt befejeződik, sok olyan
-                        funkció, amelyet eredetileg elképzeltek, már elveszíti
-                        az aktualitását, vagy egyszerűen nem hasznos a
-                        felhasználók számára. További probléma, hogy ebben a
-                        megközelítésben hiányzik a végfelhasználói visszajelzés
-                        folyamata: a felhasználók elvárásai és visszajelzései
-                        csak a teljes fejlesztési és telepítési folyamat
-                        lezárása után jutnak el a fejlesztőkhöz. Az agilis
-                        módszertan ezzel szemben megköveteli, hogy a kész
-                        funkciók – vagyis a gyártásra kész részek – jóval
-                        gyakrabban kerüljenek kiadásra. Ennek célja, hogy a
-                        felhasználók minél korábban adhassanak visszajelzést,
-                        amelyre a fejlesztőcsapat időben tud reagálni.
-                        Ugyanakkor, ha az agilitást nem egészíti ki a DevOps
-                        szemlélet, a fejlesztési ciklus még mindig hosszabb időt
-                        vehet igénybe, és sok manuális munkát igényel. A DevOps
-                        éppen ezeket a hiányosságokat kezeli az agilis
-                        fejlesztési és telepítési gyakorlatokban: lehetővé teszi
-                        az automatizált kiadásokat, gyakran beépített
-                        automatikus ellenőrzésekkel és ellenőrzőpontokkal a
-                        különböző lépések között.
-                    </p>
-                </article>
 
-                <article>
-                    <h3>Azure 3. fejezet</h3>
-                    <small>DevOps</small>
-                    <p>
-                        A DevOps napjaink egyik legfelkapottabb témája az IT
-                        világában, ugyanakkor számos különböző értelmezése és
-                        változata létezik. Ha tíz ember elkezdene beszélgetni a
-                        DevOps-ról, jó eséllyel tíz eltérő magyarázatot adnának
-                        rá.
-                    </p>
-                </article>
-            </section>
-            <section>
-                <article>
-                    <h2 id="useful_links">Hasznos linkek</h2>
+    <main id="main_container">
+        <section>
+            <article>
+                <h2>Azure</h2>
+                <h3 id="azure">Azure 1. fejezet</h3>
+                <small>A DevOps alapjai és változatai</small>
+                <p>
+                    A szoftverfejlesztési folyamatok és a kiadási
+                    követelmények időről időre változhatnak annak érdekében,
+                    hogy a vállalatok továbbra is értéket nyújtsanak az
+                    ügyfeleknek, és piaci elfogadottságot érjenek el. A
+                    méretezhetőség és a korai visszajelzés megszerzése
+                    érdekében számos szervezet gyakori kiadási módszertant
+                    alkalmaz az új funkciók vagy hibajavítások bevezetésére.
+                    Ezek a kiadások olyan gyakorisággal kerülhetnek éles
+                    rendszerbe, mint hetente egyszer, de előfordulhat, hogy
+                    naponta, óránként, vagy akár tíz másodpercenként is.
+                    Annak érdekében, hogy a vállalatok megőrizzék piaci
+                    előnyüket vagy gyors visszajelzési ciklust alakítsanak
+                    ki, egyre inkább bevezetik a DevOps gyakorlatokat, mint
+                    például a folyamatos kézbesítést (Continuous Delivery)
+                    és a folyamatos telepítést (Continuous Deployment).
+                    Ebben a fejezetben bevezetést kapsz a DevOps fogalmaiba
+                    és gyakorlataiba.
+                </p>
+            </article>
 
-                    <ul>
-                        <li>
-                            <a
-                                href="https://www.youtube.com/playlist?list=PLlJeO89e07g6HaiIEw7pYll4DQCFb6SFJ"
-                                >Webfejlesztés | Alapok</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="https://www.youtube.com/playlist?list=PLyriihBWoulwgaKMNF6M20iD0c6iDtu0S"
-                            >
-                                Programozási alapismeretek</a
-                            >
-                        </li>
+            <article>
+                <h3>Azure 2. fejezet</h3>
+                <small>Szoftverfejlesztés</small>
+                <p>
+                    A szoftverfejlesztési iparág hosszú éveken keresztül a
+                    vízesés modellt követte, majd fokozatosan áttért az
+                    agilis modell alkalmazására. Az agilis fejlesztési
+                    modell lehetővé teszi, hogy a csapatok könnyebben
+                    alkalmazkodjanak a változó követelményekhez, emellett
+                    elősegíti a jobb együttműködést a különböző csapatok
+                    között, és növeli a termelékenységet. A vízesés
+                    modellben az alkalmazásfejlesztés szigorúan egymást
+                    követő lépésekben zajlik, és a teljes alkalmazás csak a
+                    projekt végén kerül kiadásra. Ez azonban gyakran azzal
+                    jár, hogy a fejlesztési folyamat nagyon hosszú időt vesz
+                    igénybe, és mire a projekt befejeződik, sok olyan
+                    funkció, amelyet eredetileg elképzeltek, már elveszíti
+                    az aktualitását, vagy egyszerűen nem hasznos a
+                    felhasználók számára. További probléma, hogy ebben a
+                    megközelítésben hiányzik a végfelhasználói visszajelzés
+                    folyamata: a felhasználók elvárásai és visszajelzései
+                    csak a teljes fejlesztési és telepítési folyamat
+                    lezárása után jutnak el a fejlesztőkhöz. Az agilis
+                    módszertan ezzel szemben megköveteli, hogy a kész
+                    funkciók – vagyis a gyártásra kész részek – jóval
+                    gyakrabban kerüljenek kiadásra. Ennek célja, hogy a
+                    felhasználók minél korábban adhassanak visszajelzést,
+                    amelyre a fejlesztőcsapat időben tud reagálni.
+                    Ugyanakkor, ha az agilitást nem egészíti ki a DevOps
+                    szemlélet, a fejlesztési ciklus még mindig hosszabb időt
+                    vehet igénybe, és sok manuális munkát igényel. A DevOps
+                    éppen ezeket a hiányosságokat kezeli az agilis
+                    fejlesztési és telepítési gyakorlatokban: lehetővé teszi
+                    az automatizált kiadásokat, gyakran beépített
+                    automatikus ellenőrzésekkel és ellenőrzőpontokkal a
+                    különböző lépések között.
+                </p>
+            </article>
 
-                        <li>
-                            <a
-                                href="https://www.youtube.com/playlist?list=PL6VA7Z5zO0dq-6NWrHzIy7dqLfeZhhhOz"
-                            >
-                                JavaScript az alapoktól kurzus</a
-                            >
-                        </li>
+            <article>
+                <h3>Azure 3. fejezet</h3>
+                <small>DevOps</small>
+                <p>
+                    A DevOps napjaink egyik legfelkapottabb témája az IT
+                    világában, ugyanakkor számos különböző értelmezése és
+                    változata létezik. Ha tíz ember elkezdene beszélgetni a
+                    DevOps-ról, jó eséllyel tíz eltérő magyarázatot adnának
+                    rá.
+                </p>
+            </article>
+        </section>
 
-                        <li>
-                            <a
-                                href="https://www.youtube.com/watch?v=-atblwgc63E&list=PL0vfts4VzfNg__PkSVKhrYvdc35kHybBy"
-                                >Developer Productivity</a
-                            >
-                        </li>
+        <section>
+            <article>
+                <h2 id="useful_links">Hasznos linkek</h2>
 
-                        <li>
-                            <a
-                                href="https://www.youtube.com/watch?v=CtrMhe5Azys"
-                                >Webdesign tanfolyam: HTML + CSS alapoktól a
-                                felső szintig</a
-                            >
-                        </li>
-                        <li>
-                            <a href="https://www.w3schools.com/">W3Schools</a>
-                        </li>
+                <ul>
+                    <li>
+                        <a href="https://www.youtube.com/playlist?list=PLlJeO89e07g6HaiIEw7pYll4DQCFb6SFJ">Webfejlesztés
+                            | Alapok</a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/playlist?list=PLyriihBWoulwgaKMNF6M20iD0c6iDtu0S">
+                            Programozási alapismeretek</a>
+                    </li>
 
-                        <li>
-                            <a href="https://devchallenge.hu/hu/tests-list"
-                                >Kvíz</a
-                            >
-                        </li>
+                    <li>
+                        <a href="https://www.youtube.com/playlist?list=PL6VA7Z5zO0dq-6NWrHzIy7dqLfeZhhhOz">
+                            JavaScript az alapoktól kurzus</a>
+                    </li>
 
-                        <li>
-                            <a href="https://www.freecodecamp.org/"
-                                >FreeCodeCamp</a
-                            >
-                        </li>
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=-atblwgc63E&list=PL0vfts4VzfNg__PkSVKhrYvdc35kHybBy">Developer
+                            Productivity</a>
+                    </li>
 
-                        <li>
-                            <a href="https://www.codecademy.com/">Codecademy</a>
-                        </li>
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=CtrMhe5Azys">Webdesign tanfolyam: HTML + CSS alapoktól
+                            a
+                            felső szintig</a>
+                    </li>
+                    <li>
+                        <a href="https://www.w3schools.com/">W3Schools</a>
+                    </li>
 
-                        <li>
-                            <a href="https://www.classcentral.com/"
-                                >Class Central</a
-                            >
-                        </li>
+                    <li>
+                        <a href="https://devchallenge.hu/hu/tests-list">Kvíz</a>
+                    </li>
 
-                        <li>
-                            <a href="https://www.geeksforgeeks.org/"
-                                >Geeks for geeks</a
-                            >
-                        </li>
-                        <li>
-                            <a href="https://notebooklm.google.com/"
-                                >Notebook LM</a
-                            >
-                        </li>
-                    </ul>
+                    <li>
+                        <a href="https://www.freecodecamp.org/">FreeCodeCamp</a>
+                    </li>
 
-                    <h3>Python és még sok máshoz</h3>
-                    <ul>
-                        <li>
-                            <a href="https://realpython.com/html-css-python/"
-                                >Real Python (HTML-CSS-Python)
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="https://www.codingame.com/ide/puzzle/onboarding"
-                                >Codin Game</a
-                            >
-                        </li>
+                    <li>
+                        <a href="https://www.codecademy.com/">Codecademy</a>
+                    </li>
 
-                        <li>
-                            <a href="https://www.streamlit.io/">Streamlit</a>
-                        </li>
+                    <li>
+                        <a href="https://www.classcentral.com/">Class Central</a>
+                    </li>
 
-                        <li>
-                            <a href="https://www.codedex.io//">Codedex</a>
-                        </li>
-                    </ul>
+                    <li>
+                        <a href="https://www.geeksforgeeks.org/">Geeks for geeks</a>
+                    </li>
+                    <li>
+                        <a href="https://notebooklm.google.com/">Notebook LM</a>
+                    </li>
+                </ul>
 
-                    <h3>CSS</h3>
-                    <ul>
-                        <il>
-                            <a href="https://cssbattle.dev/">CSS Battle</a> </il
-                        ><br />
+                <h3>Python és még sok máshoz</h3>
+                <ul>
+                    <li>
+                        <a href="https://realpython.com/html-css-python/">Real Python (HTML-CSS-Python)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.codingame.com/ide/puzzle/onboarding">Codin Game</a>
+                    </li>
 
-                        <il>
-                            <a href="https://css-tricks.com/"
-                                >CSS Tricks</a
-                            > </il
-                        ><br />
-                    </ul>
+                    <li>
+                        <a href="https://www.streamlit.io/">Streamlit</a>
+                    </li>
 
-                    <h3>Projekt vezetéshez</h3>
-                    <ul>
-                        <li><a href="https://www.github.com">GitHub</a></li>
-                        <li>
-                            <a href="https://www.atlassian.com/software/jira"
-                                >Jira</a
-                            >
-                        </li>
-                        <li><a href="https://gitlab.com/">Gitlab</a></li>
-                    </ul>
-                    <h3>Teszteléshez</h3>
-                    <ul>
-                        <li>
-                            <a
-                                href="https://www.youtube.com/watch?v=XKFWANvLoGo&list=PLimzEeSv6f4XDEg0glRcKVvLNUgZdjbQa&index=2"
-                                >Tesztelés alapjai</a
-                            >
-                        </li>
-                    </ul>
-                    <br />
-                </article>
-            </section>
+                    <li>
+                        <a href="https://www.codedex.io//">Codedex</a>
+                    </li>
+                </ul>
 
-            <section>
-                <article>
-                    <h2 id="hotkeys_for_vscode">Hotkeys</h2>
-                    <p>HTML: html:5</p>
-                    <p>JS: clg</p>
-                    <p>
-                        Bal alul Settings->Settings->Text Editor ->
-                        Formatting->Foomat On Save-t pipáld be.
-                    </p>
+                <h3>CSS</h3>
+                <ul>
+                    <li>
+                        <a href="https://cssbattle.dev/">CSS Battle</a>
+                    </li><br />
 
-                    <p>View -> Word Wrap (Alt+Z =Sor tördelés)</p>
+                    <li>
+                        <a href="https://css-tricks.com/">CSS Tricks</a>
+                    </li><br />
+                </ul>
 
-                    <p>Hely foglaló szöveg: lorem50 tab</p>
+                <h3>Projekt vezetéshez</h3>
+                <ul>
+                    <li><a href="https://www.github.com">GitHub</a></li>
+                    <li>
+                        <a href="https://www.atlassian.com/software/jira">Jira</a>
+                    </li>
+                    <li><a href="https://gitlab.com/">Gitlab</a></li>
+                </ul>
+                <h3>Teszteléshez</h3>
+                <ul>
+                    <li>
+                        <a
+                            href="https://www.youtube.com/watch?v=XKFWANvLoGo&list=PLimzEeSv6f4XDEg0glRcKVvLNUgZdjbQa&index=2">Tesztelés
+                            alapjai</a>
+                    </li>
+                </ul>
+                <br />
+            </article>
+        </section>
 
-                    <a href="https://code.visualstudio.com/docs/languages/emmet"
-                        >Emmet</a
-                    >
-                    <br /><br />
-                    <a href="https://docs.emmet.io/cheat-sheet/"
-                        >Emmet Cheat Sheet</a
-                    ><br />
-                    <br />
-                    <b> Prettier beállítása: </b><br />
-                    <p>
-                        ⚙️ Alapértelmezett formázónak állítás Nyomd meg:
-                        Ctrl+Shift+P Írd be: Format Document With... Válaszd:
-                        Configure Default Formatter Állítsd:
-                        esbenp.prettier-vscode
-                    </p>
-                    <p>
-                        💾 Format on Save bekapcsolása Menj: File → Preferences
-                        → Settings Keresőbe írd: format on save Pipáld be:
-                        Editor: Format On Save
-                    </p>
-                    <p>Settings->Extensions->Prettier-> Tab Width:4</p>
-                </article>
-            </section>
-            <section>
-                <article>
-                    <h2 id="vscode_extension_list">
-                        VS Code kiegészítők listája
-                    </h2>
-                    <p>A felkiálltójellel ellátottak a legfontosabbak.</p>
-                    <ol>
-                        <li>
-                            Angular Language Service (Segít Angular
-                            projektekben: hibák, kódkiegészítés, IntelliSense.)
-                        </li>
-                        <li>
-                            Angular Snippets (Version 18) (Kész Angular
-                            kódrészletek (ngFor, ngIf, component stb.).)
-                        </li>
-                        <li>Auto Close Tag!</li>
-                        <li>Auto Rename Tag!</li>
-                        <li>
-                            Bookmarks (Kódrészek megjelölése könyvjelzőként →
-                            gyorsabb navigálás.)
-                        </li>
-                        <li>
-                            Bootstrap 4, Font awesome 4, Font Awesome 5 Free
-                            (Gyors Bootstrap és ikon beillesztés.)
-                        </li>
-                        <li>
-                            Bootstrap 5 Quick Snippets (Gyors Bootstrap és ikon
-                            beillesztés.)
-                        </li>
-                        <li>Black Formatter (Python kódformázó.)</li>
-                        <li>
-                            Bracket Pair Color DLW (Beszínezi az egyező {} [] ()
-                            párokat.)
-                        </li>
-                        <li>
-                            Code Spell Checker (Ellenőrzi a helyesírást kódban
-                            (pl. elgépelések változónévben).) !
-                        </li>
-                        <li>CodeSnap (Kódrészletből szép képet készít.)</li>
-                        <li>
-                            Colorful Comments (A kommenteket színesebbé teszi
-                            (// TODO, // WARNING).)!
-                        </li>
-                        <li>Color Highlight (A CSS színeket kiemeli.)</li>
-                        <li>
-                            Copy Relative Path (Gyors másolása a fájl relatív
-                            elérési útvonalának.)
-                        </li>
-                        <li>
-                            CSS Peek (Ctrl+katt megmutatja, melyik CSS szabály
-                            vonatkozik az elemre.)!
-                        </li>
-                        <li>
-                            ESLint (JavaScript hibakereső és szabály-ellenőrző.)
-                        </li>
-                        <li>
-                            Formatting Toggle (Ki/be kapcsolja a kódformázót
-                            (pl. Prettier).)
-                        </li>
-                        <li>Git History(Megmutatja a régi commitokat.)</li>
-                        <li>Git Project Manager (Projektkezelés Git-tel.)</li>
-                        <li>
-                            GitHub Copilot (A kódon belül segít neked, ne
-                            használd.)
-                        </li>
-                        <li>GitHub Copilot Chat (Ne használd.)</li>
-                        <li>GitHub Pull Requests (GitHub PR-ek kezelése.)</li>
-                        <li>
-                            GitLens - Git supercharged (Mindenre jó a Gitben: ki
-                            írta a sort, mikor, változások, diff-ek.)
-                        </li>
-                        <li>Gradle for Java (Később kell.)</li>
-                        <li>Image preview (Képek előnézete a kódban.)</li>
-                        <li>
-                            IntelliCode (Okosabb kódkiegészítés Microsofttól.)
-                        </li>
-                        <li>
-                            IntelliCode API Usage Examples(Okosabb
-                            kódkiegészítés Microsofttól.)
-                        </li>
-                        <li>
-                            JavaScript (ES6) code snippets (Hotkey, pl.: clg)
-                        </li>
-                        <li>
-                            Live Sass Compiler (SCSS → CSS automatikus
-                            fordítás.)
-                            <a
-                                href="https://youtu.be/eLmyLg2TcHc?si=fm0GC8UI4KZvHvDu&t=594"
-                                >Hogyan használd?</a
-                            >
-                        </li>
-                        <li>Live Server!</li>
-                        <li>
-                            npm Intellisense (NPM csomagnevek automatikus
-                            kiegészítése.)!
-                        </li>
-                        <li>
-                            Playwright Test for VSCode (Webtesztek futtatása
-                            Playwrighttal.)
-                        </li>
-                        <li>Prettier - Code formatter!</li>
-                        <li>Project Manager!</li>
-                        <li>
-                            Quokka.js (Azonnal futtatja a JavaScript kódot, még
-                            mentés nélkül. De nem működik megfelelően a
-                            Ctrl+space)
-                        </li>
-                        <li>Restore Terminals</li>
-                    </ol>
-                    <p>Csak dizájn, kinézet:</p>
-                    <ol>
-                        <li>One Dark Pro!</li>
-                        <li>Material Icon Theme!</li>
-                        <li>
-                            Power Mode Plus (Animációk gépelés közben. Csak
-                            szórakozás.) Az adatlapján menj a fogaskerékre ->
-                            Powermode:Enabled.
-                        </li>
-                        <li>freeCodeCamp Dark Theme</li>
-                        <li>One Monokai Theme</li>
-                    </ol>
-                    <br />
-                </article>
-            </section>
-            <section>
-                <article>
-                    <h2 id="html">HTML</h2>
+        <section>
+            <article>
+                <h2 id="hotkeys_for_vscode">Hotkeys</h2>
+                <p>HTML: html:5</p>
+                <p>JS: clg</p>
+                <p>
+                    Bal alul Settings->Settings->Text Editor ->
+                    Formatting->Foomat On Save-t pipáld be.
+                </p>
 
-                    <p>
-                        A HTML (HyperText Markup Language) a weboldalak alapját
-                        adó leíró nyelv. Minden, amit egy weboldalon látsz –
-                        címek, bekezdések, képek, listák, táblázatok, űrlapok –
-                        HTML tagek segítségével jelenik meg. A HTML nem
-                        programozási nyelv, hanem egy szerkezetet leíró nyelv,
-                        amely megmondja a böngészőnek, hogy melyik elem mit
-                        jelent és hogyan épül fel a dokumentum.
-                    </p>
+                <p>View -> Word Wrap (Alt+Z =Sor tördelés)</p>
 
-                    <p>
-                        A HTML tagek mindig valamilyen funkciót jelölnek: van,
-                        amelyik címsort hoz létre, van, amelyik egy szöveg
-                        bekezdést, listát vagy akár űrlapot. A tagek logikusan
-                        hierarchiába rendeződnek, így a böngésző és a
-                        keresőmotorok számára is érthetővé válik a dokumentum
-                        felépítése.
-                    </p>
+                <p>Hely foglaló szöveg: lorem50 tab</p>
 
-                    <p>
-                        Az alábbiakban áttekintjük a leggyakrabban használt HTML
-                        elemeket, amelyek az alapját képezik minden modern
-                        weboldalnak.
-                    </p>
+                <a href="https://code.visualstudio.com/docs/languages/emmet">Emmet</a>
+                <br /><br />
+                <a href="https://docs.emmet.io/cheat-sheet/">Emmet Cheat Sheet</a><br />
+                <br />
+                <b> Prettier beállítása: </b><br />
+                <p>
+                    ⚙️ Alapértelmezett formázónak állítás Nyomd meg:
+                    Ctrl+Shift+P Írd be: Format Document With... Válaszd:
+                    Configure Default Formatter Állítsd:
+                    esbenp.prettier-vscode
+                </p>
+                <p>
+                    💾 Format on Save bekapcsolása Menj: File → Preferences
+                    → Settings Keresőbe írd: format on save Pipáld be:
+                    Editor: Format On Save
+                </p>
+                <p>Settings->Extensions->Prettier-> Tab Width:4</p>
+            </article>
+        </section>
+        <section>
+            <article>
+                <h2 id="vscode_extension_list">
+                    VS Code kiegészítők listája
+                </h2>
+                <p>A felkiálltójellel ellátottak a legfontosabbak.</p>
+                <ol>
+                    <li>
+                        Angular Language Service (Segít Angular
+                        projektekben: hibák, kódkiegészítés, IntelliSense.)
+                    </li>
+                    <li>
+                        Angular Snippets (Version 18) (Kész Angular
+                        kódrészletek (ngFor, ngIf, component stb.).)
+                    </li>
+                    <li>Auto Close Tag!</li>
+                    <li>Auto Rename Tag!</li>
+                    <li>
+                        Bookmarks (Kódrészek megjelölése könyvjelzőként →
+                        gyorsabb navigálás.)
+                    </li>
+                    <li>
+                        Bootstrap 4, Font awesome 4, Font Awesome 5 Free
+                        (Gyors Bootstrap és ikon beillesztés.)
+                    </li>
+                    <li>
+                        Bootstrap 5 Quick Snippets (Gyors Bootstrap és ikon
+                        beillesztés.)
+                    </li>
+                    <li>Black Formatter (Python kódformázó.)</li>
+                    <li>
+                        Bracket Pair Color DLW (Beszínezi az egyező {} [] ()
+                        párokat.)
+                    </li>
+                    <li>
+                        Code Spell Checker (Ellenőrzi a helyesírást kódban
+                        (pl. elgépelések változónévben).) !
+                    </li>
+                    <li>CodeSnap (Kódrészletből szép képet készít.)</li>
+                    <li>
+                        Colorful Comments (A kommenteket színesebbé teszi
+                        (// TODO, // WARNING).)!
+                    </li>
+                    <li>Color Highlight (A CSS színeket kiemeli.)</li>
+                    <li>
+                        Copy Relative Path (Gyors másolása a fájl relatív
+                        elérési útvonalának.)
+                    </li>
+                    <li>
+                        CSS Peek (Ctrl+katt megmutatja, melyik CSS szabály
+                        vonatkozik az elemre.)!
+                    </li>
+                    <li>
+                        ESLint (JavaScript hibakereső és szabály-ellenőrző.)
+                    </li>
+                    <li>
+                        Formatting Toggle (Ki/be kapcsolja a kódformázót
+                        (pl. Prettier).)
+                    </li>
+                    <li>Git History(Megmutatja a régi commitokat.)</li>
+                    <li>Git Project Manager (Projektkezelés Git-tel.)</li>
+                    <li>
+                        GitHub Copilot (A kódon belül segít neked, ne
+                        használd.)
+                    </li>
+                    <li>GitHub Copilot Chat (Ne használd.)</li>
+                    <li>GitHub Pull Requests (GitHub PR-ek kezelése.)</li>
+                    <li>
+                        GitLens - Git supercharged (Mindenre jó a Gitben: ki
+                        írta a sort, mikor, változások, diff-ek.)
+                    </li>
+                    <li>Gradle for Java (Később kell.)</li>
+                    <li>Image preview (Képek előnézete a kódban.)</li>
+                    <li>
+                        IntelliCode (Okosabb kódkiegészítés Microsofttól.)
+                    </li>
+                    <li>
+                        IntelliCode API Usage Examples(Okosabb
+                        kódkiegészítés Microsofttól.)
+                    </li>
+                    <li>
+                        JavaScript (ES6) code snippets (Hotkey, pl.: clg)
+                    </li>
+                    <li>
+                        Live Sass Compiler (SCSS → CSS automatikus
+                        fordítás.)
+                        <a href="https://youtu.be/eLmyLg2TcHc?si=fm0GC8UI4KZvHvDu&t=594">Hogyan használd?</a>
+                    </li>
+                    <li>Live Server!</li>
+                    <li>
+                        npm Intellisense (NPM csomagnevek automatikus
+                        kiegészítése.)!
+                    </li>
+                    <li>
+                        Playwright Test for VSCode (Webtesztek futtatása
+                        Playwrighttal.)
+                    </li>
+                    <li>Prettier - Code formatter!</li>
+                    <li>Project Manager!</li>
+                    <li>
+                        Quokka.js (Azonnal futtatja a JavaScript kódot, még
+                        mentés nélkül. De nem működik megfelelően a
+                        Ctrl+space)
+                    </li>
+                    <li>Restore Terminals</li>
+                </ol>
+                <p>Csak dizájn, kinézet:</p>
+                <ol>
+                    <li>One Dark Pro!</li>
+                    <li>Material Icon Theme!</li>
+                    <li>
+                        Power Mode Plus (Animációk gépelés közben. Csak
+                        szórakozás.) Az adatlapján menj a fogaskerékre ->
+                        Powermode:Enabled.
+                    </li>
+                    <li>freeCodeCamp Dark Theme</li>
+                    <li>One Monokai Theme</li>
+                </ol>
+                <br />
+            </article>
+        </section>
+        <section>
+            <article>
+                <h2 id="html">HTML</h2>
 
-                    <h3>Címsorok (Headings)</h3>
-                    <p>A HTML 6 különböző szintű címsort használ:</p>
-                    <ul>
-                        <li><code>&lt;h1&gt;</code> – a legnagyobb, főcím</li>
-                        <li><code>&lt;h2&gt;</code> – alcím</li>
-                        <li><code>&lt;h3&gt;</code> – kisebb alcím</li>
-                        <li>…</li>
-                        <li><code>&lt;h6&gt;</code> – a legkisebb címsor</li>
-                    </ul>
+                <p>
+                    A HTML (HyperText Markup Language) a weboldalak alapját
+                    adó leíró nyelv. Minden, amit egy weboldalon látsz –
+                    címek, bekezdések, képek, listák, táblázatok, űrlapok –
+                    HTML tagek segítségével jelenik meg. A HTML nem
+                    programozási nyelv, hanem egy szerkezetet leíró nyelv,
+                    amely megmondja a böngészőnek, hogy melyik elem mit
+                    jelent és hogyan épül fel a dokumentum.
+                </p>
 
-                    <p>
-                        A címsorok hierarchiát adnak a dokumentumnak, és
-                        segítenek a keresőmotoroknak is a tartalom
-                        értelmezésében.
-                    </p>
+                <p>
+                    A HTML tagek mindig valamilyen funkciót jelölnek: van,
+                    amelyik címsort hoz létre, van, amelyik egy szöveg
+                    bekezdést, listát vagy akár űrlapot. A tagek logikusan
+                    hierarchiába rendeződnek, így a böngésző és a
+                    keresőmotorok számára is érthetővé válik a dokumentum
+                    felépítése.
+                </p>
 
-                    <h3>Bekezdés</h3>
-                    <p>
-                        A <code>&lt;p&gt;</code> tag hozza létre a bekezdéseket.
-                        A böngésző automatikusan ad körülötte egy kis térközt,
-                        így tagoltabbá és olvashatóbbá válik a szöveg.
-                    </p>
-                    <h3>Listák</h3>
-                    <p><b>A HTML kétféle listát használ:</b></p>
-                    <p>Rendezetlen lista (unordered list)</p>
-                    <ul>
-                        <li>&lt;ul&gt; – felsorolás, általában pontokkal</li>
-                        <li>&lt;li&gt; – listaelem</li>
-                    </ul>
-                    <p>Rendezett lista (ordered list)</p>
-                    <ul>
-                        <li>&lt;ol> – számozott lista</li>
-                        <li>&lt;li&gt; – listaelem</li>
-                    </ul>
+                <p>
+                    Az alábbiakban áttekintjük a leggyakrabban használt HTML
+                    elemeket, amelyek az alapját képezik minden modern
+                    weboldalnak.
+                </p>
 
-                    <h3>Táblázatok</h3>
-                    <p>A táblázatok több részből állnak:</p>
-                    <ul>
-                        <li><code>&lt;table&gt;</code> – maga a táblázat</li>
-                        <li>
-                            <code>&lt;thead&gt;</code> – a fejléc sorait
-                            foglalja magába
-                        </li>
-                        <li>
-                            <code>&lt;tbody&gt;</code> – a tartalmi sorokat
-                            tartalmazza
-                        </li>
-                        <li><code>&lt;tr&gt;</code> – egy sor</li>
-                        <li>
-                            <code>&lt;th&gt;</code> – fejléc cella (általában
-                            félkövér és középre igazított)
-                        </li>
-                        <li><code>&lt;td&gt;</code> – normál adatcella</li>
-                    </ul>
+                <h3>Címsorok (Headings)</h3>
+                <p>A HTML 6 különböző szintű címsort használ:</p>
+                <ul>
+                    <li><code>&lt;h1&gt;</code> – a legnagyobb, főcím</li>
+                    <li><code>&lt;h2&gt;</code> – alcím</li>
+                    <li><code>&lt;h3&gt;</code> – kisebb alcím</li>
+                    <li>…</li>
+                    <li><code>&lt;h6&gt;</code> – a legkisebb címsor</li>
+                </ul>
 
-                    <h3>Div</h3>
-                    <p>
-                        A <code>&lt;div&gt;</code> egy általános blokk szintű
-                        konténer, amelynek önmagában nincs szemantikai
-                        jelentése. Főként a szerkezet kialakítására és CSS alapú
-                        stílusozásra használjuk.
-                    </p>
+                <p>
+                    A címsorok hierarchiát adnak a dokumentumnak, és
+                    segítenek a keresőmotoroknak is a tartalom
+                    értelmezésében.
+                </p>
 
-                    <h3>Űrlapok (Forms)</h3>
-                    <p>
-                        Az űrlapokat felhasználói adatok bekérésére használjuk:
-                    </p>
-                    <ul>
-                        <li><code>&lt;form&gt;</code> – maga az űrlap</li>
-                        <li>
-                            <b>action</b> – ide küldi az adatokat a böngésző
-                            (pl. backend URL)
-                        </li>
-                    </ul>
+                <h3>Bekezdés</h3>
+                <p>
+                    A <code>&lt;p&gt;</code> tag hozza létre a bekezdéseket.
+                    A böngésző automatikusan ad körülötte egy kis térközt,
+                    így tagoltabbá és olvashatóbbá válik a szöveg.
+                </p>
+                <h3>Listák</h3>
+                <p><b>A HTML kétféle listát használ:</b></p>
+                <p>Rendezetlen lista (unordered list)</p>
+                <ul>
+                    <li>&lt;ul&gt; – felsorolás, általában pontokkal</li>
+                    <li>&lt;li&gt; – listaelem</li>
+                </ul>
+                <p>Rendezett lista (ordered list)</p>
+                <ul>
+                    <li>&lt;ol> – számozott lista</li>
+                    <li>&lt;li&gt; – listaelem</li>
+                </ul>
 
-                    <p><b>Gyakori mezők:</b></p>
-                    <ul>
-                        <li><code>&lt;label&gt;</code> – a mező címkéje</li>
-                        <li>
-                            <code>&lt;input type="text"&gt;</code> – szöveg
-                            beviteli mező
-                        </li>
-                        <li>
-                            <code>&lt;input type="password"&gt;</code> – jelszó
-                            mező
-                        </li>
-                        <li>
-                            <code>&lt;input type="submit"&gt;</code> – küldés
-                            gomb
-                        </li>
-                    </ul>
+                <h3>Táblázatok</h3>
+                <p>A táblázatok több részből állnak:</p>
+                <ul>
+                    <li><code>&lt;table&gt;</code> – maga a táblázat</li>
+                    <li>
+                        <code>&lt;thead&gt;</code> – a fejléc sorait
+                        foglalja magába
+                    </li>
+                    <li>
+                        <code>&lt;tbody&gt;</code> – a tartalmi sorokat
+                        tartalmazza
+                    </li>
+                    <li><code>&lt;tr&gt;</code> – egy sor</li>
+                    <li>
+                        <code>&lt;th&gt;</code> – fejléc cella (általában
+                        félkövér és középre igazított)
+                    </li>
+                    <li><code>&lt;td&gt;</code> – normál adatcella</li>
+                </ul>
 
-                    <h3>Gomb</h3>
-                    <p>
-                        A <code>&lt;button&gt;</code> tag egy kattintható gombot
-                        hoz létre. Lehet benne szöveg, ikon, vagy akár más HTML
-                        elem is.
-                    </p>
+                <h3>Div</h3>
+                <p>
+                    A <code>&lt;div&gt;</code> egy általános blokk szintű
+                    konténer, amelynek önmagában nincs szemantikai
+                    jelentése. Főként a szerkezet kialakítására és CSS alapú
+                    stílusozásra használjuk.
+                </p>
 
-                    <h3>Vízszintes vonal</h3>
-                    <p>
-                        A <code>&lt;hr&gt;</code> egy egyszerű vízszintes
-                        elválasztó vonal. Nincs záró tagje.
-                    </p>
+                <h3>Űrlapok (Forms)</h3>
+                <p>
+                    Az űrlapokat felhasználói adatok bekérésére használjuk:
+                </p>
+                <ul>
+                    <li><code>&lt;form&gt;</code> – maga az űrlap</li>
+                    <li>
+                        <b>action</b> – ide küldi az adatokat a böngésző
+                        (pl. backend URL)
+                    </li>
+                </ul>
 
-                    <h3>Kvízben előforduló speciális tagek</h3>
-                    <ul>
-                        <li>
-                            <code>&lt;area&gt;</code> – képtérkép része, mindig
-                            <code>&lt;map&gt;</code> tagben használjuk
-                        </li>
-                        <li>
-                            <code>&lt;source&gt;</code> – videókhoz vagy
-                            hangfájlokhoz (<code>&lt;audio&gt;</code>,
-                            <code>&lt;video&gt;</code>)
-                        </li>
-                        <li>
-                            <code>&lt;noscript&gt;</code> – akkor jelenik meg,
-                            ha a böngészőben le van tiltva a JavaScript
-                        </li>
-                    </ul>
+                <p><b>Gyakori mezők:</b></p>
+                <ul>
+                    <li><code>&lt;label&gt;</code> – a mező címkéje</li>
+                    <li>
+                        <code>&lt;input type="text"&gt;</code> – szöveg
+                        beviteli mező
+                    </li>
+                    <li>
+                        <code>&lt;input type="password"&gt;</code> – jelszó
+                        mező
+                    </li>
+                    <li>
+                        <code>&lt;input type="submit"&gt;</code> – küldés
+                        gomb
+                    </li>
+                </ul>
 
-                    <h3>Kép</h3>
-                    <p>
-                        A képek megjelenítéséhez a következő taget használjuk:
-                    </p>
-                    <ul>
-                        <li><code>&lt;img src="..."&gt;</code> – maga a kép</li>
-                        <li><b>src</b> – a kép elérési útja</li>
-                        <li>
-                            Opcionális tulajdonságok: <b>width</b>,
-                            <b>height</b>
-                        </li>
-                    </ul>
+                <h3>Gomb</h3>
+                <p>
+                    A <code>&lt;button&gt;</code> tag egy kattintható gombot
+                    hoz létre. Lehet benne szöveg, ikon, vagy akár más HTML
+                    elem is.
+                </p>
 
-                    <h3>Link</h3>
-                    <p>
-                        A linkekhez az <code>&lt;a href="URL"&gt;</code> taget
-                        használjuk. A <b>href</b> tartalmazza a cél URL-t.
-                    </p>
+                <h3>Vízszintes vonal</h3>
+                <p>
+                    A <code>&lt;hr&gt;</code> egy egyszerű vízszintes
+                    elválasztó vonal. Nincs záró tagje.
+                </p>
 
-                    <h3>Szövegformázó tagek</h3>
-                    <ul>
-                        <li><code>&lt;b&gt;</code> – félkövér</li>
-                        <li><code>&lt;i&gt;</code> – dőlt</li>
-                        <li><code>&lt;u&gt;</code> – aláhúzott</li>
-                        <li>
-                            <code>&lt;code&gt;</code> – kód jelölésére szolgál
-                        </li>
-                    </ul>
-                    <h3>Kérdések és helyes válaszok</h3>
-                    <ol>
-                        <li>
-                            <strong
-                                >Melyik tag tartalmazza az &lt;area&gt;
-                                taget?</strong
-                            >
-                            <p>
-                                A helyes válasz: <code>&lt;map&gt;</code> tag.
-                            </p>
-                        </li>
+                <p>
+                    A label a for attribútumon keresztül kapcsolódik az input elemhez –
+                    pontosan az id alapján.
+                </p>
+                <p>Ezekért hasznos:</p>
+                <p>
+                    Ha a felhasználó a "Text" feliratra kattint, ugyanaz történik, mintha a
+                    rádiógombot pipálná ki — mert össze vannak kapcsolva. Kisebb, mobilos
+                    vagy formában lévő elemek használhatóbbak ettől.
+                </p>
 
-                        <li>
-                            <strong
-                                >Melyik tag tartalmazhatja a &lt;source&gt;
-                                taget?</strong
-                            >
-                            <p>
-                                A helyes válasz: <code>&lt;video&gt;</code> és
-                                <code>&lt;audio&gt;</code> tagek.
-                            </p>
-                        </li>
+                <p>Kipróbálható ezeken a funkció:</p>
 
-                        <li>
-                            <strong
-                                >Kell-e záró tag a &lt;hr&gt; elemnek?</strong
-                            >
-                            <p>
-                                A <code>&lt;hr&gt;</code> tagnek nem kell záró
-                                tag.
-                            </p>
-                        </li>
+                <input type="radio" id="r1" />
+                <label for="r1">Text</label>
 
-                        <li>
-                            <strong
-                                >Mikor jelenik meg a &lt;noscript&gt;
-                                tartalma?</strong
-                            >
-                            <p>
-                                A <code>&lt;noscript&gt;</code> akkor jelenít
-                                meg tartalmat, ha a JavaScript ki van kapcsolva
-                                vagy a böngésző nem támogatja.
-                            </p>
-                        </li>
+                <input type="text" id="number" value="6" size="2" />
 
-                        <li>
-                            <strong>
-                                Mit kell figyelembe venni, ha értéket akarunk
-                                elküldeni az adatbázisba?
-                            </strong>
-                            <p>
-                                Figyelni kell az input mező
-                                <code>value</code> attribútumára, a
-                                <code>name</code> attribútumra, valamint a
-                                submit gombra.
-                            </p>
-                            <p>
-                                A <code>&lt;label&gt;</code> nem küld adatot,
-                                csak feliratként szolgál.
-                            </p>
-                        </li>
-                    </ol>
-                </article>
-            </section>
-            <section>
-                <article>
-                    <h2 id="emmet">
-                        Emmet Cheat Sheet (HTML + CSS gyorsbillentyűk)
-                    </h2>
-                    <p>
-                        Az Emmet egy kódbővítő eszköz, amellyel rövid
-                        parancsokból automatikusan teljes HTML vagy CSS kódot
-                        tudsz generálni.
-                    </p>
+                <h3>Kvízben előforduló speciális tagek</h3>
+                <ul>
+                    <li>
+                        <code>&lt;area&gt;</code> – képtérkép része, mindig
+                        <code>&lt;map&gt;</code> tagben használjuk
+                    </li>
+                    <li>
+                        <code>&lt;source&gt;</code> – videókhoz vagy
+                        hangfájlokhoz (<code>&lt;audio&gt;</code>,
+                        <code>&lt;video&gt;</code>)
+                    </li>
+                    <li>
+                        <code>&lt;noscript&gt;</code> – akkor jelenik meg,
+                        ha a böngészőben le van tiltva a JavaScript
+                    </li>
+                </ul>
 
-                    <h3>HTML Emmet parancsok</h3>
-                    <ul>
-                        <li><code>!</code> → teljes HTML5 alap sablon</li>
-                        <li><code>div</code> → &lt;div&gt;&lt;/div&gt;</li>
-                        <li>
-                            <code>.box</code> → &lt;div
-                            class="box"&gt;&lt;/div&gt;
-                        </li>
-                        <li>
-                            <code>#header</code> → &lt;div
-                            id="header"&gt;&lt;/div&gt;
-                        </li>
-                        <li><code>ul>li</code> → beágyazott listaelem</li>
-                        <li><code>ul>li*5</code> → 5 darab li elem</li>
-                        <li><code>div>p>span</code> → hierarchia</li>
-                        <li>
-                            <code>p{Hello}</code> → &lt;p&gt;Hello&lt;/p&gt;
-                        </li>
-                        <li><code>a[href="#"]</code> → attribútumos elem</li>
-                    </ul>
+                <h3>Kép</h3>
+                <p>
+                    A képek megjelenítéséhez a következő taget használjuk:
+                </p>
+                <ul>
+                    <li><code>&lt;img src="..."&gt;</code> – maga a kép</li>
+                    <li><b>src</b> – a kép elérési útja</li>
+                    <li>
+                        Opcionális tulajdonságok: <b>width</b>,
+                        <b>height</b>
+                    </li>
+                </ul>
 
-                    <h3>Item numbering: $</h3>
-                    <p>Példa számozott listaelemre:</p>
-                    <pre>
+                <h3>Link</h3>
+                <p>
+                    A linkekhez az <code>&lt;a href="URL"&gt;</code> taget
+                    használjuk. A <b>href</b> tartalmazza a cél URL-t.
+                </p>
+
+                <h3>Szövegformázó tagek</h3>
+                <ul>
+                    <li><code>&lt;b&gt;</code> – félkövér</li>
+                    <li><code>&lt;i&gt;</code> – dőlt</li>
+                    <li><code>&lt;u&gt;</code> – aláhúzott</li>
+                    <li>
+                        <code>&lt;code&gt;</code> – kód jelölésére szolgál
+                    </li>
+                </ul>
+                <h3>Kérdések és helyes válaszok</h3>
+                <ol>
+                    <li>
+                        <strong>Melyik tag tartalmazza az &lt;area&gt;
+                            taget?</strong>
+                        <p>
+                            A helyes válasz: <code>&lt;map&gt;</code> tag.
+                        </p>
+                    </li>
+
+                    <li>
+                        <strong>Melyik tag tartalmazhatja a &lt;source&gt;
+                            taget?</strong>
+                        <p>
+                            A helyes válasz: <code>&lt;video&gt;</code> és
+                            <code>&lt;audio&gt;</code> tagek.
+                        </p>
+                    </li>
+
+                    <li>
+                        <strong>Kell-e záró tag a &lt;hr&gt; elemnek?</strong>
+                        <p>
+                            A <code>&lt;hr&gt;</code> tagnek nem kell záró
+                            tag.
+                        </p>
+                    </li>
+
+                    <li>
+                        <strong>Mikor jelenik meg a &lt;noscript&gt;
+                            tartalma?</strong>
+                        <p>
+                            A <code>&lt;noscript&gt;</code> akkor jelenít
+                            meg tartalmat, ha a JavaScript ki van kapcsolva
+                            vagy a böngésző nem támogatja.
+                        </p>
+                    </li>
+
+                    <li>
+                        <strong>
+                            Mit kell figyelembe venni, ha értéket akarunk
+                            elküldeni az adatbázisba?
+                        </strong>
+                        <p>
+                            Figyelni kell az input mező
+                            <code>value</code> attribútumára, a
+                            <code>name</code> attribútumra, valamint a
+                            submit gombra.
+                        </p>
+                        <p>
+                            A <code>&lt;label&gt;</code> nem küld adatot,
+                            csak feliratként szolgál.
+                        </p>
+                    </li>
+                </ol>
+            </article>
+        </section>
+        <section>
+            <article>
+                <h2 id="emmet">
+                    Emmet Cheat Sheet (HTML + CSS gyorsbillentyűk)
+                </h2>
+                <p>
+                    Az Emmet egy kódbővítő eszköz, amellyel rövid
+                    parancsokból automatikusan teljes HTML vagy CSS kódot
+                    tudsz generálni.
+                </p>
+
+                <h3>HTML Emmet parancsok</h3>
+                <ul>
+                    <li><code>!</code> → teljes HTML5 alap sablon</li>
+                    <li><code>div</code> → &lt;div&gt;&lt;/div&gt;</li>
+                    <li>
+                        <code>.box</code> → &lt;div
+                        class="box"&gt;&lt;/div&gt;
+                    </li>
+                    <li>
+                        <code>#header</code> → &lt;div
+                        id="header"&gt;&lt;/div&gt;
+                    </li>
+                    <li><code>ul>li</code> → beágyazott listaelem</li>
+                    <li><code>ul>li*5</code> → 5 darab li elem</li>
+                    <li><code>div>p>span</code> → hierarchia</li>
+                    <li>
+                        <code>p{Hello}</code> → &lt;p&gt;Hello&lt;/p&gt;
+                    </li>
+                    <li><code>a[href="#"]</code> → attribútumos elem</li>
+                </ul>
+
+                <h3>Item numbering: $</h3>
+                <p>Példa számozott listaelemre:</p>
+                <pre>
 ul>li.item$*5
 &lt;ul&gt;
     &lt;li class="item1"&gt;&lt;/li&gt;
@@ -704,12 +770,11 @@ ul>li.item$*5
     &lt;li class="item4"&gt;&lt;/li&gt;
     &lt;li class="item5"&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</pre
-                    >
+</pre>
 
-                    <h3>Multiplication: *</h3>
-                    <p>Példa ismétlésre:</p>
-                    <pre>
+                <h3>Multiplication: *</h3>
+                <p>Példa ismétlésre:</p>
+                <pre>
 ul>li*5
 &lt;ul&gt;
     &lt;li&gt;&lt;/li&gt;
@@ -718,201 +783,252 @@ ul>li*5
     &lt;li&gt;&lt;/li&gt;
     &lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</pre
-                    >
+</pre>
 
-                    <h3>Speciális Emmet elemek</h3>
-                    <ul>
-                        <li>
-                            <code>a:link</code> → &lt;a
-                            href="http://"&gt;&lt;/a&gt;
-                        </li>
-                        <li>
-                            <code>a:mail</code> → &lt;a
-                            href="mailto:"&gt;&lt;/a&gt;
-                        </li>
-                        <li>
-                            <code>link:css</code> → &lt;link rel="stylesheet"
-                            href="style.css" /&gt;
-                        </li>
-                        <li>
-                            <code>script:src</code> → &lt;script
-                            src=""&gt;&lt;/script&gt;
-                        </li>
-                        <li><code>mg</code> → &lt;img src="" alt="" /&gt;</li>
-                    </ul>
+                <h3>Speciális Emmet elemek</h3>
+                <ul>
+                    <li>
+                        <code>a:link</code> → &lt;a
+                        href="http://"&gt;&lt;/a&gt;
+                    </li>
+                    <li>
+                        <code>a:mail</code> → &lt;a
+                        href="mailto:"&gt;&lt;/a&gt;
+                    </li>
+                    <li>
+                        <code>link:css</code> → &lt;link rel="stylesheet"
+                        href="style.css" /&gt;
+                    </li>
+                    <li>
+                        <code>script:src</code> → &lt;script
+                        src=""&gt;&lt;/script&gt;
+                    </li>
+                    <li><code>mg</code> → &lt;img src="" alt="" /&gt;</li>
+                </ul>
 
-                    <h3>CSS Emmet parancsok</h3>
-                    <ul>
-                        <li><code>m10</code> → margin: 10px;</li>
-                        <li><code>p20</code> → padding: 20px;</li>
-                        <li><code>bd1-s</code> → border: 1px solid;</li>
-                        <li><code>fw700</code> → font-weight: 700;</li>
-                        <li><code>fs18</code> → font-size: 18px;</li>
-                        <li><code>bgc#333</code> → background-color: #333;</li>
-                        <li><code>c#fff</code> → color: #fff;</li>
-                        <li><code>d:f</code> → display: flex;</li>
-                        <li>
-                            <code>jc-sb</code> → justify-content: space-between;
-                        </li>
-                    </ul>
-
-                    <p>
-                        Forrás: Emmet hivatalos dokumentáció –
-                        <a
-                            href="https://docs.emmet.io/cheat-sheet/"
-                            target="_blank"
-                            >Cheat Sheet</a
-                        >
-                    </p>
-                </article>
-            </section>
-
-            <section>
-                <article>
-                    <h2 id="css">CSS</h2>
-
-                    <p>CSS szelektorok:</p>
-                    <ul>
-                        <li>
-                            Az univerzális szelektor (*) minden HTML-elemet
-                            kijelöl.
-                        </li>
-                        <li>Az #id szelektor csak egy elemet jelölhet.</li>
-                        <li>
-                            A csoportosított szelektor (h1, h2, p) több elemet
-                            is kijelöl.
-                        </li>
-                    </ul>
-
-                    <p>CSS tulajdonságok:</p>
-                    <ul>
-                        <li>padding: belső térköz</li>
-                        <li>width: szélesség</li>
-                        <li>margin: külső térköz</li>
-                        <li>font-weight: betűvastagság</li>
-                    </ul>
-
-                    <p>
-                        A
-                        <b style="color: greenyellow">position: fixed;</b>
-                        rögzíti az elemet a viewporthoz.
-                    </p>
-                </article>
-
-                <article>
-                    <p>HTML szemantikus formázó (inline) tagek</p>
-                    <table border="1" cellpadding="8">
-                        <thead>
-                            <tr>
-                                <th>Tag</th>
-                                <th>Jelentés magyarul</th>
-                                <th>Mire utal (szemantika)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>&lt;strong&gt;</td>
-                                <td>kiemelés, hangsúlyos szöveg</td>
-                                <td>
-                                    fontos információ (nem csak vastag betű)
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>&lt;em&gt;</td>
-                                <td>dőlt kiemelés</td>
-                                <td>
-                                    nyomatékosítás, hangsúlyváltás beszédben
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>&lt;mark&gt;</td>
-                                <td>kiemelt, kiemelés sárgával</td>
-                                <td>
-                                    releváns szöveg jelölése (pl. keresési
-                                    találat)
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>&lt;small&gt;</td>
-                                <td>apróbetűs szöveg</td>
-                                <td>jogi, megjegyzés, mellékinformáció</td>
-                            </tr>
-                            <tr>
-                                <td>&lt;cite&gt;</td>
-                                <td>mű címe</td>
-                                <td>könyv, film, zene, műalkotás neve</td>
-                            </tr>
-                            <tr>
-                                <td>&lt;q&gt;</td>
-                                <td>idézet</td>
-                                <td>rövid idézet, automatikus idézőjel</td>
-                            </tr>
-                            <tr>
-                                <td>&lt;blockquote&gt;</td>
-                                <td>hosszabb idézet</td>
-                                <td>külön bekezdésben idézett szöveg</td>
-                            </tr>
-                            <tr>
-                                <td>&lt;abbr&gt;</td>
-                                <td>rövidítés</td>
-                                <td>
-                                    pl. HTML (title: HyperText Markup Language)
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>&lt;dfn&gt;</td>
-                                <td>definíció</td>
-                                <td>először bevezetett fogalom</td>
-                            </tr>
-                            <tr>
-                                <td>&lt;time&gt;</td>
-                                <td>időpont, dátum</td>
-                                <td>gépek számára érthető dátum</td>
-                            </tr>
-                            <tr>
-                                <td>&lt;code&gt;</td>
-                                <td>kód</td>
-                                <td>programkód jelölése</td>
-                            </tr>
-                            <tr>
-                                <td>&lt;kbd&gt;</td>
-                                <td>billentyűzet bevitel</td>
-                                <td>pl. Ctrl + C</td>
-                            </tr>
-                            <tr>
-                                <td>&lt;samp&gt;</td>
-                                <td>programkimenet</td>
-                                <td>parancssori eredmények</td>
-                            </tr>
-                            <tr>
-                                <td>&lt;del&gt;</td>
-                                <td>törölt szöveg</td>
-                                <td>változtatás, verziózás</td>
-                            </tr>
-                            <tr>
-                                <td>&lt;ins&gt;</td>
-                                <td>beszúrt szöveg</td>
-                                <td>új tartalom jelölése</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </article>
+                <h3>CSS Emmet parancsok</h3>
+                <ul>
+                    <li><code>m10</code> → margin: 10px;</li>
+                    <li><code>p20</code> → padding: 20px;</li>
+                    <li><code>bd1-s</code> → border: 1px solid;</li>
+                    <li><code>fw700</code> → font-weight: 700;</li>
+                    <li><code>fs18</code> → font-size: 18px;</li>
+                    <li><code>bgc#333</code> → background-color: #333;</li>
+                    <li><code>c#fff</code> → color: #fff;</li>
+                    <li><code>d:f</code> → display: flex;</li>
+                    <li>
+                        <code>jc-sb</code> → justify-content: space-between;
+                    </li>
+                </ul>
 
                 <p>
-                    <a href="https://www.w3schools.com/cssref/css_selectors.php"
-                        >CSS Selectors (W3 School)</a
-                    >
+                    Forrás: Emmet hivatalos dokumentáció –
+                    <a href="https://docs.emmet.io/cheat-sheet/" target="_blank">Cheat Sheet</a>
+                </p>
+            </article>
+        </section>
+
+        <section>
+            <article>
+                <h2 id="css">CSS</h2>
+
+                <p>CSS szelektorok:</p>
+                <ul>
+                    <li>
+                        Az univerzális szelektor (*) minden HTML-elemet
+                        kijelöl.
+                    </li>
+                    <li>Az #id szelektor csak egy elemet jelölhet.</li>
+                    <li>
+                        A csoportosított szelektor (h1, h2, p) több elemet
+                        is kijelöl.
+                    </li>
+                </ul>
+
+                <p>CSS tulajdonságok:</p>
+                <ul>
+                    <li>padding: belső térköz</li>
+                    <li>width: szélesség</li>
+                    <li>margin: külső térköz</li>
+                    <li>font-weight: betűvastagság</li>
+                </ul>
+
+                <p>
+                    A
+                    <b style="color: greenyellow">position: fixed;</b>
+                    rögzíti az elemet a viewporthoz.
+                </p>
+            </article>
+            <article>
+                <p>CSS (Cascading Style Sheets) – Lépcsőzetes stíluslapok</p>
+                <p>
+                    A CSS egy stílusleíró nyelv, amely HTML, XML vagy SVG alapú dokumentumok
+                    megjelenését (pl. színek, betűtípusok, elrendezés, margók stb.)
+                    határozza meg.
+                </p>
+                <p>
+                    A „lépcsőzetes” elnevezés arra utal, hogy a stílusok öröklődnek és
+                    felülírhatók: ha több stílus vonatkozik egy elemre, a böngésző bizonyos
+                    szabályok szerint dönti el, melyik érvényesüljön.
+                </p>
+                <p>
+                    A CSS önmagában nem programozási nyelv, tehát logikát (pl. változókat,
+                    függvényeket, feltételeket) közvetlenül nem tartalmaz.
+                </p>
+                <p>Viszont léteznek kiterjesztései, mint például:</p>
+
+                <ul>
+                    <li>Sass (Syntactically Awesome Style Sheets)</li>
+                    <li>Less</li>
+                </ul>
+
+                <p>
+                    Ezek lehetővé teszik, hogy változókat, ciklusokat, függvényeket
+                    használjunk, és logikusabban, modulárisan építsük fel a stílusokat. A
+                    böngésző ezeket lefordított (kompilált) CSS fájlként kapja meg.
                 </p>
 
-                <img
-                    src="../../Assets/Images/HTML_Selector.png"
-                    alt="HTML Selector"
-                    width="70%"
-                    height="70%"
-                />
+                <p>selector { deklaráció; -> tulajdonság neve: tulajdonság értéke; }</p>
+                <img src="../Assets/Képernyőkép 2025-12-02 083904.png" alt="box-sizing" class="wide-img" />
 
-                <pre><code>
+                <p>Flex elrendezés:</p>
+                <p>
+                    Flexbox egy dimenzióban működik: sorban vagy oszlopban. A float régi
+                    technika, eredetileg szöveg körbefolyatása miatt találták ki.
+                </p>
+
+                <p>Flex paraméterek:</p>
+                <ul>
+                    <li><code>flex: grow shrink basis</code></li>
+                    <li>Pl.: <code>flex: 0 0 70%</code></li>
+                    <li>grow = 0 → nem nő</li>
+                    <li>
+                        shrink = 0 → nem zsugorodik || shrink = 1 → alaphelyzetben
+                        összezsugorodhat, ha kisebb a hely
+                    </li>
+                    <li>basis = 70% → alapértelmezett szélesség 70%</li>
+                </ul>
+
+                <p>Float elrendezés:</p>
+                <p>
+                    Ha float-tal két dobozt egymás mellé akarsz tenni, gyakran kell clearfix
+                    trükk, külön üres &lt;div&gt; vagy ::after pseudo-element a „töréshez”.
+                </p>
+
+                <p>Grid elrendezés:</p>
+                <p>
+                    Ha komplexebb layoutot akarsz, pl.: több sor és több oszlop, vagy
+                    mobilon a main és aside egymás alá kerül, a Grid sokkal
+                    rugalmasabb. A reszponzív dizájn miatt kell a grid.
+                </p>
+            </article>
+
+            <article>
+                <p>HTML szemantikus formázó (inline) tagek</p>
+                <table border="1" cellpadding="8">
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Jelentés magyarul</th>
+                            <th>Mire utal (szemantika)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>&lt;strong&gt;</td>
+                            <td>kiemelés, hangsúlyos szöveg</td>
+                            <td>
+                                fontos információ (nem csak vastag betű)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&lt;em&gt;</td>
+                            <td>dőlt kiemelés</td>
+                            <td>
+                                nyomatékosítás, hangsúlyváltás beszédben
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&lt;mark&gt;</td>
+                            <td>kiemelt, kiemelés sárgával</td>
+                            <td>
+                                releváns szöveg jelölése (pl. keresési
+                                találat)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&lt;small&gt;</td>
+                            <td>apróbetűs szöveg</td>
+                            <td>jogi, megjegyzés, mellékinformáció</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;cite&gt;</td>
+                            <td>mű címe</td>
+                            <td>könyv, film, zene, műalkotás neve</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;q&gt;</td>
+                            <td>idézet</td>
+                            <td>rövid idézet, automatikus idézőjel</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;blockquote&gt;</td>
+                            <td>hosszabb idézet</td>
+                            <td>külön bekezdésben idézett szöveg</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;abbr&gt;</td>
+                            <td>rövidítés</td>
+                            <td>
+                                pl. HTML (title: HyperText Markup Language)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&lt;dfn&gt;</td>
+                            <td>definíció</td>
+                            <td>először bevezetett fogalom</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;time&gt;</td>
+                            <td>időpont, dátum</td>
+                            <td>gépek számára érthető dátum</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;code&gt;</td>
+                            <td>kód</td>
+                            <td>programkód jelölése</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;kbd&gt;</td>
+                            <td>billentyűzet bevitel</td>
+                            <td>pl. Ctrl + C</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;samp&gt;</td>
+                            <td>programkimenet</td>
+                            <td>parancssori eredmények</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;del&gt;</td>
+                            <td>törölt szöveg</td>
+                            <td>változtatás, verziózás</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;ins&gt;</td>
+                            <td>beszúrt szöveg</td>
+                            <td>új tartalom jelölése</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+
+            <p>
+                <a href="https://www.w3schools.com/cssref/css_selectors.php">CSS Selectors (W3 School)</a>
+            </p>
+
+            <img src="../../Assets/Images/HTML_Selector.png" alt="HTML Selector" width="70%" height="70%" />
+
+            <pre><code>
 
     /* Globális elemek / h1, h2, h3, h4, h5, h6, p, ul, li, ol {  
         /* Ezekre az elemekre egységes stílust adunk */
@@ -1104,117 +1220,117 @@ ul>li*5
     }
 
     </code></pre>
-            </section>
+        </section>
 
-            <section>
-                <h2 id="js">JavaScript</h2>
-                <p>
-                    Objektum orientált, prototípus alapú szkript nyelv.
-                    Leginkább a weboldalak kliens oldali logikájára használják.
-                    Weboldal kliensen futó programja.
-                </p>
-                <p>
-                    Magas szintű programozási nyelv. Nem kell foglalkozni a
-                    memória felszabadítással.
-                </p>
-                <p>
-                    Interpretált nyelv, vagyis nem kell fordító, mint a javanál,
-                    hanem a kód alapból a böngészőben fut. Hátránya, hogy
-                    hozzáférhető a kód idegenek számára is. Valamint a
-                    programozási hibák csak futási időben derülnek ki.
-                </p>
-                <p>
-                    Multi-paradigma, vagyis többféleképpen is megírhatod a
-                    programodat, pl.: objektum orientált módon.
-                </p>
-                <p>
-                    Régebben LiveScript volt a neve. Mocha → LiveScript →
-                    JavaScript (1995)
-                </p>
-                <p>
-                    <b>ECMAScript = a nyelvi szabvány</b>; a JavaScript ennek a
-                    szabványnak egy implementációja.
-                </p>
-                <p>
-                    A &lt;/body&gt; elé kell beírni a <code>script</code> taget,
-                    mert a böngésző fentről lefelé tölti be az oldalt.
-                </p>
+        <section>
+            <h2 id="js">JavaScript</h2>
+            <p>
+                Objektum orientált, prototípus alapú szkript nyelv.
+                Leginkább a weboldalak kliens oldali logikájára használják.
+                Weboldal kliensen futó programja.
+            </p>
+            <p>
+                Magas szintű programozási nyelv. Nem kell foglalkozni a
+                memória felszabadítással.
+            </p>
+            <p>
+                Interpretált nyelv, vagyis nem kell fordító, mint a javanál,
+                hanem a kód alapból a böngészőben fut. Hátránya, hogy
+                hozzáférhető a kód idegenek számára is. Valamint a
+                programozási hibák csak futási időben derülnek ki.
+            </p>
+            <p>
+                Multi-paradigma, vagyis többféleképpen is megírhatod a
+                programodat, pl.: objektum orientált módon.
+            </p>
+            <p>
+                Régebben LiveScript volt a neve. Mocha → LiveScript →
+                JavaScript (1995)
+            </p>
+            <p>
+                <b>ECMAScript = a nyelvi szabvány</b>; a JavaScript ennek a
+                szabványnak egy implementációja.
+            </p>
+            <p>
+                A &lt;/body&gt; elé kell beírni a <code>script</code> taget,
+                mert a böngésző fentről lefelé tölti be az oldalt.
+            </p>
 
-                <p>
-                    A JavaScript a weboldalak működéséért felelős programozási
-                    nyelv. Segítségével dinamikus elemeket hozhatunk létre,
-                    adatokat dolgozhatunk fel, eseményeket kezelhetünk
-                    (kattintás, billentyűlenyomás), vagy akár teljes
-                    alkalmazásokat építhetünk.
-                </p>
+            <p>
+                A JavaScript a weboldalak működéséért felelős programozási
+                nyelv. Segítségével dinamikus elemeket hozhatunk létre,
+                adatokat dolgozhatunk fel, eseményeket kezelhetünk
+                (kattintás, billentyűlenyomás), vagy akár teljes
+                alkalmazásokat építhetünk.
+            </p>
 
-                <p>
-                    Míg a HTML a szerkezetet, a CSS a kinézetet adja, addig a
-                    JavaScript teszi interaktívvá a weboldalt. A böngésző minden
-                    JS sort sorban végrehajt.
-                </p>
+            <p>
+                Míg a HTML a szerkezetet, a CSS a kinézetet adja, addig a
+                JavaScript teszi interaktívvá a weboldalt. A böngésző minden
+                JS sort sorban végrehajt.
+            </p>
 
-                <h3>Alap utasítások</h3>
-                <p>
-                    Egyszerű kiíratások, hibák, figyelmeztetések megjelenítése:
-                </p>
-                <ul>
-                    <li><code>alert('Hello!')</code> – felugró ablak</li>
-                    <li>
-                        <code>console.log()</code> – üzenet az ellenőrző
-                        konzolba
-                    </li>
-                    <li><code>console.error()</code> – hibaüzenet</li>
-                    <li><code>console.warn()</code> – figyelmeztetés</li>
-                </ul>
+            <h3>Alap utasítások</h3>
+            <p>
+                Egyszerű kiíratások, hibák, figyelmeztetések megjelenítése:
+            </p>
+            <ul>
+                <li><code>alert('Hello!')</code> – felugró ablak</li>
+                <li>
+                    <code>console.log()</code> – üzenet az ellenőrző
+                    konzolba
+                </li>
+                <li><code>console.error()</code> – hibaüzenet</li>
+                <li><code>console.warn()</code> – figyelmeztetés</li>
+            </ul>
 
-                <h3>Változók</h3>
-                <p>
-                    A változókban adatokat tárolunk. JavaScriptben a
-                    leggyakoribb típusok:
-                </p>
+            <h3>Változók</h3>
+            <p>
+                A változókban adatokat tárolunk. JavaScriptben a
+                leggyakoribb típusok:
+            </p>
 
-                <ul>
-                    <li>
-                        <code>let</code> – módosítható változó, csak a blokkon
-                        belül él (ajánlott)
-                    </li>
-                    <li>
-                        <code>const</code> – állandó, értéke nem módosítható
-                    </li>
-                    <li>
-                        <code>var</code> – régi változótípus, kerülendő
-                        (újradeklarálható, problémás)
-                    </li>
-                </ul>
+            <ul>
+                <li>
+                    <code>let</code> – módosítható változó, csak a blokkon
+                    belül él (ajánlott)
+                </li>
+                <li>
+                    <code>const</code> – állandó, értéke nem módosítható
+                </li>
+                <li>
+                    <code>var</code> – régi változótípus, kerülendő
+                    (újradeklarálható, problémás)
+                </li>
+            </ul>
 
-                <p>Példa:</p>
-                <pre><code>let kor = 20;
+            <p>Példa:</p>
+            <pre><code>let kor = 20;
 kor = 21; // módosítható
 
 const szam = 10;
 // szam = 11;  // hiba: a const nem módosítható</code></pre>
 
-                <h3>Adattípusok</h3>
-                <p>
-                    Két nagy csoportjuk van: primitív típusok és objektum
-                    típusok.
-                </p>
+            <h3>Adattípusok</h3>
+            <p>
+                Két nagy csoportjuk van: primitív típusok és objektum
+                típusok.
+            </p>
 
-                <h4>Primitívek</h4>
-                <ul>
-                    <li><code>String</code> – szöveg</li>
-                    <li><code>Number</code> – szám (egész és tizedes is)</li>
-                    <li><code>Boolean</code> – igaz vagy hamis</li>
-                    <li><code>null</code> – szándékosan „nincs érték”</li>
-                    <li>
-                        <code>undefined</code> – létrehozott változó, de nincs
-                        értéke
-                    </li>
-                </ul>
+            <h4>Primitívek</h4>
+            <ul>
+                <li><code>String</code> – szöveg</li>
+                <li><code>Number</code> – szám (egész és tizedes is)</li>
+                <li><code>Boolean</code> – igaz vagy hamis</li>
+                <li><code>null</code> – szándékosan „nincs érték”</li>
+                <li>
+                    <code>undefined</code> – létrehozott változó, de nincs
+                    értéke
+                </li>
+            </ul>
 
-                <p>Példa:</p>
-                <pre><code>const nev = "Zsolt";
+            <p>Példa:</p>
+            <pre><code>const nev = "Zsolt";
 const kor = 21;
 const suly = 80.5;
 const felnott = true;
@@ -1222,75 +1338,75 @@ const felnott = true;
 const x = null; 
 const y = undefined;</code></pre>
 
-                <p>
-                    A <code>null</code> és az <code>undefined</code> gyakran
-                    keveredik, de fontos a különbség:
-                </p>
-                <ul>
-                    <li><b>null</b> – Te állítod be, hogy „nincs érték”.</li>
-                    <li>
-                        <b>undefined</b> – A böngésző adja, ha nem kap értéket a
-                        változó.
-                    </li>
-                </ul>
+            <p>
+                A <code>null</code> és az <code>undefined</code> gyakran
+                keveredik, de fontos a különbség:
+            </p>
+            <ul>
+                <li><b>null</b> – Te állítod be, hogy „nincs érték”.</li>
+                <li>
+                    <b>undefined</b> – A böngésző adja, ha nem kap értéket a
+                    változó.
+                </li>
+            </ul>
 
-                <h4>Objektumok</h4>
-                <p>
-                    A JavaScript objektumok sok adatot tartalmazhatnak egy
-                    helyen.
-                </p>
+            <h4>Objektumok</h4>
+            <p>
+                A JavaScript objektumok sok adatot tartalmazhatnak egy
+                helyen.
+            </p>
 
-                <p>Példa dátum objektumra:</p>
-                <pre><code>const date = new Date();          // mai dátum
+            <p>Példa dátum objektumra:</p>
+            <pre><code>const date = new Date();          // mai dátum
 const date2 = new Date("2025-11-24");</code></pre>
 
-                <h3>String műveletek</h3>
-                <p>A szövegekkel gyakran végzünk műveleteket:</p>
+            <h3>String műveletek</h3>
+            <p>A szövegekkel gyakran végzünk műveleteket:</p>
 
-                <ul>
-                    <li><code>text.length</code> – megadja a hosszát</li>
-                    <li>
-                        <code>text.toLowerCase()</code> – kisbetűssé alakítja
-                    </li>
-                    <li><code>text.substring(1,5)</code> – részlet kivágása</li>
-                    <li><code>text.split()</code> – darabolás</li>
-                </ul>
+            <ul>
+                <li><code>text.length</code> – megadja a hosszát</li>
+                <li>
+                    <code>text.toLowerCase()</code> – kisbetűssé alakítja
+                </li>
+                <li><code>text.substring(1,5)</code> – részlet kivágása</li>
+                <li><code>text.split()</code> – darabolás</li>
+            </ul>
 
-                <p>Példa modern string írásra (interpoláció):</p>
-                <pre><code>const szoveg = "Hello világ";
+            <p>Példa modern string írásra (interpoláció):</p>
+            <pre><code>const szoveg = "Hello világ";
 console.log(`${szoveg}!`);</code></pre>
 
-                <h3>Dátumok kezelése</h3>
-                <ul>
-                    <li><code>getDate()</code> – nap lekérése</li>
-                    <li><code>getDay()</code> – hét napja (0–6)</li>
-                    <li><code>getMonth()</code> – hónap (0–11)</li>
-                    <li><code>setHours()</code> – óra beállítása</li>
-                    <li><code>setFullYear()</code> – év beállítása</li>
-                    <li><code>toISOString()</code> – ISO formátumú dátum</li>
-                </ul>
+            <h3>Dátumok kezelése</h3>
+            <ul>
+                <li><code>getDate()</code> – nap lekérése</li>
+                <li><code>getDay()</code> – hét napja (0–6)</li>
+                <li><code>getMonth()</code> – hónap (0–11)</li>
+                <li><code>setHours()</code> – óra beállítása</li>
+                <li><code>setFullYear()</code> – év beállítása</li>
+                <li><code>toISOString()</code> – ISO formátumú dátum</li>
+            </ul>
 
-                <h3>Műveletek</h3>
-                <p>
-                    A JavaScript támogatja a matematikai műveleteket, például:
-                </p>
+            <h3>Műveletek</h3>
+            <p>
+                A JavaScript támogatja a matematikai műveleteket, például:
+            </p>
 
-                <ul>
-                    <li><code>+=</code> – növeli a változó értékét</li>
-                    <li><code>++</code> – egyesével növel</li>
-                </ul>
+            <ul>
+                <li><code>+=</code> – növeli a változó értékét</li>
+                <li><code>++</code> – egyesével növel</li>
+            </ul>
 
-                <pre><code>let szam = 10;
+            <pre><code>let szam = 10;
         szam += 10;  // 20
         szam++;      // 21</code></pre>
 
-                <h3>Feltételek</h3>
-                <p>
-                    Az <code>if</code> utasítással elágazásokat hozhatunk létre.
-                </p>
+            <h3>Feltételek</h3>
+            <p>
+                Az <code>if</code> utasítással elágazásokat hozhatunk létre.
+            </p>
 
-                <p>Példa:</p>
-                <pre><code>const a = 14;
+            <p>Példa:</p>
+            <pre><code>const a = 14;
         const b = 10;
 
         if (a <= b) {
@@ -1305,153 +1421,155 @@ console.log(`${szoveg}!`);</code></pre>
             console.log("Nem egyenlő");
         }</code></pre>
 
-                <p>
-                    A <code>===</code> mindig ajánlott a
-                    <code>==</code> helyett, mert típust is ellenőriz.
-                </p>
-                <h3>Kérdések és helyes válaszok</h3>
+            <p>
+                A <code>===</code> mindig ajánlott a
+                <code>==</code> helyett, mert típust is ellenőriz.
+            </p>
+            <h3>Kérdések és helyes válaszok</h3>
 
-                <ol>
-                    <li>
-                        <strong
-                            >Hogyan lehet egy szöveg hosszát lekérdezni?</strong
-                        >
-                        <p><code>szoveg.length</code></p>
-                    </li>
-                    <li>
-                        <strong>Melyik állítás igaz a JSON-re?</strong>
-                        <p>Nyelvfüggetlen.</p>
-                        <p>
-                            JSON (JavaScript Object Notation)
-                            adatcsere-formátum, ami bármilyen nyelven
-                            használható (Java, Python, C#, stb.), nem csak
-                            JavaScript-ben.
-                        </p>
-                        <p>
-                            Nem kompatibilis 100%-ban XML-lel, mert az teljesen
-                            más szintaxis.
-                        </p>
-                    </li>
-                    <li>
-                        <strong>Mely állítások igazak a BOM-ra?</strong>
-                        <p>
-                            Hierarchikus elrendezésű, a tetején a
-                            <code>window</code> object helyezkedik el.
-                        </p>
-                        <p>
-                            Segítségével elérjük a böngésző tulajdonságait,
-                            beállításait (ablakméret, előzmények, URL-ek stb.).
-                        </p>
-                        <p>
-                            A BOM (Browser Object Model) nem szabványos, de
-                            minden böngésző implementálja.
-                        </p>
-                        <p>
-                            Lehetővé teszi az ablak, előzmények, URL-ek,
-                            képernyőméret kezelését, a dokumentumon kívüli
-                            objektumokhoz fér hozzá.
-                        </p>
-                    </li>
-                    <li>
-                        <strong>Mi a kimenete?</strong>
-                        <pre>
+            <ol>
+                <li>
+                    <strong>Hogyan lehet egy szöveg hosszát lekérdezni?</strong>
+                    <p><code>szoveg.length</code></p>
+                </li>
+                <li>
+                    <strong>Melyik állítás igaz a JSON-re?</strong>
+                    <p>Nyelvfüggetlen.</p>
+                    <p>
+                        JSON (JavaScript Object Notation)
+                        adatcsere-formátum, ami bármilyen nyelven
+                        használható (Java, Python, C#, stb.), nem csak
+                        JavaScript-ben.
+                    </p>
+                    <p>
+                        Nem kompatibilis 100%-ban XML-lel, mert az teljesen
+                        más szintaxis.
+                    </p>
+                </li>
+                <li>
+                    <strong>Mely állítások igazak a BOM-ra?</strong>
+                    <p>
+                        Hierarchikus elrendezésű, a tetején a
+                        <code>window</code> object helyezkedik el.
+                    </p>
+                    <p>
+                        Segítségével elérjük a böngésző tulajdonságait,
+                        beállításait (ablakméret, előzmények, URL-ek stb.).
+                    </p>
+                    <p>
+                        A BOM (Browser Object Model) nem szabványos, de
+                        minden böngésző implementálja.
+                    </p>
+                    <p>
+                        Lehetővé teszi az ablak, előzmények, URL-ek,
+                        képernyőméret kezelését, a dokumentumon kívüli
+                        objektumokhoz fér hozzá.
+                    </p>
+                </li>
+                <li>
+                    <strong>Mi a kimenete?</strong>
+                    <pre>
         let keresztNev = "Elek";
         let csaladNev = null;
         let beceNev = null;
         console.log(keresztNev ?? csaladNev ?? beceNev ?? "Nem meghatározott");
-            </pre
-                        >
-                        <p>Megoldás: Elek</p>
-                        <p>
-                            Az ?? (nullish coalescing) a null vagy undefined
-                            ellenőrzi. keresztNev értéke "Elek", ami nem null
-                            vagy undefined, így az első érték kerül kiírásra.
-                        </p>
-                    </li>
-                    <li>
-                        <strong>Mi a kimenete?</strong>
-                        <pre>console.log(Math.ceil(4.4))</pre>
-                        <p>Megoldás: 5</p>
-                        <p>Mindig a következő egész számra kerekít felfelé.</p>
-                    </li>
-                    <li>
-                        <strong>Mely állítások igazak a JSON-re?</strong>
-                        <p>Nyelvfüggetlen.</p>
-                        <p>
-                            Adatok tárolására és az adatküldés
-                            leegyszerűsítésére használható.
-                        </p>
-                        <p>
-                            A JSON formátum adatcsere-formátum, kliens-szerver
-                            kommunikációban is gyakran használják.
-                        </p>
-                    </li>
-                    <li>
-                        <strong>Mit ír ki?</strong>
-                        <pre>
+            </pre>
+                    <p>Megoldás: Elek</p>
+                    <p>
+                        Az ?? (nullish coalescing) a null vagy undefined
+                        ellenőrzi. keresztNev értéke "Elek", ami nem null
+                        vagy undefined, így az első érték kerül kiírásra.
+                    </p>
+                </li>
+                <li>
+                    <strong>Mi a kimenete?</strong>
+                    <pre>console.log(Math.ceil(4.4))</pre>
+                    <p>Megoldás: 5</p>
+                    <p>Mindig a következő egész számra kerekít felfelé.</p>
+                </li>
+                <li>
+                    <strong>Mely állítások igazak a JSON-re?</strong>
+                    <p>Nyelvfüggetlen.</p>
+                    <p>
+                        Adatok tárolására és az adatküldés
+                        leegyszerűsítésére használható.
+                    </p>
+                    <p>
+                        A JSON formátum adatcsere-formátum, kliens-szerver
+                        kommunikációban is gyakran használják.
+                    </p>
+                </li>
+                <li>
+                    <strong>Mit ír ki?</strong>
+                    <pre>
                         let obj = {
                             for: 1,
                             let: 2,
                             return: 3,
                         }
                         console.log(obj.let);
-                       </pre
-                        >
-                        <p>Megoldás: 2</p>
-                        <p>
-                            Objektumokban kulcsokat szabad szövegesen használni,
-                            így let itt egy érvényes property. obj.let pontosan
-                            a 2 értéket adja vissza.
-                        </p>
-                    </li>
-                    <li>
-                        <strong>Mi a kimenete?</strong>
-                        <pre>
+                       </pre>
+                    <p>Megoldás: 2</p>
+                    <p>
+                        Objektumokban kulcsokat szabad szövegesen használni,
+                        így let itt egy érvényes property. obj.let pontosan
+                        a 2 értéket adja vissza.
+                    </p>
+                </li>
+                <li>
+                    <strong>Mi a kimenete?</strong>
+                    <pre>
                     let nameSymbol2 = Symbol("name");
                     console.log(Symbol.keyFor(nameSymbol2));
-                      </pre
-                        >
-                        <p>undefined</p>
-                        <p>
-                            Symbol("name") egy lokális szimbólum, ami nem
-                            regisztrált globális szimbólumként.
-                        </p>
-                        <p>
-                            A Symbol.keyFor() csak a globális szimbólumoknál ad
-                            vissza kulcsot.
-                        </p>
-                    </li>
-                    <li>
-                        <strong>Mi a kimenete?</strong>
-                        <pre>
+                      </pre>
+                    <p>undefined</p>
+                    <p>
+                        Symbol("name") egy lokális szimbólum, ami nem
+                        regisztrált globális szimbólumként.
+                    </p>
+                    <p>
+                        A Symbol.keyFor() csak a globális szimbólumoknál ad
+                        vissza kulcsot.
+                    </p>
+                </li>
+                <li>
+                    <strong>Mi a kimenete?</strong>
+                    <pre>
                     var foo = function teszt(){
                         console.log(foo==foo)
                     };
                     foo();
-            </pre
-                        >
-                        <p>true</p>
-                        <p>
-                            foo mindig önmagára mutat a függvény scope-on belül,
-                            így a foo == foo mindig true.
-                        </p>
-                    </li>
-                    <li>
-                        <strong>Mi a kimenete?</strong>
-                        <pre>console.log(undefined > 0);</pre>
-                        <p>false</p>
-                        <p>
-                            undefined nem szám, így összehasonlításkor NaN-ra
-                            konvertálódik → minden összehasonlítás false lesz.
-                        </p>
-                        <p>Nem dob hibát, egyszerűen false az eredmény.</p>
-                    </li>
-                </ol>
-            </section>
-        </main>
-        <a class="navigation_button" id="navigation_button" href="#navigation"
-            >Kategóriák</a
-        >
-        <footer id="footerID">Lábléc</footer>
-    </body>
+            </pre>
+                    <p>true</p>
+                    <p>
+                        foo mindig önmagára mutat a függvény scope-on belül,
+                        így a foo == foo mindig true.
+                    </p>
+                </li>
+                <li>
+                    <strong>Mi a kimenete?</strong>
+                    <pre>console.log(undefined > 0);</pre>
+                    <p>false</p>
+                    <p>
+                        undefined nem szám, így összehasonlításkor NaN-ra
+                        konvertálódik → minden összehasonlítás false lesz.
+                    </p>
+                    <p>Nem dob hibát, egyszerűen false az eredmény.</p>
+                </li>
+            </ol>
+        </section>
+    </main>
+
+    <a class="navigation_button" id="navigation_button" href="#navigation">Kategóriák</a>
+
+    <footer class="site-footer" id="site-footer">
+        <div class="footer_class">
+            <p>&copy; <span id="year"></span> Nagraggini Blogja — Minden jog fenntartva.</p>
+
+            <p><a href="#headerID">Oldal tetejére ugrás.</a></p>
+        </div>
+    </footer>
+
+</body>
+
 </html>
