@@ -2,14 +2,16 @@
 
 /*Ezt érdemes beállítani az elején, mert minden elemre vonatkozik.*/
 * {
-  /*pl.: A 30 % ,vagy 70 %-os szélességbe bele számolja a padding-et is. Így a tartalomnak jut kevesebb hely.*/
-  box-sizing: border-box;
+    /*pl.: A 30 % ,vagy 70 %-os szélességbe bele számolja a padding-et is. Így a tartalomnak jut kevesebb hely.*/
+    box-sizing: border-box;
 }
 
-html, body { /*Ez garantálja, hogy minden szöveg örökli.*/
-  background-color: black;
-  /*A var() egy függvény, ami megmondja a böngészőnek, hogy tedd ide a --text-color nevű változó értékét.*/
-  color: var(--text-color_pink);
+html,
+body {
+    /*Ez garantálja, hogy minden szöveg örökli.*/
+    background-color: black;
+    /*A var() egy függvény, ami megmondja a böngészőnek, hogy tedd ide a --text-color nevű változó értékét.*/
+    color: var(--text-color_pink);
 }
 
 small,
@@ -19,17 +21,18 @@ p {
 
 /*A lenti egy változó, amit bárhol felhasználhatsz később és nem kell megadni megint a színkódot.
 :root nem egy függvény, hanem egy selector*/
-:root { /*a dokumentum legfelső szintje (az egész oldal)*/
-  /*A két kötőjel (--) a CSS változók kötelező prefixe.*/
-  /*egy saját változó neve: a változó értéke*/
-  --main-bg: rgb(80, 99, 117);
-  --accent-bg: rgb(35, 43, 59);
-  --accent-border: plum;
-  --text-color_pink: rgb(222, 89, 222);
-  --text-color_blue:cyan;
+:root {
+    /*a dokumentum legfelső szintje (az egész oldal)*/
+    /*A két kötőjel (--) a CSS változók kötelező prefixe.*/
+    /*egy saját változó neve: a változó értéke*/
+    --main-bg: rgb(80, 99, 117);
+    --accent-bg: rgb(35, 43, 59);
+    --accent-border: plum;
+    --text-color_pink: rgb(222, 89, 222);
+    --text-color_blue: cyan;
 }
 
-.headerID {
+header {
     text-align: center;
     background-color: rgb(60, 77, 233);
     color: var(--text-color_blue);
@@ -37,19 +40,12 @@ p {
 }
 
 aside {
-  background-color: var(--accent-bg);
-  border-left: 10px solid var(--accent-border);
-}
-
-.top_main {
-  background-color: var(--accent-bg);
-  border: 1px solid white;
-  display: grid;
-  grid-template-columns: 60% 40% minmax(10px, 100px);
+    background-color: var(--accent-bg);
+    border-left: 10px solid var(--accent-border);
 }
 
 .wide-img {
-  width: 80%;
+    width: 80%;
 }
 
 .navigation_button {
@@ -63,10 +59,6 @@ aside {
     background-color: rgb(5, 23, 161); /* Háttér szín beállítás. */
 }
 
-.grid-container {
-    display: grid;
-}
-
 section {
     border: 3px var(--text-color_pink) solid;
     margin-bottom: 20px;
@@ -74,17 +66,15 @@ section {
     border-radius: 10px; /*Lekerekíti a sarkokat.*/
 }
 
-
 .footerID {
-  padding: 5px;
-  margin: 5px 0;
+    padding: 5px;
+    margin: 5px 0;
 }
-
 
 /*Linkek színének beállítása:*/
 a:link,
 a:visited {
-   color: var(--text-color_blue);
+    color: var(--text-color_blue);
     text-decoration: none;
 }
 
@@ -93,7 +83,7 @@ a:hover {
     text-decoration: underline;
 }
 
-.site-footer{
+.site-footer {
     color: var(--text-color_blue);
     text-align: center;
     font-size: 26px;
