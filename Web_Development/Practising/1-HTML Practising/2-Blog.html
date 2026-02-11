@@ -1240,6 +1240,9 @@ ul>li*5
         src: url("../../Assets/Fonts/Momo_Signature/MomoSignature-Regular.ttf") format("truetype"); 
     }
 
+     /*A betűk árnyékát sötét kékre állítjuk: */
+    text-shadow: 2px 2px #22096b;
+
     /* Body alapbeállítások */ 
     body {
         background-color: black; /* Az oldal háttere fekete */
@@ -1414,6 +1417,22 @@ ul>li*5
 
     .test_link {
         color: white; /* Végső szín: fehér */
+    }
+
+    /*Saját szím változó*/
+    :root {
+    --my-primary-color: #3498db; /* saját színváltozó */
+    --my-secondary-color: rgb(255, 99, 71); /* másik példa */
+    }
+
+    /*A var() függvénnyel hívod meg.*/
+    body {
+    background-color: var(--my-primary-color);
+    color: var(--my-secondary-color);
+    }
+
+    h1 {
+    color: var(--my-accent-color, purple); /* ha nincs --my-accent-color, akkor lila lesz */
     }
 
     </code></pre>
