@@ -437,19 +437,19 @@ Fontos infó, hogy bármennyi infészt lehet implementálni, nincs megkötés mi
 
         @Override
         public void cuddle() {
-            // TODO Auto-generated method stub
+            
 
         }
 
         @Override
         public void layDown() {
-            // TODO Auto-generated method stub
+          
 
         }
 
         @Override
         public void sit() {
-            // TODO Auto-generated method stub
+          
 
         }
     }
@@ -1506,7 +1506,7 @@ Példa:
             try {
                 test();
             } catch (FileNotFoundException e) {
-                // TODO Auto-generated catch block
+               
                 e.printStackTrace();
             }
         }
