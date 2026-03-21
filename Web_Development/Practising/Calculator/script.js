@@ -19,7 +19,12 @@ function szamitas() {
             eredmeny = aOperandus * bOperandus;
             break;
         case "/":
-            eredmeny = aOperandus / bOperandus;
+            if (bOperandus != 0) {
+                eredmeny = aOperandus / bOperandus;
+            } else {
+                eredmeny = "Nem végrehajtható művelet!";
+            }
+
             break;
     }
 
