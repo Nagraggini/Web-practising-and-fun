@@ -96,48 +96,50 @@ button:hover {
 }
 
 .submit-button {
-  background-color: #5e1354; /* Gomb háttérszíne */
-  color: black; /* Gomb szövegének színe */
-  border: none; /* Nincs keret */
-  padding: 10px 20px; /* Belső margó */
-  text-align: center; /* Szöveg középre igazítása */
-  text-decoration: none; /* Nincs aláhúzás */
-  display: inline-block; /* Inline blokk elem */
-  font-size: 16px; /* Betűméret */
-  margin: 10px 2px; /* Külső margó */
-  cursor: pointer; /* Mutató kurzor */
-  border-radius: 5px; /* Lekerekített sarkok */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Áttűnés a háttérszín és árnyék változásakor */
-  font-weight: bold; /* Félkövér szöveg */
-  position: relative; /* Relatív pozíció a fénycsíkhoz */
-  overflow: hidden; /* Elrejtjük a túlcsorduló tartalmat */
-  margin: 10px 40px; /* Növelt vízszintes margó a gombok között */
+    background-color: rgb(213, 119, 224); /* Gomb háttérszíne */
+    color: black; /* Gomb szövegének színe */
+    border: none; /* Nincs keret */
+    padding: 10px 20px; /* Belső margó */
+    text-align: center; /* Szöveg középre igazítása */
+    text-decoration: none; /* Nincs aláhúzás */
+    display: inline-block; /* Inline blokk elem */
+    font-size: 16px; /* Betűméret */
+    margin: 10px 2px; /* Külső margó */
+    cursor: pointer; /* Mutató kurzor */
+    border-radius: 5px; /* Lekerekített sarkok */
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease; /* Áttűnés a háttérszín és árnyék változásakor */
+    font-weight: bold; /* Félkövér szöveg */
+    position: relative; /* Relatív pozíció a fénycsíkhoz */
+    overflow: hidden; /* Elrejtjük a túlcsorduló tartalmat */
+    margin: 10px 40px; /* Növelt vízszintes margó a gombok között */
 }
 
 .submit-button::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -200%; /* Kezdetben rejtve */
-  width: 200%;
-  height: 20px; /* Vékony csík */
-  background: rgba(255, 255, 255, 0.8); /* Fényes csík színe */
-  transform: rotate(45deg);
-  transition: all 0.5s ease;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -200%; /* Kezdetben rejtve */
+    width: 200%;
+    height: 20px; /* Vékony csík */
+    background: rgba(255, 255, 255, 0.8); /* Fényes csík színe */
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
 }
 
 .submit-button:hover::before {
-  left: 100%; /* Mozgás hover esetén */
-  transition: all 0.5s ease;
+    left: 100%; /* Mozgás hover esetén */
+    transition: all 0.5s ease;
 }
 
 .submit-button:hover {
-  transform: scale(1.05); /* Nagyítás hover esetén */
-  background-color: #b5a9a9; /* Háttérszín változás hover esetén */
-  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8); /* Csillogó hatás */
+    transform: scale(1.05); /* Nagyítás hover esetén */
+    background-color: #b5a9a9; /* Háttérszín változás hover esetén */
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8); /* Csillogó hatás */
 }
 
 .submit-button:focus {
-  background-color: #b5a9a9; /* Háttérszín változás focus esetén */
-  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8); /* Csillogó hatás */
+    background-color: #b5a9a9; /* Háttérszín változás focus esetén */
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8); /* Csillogó hatás */
 }
