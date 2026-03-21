@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="hu">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>GitHub Pages AJAX példa</title>
+    </head>
+    <body>
+        <h1>AJAX példa GitHub Pages-en</h1>
+        <!-- TODO AJAX-->
+        <p>
+            AJAX (Asynchronous JavaScript and XML): lehetővé teszi, hogy az
+            oldal aszimmetrikusan kommunikáljon a szerverrel, tehát csak a
+            szükséges adatokat kérjük le vagy küldjük el, az oldal teljes
+            újratöltése nélkül.
+        </p>
+        <p id="adat">Ez a szöveg frissülni fog AJAX segítségével.</p>
+        <button id="frissitGomb">Frissítés</button>
+
+        <script>
+            document
+                .getElementById("frissitGomb")
+                .addEventListener("click", function () {
+                    fetch("adat.json")
+                        .then((response) => response.json())
+                        .then((data) => {
+                            document.getElementById("adat").innerText =
+                                data.szoveg;
+                        })
+                        .catch((error) => {
+                            console.error("Hiba történt:", error);
+                        });
+                });
+        </script>
+    </body>
+</html>
