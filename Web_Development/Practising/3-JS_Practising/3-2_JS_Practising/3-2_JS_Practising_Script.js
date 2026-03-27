@@ -281,7 +281,7 @@ const {
 console.log(`Neve: ${name}`);
 console.log(`Utcája: ${street}`);
 */
-const todos = [
+const tods = [
     {
         id: 1,
         text: "Ne felejtsd el feltölteni a blogra.",
@@ -300,10 +300,10 @@ const todos = [
 ];
 
 /*
-console.log(`To-do: ${todos}`);
-console.log(todos);
+console.log(`To-do: ${tods}`);
+console.log(tods);
 
-console.log(`0. objektum: ${todos[0].id}`);
+console.log(`0. objektum: ${tods[0].id}`);
 */
 
 //Ciklusok
@@ -322,29 +322,29 @@ while (index < 10) {
 
 //A tömböknél használjuk sokat a ciklusokat, mert nem tudjuk hány elem van benne.
 
-for (let i = 0; i < todos.length; i++) {
-    //console.log(todos[i]);
+for (let i = 0; i < tods.length; i++) {
+    //console.log(tods[i]);
 }
 
 //console.log("ES6-os változat:");
-for (let todo of todos) {
+for (let tod of tods) {
     //ES6-os modern. fof és tab
-    //console.log(todo);
+    //console.log(tod);
 }
 
 //Ugyanazt csinálja, mint a fenti for és while ciklus. Végig megy a tömbön.
-todos.forEach(function (todo) {
-    //console.log(todo);
+tods.forEach(function (tod) {
+    //console.log(tod);
 });
 
 //Tömb műveletek ciklusokkal.
 //Létrehozunk egy string tömböt, amibe belerakjuk az id-kat.
-const todoIDs = todos.map(function (todo) {
-    return todo.text;
+const todIDs = tods.map(function (tod) {
+    return tod.text;
 });
 /*
-console.log(todoIDs);
-console.log(todoIDs[0]);
+console.log(todIDs);
+console.log(todIDs[0]);
 console.log("Filtered (only false): ");
 */
 
@@ -356,8 +356,8 @@ Kifejezetten értékek kinyerésére van.
 */
 
 //Létrehoztunk egy új tömbböt azokra szelektálva, amiknél a completed értéke false.
-const filtered = todos.filter(function (todo) {
-    return !todo.completed; //false-ra szűrünk.
+const filtered = tods.filter(function (tod) {
+    return !tod.completed; //false-ra szűrünk.
 });
 
 //console.log(filtered);
