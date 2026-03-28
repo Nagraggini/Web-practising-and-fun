@@ -16,6 +16,4 @@ Live demo:
 https://jzjmwf.csb.app/
 
 
-<!-- TODO --> 
-
 https://www.freecodecamp.org/learn/javascript-v9/lecture-working-with-the-dom-click-events-and-web-apis/how-do-you-create-new-nodes-using-innerhtml-and-createelement
