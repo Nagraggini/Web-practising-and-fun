@@ -3,3 +3,7 @@ Main site:
 
 If you are interested in how to start being a web developer, this is my blog. At the moment, I only have a Hungarian version:
 [My blog - Hungarian version](https://nagraggini-blog.onrender.com/)
+
+---
+
+[Kezdőknek szóló blogom.](https://nagraggini-blog.onrender.com/)

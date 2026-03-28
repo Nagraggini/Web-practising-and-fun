@@ -3,7 +3,7 @@
 a {
     /* Linkek stílusa */
     color: #ffffff;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 body {
@@ -41,4 +41,21 @@ button {
 button:hover {
     transform: scale(1.1);
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.racs-szerkezet {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+
+.btn {
+    display: block;
+    padding: 15px;
+    background-color: #6c63ff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
 }

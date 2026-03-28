@@ -34,3 +34,17 @@ function szamitas() {
         aOperandus + " " + muvelet + " " + bOperandus + " = " + eredmeny;
     document.getElementById("elozo").appendChild(ujLi);
 }
+
+function oldalBetoltve() {
+    //Egyszer kell, hogy betöltsön.
+    // lambda üres paraméterrel. () => {}
+    setTimeout(() => {
+        const valasz = confirm("Szeretné megnézni a GitHub projektjeimet?");
+        if (valasz) {
+            window.location.href = "https://github.com/Nagraggini";
+        } else {
+            const h1 = document.querySelector("h1");
+            h1.style.color = "red";
+        }
+    }, 10000); /// 1000 -> 1 másodperc
+}
