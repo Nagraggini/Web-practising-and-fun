@@ -34,17 +34,17 @@ const x = function () {
 */
 
 // Random szám generálás
-//Minimum: 0 (előfordulhat)
-//Maximum: 0.999999... (de 1 sosem lesz)
-Math.random();
+// Minimum: 0 (előfordulhat)
+// Maximum: 0.999999... (de 1 sosem lesz)
+// Math.random();
 
 const secretNumber = Math.trunc(Math.random() * 20) + 1; // 1-20 közötti szám kreálása.
 //A +1 azért kell, hogy lehessen 20 is az eredmény.
 //Teszthez.
-console.log((document.querySelector('.number').textContent = secretNumber));
+console.log(secretNumber);
 
 //Eredmény módosításához.
-const score = 20;
+let score = 20; //Nem lehet const, mert csökkenteni kell az értékét.
 
 // <button class="btn check">Check!</button>
 //A btn class-on belül a check gombot kérjük le.
@@ -61,14 +61,107 @@ document.querySelector('.check').addEventListener('click', function () {
       'Number must be between 1-20!';
   } else if (guess === secretNumber) {
     document.querySelector('.message').textContent = '🎆 You are a winner!';
+
+    displayFirework();
+
+    if (Number(document.querySelector('.highscore').textContent) >= score) {
+      document.querySelector('.highscore').textContent = score;
+      // TODO nem működik.
+    }
+    // TODO Legyen zöld a hattertes a betűk fehérek
   } else if (guess > secretNumber) {
-    document.querySelector('.message').textContent = 'Too high!';
+    if (score > 1) {
+      document.querySelector('.message').textContent = 'Too high!';
+      score--; //Hibás tippnél csökkentjük a pontot.
+      document.querySelector('.score').textContent = score;
+    } else {
+      //A score=0.
+      document.querySelector('.message').textContent = "Don't worry about it!";
+      document.querySelector('.score').textContent = 0;
+    }
   } else {
-    document.querySelector('.message').textContent = 'Too low!';
+    if (score > 1) {
+      document.querySelector('.message').textContent = 'Too low!';
+      score--; //Hibás tippnél csökkentjük a pontot.
+      document.querySelector('.score').textContent = score;
+    } else {
+      //A score=0.
+      document.querySelector('.message').textContent = "Don't worry about it!";
+      document.querySelector('.score').textContent = 0;
+    }
   }
 });
-// TODO
-//Udemy - The Complete JavaScript Course 2025 From Zero to Expert! (2025)/07. JavaScript in the Browser DOM and Events PROJECT
-// 7. videó 11. perc
+// TODO Ezt!
+//Udemy - The Complete JavaScript Course 2025 From Zero to Expert! (2025)
+//07. JavaScript in the Browser DOM and Events PROJECT
+// 8. videó egészen a 11. videóig.
 
 // TODO localStroge-ba mentsd el a high score-t.
+
+// Tűzijáték animáció
+function displayFirework() {
+  // Egyszerű tűzijáték animáció canvas-szal
+  let firework = document.createElement('canvas');
+  firework.id = 'firework-canvas';
+  firework.width = window.innerWidth;
+  firework.height = window.innerHeight;
+  firework.style.position = 'fixed';
+  firework.style.top = '0';
+  firework.style.left = '0';
+  firework.style.pointerEvents = 'none';
+  firework.style.zIndex = '10000';
+  document.body.appendChild(firework);
+
+  const ctx = firework.getContext('2d');
+  let particles = [];
+
+  function randomColor() {
+    return `hsl(${Math.random() * 360}, 100%, 60%)`;
+  }
+
+  function createFirework(x, y) {
+    // Több tűzijáték-pont, különböző helyekre és színekre
+    for (let j = 0; j < 5; j++) {
+      const centerX = x + Math.cos((2 * Math.PI * j) / 5) * 200;
+      const centerY = y + Math.sin((2 * Math.PI * j) / 5) * 120;
+      for (let i = 0; i < 30; i++) {
+        const angle = (Math.PI * 2 * i) / 30;
+        const speed = Math.random() * 4 + 2;
+        particles.push({
+          x: centerX,
+          y: centerY,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed,
+          alpha: 1,
+          color: randomColor(),
+        });
+      }
+    }
+  }
+
+  createFirework(firework.width / 2, firework.height / 2);
+
+  let frame = 0;
+  function animate() {
+    ctx.clearRect(0, 0, firework.width, firework.height);
+    particles.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vy += 0.04; // gravitáció
+      p.alpha -= 0.012;
+      ctx.globalAlpha = Math.max(p.alpha, 0);
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
+      ctx.fillStyle = p.color;
+      ctx.fill();
+    });
+    particles = particles.filter(p => p.alpha > 0);
+    frame++;
+    if (particles.length > 0 && frame < 120) {
+      requestAnimationFrame(animate);
+    } else {
+      firework.remove();
+    }
+  }
+  animate();
+}

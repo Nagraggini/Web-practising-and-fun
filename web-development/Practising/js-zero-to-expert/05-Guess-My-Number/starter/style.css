@@ -18,6 +18,11 @@ body {
   /* background-color: #60b347; */
 }
 
+/*
+A teljes oldal:
+header (35vh) + main (65vh) = 100vh
+A viewport magasságához (képernyő magasságához) van kötve.
+*/
 /* LAYOUT */
 header {
   position: relative;
@@ -26,12 +31,12 @@ header {
 }
 
 main {
-  height: 65vh;
+  min-height: 60vh;
   color: #eee;
   display: flex;
   align-items: center;
   justify-content: space-around;
-}
+} /*5 vh marad a footernek.*/
 
 .left {
   width: 52rem;
@@ -116,4 +121,151 @@ h1 {
 
 .label-score {
   margin-bottom: 2rem;
+}
+
+footer {
+  display: flex;
+  gap: 5px; /*Az elemek közötti térköt beállításához.*/
+  flex-direction: column;
+}
+
+@media (max-width: 800px) {
+  /*Ide csak azt kell írni, ami változik.*/
+
+  @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+  /* RESET */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 62.5%;
+  }
+
+  body {
+    font-family: 'Press Start 2P', sans-serif;
+    color: #eee;
+    background-color: #222;
+  }
+
+  /* LAYOUT - MOBILE FIRST */
+  header {
+    position: relative;
+    height: 30vh;
+    border-bottom: 3px solid #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /*Középre.*/
+  }
+
+  main {
+    display: flex;
+    flex-direction: column; /* 📱 egymás alatt */
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    padding: 2rem;
+  }
+
+  /* SECTIONS */
+  .left,
+  .right {
+    width: 100%;
+    max-width: 35rem; /* nem lesz túl széles */
+    text-align: center;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* TITLE */
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* NUMBER BOX */
+  .number {
+    background: #eee;
+    color: #333;
+    font-size: 4rem;
+    width: 12rem;
+    padding: 2rem 0;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 30%); /* 📱 kisebb eltolás */
+  }
+
+  /* TEXTS */
+  .between,
+  .again {
+    position: static; /* ❗ EZ A LÉNYEG */
+    transform: none;
+  }
+
+  .between {
+    margin-top: 1rem;
+  }
+
+  .again {
+    margin-top: 1rem;
+  }
+
+  /* INPUT */
+  .guess {
+    background: none;
+    border: 3px solid #eee;
+    font-family: inherit;
+    color: inherit;
+    font-size: 3rem;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 25rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  /* BUTTON */
+  .btn {
+    border: none;
+    background-color: #eee;
+    color: #222;
+    font-size: 1.6rem;
+    font-family: inherit;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background-color: #ccc;
+  }
+
+  /* INFO TEXT */
+  .message {
+    margin-bottom: 4rem;
+    height: 2rem;
+  }
+
+  .label-score {
+    margin-bottom: 1.5rem;
+  }
+
+  footer {
+    display: flex;
+    gap: 10px; /*Az elemek közötti térköt beállításához.*/
+    flex-direction: column;
+  }
 }
