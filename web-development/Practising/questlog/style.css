@@ -13,6 +13,12 @@ h6,
 p,
 label,
 input,
-button {
+button,
+ul,
+li {
     color: blueviolet;
+}
+
+ul {
+    list-style-image: url(../../Assets/Icons/linkSmall.png);
 }

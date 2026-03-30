@@ -1,21 +1,26 @@
-Gamer/geek teendő lista
+# Gamer/geek teendő lista
 
-https://nagraggini.github.io/web-practising-and-fun/web-development/Practising/questlog/questlog.html
+[Live demo](https://nagraggini.github.io/web-practising-and-fun/web-development/Practising/questlog/questlog.html)
 
-Az elején felugró ablakban bekéri a nevet és kiírja, hogy üd xy.
+# Házi feladat leírása
 
-<!-- TODO -->
-<!-- start-projects -> static-websites-ba rakd. -->
+•  Készítsen weboldalt, melyen egy tennivalólistát tudunk kezelni.      
+• Az oldal megnyitásakor bekérünk a felhasználótól egy nevet, majd 
+lehetősége van felvinni tennivalókat egy táblázatba.            
+• Egy tennivaló bejegyzésről 3 dolgot adhat meg: Megnevezés, Dátum, Fontosság {nem fontos, normál, fontos}        
+• A táblázatban jelenjen meg a megnevezés és a dátum, és a
+fontosságnak megfelelő színnel legyen kiírva:           
+• Nem fontos – kék, normál – fekete, fontos - piros     
 
-# localStorage
+# localStorage cheatsheet
 
 ```javascript
 //Mentés
-localStorage.setItem("nev", "Andrea");
+localStorage.setItem("nev", "Leroy");
 
 //Lekérés
 const nev = localStorage.getItem("nev");
-console.log(nev); // Andrea
+console.log(nev); // Leroy
 
 //Törlés
 localStorage.removeItem("nev");
@@ -30,4 +35,13 @@ localStorage.setItem("todos", JSON.stringify(todos));
 //Visszaolvaás
 const todos = JSON.parse(localStorage.getItem("todos")) || [];
 console.log(todos);
+```
 
+# Kép kicsinyítése
+
+Terminálban:
+sudo apt install imagemagick
+
+cd Dokumentumok/Icons
+
+convert kep.png -resize 24x24 kiskep.png
