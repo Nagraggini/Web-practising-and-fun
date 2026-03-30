@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -12,6 +12,7 @@
       <h1>Guess My Number!</h1>
       <p class="between">(Between 1 and 20)</p>
       <button class="btn again">Again!</button>
+      <button class="btn clear">Clear history!</button>
       <div class="number">?</div>
     </header>
     <main>
@@ -27,6 +28,16 @@
         </p>
       </section>
     </main>
-    <script src="script.js"></script>
+    <footer>
+      <a
+        href="https://github.com/Nagraggini/web-practising-and-fun?tab=readme-ov-file"
+        >My source code</a
+      >
+      <a href="https://www.udemy.com/course/the-complete-javascript-course/"
+        >Course</a
+      >
+    </footer>
+    <!--defer: A script csak akkor fut le, amikor a HTML teljesen betöltődött.-->
+    <script src="script.js" defer></script>
   </body>
 </html>

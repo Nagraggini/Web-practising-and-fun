@@ -38,13 +38,28 @@ const x = function () {
 // Maximum: 0.999999... (de 1 sosem lesz)
 // Math.random();
 
-const secretNumber = Math.trunc(Math.random() * 20) + 1; // 1-20 közötti szám kreálása.
+let secretNumber = Math.trunc(Math.random() * 20) + 1; // 1-20 közötti szám kreálása.
 //A +1 azért kell, hogy lehessen 20 is az eredmény.
 //Teszthez.
-console.log(secretNumber);
+console.log('The number is: ' + secretNumber);
 
 //Eredmény módosításához.
 let score = 20; //Nem lehet const, mert csökkenteni kell az értékét.
+let highscore;
+
+if (localStorage.getItem('highscore') != '0') {
+  highscore = localStorage.getItem('highscore');
+} else {
+  highscore = 0;
+}
+
+const displayMessage = function (message) {
+  document.querySelector('.message').textContent = message;
+};
+
+const displayNumber = function (number) {
+  document.querySelector('.number').textContent = number;
+};
 
 // <button class="btn check">Check!</button>
 //A btn class-on belül a check gombot kérjük le.
@@ -53,50 +68,68 @@ document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
 
-  if (!guess && guess !== 0) {
-    //Értéket és típust is ellenőrzünk ezzel: !==
-    document.querySelector('.message').textContent = '🚫 No number!';
-  } else if (guess < 1 || guess > 20) {
-    document.querySelector('.message').textContent =
-      'Number must be between 1-20!';
+  if (guess < 1 || guess > 20) {
+    displayMessage('Number must be between 1-20!');
   } else if (guess === secretNumber) {
-    document.querySelector('.message').textContent = '🎆 You are a winner!';
+    displayNumber(secretNumber);
+    displayMessage('🎆 You are a winner!');
+
+    //Háttérszín és stílus megváltoztatása. Ezek inline stílusok lesznek a htmlben, a css fájlban nem fog megváltozni semmi sem.
+    document.querySelector('body').style.backgroundColor = '#ff66ff';
+    //Csak egy elemet módosít (az első találatot)
+    document.querySelector('.number').style.width = '30rem'; //rem: Egy relatív mértékegység a html font-size-hoz viszonyítva.
+    //font-size: 10px -> 30rem = 30 × 10px = 300px
 
     displayFirework();
 
-    if (Number(document.querySelector('.highscore').textContent) >= score) {
-      document.querySelector('.highscore').textContent = score;
-      // TODO nem működik.
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector('.highscore').textContent = highscore;
+
+      //Mentés
+      localStorage.setItem('highscore', highscore);
     }
-    // TODO Legyen zöld a hattertes a betűk fehérek
-  } else if (guess > secretNumber) {
+    //Amikor a tipp helytelen.
+  } else if (guess !== secretNumber) {
     if (score > 1) {
-      document.querySelector('.message').textContent = 'Too high!';
+      //Ternális operátor feltétel ? "igaz ág":"hamis ág"
+      displayMessage(guess > secretNumber ? 'Too high!' : 'Too low!');
       score--; //Hibás tippnél csökkentjük a pontot.
       document.querySelector('.score').textContent = score;
     } else {
       //A score=0.
-      document.querySelector('.message').textContent = "Don't worry about it!";
-      document.querySelector('.score').textContent = 0;
-    }
-  } else {
-    if (score > 1) {
-      document.querySelector('.message').textContent = 'Too low!';
-      score--; //Hibás tippnél csökkentjük a pontot.
-      document.querySelector('.score').textContent = score;
-    } else {
-      //A score=0.
-      document.querySelector('.message').textContent = "Don't worry about it!";
+      displayMessage("Don't worry about it!");
       document.querySelector('.score').textContent = 0;
     }
   }
 });
-// TODO Ezt!
-//Udemy - The Complete JavaScript Course 2025 From Zero to Expert! (2025)
-//07. JavaScript in the Browser DOM and Events PROJECT
-// 8. videó egészen a 11. videóig.
 
-// TODO localStroge-ba mentsd el a high score-t.
+function displayReset() {
+  score = 20;
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+  //Teszthez.
+  console.log('The number is: ' + secretNumber);
+  displayMessage('Start guessing...');
+
+  document.querySelector('.score').textContent = score;
+
+  displayNumber('?');
+  document.querySelector('.guess').value = '';
+
+  document.querySelector('body').style.backgroundColor = '#222';
+  document.querySelector('.number').style.width = '15rem';
+}
+
+//Egy soros utasításnál nem kell a függvény mögő tenni a zárójeleket, ha kiteszed, akkor az oldalbetültésekor egyből lefut.
+document.querySelector('.again').addEventListener('click', displayReset);
+
+//Összes előzmény törlése és kezdőképernyő beállítása.
+document.querySelector('.clear').addEventListener('click', () => {
+  localStorage.clear();
+  document.querySelector('.highscore').textContent = '0';
+  highscore = 0;
+  displayReset();
+});
 
 // Tűzijáték animáció
 function displayFirework() {
