@@ -29,7 +29,16 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("A gomb szövege target-el: " + event.target.innerText);
         event.target.style.backgroundColor = "blue";
     });
+    //====================== 2. feladat ============================
+    const kivalasztottSzinHatterhez = document.getElementById(
+        "kivalasztottSzinHatterhez",
+    );
 
+    kivalasztottSzinHatterhez.addEventListener("input", (e) => {
+        const hexColor = e.target.value;
+        document.querySelector("body").style.backgroundColor = hexColor;
+        document.querySelector(".kiemeltCikk").style.backgroundColor = hexColor;
+    });
     //====================== 3. feladat ============================
     // 3. Színválasztó input
     const kivalasztottSzinInput = document.getElementById("kivalasztottSzin");
