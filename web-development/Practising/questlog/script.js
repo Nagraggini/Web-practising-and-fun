@@ -1,19 +1,61 @@
 "use strict";
 
 //Név lekérésése.
-let name = localStorage.getItem("name");
-console.log(name);
+{
+    let name = localStorage.getItem("name");
+    console.log(name);
 
-if (name) {
-    //Template Literal
-    document.querySelector(".welcome").textContent = `Hello ${name}!`;
-} else {
-    document.querySelector(".welcome").textContent = "Hello!";
+    if (name) {
+        //Template Literal
+        document.querySelector(".welcome").textContent = `Hello ${name}!`;
+    } else {
+        document.querySelector(".welcome").textContent = "Hello!";
+    }
+}
+
+// Lista lekérése
+displayQuestList;
+function displayQuestList() {
+    //TODO
+    let rawData = JSON.parse(localStorage.getItem("lista")) || []; //Visszaolvasás, vagy üres tömböt kapunk.
+    console.log(rawData);
+    // 2. Visszaalakítjuk tömbbé (ha létezik az adat)
+    if (rawData) {
+        console.log("A tömb hossza:" + rawData.length);
+
+        // TODO forEach-el kell végig menni a listán.
+
+        let idOld, checkboxOld, descriptionOld, dateOld, priorityOld;
+        // Osztálynév meghatározása a select értéke alapján
+        let pClass = "";
+        if (priorityOld === "Low") pClass = "low";
+        else if (priorityOld === "Normal") pClass = "normal";
+        else if (priorityOld === "High") pClass = "high";
+
+        //Új sor beszúrása a táblázatba.
+        const tbody = document.querySelector("table tbody");
+        const ujSor = document.createElement("tr");
+        ujSor.id = idOld; //Egyedi id.
+        // TODO amelyik checkbox checked az legyen áthúzva.
+
+        //A tr-nek van egyedi id-ja.
+        ujSor.innerHTML = `
+            <td><input type="checkbox" /></td>
+            <td>${descriptionOld}</td>
+            <td>${dateOld}</td>            
+            <td class="${pClass}">${priorityOld}</td>`; // Itt adjuk át a class-t, ami kell a színkódhoz.
+
+        //Hozzáadjuk a táblázathoz.
+        tbody.appendChild(ujSor);
+        //id-ra hivatkozunk.
+        document.getElementById("questForm").reset();
+    } else {
+        console.log("Még nincs mentett adat.");
+    }
 }
 
 /*Ez a JavaScript kód dinamikusan frissíti egy HTML oldalon az aktuális évet egy elemben,
          jellemzően lábjegyzetekben vagy copyright szövegekben, így nem kell kézzel módosítani minden év elején.*/
-
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
@@ -53,6 +95,9 @@ const today = new Date().toISOString().split("T")[0];
 // 2. Beállítjuk a 'min' attribútumot a HTML elemünkön.
 document.getElementById("quest-date").setAttribute("min", today);
 
+//localStorage mentéshez kellenek.
+let checkbox;
+let id;
 document.querySelector(".questSubmit").addEventListener("click", (e) => {
     // Ez a titkos fegyver: megakadályozza az oldal frissítését.
     e.preventDefault();
@@ -61,9 +106,6 @@ document.querySelector(".questSubmit").addEventListener("click", (e) => {
         new Date(document.querySelector(".date").value),
     );
     let priorityInput = document.querySelector(".priority").value;
-
-    console.log(descriptionInput + " ; " + dateInput + " ; " + priorityInput);
-    // TODO le kéne menteni négy mezőt. A checkbox értékét is.
 
     //Leellenőrizzük, hogy tuti nem üresek.
     if (descriptionInput && dateInput && priorityInput) {
@@ -76,16 +118,32 @@ document.querySelector(".questSubmit").addEventListener("click", (e) => {
         //Új sor beszúrása a táblázatba.
         const tbody = document.querySelector("table tbody");
         const ujSor = document.createElement("tr");
+        ujSor.id = Date.now(); //Egyedi id-t adunk a sornak.
+
+        //A tr-nek van id-ja ami az adott task sorszáma.
         ujSor.innerHTML = `
             <td><input type="checkbox" /></td>
             <td>${descriptionInput}</td>
-            <td>${dateInput}</td>
+            <td>${dateInput}</td>            
             <td class="${pClass}">${priorityInput}</td>`; // Itt adjuk át a class-t, ami kell a színkódhoz.
 
         //Hozzáadjuk a táblázathoz.
         tbody.appendChild(ujSor);
         //id-ra hivatkozunk.
         document.getElementById("questForm").reset();
+
+        //Mentés tömbbel
+        checkbox = document.createElement("input");
+        let lista = [
+            ujSor.id,
+            checkbox,
+            descriptionInput,
+            dateInput,
+            priorityInput,
+        ];
+        localStorage.setItem("lista", JSON.stringify(lista));
+        console.log("A lista hossza:" + lista.length);
+        console.log(lista.toString());
     }
 
     newQuestDisplayClear();
@@ -97,6 +155,7 @@ document.querySelector(".deleteAllButton").addEventListener("click", () => {
     document.querySelector(".welcome").textContent = "Hello!";
     newNameDisplayClear();
     newQuestDisplayClear();
+    displayQuestList();
     nameInput.value = "";
     displayFirework();
     console.log("History cleared!");
@@ -169,3 +228,5 @@ function displayFirework() {
     }
     animate();
 }
+// TODO deleteButton gomb eseménykezelője.
+// TODO doneButton eseménykezelője. -> design áthúzott legyen.

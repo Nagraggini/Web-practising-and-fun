@@ -138,6 +138,51 @@ button {
     background-color: var(--primary-color);
     color: var(--font-color-button);
     padding: 5px 5px;
+    height: 30px;
+    cursor: crosshair;
+
+    border: none; /* Nincs keret */
+    padding: 10px 20px; /* Belső margó */
+    text-align: center; /* Szöveg középre igazítása */
+    text-decoration: none; /* Nincs aláhúzás */
+    display: inline-block; /* Inline blokk elem */
+    font-size: 16px; /* Betűméret */
+
+    border-radius: 5px; /* Lekerekített sarkok */
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease; /* Áttűnés a háttérszín és árnyék változásakor */
+    font-weight: bold; /* Félkövér szöveg */
+    position: relative; /* Relatív pozíció a fénycsíkhoz */
+    overflow: hidden; /* Elrejtjük a túlcsorduló tartalmat */
+}
+
+/*Filterezés.*/
+button:hover {
+    background-color: rgb(213, 119, 224);
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -200%; /* Kezdetben rejtve */
+    width: 200%;
+    height: 20px; /* Vékony csík */
+    background: rgba(255, 255, 255, 0.8); /* Fényes csík színe */
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+}
+
+button:hover::before {
+    left: 100%; /* Mozgás hover esetén */
+    transition: all 0.5s ease;
+}
+
+button:hover {
+    transform: scale(1.05); /* Nagyítás hover esetén */
+    background-color: #b5a9a9; /* Háttérszín változás hover esetén */
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8); /* Csillogó hatás */
 }
 
 /*Ide csak azt kell írni, ami változik.*/
