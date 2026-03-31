@@ -30,7 +30,7 @@ body {
 /*
 A TELJES OLDAL SZERKEZETE (LAYOUT):
 Azzal kalkulálunk, hogy a fejléc (header) a képernyő 35%-át, 
-a fő rész (main) pedig a 60%-át foglalja el.
+a fő rész (main) pedig a 60%-át foglalja el, a footernek 5%-a lesz.
 */
 
 header {

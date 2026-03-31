@@ -29,15 +29,15 @@ localStorage.removeItem("nev");
 localStorage.clear();
 
 //Mentés tömbbel
-const todos = ["tanulás", "edzés", "projekt"];
-localStorage.setItem("todos", JSON.stringify(todos));
+const tod = ["tanulás", "edzés", "projekt"];
+localStorage.setItem("tod", JSON.stringify(tod));
 
 //Visszaolvaás
-const todos = JSON.parse(localStorage.getItem("todos")) || [];
-console.log(todos);
+const tod = JSON.parse(localStorage.getItem("tod")) || [];
+console.log(tod);
 ```
 
-# Kép kicsinyítése
+# Kép kicsinyítése (Linux Mint-en)
 
 Terminálban:
 sudo apt install imagemagick
@@ -45,3 +45,4 @@ sudo apt install imagemagick
 cd Dokumentumok/Icons
 
 convert kep.png -resize 24x24 kiskep.png
+

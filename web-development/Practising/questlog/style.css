@@ -1,24 +1,146 @@
+/*Retro betűtípus.*/
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
 
-body {
-    font-family: "Press Start 2P", sans-serif;
-    background-color: black;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-label,
-input,
-button,
-ul,
-li {
-    color: blueviolet;
+/*Színek*/
+:root {
+    --primary-color: rgb(124, 41, 155); /*Gomboknak pl.*/
+    --background-color: black;
+    --font-color: blueviolet;
+    --font-color-button: white;
+    --link-color: aqua;
 }
 
-ul {
-    list-style-image: url(../../Assets/Icons/linkSmall.png);
+html {
+    /* A REM MÉRTÉKEGYSÉG ALAPJA: 
+     A böngészők alapmérete 16px. Ha ezt 62.5%-ra állítjuk, akkor 1rem pontosan 10px lesz. 
+     Így fejszámolással tudunk váltani: pl. 4.5rem = 45px. Nagyon kényelmes! */
+    font-size: 62.5%;
+
+    /* BORDER-BOX: 
+     Ezzel azt mondjuk meg, hogy ha egy doboznak keretet vagy paddingot adunk, 
+     az ne növelje meg a doboz teljes szélességét, hanem "befelé" terjeszkedjen. */
+    box-sizing: border-box;
+}
+
+body {
+    font-family:
+        "Press Start 2P", sans-serif; /* Beállítjuk a retró betűtípust az egész oldalra. */
+    font-size: 11px;
+    color: var(--font-color);
+    background-color: var(--background-color);
+    padding: 10px;
+}
+
+input,
+button,
+select {
+    color: var(--font-color);
+    font-family: "Press Start 2P", sans-serif;
+}
+
+/*
+A TELJES OLDAL SZERKEZETE (LAYOUT):
+A fejléc (header) a képernyő x %-át, a fő rész (main) az x %-át foglalja el, a footernek pedig x % helye lesz.
+*/
+header {
+    height: 28vh; /* A viewport (látható képernyő) magasságának 35%-a. */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /*Ezt együtt kell használni pl.: flex/grid-el*/
+    border-bottom: 5px solid #eee; /* Vastag alsó vonal a stílus kedvéért. */
+}
+
+/*A headerben lévő összes gyerek kap párnázást. Csillag az univerzális választó.*/
+header > * {
+    /*alsó és felső, jobb és bal belső távolságok*/
+    padding: 3px 0px;
+}
+
+.form-group-new-user {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /*Vízszintes távolság a flex:row miatt.*/
+    padding: 2px; /*Függőleges távolság.*/
+}
+
+.form-group-new-quest {
+    display: flex;
+    flex-direction: row;
+    gap: 9px; /*Vízszintes távolság a flex:row miatt.*/
+    padding: 2px; /*Függőleges távolság.*/
+}
+label {
+    font-size: 12px;
+    padding: 10px; /*Függőleges távolság.*/
+}
+
+main {
+    min-height: 55vh;
+}
+
+/*A mainben lévő összes gyerek kap párnázást. Csillag az univerzális választó.*/
+main > * {
+    /*alsó és felső, jobb és bal belső távolságok*/
+    padding: 20px 20px;
+}
+h2 {
+    padding: 10px;
+}
+
+/*class-ra hivatkozunk, id-ra -el kell.*/
+.quest-list {
+    width: 100%;
+}
+
+.quest-list,
+th,
+td {
+    border: 3px dashed rgba(255, 255, 255, 0.584); /*dashed=szagatott vonal; dotted=pontozott vonal*/
+    border-collapse: collapse; /*Így nem lesz mindenhol duplán a szagatott vonal.*/
+    padding: 5px;
+    text-align: center; /*Alapból is középre van igazítva.*/
+}
+
+/*A :has() segítségével megváltoztathatod egy eleme stílusát attól függően, hogy mi van benne.*/
+
+tr:has(.low) {
+    background-color: rgba(255, 255, 255, 0.716);
+    color: white;
+}
+
+tr:has(.normal) {
+    background-color: DodgerBlue;
+    color: white;
+}
+
+tr:has(.high) {
+    background-color: tomato;
+    color: white;
+}
+
+.funcSection {
+    text-align: right; /*Jobb szélésre igazítás.*/
+}
+
+footer {
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /*A linkek közti távolság.*/
+}
+
+a {
+    color: var(--link-color);
+    text-decoration-thickness: 2px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--font-color-button);
+    padding: 5px 5px;
+}
+
+/*Ide csak azt kell írni, ami változik.*/
+@media (max-width: 800px) {
+    /*TODO mobilos nézet.*/
 }

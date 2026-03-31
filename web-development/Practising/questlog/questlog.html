@@ -4,42 +4,69 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="style.css" />
+        <link
+            rel="icon"
+            type="image/png"
+            href="../../../assets/icons/unicorn.png"
+        />
         <title>Questlog</title>
     </head>
     <body>
         <header>
-            <h1>Gamer/geek teendő lista</h1>
+            <h1>Gamer/Geek Quest List</h1>
             <!--A bekért nevet írjuk ki.-->
-            <h2>Szia!</h2>
+            <h2 class="welcome"></h2>
             <section class="inputSection">
                 <form id="nameForm">
-                    <label>Your name: </label>
-                    <input
-                        type="text"
-                        id="name"
-                        placeholder="Pls write your name"
-                        required
-                    />
-                    <button type="sumbit">Submit</button>
+                    <div class="form-group-new-user">
+                        <label for="name">Your name: </label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            class="name"
+                            placeholder="Pls write your name"
+                            required
+                        />
+                        <button type="sumbit" class="btn nameSubmit">
+                            Submit
+                        </button>
+                    </div>
                 </form>
-
-                <form id="newquestForm">
-                    <!--Megnevezés, Dátum, Fontosság {nem fontos, normál, fontos}  -->
-                    <label>Quest name: </label>
-                    <input
-                        type="text"
-                        id="description"
-                        placeholder="Pls describe"
-                        required
-                    />
-                    <input type="date" required />
-                    <select name="priority" id="priority" required>
-                        <option value="">Choose priority</option>
-                        <option value="Not important">Not important</option>
-                        <option value="Normal">Normal</option>
-                        <option value="Important">Important</option>
-                    </select>
-                    <button type="sumbit">Submit</button>
+                <form id="questForm">
+                    <div class="form-group-new-quest">
+                        <!--Megnevezés, Dátum, Fontosság {nem fontos, normál, fontos}  -->
+                        <label for="description">Quest name: </label>
+                        <input
+                            type="text"
+                            id="description"
+                            name="description"
+                            class="description"
+                            placeholder="Pls describe"
+                            required
+                        />
+                        <input
+                            type="date"
+                            id="quest-date"
+                            class="date"
+                            name="deadline"
+                            required
+                        />
+                        <select
+                            name="priority"
+                            id="priority"
+                            class="priority"
+                            required
+                        >
+                            <option value="">Choose priority</option>
+                            <option value="Low">Low</option>
+                            <option value="Normal">Normal</option>
+                            <option value="High">High</option>
+                        </select>
+                        <button type="sumbit" class="btn questSubmit">
+                            Accept
+                        </button>
+                    </div>
                 </form>
             </section>
         </header>
@@ -47,12 +74,48 @@
             <section class="mainSection">
                 <!--Nem minden esetben kell.-->
                 <!--<article></article>-->
-                <h3>Active quests</h3>
-                <ul id="quest-list">
-                    <li>Check my mail box.</li>
-                </ul>
+                <h2>Active quests</h2>
+                <table class="quest-list">
+                    <thead>
+                        <tr>
+                            <th>WIP/Done</th>
+                            <th>Description</th>
+                            <th>Date</th>
+                            <th>Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="0">
+                            <td><input type="checkbox" id="" /></td>
+                            <td>Check my mail box.</td>
+                            <td>2026. 04. 06</td>
+                            <td class="high">High</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="funcSection">
+                <button type="reset" class="btn deleteButton">
+                    Delete selected
+                </button>
+                <button type="reset" class="btn deleteAllButton">
+                    Delete all (name&history)
+                </button>
             </section>
         </main>
+        <footer>
+            <a
+                href="https://github.com/Nagraggini/web-practising-and-fun/tree/main/web-development/Practising/questlog"
+            >
+                <img src="../../assets/icons/linkSmall.png" alt="link" />
+                My source code</a
+            >
+
+            <p>
+                &copy; <span id="year"></span> Nagraggini (Andrea Freud) — All
+                rights reserved.
+            </p>
+        </footer>
     </body>
     <script src="script.js" defer></script>
 </html>
