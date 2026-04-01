@@ -16,12 +16,12 @@
 // Lista lekérése
 displayQuestList;
 function displayQuestList() {
-    //TODO
-    let rawData = JSON.parse(localStorage.getItem("lista")) || []; //Visszaolvasás, vagy üres tömböt kapunk.
-    console.log(rawData);
-    // 2. Visszaalakítjuk tömbbé (ha létezik az adat)
-    if (rawData) {
-        console.log("A tömb hossza:" + rawData.length);
+    const ourStorage = window.localStorage; //Visszaolvasás, vagy üres tömböt kapunk.
+    console.log(ourStorage);
+
+    // Visszaalakítjuk tömbbé (ha létezik az adat).
+    if (ourStorage) {
+        console.log("A tömb hossza:" + ourStorage.length);
 
         // TODO forEach-el kell végig menni a listán.
 
@@ -36,7 +36,7 @@ function displayQuestList() {
         const tbody = document.querySelector("table tbody");
         const ujSor = document.createElement("tr");
         ujSor.id = idOld; //Egyedi id.
-        // TODO amelyik checkbox checked az legyen áthúzva.
+        // TODO amelyik checkbox checked az legyen áthúzva és bepipálva.
 
         //A tr-nek van egyedi id-ja.
         ujSor.innerHTML = `
@@ -53,11 +53,6 @@ function displayQuestList() {
         console.log("Még nincs mentett adat.");
     }
 }
-
-/*Ez a JavaScript kód dinamikusan frissíti egy HTML oldalon az aktuális évet egy elemben,
-         jellemzően lábjegyzetekben vagy copyright szövegekben, így nem kell kézzel módosítani minden év elején.*/
-const yearEl = document.getElementById("year");
-if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 function newNameDisplayClear() {
     document.querySelector(".name").value = "";
@@ -88,6 +83,7 @@ document.querySelector(".nameSubmit").addEventListener("click", (event) => {
         localStorage.setItem("name", name);
     }
 });
+
 //Beállítjuk, hogy csak jövőbeli dátumot lehessen megadni.
 // 1. Lekérjük a mai dátumot ISO formátumban (YYYY-MM-DD)
 const today = new Date().toISOString().split("T")[0];
@@ -101,6 +97,7 @@ let id;
 document.querySelector(".questSubmit").addEventListener("click", (e) => {
     // Ez a titkos fegyver: megakadályozza az oldal frissítését.
     e.preventDefault();
+    checkbox = document.createElement("input").checked; //false
     let descriptionInput = document.querySelector(".description").value;
     let dateInput = new Intl.DateTimeFormat("hu-HU").format(
         new Date(document.querySelector(".date").value),
@@ -132,8 +129,7 @@ document.querySelector(".questSubmit").addEventListener("click", (e) => {
         //id-ra hivatkozunk.
         document.getElementById("questForm").reset();
 
-        //Mentés tömbbel
-        checkbox = document.createElement("input");
+        //Mentés tömbben.
         let lista = [
             ujSor.id,
             checkbox,
@@ -141,8 +137,8 @@ document.querySelector(".questSubmit").addEventListener("click", (e) => {
             dateInput,
             priorityInput,
         ];
-        localStorage.setItem("lista", JSON.stringify(lista));
-        console.log("A lista hossza:" + lista.length);
+        localStorage.setItem(ujSor.id, JSON.stringify(lista));
+        console.log("A lista hossza: " + lista.length);
         console.log(lista.toString());
     }
 
@@ -228,5 +224,50 @@ function displayFirework() {
     }
     animate();
 }
+
+//==========================================
+//Teszt adatok.
+function newTestQuest() {
+    //13 karakteres szám.
+    let id = Math.floor(Math.random() * 9000000000000) + 1000000000000;
+
+    //Random true vagy false.
+
+    let check = {
+        id: Date.now(),
+        check: ["true", "false"][Math.floor(Math.random() * 2)],
+    };
+
+    let checkbox = check.check;
+    //Random szöveg.
+    let descriptionInput = crypto.randomUUID();
+
+    //Random dátum.
+    let d = new Date(
+        +new Date(2024, 0, 1) +
+            Math.random() * (+new Date(2026, 11, 31) - +new Date(2024, 0, 1)),
+    );
+    let dateInput = `${d.getFullYear()}. ${String(d.getMonth() + 1).padStart(2, "0")}. ${String(d.getDate()).padStart(2, "0")}`;
+
+    //Random priority.
+    let task = {
+        id: Date.now(),
+        priority: ["Low", "Normal", "High"][Math.floor(Math.random() * 3)],
+    };
+
+    let priorityInput = task.priority;
+
+    let list = [id, checkbox, descriptionInput, dateInput, priorityInput];
+
+    localStorage.setItem(id, JSON.stringify(list));
+    console.log("A lista hossza: " + list.length);
+    console.log(list.toString()); //62120516,[object HTMLInputElement],,,
+}
+
+//Oda rakod a függvény mögé a ()-et akkor mindig lefut, ha elindítod az oldalt. De nem fut, amikor rányomsz a gombra.
+document
+    .querySelector(".randomQuestButton")
+    .addEventListener("click", newTestQuest);
+
 // TODO deleteButton gomb eseménykezelője.
 // TODO doneButton eseménykezelője. -> design áthúzott legyen.

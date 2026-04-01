@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!--Csak a html body-ban tud le futni.-->
+        <script>
+            document.open();
+            document.write("<h1>Hello World</h1>");
+            document.writeln("Hello World!");
+            document.close();
+        </script>
+
+        <button onclick="myFunction()">Open</button>
+        <script>
+            function myFunction() {
+                const myWindow = window.open();
+                myWindow.document.write("<h1>New Window</h1>");
+                myWindow.document.write("<p>Hello World!</p>");
+            }
+        </script>
+        <button onclick="window.print()">Print this page.</button>
+        <br />
+        <a href="https://www.w3schools.com/jsref/met_doc_write.asp"
+            >HTML DOM Document write()</a
+        ><br />
+        <a
+            href="https://www.geeksforgeeks.org/javascript/javascript-localstorage/"
+        >
+            JavaScript localStorage</a
+        >
+        <p>
+            Nézd meg a console log-ot és az Applications részt a webtoolban
+            (F12).
+        </p>
+        <button class="randomQuestButton">
+            Random quest generálása a localStorage-ba.
+        </button>
+    </body>
+    <script src="localstore-prac.js" defer></script>
+</html>
