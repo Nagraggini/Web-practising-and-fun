@@ -29,6 +29,8 @@ export class UI {
         document.querySelector(".priority").value = "";
     }
     createFirstQuest() {
+        // TODO ez sose fut le.
+        console.log("createFirstQuest()");
         //Táblázat kiürítése.
         const tbody = document.querySelector(".quest-list tbody");
         tbody.innerHTML = "";
@@ -51,50 +53,54 @@ export class UI {
     }
 
     displayQuestList() {
+        console.log("displayQuestList()");
         //Kitöröljük a régi adatokat, hogy ne duplikálódjanak.
         const tableBody = document.querySelector(".quest-list tbody");
         tableBody.innerHTML = "";
 
         //Adatok kinyerése a localStorage-ból. A metódus egy részében az AI segített.
         const ourStorage = { ...localStorage };
+        if (ourStorage) {
+            // use for...in to iterate over the keys of ourStorage
+            for (let key in ourStorage) {
+                // Kihagyjuk a nevet, csak a küldetéseket listázzuk.
+                if (key === "name") continue;
 
-        // use for...in to iterate over the keys of ourStorage
-        for (let key in ourStorage) {
-            // Kihagyjuk a nevet, csak a küldetéseket listázzuk.
-            if (key === "name") continue;
+                const dataArray = JSON.parse(localStorage.getItem(key));
 
-            const dataArray = JSON.parse(localStorage.getItem(key));
+                const idOld = dataArray[0];
+                const checkboxOld = dataArray[1];
+                const descriptionOld = dataArray[2];
+                const dateOld = dataArray[3];
+                const priorityOld = dataArray[4];
 
-            const idOld = dataArray[0];
-            const checkboxOld = dataArray[1];
-            const descriptionOld = dataArray[2];
-            const dateOld = dataArray[3];
-            const priorityOld = dataArray[4];
+                const ujSor = document.createElement("tr");
+                ujSor.id = idOld;
+                // TODO nem is kell mert a css-ben állítjuk be a színt.
+                let pClass = "";
+                if (priorityOld === "High") {
+                    pClass = "red";
+                } else if (priorityOld === "Medium") {
+                    pClass = "yellow";
+                } else {
+                    pClass = "green";
+                }
 
-            const ujSor = document.createElement("tr");
-            ujSor.id = idOld;
+                // Ha a küldetés kész (true), áthúzzuk a szöveget
+                if (checkboxOld === true) {
+                    ujSor.style.textDecoration = "line-through";
+                }
 
-            let pClass = "";
-            if (priorityOld === "High") {
-                pClass = "red";
-            } else if (priorityOld === "Medium") {
-                pClass = "yellow";
-            } else {
-                pClass = "green";
-            }
-
-            // Ha a küldetés kész (true), áthúzzuk a szöveget
-            if (checkboxOld === true) {
-                ujSor.style.textDecoration = "line-through";
-            }
-
-            ujSor.innerHTML = `
+                ujSor.innerHTML = `
             <td><input type="checkbox" ${checkboxOld ? "checked" : ""}></td>
             <td>${descriptionOld}</td>
             <td>${dateOld}</td>            
             <td class="${pClass}">${priorityOld}</td>`;
 
-            tableBody.appendChild(ujSor);
+                tableBody.appendChild(ujSor);
+            }
+        } else {
+            createFirstQuest();
         }
     }
 

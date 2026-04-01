@@ -12,7 +12,7 @@ const testInstance = new Test();
 
 //Név és quest lista lekérésése.
 uiInstance.setName();
-uiInstance.displayQuestList(); //Kiírjuk a quest listát, ha van.
+uiInstance.displayQuestList(); //Kiírjuk a quest listát, ha nincs akkor a teszt sort.
 
 function setDateInput() {
     //Beállítjuk, hogy csak jövőbeli dátumot lehessen megadni.
@@ -72,6 +72,7 @@ document.querySelector(".questSubmit").addEventListener("click", (e) => {
         console.log(lista.toString());
 
         uiInstance.newNameDisplayClear();
+        uiInstance.newQuestDisplayClear();
         uiInstance.displayQuestList();
     } else {
         alert("Kérlek tölts ki minden mezőt!");
