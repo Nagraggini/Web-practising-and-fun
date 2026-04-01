@@ -50,7 +50,6 @@ document.querySelector(".questSubmit").addEventListener("click", (e) => {
     e.preventDefault();
 
     //localStorage mentéshez.
-    let checkbox = document.createElement("input").checked; //false
     let descriptionInput = document.querySelector(".description").value;
     let dateInput = new Intl.DateTimeFormat("hu-HU").format(
         new Date(document.querySelector(".date").value),
@@ -59,21 +58,26 @@ document.querySelector(".questSubmit").addEventListener("click", (e) => {
 
     //Leellenőrizzük, hogy tuti nem üresek.
     if (descriptionInput && dateInput && priorityInput) {
+        // Generálunk egy egyedi ID-t
+        const id = Date.now().toString();
+
         //Mentés tömbben.
-        let lista = [
-            ujSor.id,
-            checkbox,
-            descriptionInput,
-            dateInput,
-            priorityInput,
-        ];
+        let lista = [id, false, descriptionInput, dateInput, priorityInput];
+
+        //Hozzáadjuk a localStorage-hoz.
         localStorage.setItem(ujSor.id, JSON.stringify(lista));
+
+        //Kiírjuk a konzolra az értékeket.
         console.log("A lista hossza: " + lista.length);
         console.log(lista.toString());
+
+        uiInstance.newNameDisplayClear();
+        uiInstance.displayQuestList();
+    } else {
+        alert("Kérlek tölts ki minden mezőt!");
     }
 
     //Újra betöltjük a quest list-et.
-    uiInstance.displayQuestList();
 });
 
 //Egy soros utasításnál nem kell a függvény mögő tenni a zárójeleket, ha kiteszed, akkor az oldalbetültésekor egyből lefut.

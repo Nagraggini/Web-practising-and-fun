@@ -58,7 +58,7 @@ export class UI {
         // Visszaalakítjuk tömbbé (ha létezik az adat).
         if (ourStorage) {
             //Kitötöljük a régi adatokat, hogy ne duplikálódjanak.
-            const tbody = document.querySelector("quest-list");
+            const tbody = document.querySelector(".quest-list tbody");
             tbody.innerHTML = "";
             console.log("A tömb hossza:" + ourStorage.length);
 
