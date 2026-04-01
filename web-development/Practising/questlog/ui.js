@@ -51,61 +51,50 @@ export class UI {
     }
 
     displayQuestList() {
-        //Adatok kinyerése a localStorage-ból.
-        const ourStorage = window.localStorage; //Visszaolvasás, vagy üres tömböt kapunk.
-        console.log(ourStorage);
+        //Kitöröljük a régi adatokat, hogy ne duplikálódjanak.
+        const tableBody = document.querySelector(".quest-list tbody");
+        tableBody.innerHTML = "";
 
-        // Visszaalakítjuk tömbbé (ha létezik az adat).
-        if (ourStorage) {
-            //Kitötöljük a régi adatokat, hogy ne duplikálódjanak.
-            const tbody = document.querySelector(".quest-list tbody");
-            tbody.innerHTML = "";
-            console.log("A tömb hossza:" + ourStorage.length);
+        //Adatok kinyerése a localStorage-ból. A metódus egy részében az AI segített.
+        const ourStorage = { ...localStorage };
 
-            // 1. Kiszedjük az értékeket és végigmennyünk rajtuk
-            Object.values(ourStorage).forEach((item) => {
-                //Ebben a forEachben az AI segített bevallom a tbody sorig. :)
-                // 2. Mivel a "length" és a név is benne van a Storage-ben, azt ki kell szűrni.
-                if (typeof item === "string" || item.getItem !== "name") {
-                    // 3. A szöveget (string) valódi tömbbé alakítjuk
-                    const dataArray = JSON.parse(item);
+        // use for...in to iterate over the keys of ourStorage
+        for (let key in ourStorage) {
+            // Kihagyjuk a nevet, csak a küldetéseket listázzuk.
+            if (key === "name") continue;
 
-                    // Most már hozzáférsz az adatokhoz index alapján:
-                    const idOld = dataArray[0];
-                    const checkboxOld = dataArray[1];
-                    const descriptionOld = dataArray[2];
-                    const dateOld = dataArray[3];
-                    const priorityOld = dataArray[4];
+            const dataArray = JSON.parse(localStorage.getItem(key));
 
-                    // Osztálynév meghatározása a select értéke alapján
-                    let pClass = "";
-                    if (priorityOld === "Low") pClass = "low";
-                    else if (priorityOld === "Normal") pClass = "normal";
-                    else if (priorityOld === "High") pClass = "high";
+            const idOld = dataArray[0];
+            const checkboxOld = dataArray[1];
+            const descriptionOld = dataArray[2];
+            const dateOld = dataArray[3];
+            const priorityOld = dataArray[4];
 
-                    //Új sor beszúrása a táblázatba.
+            const ujSor = document.createElement("tr");
+            ujSor.id = idOld;
 
-                    const ujSor = document.createElement("tr");
-                    ujSor.id = idOld; //Egyedi id.
-                    // TODO amelyik checkbox checked az legyen áthúzva és bepipálva.
+            let pClass = "";
+            if (priorityOld === "High") {
+                pClass = "red";
+            } else if (priorityOld === "Medium") {
+                pClass = "yellow";
+            } else {
+                pClass = "green";
+            }
 
-                    //A tr-nek van egyedi id-ja.
-                    ujSor.innerHTML = `
-            <td><input type="checkbox" /></td>
+            // Ha a küldetés kész (true), áthúzzuk a szöveget
+            if (checkboxOld === true) {
+                ujSor.style.textDecoration = "line-through";
+            }
+
+            ujSor.innerHTML = `
+            <td><input type="checkbox" ${checkboxOld ? "checked" : ""}></td>
             <td>${descriptionOld}</td>
             <td>${dateOld}</td>            
-            <td class="${pClass}">${priorityOld}</td>`; // Itt adjuk át a class-t, ami kell a színkódhoz.
+            <td class="${pClass}">${priorityOld}</td>`;
 
-                    //Hozzáadjuk a táblázathoz.
-                    tbody.appendChild(ujSor);
-
-                    //id-ra hivatkozunk.
-                    document.getElementById("questForm").reset();
-                }
-            });
-        } else {
-            console.log("Nincs egy feladat sem a localStorage-ban.");
-            createFirstQuest(); //Mintát generálunk.
+            tableBody.appendChild(ujSor);
         }
     }
 

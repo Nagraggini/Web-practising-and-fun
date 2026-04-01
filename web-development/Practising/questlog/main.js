@@ -65,7 +65,7 @@ document.querySelector(".questSubmit").addEventListener("click", (e) => {
         let lista = [id, false, descriptionInput, dateInput, priorityInput];
 
         //Hozzáadjuk a localStorage-hoz.
-        localStorage.setItem(ujSor.id, JSON.stringify(lista));
+        localStorage.setItem(id, JSON.stringify(lista));
 
         //Kiírjuk a konzolra az értékeket.
         console.log("A lista hossza: " + lista.length);
