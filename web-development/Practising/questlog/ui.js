@@ -1,4 +1,5 @@
-class UI {
+// Az export kulcsszóval publikussá tesszük.
+export class UI {
     setName() {
         let name = localStorage.getItem("name");
         console.log(name);
@@ -10,6 +11,7 @@ class UI {
             document.querySelector(".welcome").textContent = "Hello!";
         }
     }
+
     /*Ez a JavaScript kód dinamikusan frissíti egy HTML oldalon az aktuális évet egy elemben,
          jellemzően lábjegyzetekben vagy copyright szövegekben, így nem kell kézzel módosítani minden év elején.*/
     setYear() {
@@ -26,6 +28,27 @@ class UI {
         document.querySelector(".date").value = "";
         document.querySelector(".priority").value = "";
     }
+    createFirstQuest() {
+        //Táblázat kiürítése.
+        const tbody = document.querySelector(".quest-list tbody");
+        tbody.innerHTML = "";
+
+        //Új sor beszúrása a táblázatba.
+        const ujSor = document.createElement("tr");
+        ujSor.id = 1774976649108; //Egyedi id.
+        // TODO mindig a mai nap legyen a dátum.
+        //A tr-nek van egyedi id-ja.
+        ujSor.innerHTML = `
+            <td><input type="checkbox" /></td>
+            <td>Check my mail box.</td>
+            <td>2026. 04. 06</td>            
+            <td class="high}">High</td>`; // Itt adjuk át a class-t, ami kell a színkódhoz.
+
+        //Hozzáadjuk a táblázathoz.
+        tbody.appendChild(ujSor);
+
+        document.getElementById("questForm").reset();
+    }
 
     displayQuestList() {
         const ourStorage = window.localStorage; //Visszaolvasás, vagy üres tömböt kapunk.
@@ -33,13 +56,16 @@ class UI {
 
         // Visszaalakítjuk tömbbé (ha létezik az adat).
         if (ourStorage) {
+            //Kitötöljük a régi adatokat, hogy ne duplikálódjanak.
+            const tbody = document.querySelector("table tbody");
+            tbody.innerHTML = "";
             console.log("A tömb hossza:" + ourStorage.length);
 
             // 1. Kiszedjük az értékeket és végigmennyünk rajtuk
             Object.values(ourStorage).forEach((item) => {
                 //Ebben a forEachben az AI segített bevallom a tbody sorig. :)
                 // 2. Mivel a "length" is benne van a Storage-ben, azt ki kell szűrni
-                if (typeof item === "string") {
+                if (typeof item === "string" || item !== "name") {
                     // 3. A szöveget (string) valódi tömbbé alakítjuk
                     const dataArray = JSON.parse(item);
 
@@ -57,7 +83,7 @@ class UI {
                     else if (priorityOld === "High") pClass = "high";
 
                     //Új sor beszúrása a táblázatba.
-                    const tbody = document.querySelector("table tbody");
+                    tbody = document.querySelector("table tbody");
                     const ujSor = document.createElement("tr");
                     ujSor.id = idOld; //Egyedi id.
                     // TODO amelyik checkbox checked az legyen áthúzva és bepipálva.
@@ -77,6 +103,7 @@ class UI {
             });
         } else {
             console.log("Nincs egy feladat sem a localStorage-ban.");
+            createFirstQuest(); //Mintát generálunk.
         }
     }
 
