@@ -1,4 +1,4 @@
-class test {
+class Test {
     //Teszt adatok generálása.
     newTestQuest() {
         //13 karakteres szám.

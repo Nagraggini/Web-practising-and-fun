@@ -1,4 +1,4 @@
-class ui {
+class UI {
     setName() {
         let name = localStorage.getItem("name");
         console.log(name);

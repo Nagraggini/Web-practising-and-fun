@@ -1,9 +1,11 @@
 "use strict";
+//Példányosítások.
+const ui = new Ui();
+const events = new Events();
+const test = new Test();
 
-//Név lekérésése.
+//Név és quest lista lekérésése.
 ui.setName();
-
-// Lista lekérése
 ui.displayQuestList();
 
 let nameInput = document.querySelector(".name");
