@@ -27,7 +27,58 @@ class ui {
         document.querySelector(".priority").value = "";
     }
 
-    displayQuestList() {}
+    displayQuestList() {
+        const ourStorage = window.localStorage; //Visszaolvasás, vagy üres tömböt kapunk.
+        console.log(ourStorage);
+
+        // Visszaalakítjuk tömbbé (ha létezik az adat).
+        if (ourStorage) {
+            console.log("A tömb hossza:" + ourStorage.length);
+
+            // 1. Kiszedjük az értékeket és végigmennyünk rajtuk
+            Object.values(ourStorage).forEach((item) => {
+                //Ebben a forEachben az AI segített bevallom a tbody sorig. :)
+                // 2. Mivel a "length" is benne van a Storage-ben, azt ki kell szűrni
+                if (typeof item === "string") {
+                    // 3. A szöveget (string) valódi tömbbé alakítjuk
+                    const dataArray = JSON.parse(item);
+
+                    // Most már hozzáférsz az adatokhoz index alapján:
+                    const idOld = dataArray[0];
+                    const checkboxOld = dataArray[1];
+                    const descriptionOld = dataArray[2];
+                    const dateOld = dataArray[3];
+                    const priorityOld = dataArray[4];
+
+                    // Osztálynév meghatározása a select értéke alapján
+                    let pClass = "";
+                    if (priorityOld === "Low") pClass = "low";
+                    else if (priorityOld === "Normal") pClass = "normal";
+                    else if (priorityOld === "High") pClass = "high";
+
+                    //Új sor beszúrása a táblázatba.
+                    const tbody = document.querySelector("table tbody");
+                    const ujSor = document.createElement("tr");
+                    ujSor.id = idOld; //Egyedi id.
+                    // TODO amelyik checkbox checked az legyen áthúzva és bepipálva.
+
+                    //A tr-nek van egyedi id-ja.
+                    ujSor.innerHTML = `
+            <td><input type="checkbox" /></td>
+            <td>${descriptionOld}</td>
+            <td>${dateOld}</td>            
+            <td class="${pClass}">${priorityOld}</td>`; // Itt adjuk át a class-t, ami kell a színkódhoz.
+
+                    //Hozzáadjuk a táblázathoz.
+                    tbody.appendChild(ujSor);
+                    //id-ra hivatkozunk.
+                    document.getElementById("questForm").reset();
+                }
+            });
+        } else {
+            console.log("Nincs egy feladat sem a localStorage-ban.");
+        }
+    }
 
     // Tűzijáték animáció (AI csinálta.)
     displayFirework() {
