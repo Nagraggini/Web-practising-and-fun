@@ -10,7 +10,7 @@ lehetősége van felvinni tennivalókat egy táblázatba.
 • Egy tennivaló bejegyzésről 3 dolgot adhat meg: Megnevezés, Dátum, Fontosság {nem fontos, normál, fontos}        
 • A táblázatban jelenjen meg a megnevezés és a dátum, és a
 fontosságnak megfelelő színnel legyen kiírva:           
-• Nem fontos – kék, normál – fekete, fontos - piros     
+• Különböző színűek legyenek: Nem fontos, normál , fontos     
 
 # localStorage cheatsheet
 

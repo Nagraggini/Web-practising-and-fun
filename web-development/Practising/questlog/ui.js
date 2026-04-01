@@ -51,21 +51,22 @@ export class UI {
     }
 
     displayQuestList() {
+        //Adatok kinyerése a localStorage-ból.
         const ourStorage = window.localStorage; //Visszaolvasás, vagy üres tömböt kapunk.
         console.log(ourStorage);
 
         // Visszaalakítjuk tömbbé (ha létezik az adat).
         if (ourStorage) {
             //Kitötöljük a régi adatokat, hogy ne duplikálódjanak.
-            const tbody = document.querySelector("table tbody");
+            const tbody = document.querySelector("quest-list");
             tbody.innerHTML = "";
             console.log("A tömb hossza:" + ourStorage.length);
 
             // 1. Kiszedjük az értékeket és végigmennyünk rajtuk
             Object.values(ourStorage).forEach((item) => {
                 //Ebben a forEachben az AI segített bevallom a tbody sorig. :)
-                // 2. Mivel a "length" is benne van a Storage-ben, azt ki kell szűrni
-                if (typeof item === "string" || item !== "name") {
+                // 2. Mivel a "length" és a név is benne van a Storage-ben, azt ki kell szűrni.
+                if (typeof item === "string" || item.getItem !== "name") {
                     // 3. A szöveget (string) valódi tömbbé alakítjuk
                     const dataArray = JSON.parse(item);
 
@@ -83,7 +84,7 @@ export class UI {
                     else if (priorityOld === "High") pClass = "high";
 
                     //Új sor beszúrása a táblázatba.
-                    tbody = document.querySelector("table tbody");
+
                     const ujSor = document.createElement("tr");
                     ujSor.id = idOld; //Egyedi id.
                     // TODO amelyik checkbox checked az legyen áthúzva és bepipálva.
@@ -97,6 +98,7 @@ export class UI {
 
                     //Hozzáadjuk a táblázathoz.
                     tbody.appendChild(ujSor);
+
                     //id-ra hivatkozunk.
                     document.getElementById("questForm").reset();
                 }
