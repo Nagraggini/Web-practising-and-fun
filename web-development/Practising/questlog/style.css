@@ -101,6 +101,23 @@ td {
     text-align: center; /*Alapból is középre van igazítva.*/
 }
 
+/*A :has() segítségével megváltoztathatod egy eleme stílusát attól függően, hogy mi van benne.*/
+
+tr:has(.low) {
+    background-color: rgba(255, 255, 255, 0.716);
+    color: white;
+}
+
+tr:has(.normal) {
+    background-color: DodgerBlue;
+    color: white;
+}
+
+tr:has(.high) {
+    background-color: tomato;
+    color: white;
+}
+
 .funcSection {
     text-align: right; /*Jobb szélésre igazítás.*/
 }

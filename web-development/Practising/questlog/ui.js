@@ -1,6 +1,5 @@
 // Az export kulcsszóval publikussá tesszük.
 export class UI {
-    //Számít a függvények sorrendje!
     setName() {
         let name = localStorage.getItem("name");
         console.log(name);
@@ -53,24 +52,6 @@ export class UI {
         document.getElementById("questForm").reset();
     }
 
-    setColorfulQuestList(ujSor, priorityOld) {
-        console.log("setColorfulQuestList");
-        switch (priorityOld) {
-            case "high":
-                ujSor.style.backgroundColor = "tomato";
-                break;
-            case "normal":
-                ujSor.style.backgroundColor = "DodgerBlue";
-                break;
-            case "low":
-                ujSor.style.backgroundColor = "lightgrey";
-                break;
-            default: //Hekkelésre felkészülve.
-                ujSor.style.backgroundColor = "pink";
-                break;
-        }
-    }
-
     displayQuestList() {
         console.log("displayQuestList()");
         //Kitöröljük a régi adatokat, hogy ne duplikálódjanak.
@@ -82,41 +63,39 @@ export class UI {
         if (ourStorage) {
             // use for...in to iterate over the keys of ourStorage
             for (let key in ourStorage) {
-                //forEach
                 // Kihagyjuk a nevet, csak a küldetéseket listázzuk.
                 if (key === "name") continue;
 
                 const dataArray = JSON.parse(localStorage.getItem(key));
 
                 const idOld = dataArray[0];
-                //Alapból szövegként adja vissza.
-                const checkboxOld =
-                    dataArray[1] === true || dataArray[1] === "true";
+                const checkboxOld = dataArray[1];
                 const descriptionOld = dataArray[2];
                 const dateOld = dataArray[3];
                 const priorityOld = dataArray[4];
 
                 const ujSor = document.createElement("tr");
+                ujSor.id = idOld;
+                // TODO nem is kell mert a css-ben állítjuk be a színt.
+                let pClass = "";
+                if (priorityOld === "High") {
+                    pClass = "red";
+                } else if (priorityOld === "Medium") {
+                    pClass = "yellow";
+                } else {
+                    pClass = "green";
+                }
 
-                this.setColorfulQuestList(ujSor, priorityOld);
+                // Ha a küldetés kész (true), áthúzzuk a szöveget
+                if (checkboxOld === true) {
+                    ujSor.style.textDecoration = "line-through";
+                }
 
-                ujSor.id = idOld; //Ezzel, majd le tudjuk kérdezni, hogy melyik sort jelölte ki.
-
-                //Tartalom feltöltése.
                 ujSor.innerHTML = `
             <td><input type="checkbox" ${checkboxOld ? "checked" : ""}></td>
             <td>${descriptionOld}</td>
             <td>${dateOld}</td>            
-            <td >${priorityOld}</td>`; //class="${pClass}"
-
-                // Stípus. Ha a küldetés kész (true), áthúzzuk a szöveget
-                if (checkboxOld === true) {
-                    console.log("checkboxOld === true)");
-                    //Fontos a sorrend!
-                    ujSor.style.textDecoration = "line-through"; // 1. Alap beállítása
-                    ujSor.style.textDecorationColor = "rgba(3, 5, 8, 0.7)"; // 2. Szín módosítása
-                    ujSor.style.textDecorationThickness = "3px"; // 3. Vastagság módosítása
-                }
+            <td class="${pClass}">${priorityOld}</td>`;
 
                 tableBody.appendChild(ujSor);
             }
