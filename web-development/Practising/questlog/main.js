@@ -54,7 +54,7 @@ document.querySelector(".questSubmit").addEventListener("click", (e) => {
     let dateInput = new Intl.DateTimeFormat("hu-HU").format(
         new Date(document.querySelector(".date").value),
     );
-    let priorityInput = document.querySelector(".priority").value;
+    let priorityInput = document.querySelector(".priority").value.toLowerCase(); //Kis betűssé kell alakítani.
 
     //Leellenőrizzük, hogy tuti nem üresek.
     if (descriptionInput && dateInput && priorityInput) {
