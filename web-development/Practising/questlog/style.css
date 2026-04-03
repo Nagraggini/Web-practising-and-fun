@@ -101,12 +101,6 @@ td {
     text-align: center; /*Alapból is középre van igazítva.*/
 }
 
-/*A :has() segítségével megváltoztathatod egy eleme stílusát attól függően, hogy mi van benne. De ez, csak akkor működik, ha nem a js-ben van a módosítás. :( */
-h2:has(.Andi) {
-    background-color: rgba(255, 255, 255, 0.716);
-    color: white;
-}
-
 .funcSection {
     text-align: right; /*Jobb szélésre igazítás.*/
 }

@@ -11,7 +11,10 @@ lehetősége van felvinni tennivalókat egy táblázatba.
 • A táblázatban jelenjen meg a megnevezés és a dátum, és a
 fontosságnak megfelelő színnel legyen kiírva:                 
 • Különböző színűek legyenek: Nem fontos, normál , fontos           
-• UX miatt más színet lettek beállítva.     
+• UX miatt más színet lettek beállítva.  
+
+<!--TODO -->
+-> Ezek még nem működnek: Done selected,Delete selected
 
 # localStorage cheatsheet
 

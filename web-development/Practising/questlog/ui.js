@@ -101,15 +101,7 @@ export class UI {
                 this.setColorfulQuestList(ujSor, priorityOld);
 
                 ujSor.id = idOld; //Ezzel, majd le tudjuk kérdezni, hogy melyik sort jelölte ki.
-                // TODO nem is kell mert a css-ben állítjuk be a színt.
-                /* let pClass = "";
-                if (priorityOld === "High") {
-                    pClass = "red";
-                } else if (priorityOld === "Medium") {
-                    pClass = "yellow";
-                } else {
-                    pClass = "green";
-                }*/
+
                 //Tartalom feltöltése.
                 ujSor.innerHTML = `
             <td><input type="checkbox" ${checkboxOld ? "checked" : ""}></td>

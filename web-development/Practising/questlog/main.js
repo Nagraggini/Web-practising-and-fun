@@ -101,4 +101,4 @@ document.querySelector(".randomQuestButton").addEventListener("click", () => {
 });
 
 // TODO deleteButton gomb eseménykezelője.
-// TODO doneButton eseménykezelője. -> design áthúzott legyen.
+// TODO doneButton eseménykezelője.
