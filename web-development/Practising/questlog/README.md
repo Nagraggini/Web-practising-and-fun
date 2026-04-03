@@ -9,8 +9,12 @@
 lehetősége van felvinni tennivalókat egy táblázatba.            
 • Egy tennivaló bejegyzésről 3 dolgot adhat meg: Megnevezés, Dátum, Fontosság {nem fontos, normál, fontos}        
 • A táblázatban jelenjen meg a megnevezés és a dátum, és a
-fontosságnak megfelelő színnel legyen kiírva:           
-• Különböző színűek legyenek: Nem fontos, normál , fontos     
+fontosságnak megfelelő színnel legyen kiírva:                 
+• Különböző színűek legyenek: Nem fontos, normál , fontos           
+• UX miatt más színet lettek beállítva.  
+
+<!--TODO -->
+-> Ezek még nem működnek: Done selected,Delete selected
 
 # localStorage cheatsheet
 
