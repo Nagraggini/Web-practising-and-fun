@@ -56,17 +56,17 @@ export class UI {
     setColorfulQuestList(ujSor, priorityOld) {
         console.log("setColorfulQuestList");
         switch (priorityOld) {
-            case "high":
+            case "High":
                 ujSor.style.backgroundColor = "tomato";
                 break;
-            case "normal":
+            case "Normal":
                 ujSor.style.backgroundColor = "DodgerBlue";
                 break;
-            case "low":
+            case "Low":
                 ujSor.style.backgroundColor = "lightgrey";
                 break;
-            default: //Hekkelésre felkészülve.
-                ujSor.style.backgroundColor = "pink";
+            default: //Error
+                ujSor.style.backgroundColor = "purple";
                 break;
         }
     }
@@ -98,6 +98,7 @@ export class UI {
 
                 const ujSor = document.createElement("tr");
 
+                // * Színek beállítása.
                 this.setColorfulQuestList(ujSor, priorityOld);
 
                 ujSor.id = idOld; //Ezzel, majd le tudjuk kérdezni, hogy melyik sort jelölte ki.

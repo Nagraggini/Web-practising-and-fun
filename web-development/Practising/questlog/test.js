@@ -27,7 +27,7 @@ export class Test {
         //Random priority.
         let task = {
             id: Date.now(),
-            priority: ["low", "normal", "high"][Math.floor(Math.random() * 3)],
+            priority: ["Low", "Normal", "High"][Math.floor(Math.random() * 3)],
         };
 
         let priorityInput = task.priority;

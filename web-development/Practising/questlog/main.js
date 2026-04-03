@@ -54,7 +54,7 @@ document.querySelector(".questSubmit").addEventListener("click", (e) => {
     let dateInput = new Intl.DateTimeFormat("hu-HU").format(
         new Date(document.querySelector(".date").value),
     );
-    let priorityInput = document.querySelector(".priority").value.toLowerCase(); //Kis betűssé kell alakítani.
+    let priorityInput = document.querySelector(".priority").value;
 
     //Leellenőrizzük, hogy tuti nem üresek.
     if (descriptionInput && dateInput && priorityInput) {
@@ -74,7 +74,6 @@ document.querySelector(".questSubmit").addEventListener("click", (e) => {
         uiInstance.newNameDisplayClear();
         uiInstance.newQuestDisplayClear();
         uiInstance.displayQuestList();
-        uiInstance.setColorfulQuestList();
     } else {
         alert("Kérlek tölts ki minden mezőt!");
     }
