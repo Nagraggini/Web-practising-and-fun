@@ -74,11 +74,10 @@ document.querySelector(".questSubmit").addEventListener("click", (e) => {
         uiInstance.newNameDisplayClear();
         uiInstance.newQuestDisplayClear();
         uiInstance.displayQuestList();
+        uiInstance.setColorfulQuestList();
     } else {
         alert("Kérlek tölts ki minden mezőt!");
     }
-
-    //Újra betöltjük a quest list-et.
 });
 
 //Egy soros utasításnál nem kell a függvény mögő tenni a zárójeleket, ha kiteszed, akkor az oldalbetültésekor egyből lefut.
