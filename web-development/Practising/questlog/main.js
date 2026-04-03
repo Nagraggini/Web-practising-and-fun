@@ -11,8 +11,9 @@ const eventsInstance = new Events();
 const testInstance = new Test();
 
 //Név és quest lista lekérésése.
-uiInstance.setName();
-uiInstance.displayQuestList(); //Kiírjuk a quest listát, ha nincs akkor a teszt sort.
+window.addEventListener("load", () => {
+    ((window.onload = uiInstance.setName()), uiInstance.displayQuestList()); //Kiírjuk a quest listát, ha nincs akkor a teszt sort.
+});
 
 function setDateInput() {
     //Beállítjuk, hogy csak jövőbeli dátumot lehessen megadni.
