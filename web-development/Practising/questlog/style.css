@@ -30,6 +30,7 @@ body {
     background-color: var(--background-color);
     line-height: 2.5rem; /* Az alapértelmezett ~1.2 helyett nagyobb térközt állítunk be.*/
     padding: 9px;
+    white-space: normal; /*Több space → egy lesz*/
 }
 
 input,
@@ -59,6 +60,11 @@ header > * {
 }
 h1 {
     margin-bottom: 1px; /*A h1 és h2 közti távolság.*/
+    text-shadow: 2px 2px #5d1955; /*Árnyék.*/
+}
+
+h2 {
+    text-shadow: 2px 2px #5d1955; /*Árnyék.*/
 }
 
 .form-group-new-user {
