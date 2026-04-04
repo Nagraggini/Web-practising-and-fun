@@ -94,7 +94,22 @@ export default defineConfig({
 });
 ```
 
-Ezután jöhet a commitolás a master/main-be. "Add GitHub Actions workflow" címmel.
+A gyökér könyvtárban lévő package.json-t ki kell egészíteni a playwright függőséggel:
+```js
+{
+{
+  }
+ //... korábbi sorok 
+  ,
+  "devDependencies": {
+    "@playwright/test": "^1.44.0"
+  }
+// ... többi sor
+}
+```
 
+Terminálba: npm install --save-dev servor
+
+Ezután jöhet a commitolás a master/main-be. "Add GitHub Actions workflow" címmel.
 
 
