@@ -3,7 +3,7 @@ export class UI {
     //Számít a függvények sorrendje!
     setName() {
         let name = localStorage.getItem("name");
-        console.log(name);
+        console.log("Name: " + name);
 
         if (name) {
             //Template Literal
@@ -37,36 +37,39 @@ export class UI {
         tbody.innerHTML = "";
 
         //Új sor beszúrása a táblázatba.
-        const ujSor = document.createElement("tr");
-        ujSor.id = 1774976649108; //Egyedi id.
+        const ujSorNode = document.createElement("tr");
+        ujSorNode.id = 1774976649108; //Egyedi id.
         // TODO mindig a mai nap legyen a dátum.
         //A tr-nek van egyedi id-ja.
-        ujSor.innerHTML = `
+        ujSorNode.innerHTML = `
             <td><input type="checkbox" /></td>
             <td>Check my mail box.</td>
             <td>2026. 04. 06</td>            
-            <td class="high}">High</td>`; // Itt adjuk át a class-t, ami kell a színkódhoz.
+            <td class="High">High</td>`; // Itt adjuk át a class-t, ami kell a színkódhoz.
+
+        // * Színek beállítása.
+        this.setColorfulQuestList(ujSorNode, "High");
 
         //Hozzáadjuk a táblázathoz.
-        tbody.appendChild(ujSor);
+        tbody.appendChild(ujSorNode);
 
         document.getElementById("questForm").reset();
     }
 
-    setColorfulQuestList(ujSor, priorityOld) {
-        console.log("setColorfulQuestList");
+    setColorfulQuestList(ujSorNode, priorityOld) {
+        console.log("setColorfulQuestList()");
         switch (priorityOld) {
             case "High":
-                ujSor.style.backgroundColor = "tomato";
+                ujSorNode.style.backgroundColor = "tomato";
                 break;
             case "Normal":
-                ujSor.style.backgroundColor = "DodgerBlue";
+                ujSorNode.style.backgroundColor = "DodgerBlue";
                 break;
             case "Low":
-                ujSor.style.backgroundColor = "lightgrey";
+                ujSorNode.style.backgroundColor = "lightgrey";
                 break;
             default: //Error
-                ujSor.style.backgroundColor = "purple";
+                ujSorNode.style.backgroundColor = "purple";
                 break;
         }
     }
@@ -79,6 +82,7 @@ export class UI {
 
         //Adatok kinyerése a localStorage-ból. A metódus egy részében az AI segített.
         const ourStorage = { ...localStorage };
+
         if (ourStorage) {
             // use for...in to iterate over the keys of ourStorage
             for (let key in ourStorage) {
@@ -96,33 +100,55 @@ export class UI {
                 const dateOld = dataArray[3];
                 const priorityOld = dataArray[4];
 
-                const ujSor = document.createElement("tr");
+                const ujSorNode = document.createElement("tr");
+
+                ujSorNode.id = idOld; //Ezzel, majd le tudjuk kérdezni, hogy melyik sort jelölte ki.
 
                 // * Színek beállítása.
-                this.setColorfulQuestList(ujSor, priorityOld);
-
-                ujSor.id = idOld; //Ezzel, majd le tudjuk kérdezni, hogy melyik sort jelölte ki.
+                this.setColorfulQuestList(ujSorNode, priorityOld);
 
                 //Tartalom feltöltése.
-                ujSor.innerHTML = `
+                // 1. Checkbox marad az innerHTML, mert fix a kód.
+                const tdCheck = document.createElement("td"); //Cella.
+                tdCheck.innerHTML = `<input type="checkbox" ${checkboxOld ? "checked" : ""}>`;
+
+                // 2. Leírás cella -> textContent az XSS támadások miatt.
+                const tdDesc = document.createElement("td");
+                tdDesc.textContent = descriptionOld;
+
+                // 3. Dátum cella.
+                const tdDate = document.createElement("td");
+                tdDate.textContent = dateOld;
+
+                // 4. Prioritás cella.
+                const tdPrio = document.createElement("td");
+                tdPrio.textContent = priorityOld;
+
+                // Hozzáadjuk a cellákat a sorhoz.
+                ujSorNode.append(tdCheck, tdDesc, tdDate, tdPrio);
+
+                /*
+                ujSorNode.innerHTML = `
             <td><input type="checkbox" ${checkboxOld ? "checked" : ""}></td>
             <td>${descriptionOld}</td>
             <td>${dateOld}</td>            
             <td >${priorityOld}</td>`; //class="${pClass}"
+            */
+                console.log(ujSorNode);
 
-                // Stípus. Ha a küldetés kész (true), áthúzzuk a szöveget
+                // Stílus. Ha a küldetés kész (true), áthúzzuk a szöveget.
                 if (checkboxOld === true) {
-                    console.log("checkboxOld === true)");
                     //Fontos a sorrend!
-                    ujSor.style.textDecoration = "line-through"; // 1. Alap beállítása
-                    ujSor.style.textDecorationColor = "rgba(3, 5, 8, 0.7)"; // 2. Szín módosítása
-                    ujSor.style.textDecorationThickness = "3px"; // 3. Vastagság módosítása
+                    ujSorNode.style.textDecoration = "line-through"; // 1. Alap beállítása
+                    ujSorNode.style.textDecorationColor = "rgba(3, 5, 8, 0.7)"; // 2. Szín módosítása
+                    ujSorNode.style.textDecorationThickness = "3px"; // 3. Vastagság módosítása
                 }
 
-                tableBody.appendChild(ujSor);
+                // Ide nem kell textNode és appendChild(ujSorNode) sem.
+                tableBody.appendChild(ujSorNode);
             }
         } else {
-            createFirstQuest();
+            this.createFirstQuest();
         }
     }
 

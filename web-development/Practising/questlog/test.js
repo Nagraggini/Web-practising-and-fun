@@ -34,8 +34,9 @@ export class Test {
 
         let list = [id, checkbox, descriptionInput, dateInput, priorityInput];
 
+        //Mentsé.
         localStorage.setItem(id, JSON.stringify(list));
-        console.log("A lista hossza: " + list.length);
+        console.log("Új teszt sor:");
         console.log(list.toString()); //62120516,[object HTMLInputElement],,,
     }
 }

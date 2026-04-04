@@ -12,7 +12,8 @@ const testInstance = new Test();
 
 //Név és quest lista lekérésése.
 window.addEventListener("load", () => {
-    ((window.onload = uiInstance.setName()), uiInstance.displayQuestList()); //Kiírjuk a quest listát, ha nincs akkor a teszt sort.
+    (((window.onload = uiInstance.setName()), uiInstance.displayQuestList()),
+        uiInstance.setYear()); //Kiírjuk a quest listát, ha nincs akkor a teszt sort.
 });
 
 function setDateInput() {
