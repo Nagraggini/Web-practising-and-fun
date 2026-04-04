@@ -79,6 +79,8 @@ Ez az útmutató, hogy mi alapján futtassa a GitHub a teszteket.
 
 Amikor a terminálban telepítetted a playwright-ot (npm init playwright@latest), akkor yes-t kellett nyomni a GitHub Action-s kérdésre.
 
+## playwright.config.js
+
 A GitHub Actions egy üres szerveren fut, ahol nincs elindítva a Live Server, ezért a playwright.config.js fájlba a lentit írd bele, amivel megmondjuk a Playwright-nak, hogy indítsa el a webszervert a tesztek előtt.
 
 ```javascript
@@ -87,6 +89,8 @@ export default defineConfig({
     use: { //Fontos, hogy ne duplikáld a use részt!
      //... korábbi sorok
         baseURL: "http://127.0.0.1:8080", // Így nem kell mindig beírni.
+        actionTimeout: 10000, // 10 másodperc minden kattintásra/gépelésre
+        navigationTimeout: 15000,
 
     // ... többi sorok
         trace: "on-first-retry",
@@ -100,11 +104,13 @@ export default defineConfig({
         reuseExistingServer: !process.env.CI,
         stdout: 'ignore',
         stderr: 'pipe',
-        timeout: 120000, //Lassú gépnél kell a 2 perces várakozási idő.
     },
 // ... többi sor
 });
 ```
+A "projects: [..]" részen kommenteld ki a safarit és a firefox-ot, ha nem akarod a gépedre is telepíteni azokat.
+
+## package.json
 
 A gyökér könyvtárban lévő package.json-t ki kell egészíteni a playwright függőséggel:
 ```js
@@ -133,6 +139,8 @@ Javítsd ki erre:
 } //Duplikálni nem szabad.
 ```
 
+Fontos , hogy a port számnak mindenhol egyeznie kell.
+
 Terminálba: npm install --save-dev servor
 
 Ezek után még csekkold le, hogy tuti nem a live servert akarja használni playwright.
@@ -155,5 +163,9 @@ npm run start
 
 Miután elindult minden a leállításhoz a terminálban nyomd meg a ctrl+C-t.
 npx playwright test
+
+Többi hasznos terminál parancs a teszteléshez:
+npx playwright test --ui
+npx playwright test --debug
 
 
