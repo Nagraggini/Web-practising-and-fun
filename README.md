@@ -83,12 +83,24 @@ A GitHub Actions egy üres szerveren fut, ahol nincs elindítva a Live Server, e
 
 ```javascript
 export default defineConfig({
+
+    use: { //Fontos, hogy ne duplikáld a use részt!
+     //... korábbi sorok
+        baseURL: "http://127.0.0.1:8080", // Így nem kell mindig beírni.
+
+    // ... többi sorok
+        trace: "on-first-retry",
+    },
+
 //... korábbi sorok
     /* Run your local dev server before starting the tests */
     webServer: {
         command: "npm run start",
-        url: "http://127.0.0.1:5500",
+        url: "http://127.0.0.1:8080",
         reuseExistingServer: !process.env.CI,
+        stdout: 'ignore',
+        stderr: 'pipe',
+        timeout: 120000, //Lassú gépnél kell a 2 perces várakozási idő.
     },
 // ... többi sor
 });
@@ -108,8 +120,40 @@ A gyökér könyvtárban lévő package.json-t ki kell egészíteni a playwright
 }
 ```
 
+Valamint ennél:
+```js
+  "scripts": {},
+```
+
+Javítsd ki erre:
+```js
+"scripts": {
+  "test": "npx playwright test",
+  "start": "servor . 8080 --reload" 
+} //Duplikálni nem szabad.
+```
+
 Terminálba: npm install --save-dev servor
 
+Ezek után még csekkold le, hogy tuti nem a live servert akarja használni playwright.
+Terminálba írd be ezt: npx playwright test
+
+Ha hiba van írd be ezt: npx playwright show-report
+Meg tudod nézni részletesen a hibát.
+
 Ezután jöhet a commitolás a master/main-be. "Add GitHub Actions workflow" címmel.
+
+Ezután a GitHub-on az adott reponál az Actions lapfülön láthatod, hogy sikerült-e a teszt.
+
+**Teljes teszthez**
+
+Terminálban: 
+Ezzel csak a chromium típusú böngészőben futtatod a tesztet.
+npx playwright test --project=chromium
+
+npm run start
+
+Miután elindult minden a leállításhoz a terminálban nyomd meg a ctrl+C-t.
+npx playwright test
 
 
