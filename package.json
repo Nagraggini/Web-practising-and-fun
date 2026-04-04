@@ -1,0 +1,22 @@
+{
+  "name": "web-practising-and-fun",
+  "version": "1.0.0",
+  "description": "This repository is a collection of small web development projects, experiments, and practice work.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nagraggini/web-practising-and-fun.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nagraggini/web-practising-and-fun/issues"
+  },
+  "homepage": "https://github.com/Nagraggini/web-practising-and-fun#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.5.2"
+  }
+}

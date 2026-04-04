@@ -34,3 +34,11 @@ Célja, hogy fejlesszem a HTML, CSS és JavaScript tudásomat, miközben egyszer
 Ha érdekel, hogyan kezdj el webfejlesztést tanulni, nézd meg a blogomat:
 
 👉 https://nagraggini-blog.onrender.com/
+
+# Teszt (Playwright)
+
+Terminálba: npm init playwright@latest
+JavaScript -> tests -> GitHub Actions yes -> Install Playwright browsers? yes
+
+Egy test mappád legyen, akár kicsi akár nagy betűs. 
+Ezután a playwright.config.js-ben csekold le ezt: testDir: './tests',
