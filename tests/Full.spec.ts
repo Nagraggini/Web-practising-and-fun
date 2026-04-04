@@ -1,0 +1,36 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('http://127.0.0.1:5500/web-development/Practising/questlog/questlog.html');
+  await page.getByRole('textbox', { name: 'Your name:' }).click();
+  await page.getByRole('textbox', { name: 'Your name:' }).click();
+  await page.getByRole('textbox', { name: 'Your name:' }).fill('Andi');
+  await page.getByRole('button', { name: 'Submit' }).click();
+  await page.getByRole('textbox', { name: 'Quest name:' }).click();
+  await page.getByRole('textbox', { name: 'Quest name:' }).fill('Test');
+  await page.locator('#quest-date').fill('2026-04-05');
+  await page.locator('#priority').selectOption('Low');
+  await page.getByRole('button', { name: 'Accept' }).click();
+  await page.getByRole('textbox', { name: 'Quest name:' }).click();
+  await page.getByRole('textbox', { name: 'Quest name:' }).fill('Test2');
+  await page.locator('#quest-date').fill('2026-04-24');
+  await page.locator('#priority').selectOption('Normal');
+  await page.getByRole('button', { name: 'Accept' }).click();
+  await page.getByRole('textbox', { name: 'Quest name:' }).click();
+  await page.getByRole('textbox', { name: 'Quest name:' }).fill('Test3');
+  await page.locator('#quest-date').fill('2026-04-30');
+  await page.locator('#priority').selectOption('High');
+  await page.getByRole('button', { name: 'Accept' }).click();
+  await page.getByRole('button', { name: 'Print this page' }).click();
+  await page.getByRole('button', { name: 'Delete all (name&history)' }).click();
+  await page.getByRole('button', { name: 'Delete all (name&history)' }).click();
+  await page.getByRole('button', { name: 'Generate test data' }).click();
+  await page.locator('div').filter({ hasText: 'Generate test data' }).click();
+  await page.getByRole('button', { name: 'Generate test data' }).click();
+  await page.getByRole('button', { name: 'Generate test data' }).click();
+  await page.getByRole('button', { name: 'Generate test data' }).click();
+  await page.getByRole('button', { name: 'Generate test data' }).click();
+  const page1Promise = page.waitForEvent('popup');
+  await page.getByRole('link', { name: 'link My source code' }).click();
+  const page1 = await page1Promise;
+});
