@@ -94,7 +94,7 @@ export default defineConfig({
 });
 ```
 
-Ezután jöhet a commitolás a master/main-be. Add GitHub Actions workflow" címmel.
+Ezután jöhet a commitolás a master/main-be. "Add GitHub Actions workflow" címmel.
 
 
 
