@@ -8,6 +8,9 @@
     --font-color: blueviolet;
     --font-color-button: white;
     --link-color: aqua;
+    --low-color: lightgrey;
+    --normal-color: DodgerBlue;
+    --high-color: tomato;
 }
 
 html {
@@ -60,9 +63,9 @@ header > * {
 }
 h1 {
     margin-bottom: 1px; /*A h1 és h2 közti távolság.*/
-    text-shadow: 2px 2px #5d1955; /*Árnyék.*/
 }
 
+h1,
 h2 {
     text-shadow: 2px 2px #5d1955; /*Árnyék.*/
 }
@@ -79,6 +82,15 @@ h2 {
     flex-direction: row;
     gap: 9px; /*Vízszintes távolság a flex:row miatt.*/
     padding: 2px; /*Függőleges távolság.*/
+}
+.LowOption {
+    background-color: var(--low-color);
+}
+.NormalOption {
+    background-color: var(--normal-color);
+}
+.HighOption {
+    background-color: var(--high-color);
 }
 
 main {
@@ -205,10 +217,6 @@ A fejléc (header) a képernyő x %-át, a fő rész (main) az x %-át foglalja 
     header {
         height: auto;
         padding-bottom: 20px;
-    }
-
-    h1 {
-        font-size: 13px;
     }
 
     .form-group-new-user,

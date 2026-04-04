@@ -1,3 +1,7 @@
+![Workflow neve](https://github.com/Nagraggini/web-practising-and-fun/actions/workflows/playwright.yml/badge.svg)
+![Top Language](https://img.shields.io/github/languages/top/Nagraggini/web-practising-and-fun)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 ## Web Practising & Fun
 
 This repository is a collection of small web development projects, experiments, and practice work.

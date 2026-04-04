@@ -60,13 +60,13 @@ export class UI {
         console.log("setColorfulQuestList()");
         switch (priorityOld) {
             case "High":
-                ujSorNode.style.backgroundColor = "tomato";
+                ujSorNode.style.backgroundColor = "var(--high-color)";
                 break;
             case "Normal":
-                ujSorNode.style.backgroundColor = "DodgerBlue";
+                ujSorNode.style.backgroundColor = "var(--normal-color)";
                 break;
             case "Low":
-                ujSorNode.style.backgroundColor = "lightgrey";
+                ujSorNode.style.backgroundColor = "var(--low-color)";
                 break;
             default: //Error
                 ujSorNode.style.backgroundColor = "purple";
