@@ -1,3 +1,7 @@
+![Workflow neve](https://github.com/Nagraggini/web-practising-and-fun/actions/workflows/playwright.yml/badge.svg)
+![Top Language](https://img.shields.io/github/languages/top/Nagraggini/web-practising-and-fun)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 # Gamer/geek teendő lista
 
 [Live demo](https://nagraggini.github.io/web-practising-and-fun/web-development/Practising/questlog/questlog.html)
