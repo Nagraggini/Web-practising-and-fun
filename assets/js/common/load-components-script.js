@@ -1,4 +1,4 @@
-fetch("./components/header.html")
+fetch("./components/header-component.html")
     .then((res) => res.text())
     .then((data) => {
         document.getElementById("header").innerHTML = data;
@@ -15,11 +15,11 @@ function setYear() {
 
 window.addEventListener("load", setYear);
 
-fetch("./components/footer.html")
+fetch("./components/footer-component.html")
     .then((res) => res.text())
     .then((data) => {
         document.getElementById("footer").innerHTML = data;
         console.log("Betöltött a footer");
     });
 
-// TODO: Elkell menteni a téma választást localStorageba.
+// TODO: El kell menteni a téma választást localStorageba.
