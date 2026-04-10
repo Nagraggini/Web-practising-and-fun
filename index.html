@@ -3,14 +3,17 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="assets/common-styles.css" />
+        <link rel="stylesheet" href="assets/css/common/common-style.css" />
 
-        <link rel="icon" type="image/png" href="Design/Icons/unicorn.png" />
+        <link rel="icon" type="image/png" href="assets/icons/unicorn.png" />
 
         <title>Főoldal</title>
     </head>
 
     <body>
+        <!--Helyőrző. A components mappában van a html.-->
+        <div id="header"></div>
+
         <h1>Főoldal</h1>
 
         <a
@@ -26,11 +29,11 @@
         <div class="racs-szerkezet">
             <a
                 class="btn"
-                href="/web-practising-and-fun/web-development/Practising/0-First_website/First_Main.html"
+                href="pages/practising/html-practising/first.html"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                Első weboldalam
+                Első weboldalam :)
             </a>
 
             <a
@@ -97,7 +100,7 @@
         <div class="racs-szerkezet">
             <a
                 class="btn"
-                href="/web-practising-and-fun/web-development/Practising/js-zero-to-expert/05-Guess-My-Number/index.html"
+                href="pages/js-zero-to-expert/guess-my-number.html"
                 target="_blank"
                 rel="noopener noreferrer"
             >
@@ -106,11 +109,19 @@
 
             <a
                 class="btn"
-                href="/web-practising-and-fun/web-development/Practising/questlog/questlog.html"
+                href="pages/questlog/questlog.html"
                 target="_blank"
                 rel="noopener noreferrer"
             >
                 Questlog
+            </a>
+            <a
+                class="btn"
+                href="pages/simple-theme-set.html"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Set theme
             </a>
             <a
                 class="btn"
@@ -141,17 +152,9 @@
                 Tematika a tesztelés gyakorlásához
             </a>
         </div>
-
-        <footer>
-            <!--TODO univerzális footert állíts be. Link hozzá: https://www.youtube.com/watch?v=5Ji0dGJtOjI-->
-            <h2>Contact</h2>
-
-            <a
-                href="https://github.com/Nagraggini"
-                target="_blank"
-                rel="noopener noreferrer"
-                >github.com/Nagraggini</a
-            >
-        </footer>
+        <!--Helyőrző. A components mappában van a html.-->
+        <div id="footer"></div>
     </body>
+    <script src="assets/js/common/load-components-script.js"></script>
+    ip
 </html>
