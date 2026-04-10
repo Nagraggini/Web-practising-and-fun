@@ -1,9 +1,9 @@
 "use strict";
 
 // Importálás.
-import { UI } from "./ui.js";
-import { Events } from "./events.js";
-import { Test } from "./test.js";
+import { UI } from "./ui-script.js";
+import { Events } from "./events-script.js";
+import { Test } from "./test-script.js";
 
 //Példányosítások.
 const uiInstance = new UI();
