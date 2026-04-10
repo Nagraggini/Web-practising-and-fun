@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+
+a {
+    /* Linkek stílusa */
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+body {
+    background-color: black;
+    font-family: "Special Elite", serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #ffffff;
+    font-family: "Special Elite", serif;
+}
+ul,
+ol,
+li {
+    padding: 3px; /* Lista elemek párnázása */
+    margin: 1px; /*Bal és jobb margó */
+    font-family: "Special Elite", serif;
+}
+button {
+    font-family: "Special Elite", serif;
+    background-color: #a34caf; /*Háttér */
+    color: white; /* Fehér szöveg */
+    padding: 9px 20px; /* Párnázás */
+    border: none; /* Nincs keret */
+    border-radius: 5px; /* Lekerekített sarkok */
+    cursor: pointer; /* Mutató kéz kurzor */
+}
+
+/* Gomb hover animáció */
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.racs-szerkezet {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+
+.btn {
+    display: block;
+    padding: 15px;
+    background-color: #6c63ff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+}
