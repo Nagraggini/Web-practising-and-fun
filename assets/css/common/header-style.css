@@ -1,8 +1,12 @@
 /*TODO nem működik*/
 
 .header-left {
-    align-content: left;
+    display: flex;
+    flex-direction: row;
+   justify-content: flex-start; /* Ez az alapértelmezett 'balra'.Ezt együtt kell használni pl.: flex/grid-el*/
 }
 .header-right {
-    align-content: right;
+   display: flex;
+    flex-direction: row;
+   justify-content: flex-end; /* Ez az alapértelmezett 'balra'.Ezt együtt kell használni pl.: flex/grid-el*/
 }
