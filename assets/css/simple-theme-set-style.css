@@ -13,6 +13,7 @@
 html {
     color-scheme: dark light; /*Így pl.: a görgetős csúszka is színt vált. */
 }
+
 /* CSS-only solution using :has()
    the JS version is commented out lower down */
 :root:has(#theme [value="☀️"]:checked) {
