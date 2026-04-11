@@ -1,22 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
 
-html {
+* {
     color: #ffffff;
     font-family: "Special Elite", serif;
     background-color: black;
 }
 a {
     /* Linkek stílusa */
-
     text-decoration: underline;
 }
 
-ul,
-ol,
-li {
-    padding: 3px; /* Lista elemek párnázása */
-    margin: 1px; /*Bal és jobb margó */
-}
 btn {
     background-color: #a34caf; /*Háttér */
     color: white; /* Fehér szöveg */
@@ -30,13 +23,6 @@ btn {
 btn:hover {
     transform: scale(1.1);
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.racs-szerkezet {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    padding: 10px;
 }
 
 .btn {
