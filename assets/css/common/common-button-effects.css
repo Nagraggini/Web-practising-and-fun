@@ -1,0 +1,90 @@
+/*https://www.youtube.com/watch?v=8SeFSmvx3AA*/
+@property --deg {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.colorful-animated-effect {
+    /*Eztahátteretlátodmajdagombközepén*/
+    background: #1a1a1a;
+    color: white;
+    /*Méretezéséselrendezés*/
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+    /*Ezfontosarétegekmiatt*/
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+
+.colorful-animated-effect::before,
+.colorful-animated-effect::after {
+    content: "";
+    position: absolute;
+    /*Atrükk:;
+    negatívinset-tel"kilógatjuk"agombalól*/
+    inset: -3px;
+    /*Ezhatározzamegakeretvastagságát(pl.-3px)*/
+    background: conic-gradient(
+        from var(--deg) at center,
+        #0000ff,
+        #ff00ff,
+        #00ffff,
+        #ff00ff,
+        #0000ff
+            /* Újra meg kell adni a kezdő szint, így tökéletes a körbeérés */
+    );
+    border-radius: 30px;
+    /*Az adott elem örökli(átveszi)a szülőelemének a lekerekítési értékét.*/
+    z-index: -1;
+    /*Belemegyagombalá*/
+    animation: autoRotate 3s linear infinite;
+    -webkit-animation: autoRotate 3s linear infinite;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+
+.colorful-animated-effect::after {
+    filter: blur(15px);
+    z-index: -2;
+    /*Afényudvarmégmélyebbremegy*/
+    -webkit-filter: blur(30px);
+    -webkit-filter: blur(15px);
+}
+
+@keyframes autoRotate {
+    to {
+        --deg: 360deg; /*Ezzel fog mozogni körbe körbe.*/
+    }
+}
+
+/*===============================================*/
+
+/* Gomb stílusa */
+.simple-blue {
+    padding: 1rem 1.5rem; /*Első érték a függőleges a második érték a vízszintes.*/
+    border-radius: 30px;
+    border: none;
+    background: #4cc9f0;
+    color: #03045e;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(76, 201, 240, 0.4);
+    transition: 0.3s;
+}
+
+.simple-blue:hover {
+    background: #081965;
+    color: white;
+    transform: scale(1.05);
+}
+
+/*===============================================*/
