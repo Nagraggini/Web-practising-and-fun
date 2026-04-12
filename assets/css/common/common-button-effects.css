@@ -88,3 +88,65 @@
 }
 
 /*===============================================*/
+
+.shine-effect {
+    background-color: #5e1354; /* Gomb háttérszíne */
+    color: black; /* Gomb szövegének színe */
+    border: none; /* Nincs keret */
+    padding: 10px 20px; /* Belső margó */
+    text-align: center; /* Szöveg középre igazítása */
+    text-decoration: none; /* Nincs aláhúzás */
+    display: inline-block; /* Inline blokk elem */
+    font-size: 16px; /* Betűméret */
+    margin: 20px; /* Nagyobb külső margó a gombok között */
+    cursor: pointer; /* Mutató kurzor */
+    border-radius: 5px; /* Lekerekített sarkok */
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease; /* Kiegészítve transform-mal a sima nagyításért */
+    font-weight: bold; /* Félkövér szöveg */
+    position: relative; /* Relatív pozíció a fénycsíkhoz */
+    overflow: hidden; /* Elrejtjük a túlcsorduló tartalmat - Ez tartja belül a csíkot */
+}
+
+/* Fénycsík alaphelyzete - Javítva a kijelölés és a pozíció */
+.shine-effect::before {
+    content: "";
+    position: absolute;
+    /* A top: 50% helyett 0-ra tettem, hogy ne csak a gomb felétől induljon */
+    top: 0;
+    /* A csík hossza miatt messzebbről kell indítani, hogy ne látszódjon alapból */
+    left: -250%;
+    width: 200%;
+    height: 20px; /* Eredeti vékony csík vastagság */
+    background: rgba(255, 255, 255, 0.8); /* Eredeti fényes csík szín */
+    transform: translateY(10px) rotate(45deg); /* Eredeti dőlésszög, finomhangolt eltolással */
+    transition: all 0.5s ease; /* Eredeti gyorsaság */
+    pointer-events: none;
+}
+
+/* Mozgás hover esetén - Javítva a hiányzó pont a submit-button előtt */
+.shine-effect:hover::before {
+    left: 150%; /* Végigfut a gombon */
+    transition: all 0.5s ease;
+}
+
+.shine-effect:hover {
+    transform: scale(1.05);
+    /*Nagyításhoveresetén*/
+    background-color: #b5a9a9;
+    /*Háttérszínváltozáshoveresetén*/
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+    /* Csillogó hatás */
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+}
+
+.shine-effect:focus {
+    background-color: #b5a9a9;
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+    outline: none;
+}
