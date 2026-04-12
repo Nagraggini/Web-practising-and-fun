@@ -62,8 +62,8 @@ export class UI {
             case "High":
                 ujSorNode.style.backgroundColor = "var(--high-color)";
                 break;
-            case "Normal":
-                ujSorNode.style.backgroundColor = "var(--normal-color)";
+            case "Medium":
+                ujSorNode.style.backgroundColor = "var(--medium-color)";
                 break;
             case "Low":
                 ujSorNode.style.backgroundColor = "var(--low-color)";

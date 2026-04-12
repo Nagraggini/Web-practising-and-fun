@@ -9,7 +9,7 @@
     --font-color-button: white;
     --link-color: aqua;
     --low-color: lightgrey;
-    --normal-color: DodgerBlue;
+    --medium-color: DodgerBlue;
     --high-color: tomato;
 }
 
@@ -83,13 +83,14 @@ h2 {
     gap: 9px; /*Vízszintes távolság a flex:row miatt.*/
     padding: 2px; /*Függőleges távolság.*/
 }
-.LowOption {
+
+option[value="Low"] {
     background-color: var(--low-color);
 }
-.NormalOption {
-    background-color: var(--normal-color);
+option[value="Medium"] {
+    background-color: var(--medium-color);
 }
-.HighOption {
+option[value="High"] {
     background-color: var(--high-color);
 }
 

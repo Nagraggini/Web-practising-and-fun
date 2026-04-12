@@ -178,7 +178,6 @@ https://codesandbox.io/
 
 Lépj be a github fiókoddal.
 
-
 Jobb felül "Create" -> Html+css, ne aggódj js-t is tudsz majd létrehozni.
 
 Template-k:
