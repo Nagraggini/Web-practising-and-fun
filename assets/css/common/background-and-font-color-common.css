@@ -1,0 +1,14 @@
+:root {
+    --primary-color: #dddde4;
+}
+
+html {
+    background-color: lightblue; /*régi böngészőknek*/
+    min-height: 100%;
+    background-image: linear-gradient(
+        130deg,
+        rgba(228, 188, 241, 0.9),
+        rgba(49, 21, 141, 0.9)
+    );
+    color: var(--primary-color);
+}
