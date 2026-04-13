@@ -1,10 +1,3 @@
-fetch("./components/header-component.html")
-    .then((res) => res.text())
-    .then((data) => {
-        document.getElementById("header").innerHTML = data;
-        console.log("Betöltött a header.");
-    });
-
 /*Ez a JavaScript kód dinamikusan frissíti egy HTML oldalon az aktuális évet egy elemben,
          jellemzően lábjegyzetekben vagy copyright szövegekben, így nem kell kézzel módosítani minden év elején.*/
 function setYear() {
@@ -21,5 +14,3 @@ fetch("./components/footer-component.html")
         document.getElementById("footer").innerHTML = data;
         console.log("Betöltött a footer");
     });
-
-// TODO: El kell menteni a téma választást localStorageba.

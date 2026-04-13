@@ -1,5 +1,5 @@
 
-# Playwright
+# Playwright, így nem szemeteli szét a tárolót. 
 node_modules/
 /test-results/
 /playwright-report/

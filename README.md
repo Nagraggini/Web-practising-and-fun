@@ -200,3 +200,51 @@ A Settingben állj át az új branchre és a Pages-en is.
 Pages -> build and deployment -> source -> GitHub Actions -> Static HTML
 A branch névre figyelj, hogy megfelelő legyen beállítva.
 
+# Mappa Struktúra
+
+web-practising-and-fun/
+├── index.html                  # Főoldal (alkalmazás választó)
+├── README.md                   # Projekt leírás
+├── package.json                # Node.js függőségek és szkriptek
+├── playwright.config.js        # Tesztelési konfiguráció
+├── .gitignore                  # (Ajánlott: node_modules, test-results elrejtésére)
+│
+├── components/                 # HTML sablonok (újrafelhasználható darabok)
+│   ├── header-component.html
+│   ├── footer-component.html
+│   └── sidebar-navigation.html
+│
+├── pages/                      # Fix információs oldalak
+│   ├── about-me.html
+│   └── settings.html
+│
+├── apps/                       # MINI ALKALMAZÁSOK (A projekt szíve)
+│   ├── blog/                   # Blog motor
+│   ├── questlog/               # Quest log (saját JS mappával)
+│   ├── student-list/           # Hallgatói listák (Beginner, Modern, Pro szintek)
+│   ├── js-zero-to-expert/      # Tanfolyami feladatok (pl. Guess My Number)
+│   ├── calc / calc-2 / feladat8 # Számológép variációk
+│   ├── rock-band / counter     # Kisebb interaktív appok
+│   └── ... (további gyakorló mappák: form, localstore, responsive-design)
+│
+├── css/                        # STÍLUSOK
+│   ├── main-style.css          # Globális stílus
+│   └── components/             # Komponensek egyedi CSS fájljai (footer, header, theme)
+│
+├── js/                         # JAVASCRIPT
+│   ├── common.js               # Általános logikák
+│   └── components/             # JS komponensek (firework-ui, header-script, model)
+│
+├── assets/                     # ERŐFORRÁSOK
+│   ├── fonts/                  # Egyedi betűtípusok (Momo_Signature)
+│   ├── icons/                  # Ikonok és gifek
+│   └── images/                 # Képek, ábrák és cheat-sheetek
+│
+├── tests/                      # AUTOMATIZÁLT TESZTEK (Playwright)
+│   ├── example.spec.js
+│   └── set-name-and-create-one-quest.spec.ts
+│
+├── docs/                       # DOKUMENTÁCIÓ
+│   └── main-site-plan.png      # Tervezési vázlatok
+│
+└── node_modules/               # Telepített könyvtárak (Playwright, Servor)
