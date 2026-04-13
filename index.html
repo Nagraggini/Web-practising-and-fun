@@ -4,16 +4,22 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!--TODO-->
-        <!-- <link rel="stylesheet" href="assets/css/common/common-style.css" />-->
+        <link rel="stylesheet" href="assets/css/common/font-common.css" />
+
         <link rel="stylesheet" href="assets/css/common/header-style.css" />
         <!-- <link rel="stylesheet" href="assets/css/common/footer-style.css" />-->
 
         <!--  <link rel="stylesheet" href="assets/css/common/theme-style.css" />-->
         <link
             rel="stylesheet"
-            href="assets/css/common/common-button-effects.css"
+            href="assets/css/common/background-and-font-color-common.css"
         />
-        <!-- <link rel="icon" type="image/png" href="assets/icons/unicorn.png" />-->
+        <link
+            rel="stylesheet"
+            href="assets/css/common/button-effects-common.css"
+        />
+        <link rel="stylesheet" href="assets/css/index-style.css" />
+        <link rel="icon" type="image/png" href="assets/icons/unicorn.png" />
 
         <title>Main site</title>
     </head>
@@ -23,83 +29,94 @@
         <div id="header"></div>
 
         <h1>Főoldal</h1>
-        <p>My frontend development journey and projects.</p>
-        <h3>My modern projects</h3>
-        <a
-            class="btn simple-blue"
-            href="https://nagraggini-blog.onrender.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >IT-s blogom kezdőknek (Dinamikus oldal SpringBoot-ban)</a
-        >
-        <a
-            class="btn simple-blue"
-            href="pages/js-zero-to-expert/guess-my-number.html"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            Guess my number
-        </a>
+        <main>
+            <section class="hero">
+                <p>My frontend development journey and projects.</p>
+            </section>
 
-        <a
-            class="btn colorful-animated-effect"
-            href="pages/questlog/questlog.html"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            Questlog
-        </a>
-        <a
-            class="btn simple-blue"
-            href="pages/simple-theme-set.html"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            Set theme
-        </a>
-        <a
-            class="btn simple-blue"
-            href="https://nagraggini.github.io/project-showcase/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            Portfólió
-        </a>
-        <hr />
-        <h3>My oldschool projects</h3>
+            <h3>My modern projects</h3>
 
-        <a
-            class="btn shine-effect"
-            href="pages/practising/html-practising/first.html"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            Első weboldalam :)
-        </a>
-        <a href="https://codepen.io/Nagraggini"> My works on codepen</a>
-        <hr />
+            <section class="modern-projects">
+                <!--Nem minden esetben kell.-->
+                <!--<article></article>-->
+                <a
+                    class="simple-blue"
+                    href="https://nagraggini-blog.onrender.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >IT-s blogom kezdőknek (Dinamikus oldal SpringBoot-ban)</a
+                >
+                <a
+                    class="simple-blue"
+                    href="pages/js-zero-to-expert/guess-my-number.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Guess my number
+                </a>
 
-        <h3>Tesztelés</h3>
-
-        <a
-            class="btn"
-            href="/web-practising-and-fun/allasinterjus-kerdesek-es-valaszok/allasinterjus-kerdesek-es-valaszok.html"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            Állásinterjús kérdések és válaszok
-        </a>
-        <a
-            class="btn"
-            href="/web-practising-and-fun/for-new-job/For_new_job.html"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            Tematika a tesztelés gyakorlásához
-        </a>
-        <hr />
-        <!--TODO firework eseményt kéne hozzárendelni külön js-ben.-->
-        <button class="btn colorful-animated-effect firework">Firework</button>
+                <a
+                    class="colorful-animated-effect"
+                    href="pages/questlog/questlog.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Questlog
+                </a>
+                <a
+                    class="simple-blue"
+                    href="pages/simple-theme-set.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Set theme
+                </a>
+                <a
+                    class="colorful-border"
+                    href="https://nagraggini.github.io/project-showcase/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Portfólió
+                </a>
+            </section>
+            <hr />
+            <h3>My old-school projects</h3>
+            <section class="old-school-projects">
+                <a
+                    class="shine-effect"
+                    href="pages/practising/html-practising/first.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Első weboldalam :)
+                </a>
+                <a href="https://codepen.io/Nagraggini"> My works on codepen</a>
+                <hr />
+            </section>
+            <h3>Tesztelés</h3>
+            <section class="test">
+                <a
+                    class="purple-btn zoom-effect"
+                    href="/web-practising-and-fun/allasinterjus-kerdesek-es-valaszok/allasinterjus-kerdesek-es-valaszok.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Állásinterjús kérdések és válaszok
+                </a>
+                <a
+                    class="pink-btn zoom-effect"
+                    href="/web-practising-and-fun/for-new-job/For_new_job.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Tematika a tesztelés gyakorlásához
+                </a>
+            </section>
+            <hr />
+            <!--TODO firework eseményt kéne hozzárendelni külön js-ben.-->
+            <button class="colorful-animated-effect firework">Firework</button>
+        </main>
         <!--Helyőrző. A components mappában van a html.-->
         <div id="footer"></div>
     </body>

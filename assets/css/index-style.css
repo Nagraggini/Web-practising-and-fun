@@ -1,0 +1,11 @@
+/* Minden projekt szekciót Flexbox-szá teszünk */
+.hero,
+.modern-projects,
+.old-school-projects,
+.test {
+    display: flex;
+    flex-wrap: wrap; /* Ha nem férnek el egy sorban, törjenek új sorba */
+    gap: 10px; /* Ez a kulcs: fix távolság a gombok között minden irányban */
+    padding: 10px 0; /* Kis hely alul-felül */
+    align-items: center; /* Függőlegesen középre igazítja a különböző magasságú gombokat */
+}
