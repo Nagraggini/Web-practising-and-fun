@@ -1,3 +1,10 @@
+/* main-style.css */
+@import "components/header-style.css";
+@import "components/footer-style.css";
+@import "components/button-effects-style.css";
+@import "components/theme-style.css";
+@import "components/background-and-font-color-style.css";
+
 /* Minden projekt szekciót Flexbox-szá teszünk */
 .hero,
 .modern-projects,
