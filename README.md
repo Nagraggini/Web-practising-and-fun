@@ -189,6 +189,8 @@ https://www.youtube.com/watch?v=i_KXcwr7PYc
 https://www.freecodecamp.org/learn/javascript-v9/lecture-working-with-the-dom-click-events-and-web-apis/what-is-an-api-and-what-are-web-apis
 https://www.youtube.com/watch?v=HmaQwuKUYTc
 https://www.freecodecamp.org/learn/javascript-v9/lecture-working-with-the-dom-click-events-and-web-apis/how-do-you-create-new-nodes-using-innerhtml-and-createelement
+[10 CSS PRO Tips and Tricks you NEED to know](https://www.youtube.com/watch?v=44FTAS-qT8Q&list=WL&index=11)
+[How to create a Responsive Navigation Bar (for beginners)](https://www.youtube.com/watch?v=U8smiWQ8Seg)
 
 
 # Github branch
