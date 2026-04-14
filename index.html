@@ -10,8 +10,8 @@
     </head>
 
     <body>
-        <!--Helyőrző. A components mappában van a html.-->
-        <div id="main-header"></div>
+        <!--Helyőrző. A components mappában van a html. Az incluse azért kell, mert a github actions fogja összerakni a weboldal komponenseit.-->
+        <include src="components/header-component.html"></include>
 
         <h1>Főoldal</h1>
         <main>
@@ -41,7 +41,7 @@
                 </a>
 
                 <a
-                    class="colorful-animated-effect"
+                    class="colorful-border"
                     href="apps/questlog/questlog.html"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -103,7 +103,8 @@
             <button class="colorful-animated-effect firework">Firework</button>
         </main>
         <!--Helyőrző. A components mappában van a html.-->
-        <div id="main-footer"></div>
+        <include src="components/footer-component.html"></include>
     </body>
     <script type="module" src="./js/common.js"></script>
 </html>
+<!--TODO: https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site-->
