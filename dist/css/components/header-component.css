@@ -1,10 +1,5 @@
 /*http://127.0.0.1:5500/components/header-component.html*/
 
-#main-header {
-    min-height: 80px; /* Így lesz fix helye fent. */
-    display: block;
-}
-
 .logo {
     width: 5%;
 }
@@ -13,7 +8,7 @@ nav {
     width: 100%;
     padding: 1rem 5%;
     display: flex;
-
+    justify-content: space-between; /* Ez teszi a logót balra, a menüt jobbra */
     align-items: center;
     background: rgba(255, 255, 255, 0.1); /* Áttetsző háttér */
     backdrop-filter: blur(15px); /* Üveghatás - elmosás */
@@ -32,13 +27,13 @@ nav {
 }
 
 /* Linkek elrendezése  */
-.nav-links {
+.header-nav {
     display: flex;
     list-style: none;
     gap: 2rem;
 }
 
-.nav-links a {
+.header-nav a {
     text-decoration: none;
     /* color: #666;*/
     font-size: 1.05rem;
@@ -47,7 +42,7 @@ nav {
     position: relative;
 }
 
-.nav-links a:hover {
+.header-nav a:hover {
     color: #1936b4;
     text-shadow: 0 0 10px rgba(67, 97, 238, 0.3);
 }
