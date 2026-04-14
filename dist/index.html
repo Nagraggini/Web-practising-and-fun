@@ -15,7 +15,14 @@
     <nav class="header-nav">
         <img src="./assets/icons/unicorn.png" alt="Unicorn" class="unicornImg" width="5%">
         <div class="logo">Nagraggini's page</div>
-        <ul class="nav-links">
+    </nav>
+</header>
+
+        <header>
+    <nav class="header-nav">
+        <img src="./assets/icons/unicorn.png" alt="Unicorn" class="unicornImg" width="5%">
+        <div class="logo">Nagraggini's page</div>
+        <ul class="sidebar">
             <li>
                 <a href="https://nagraggini.github.io/web-practising-and-fun/" target="_blank" rel="noopener noreferrer">Main page</a>
             </li>
@@ -24,6 +31,25 @@
             </li>
             <li>
                 <a href="../pages/common/settings.html" target="_blank" rel="noopener noreferrer">Settings</a>
+            </li>
+        </ul>
+
+        <ul>
+            <li class="hideOnMobile"><a href="logo">Nagraggini's page</a></li>
+
+            <li class="hideOnMobile">
+                <a href="https://nagraggini.github.io/web-practising-and-fun/" target="_blank" rel="noopener noreferrer">Main page</a>
+            </li>
+            <li class="hideOnMobile">
+                <a href="https://github.com/Nagraggini/nagraggini/blob/main/Andrea_Freud_CV.pdf" target="_blank" rel="noopener noreferrer">About me</a>
+            </li>
+            <li class="hideOnMobile">
+                <a href="../pages/common/settings.html" target="_blank" rel="noopener noreferrer">Settings</a>
+            </li>
+
+            <li class="menu-button" onclick="showSidebar()">
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26">
+                        <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"></path></svg></a>
             </li>
         </ul>
     </nav>

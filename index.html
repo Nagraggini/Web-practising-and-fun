@@ -12,6 +12,7 @@
     <body>
         <!--Helyőrző. A components mappában van a html. Az incluse azért kell, mert a github actions fogja összerakni a weboldal komponenseit.-->
         <include src="components/header-component.html"></include>
+        <include src="components/sidebar-navigation.html"></include>
 
         <h1>Főoldal</h1>
         <main>
@@ -25,14 +26,14 @@
                 <!--Nem minden esetben kell.-->
                 <!--<article></article>-->
                 <a
-                    class="simple-blue"
+                    class="btn colorful-animated-effect"
                     href="https://nagraggini-blog.onrender.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                     >IT-s blogom kezdőknek (Dinamikus oldal SpringBoot-ban)</a
                 >
                 <a
-                    class="simple-blue"
+                    class="btn colorful-animated-effect"
                     href="apps/js-zero-to-expert/guess-my-number/guess-my-number.html"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -41,23 +42,16 @@
                 </a>
 
                 <a
-                    class="colorful-border"
+                    class="btn colorful-animated-effect"
                     href="apps/questlog/questlog.html"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
                     Questlog
                 </a>
+
                 <a
-                    class="simple-blue"
-                    href="apps/simple-theme-set/simple-theme-set.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Set theme
-                </a>
-                <a
-                    class="colorful-border"
+                    class="btn colorful-animated-effect"
                     href="https://nagraggini.github.io/project-showcase/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -69,20 +63,27 @@
             <h3>My old-school projects</h3>
             <section class="old-school-projects">
                 <a
-                    class="shine-effect"
+                    class="btn shine-effect"
                     href="apps/first/first.html"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
                     Első weboldalam :)
                 </a>
-                <a href="https://codepen.io/Nagraggini"> My works on codepen</a>
+                <a
+                    class="btn shine-effect"
+                    href="https://codepen.io/Nagraggini"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    My works on codepen</a
+                >
                 <hr />
             </section>
             <h3>Tesztelés</h3>
             <section class="test">
                 <a
-                    class="purple-btn zoom-effect"
+                    class="btn shine-effect"
                     href="apps/job-interview-q-and-a/job-interview-q-and-a.html"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -90,7 +91,7 @@
                     Állásinterjús kérdések és válaszok
                 </a>
                 <a
-                    class="pink-btn zoom-effect"
+                    class="btn shine-effect"
                     href="/apps/for-a-new-job/for-a-new-job.html"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -100,7 +101,9 @@
             </section>
             <hr />
             <!--TODO firework eseményt kéne hozzárendelni külön js-ben.-->
-            <button class="colorful-animated-effect firework">Firework</button>
+            <button class="btn shine-effect zoom-effect firework">
+                Firework
+            </button>
         </main>
         <!--Helyőrző. A components mappában van a html.-->
         <include src="components/footer-component.html"></include>
