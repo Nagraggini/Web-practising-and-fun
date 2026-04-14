@@ -1,8 +1,6 @@
 /*Ez az a fájl, amit minden HTML oldalad behív. Ez mondja meg, hogy az adott oldalon mi történjen.*/
 console.log("common.js eleje");
 // UI Komponensek logikája
-import "./components/header-script.js";
-import "./components/footer-script.js";
 import "./components/firework-ui.js";
 
 import "./components/loader.js";
