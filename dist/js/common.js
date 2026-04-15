@@ -7,3 +7,13 @@ import "./components/loader.js";
 import "./components/model.js";
 
 console.log("common.js vége");
+
+document.querySelector(".menu-button").addEventListener("click", () => {
+    const sidebar = document.querySelector(".sidebar");
+    sidebar.style.display = "flex";
+});
+
+document.querySelector(".sidebar").addEventListener("click", () => {
+    const sidebar = document.querySelector(".sidebar");
+    sidebar.style.display = "none";
+});
