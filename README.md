@@ -64,10 +64,17 @@ Projekt leállítása: Terminálban ctrl+c-t nyomj.
 # Teszt Playwright-al
 
 Terminálba: npm init playwright@latest
+
+Linux-on valszeg elhasal a telepítés, és külön kell a függőségeket telepíteni ezzel: 
+sudo rm /etc/apt/sources.list.d/docker.list  //Ezt akkor futtasd, ha van hibás docker tárolód.
+sudo apt update
+sudo apt-get install libavif16
+sudo npx playwright install-deps
+
 JavaScript -> tests -> GitHub Actions yes -> Install Playwright browsers? yes
 
 Egy test mappád legyen, akár kicsi akár nagy betűs. 
-Ezután a playwright.config.js-ben csekold le ezt: testDir: './tests',
+Ezután a playwright.config.js-ben csekkold le ezt: testDir: './tests',
 
 
 **Így indítsd el a "Kattintgatós" módot**
@@ -191,6 +198,7 @@ Miután elindult minden a leállításhoz a terminálban nyomd meg a ctrl+C-t.
 npx playwright test
 
 Többi hasznos terminál parancs a teszteléshez:
+npx playwright test --headed
 npx playwright test --ui
 npx playwright test --debug
 
