@@ -1,3 +1,17 @@
+/*===============================================*/
+
+:root {
+    --btn-text-color: #dbdbe6; /*Betűszín.*/
+}
+
+.btn {
+    color: var(--btn-text-color);
+    font-weight: 550;
+    text-decoration: none;
+    cursor: pointer;
+}
+/*===============================================*/
+
 /*https://www.youtube.com/watch?v=8SeFSmvx3AA*/
 @property --deg {
     syntax: "<angle>";
@@ -6,10 +20,9 @@
 }
 
 .colorful-animated-effect {
-    /*Eztahátteretlátodmajdagombközepén*/
+    /*Ezt a hátteret látod majd a gomb közepén*/
     background: #1a1a1a;
-    color: white;
-    /*Méretezéséselrendezés*/
+    /*Méretezésésel rendezés*/
     padding: 15px 30px;
     border: none;
     border-radius: 30px;
@@ -23,14 +36,14 @@
     -o-border-radius: 30px;
 }
 
-.colorful-animated-effect::before,
-.colorful-animated-effect::after {
+.colorful-animated-effect::before {
     content: "";
     position: absolute;
-    /*Atrükk:;
-    negatívinset-tel"kilógatjuk"agombalól*/
+    /*A trükk:;
+    negatív inset-tel "kilógatjuk" a gomb alól*/
     inset: -3px;
-    /*Ezhatározzamegakeretvastagságát(pl.-3px)*/
+    border-radius: 30px;
+
     background: conic-gradient(
         from var(--deg) at center,
         #0000ff,
@@ -40,24 +53,24 @@
         #0000ff
             /* Újra meg kell adni a kezdő szint, így tökéletes a körbeérés */
     );
-    border-radius: 30px;
-    /*Az adott elem örökli(átveszi)a szülőelemének a lekerekítési értékét.*/
+
+    /* 🔥 EZ VÁGJA KI A KÖZEPÉT → csak a szélén marad */
+    padding: 3px; /*Ez határozza meg a keret vastagságát(pl.-3px)*/
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
     z-index: -1;
-    /*Belemegyagombalá*/
+    /*Belemegy a gomb alá*/
     animation: autoRotate 3s linear infinite;
     -webkit-animation: autoRotate 3s linear infinite;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
 }
 
+/*Ha nem kell fényudvar, kikapcsoljuk*/
 .colorful-animated-effect::after {
-    filter: blur(15px);
-    z-index: -2;
-    /*Afényudvarmégmélyebbremegy*/
-    -webkit-filter: blur(30px);
-    -webkit-filter: blur(15px);
+    display: none;
 }
 
 @keyframes autoRotate {
@@ -70,42 +83,33 @@
 
 /* Gomb stílusa */
 .simple-blue {
+    background: #4cc9f0;
     padding: 1rem 1.5rem; /*Első érték a függőleges a második érték a vízszintes.*/
     border-radius: 30px;
     border: none;
-    background: #4cc9f0;
-
-    font-weight: 600;
-    cursor: pointer;
     box-shadow: 0 0 15px rgba(76, 201, 240, 0.4);
     transition: 0.3s;
 }
 
 .simple-blue:hover {
-    background: #081965;
     color: white;
+    background: #081965;
     transform: scale(1.05);
 }
 
 /*===============================================*/
 
 .shine-effect {
-    background-color: #5e1354; /* Gomb háttérszíne */
-    color: white;
+    background-color: #be55b0; /* Gomb háttérszíne */
     border: none; /* Nincs keret */
     padding: 10px 20px; /* Belső margó */
     text-align: center; /* Szöveg középre igazítása */
-    text-decoration: none; /* Nincs aláhúzás */
     display: inline-block; /* Inline blokk elem */
-    font-size: 16px; /* Betűméret */
-
-    cursor: pointer; /* Mutató kurzor */
     border-radius: 5px; /* Lekerekített sarkok */
     transition:
         background-color 0.3s ease,
         box-shadow 0.3s ease,
         transform 0.3s ease; /* Kiegészítve transform-mal a sima nagyításért */
-    font-weight: bold; /* Félkövér szöveg */
     position: relative; /* Relatív pozíció a fénycsíkhoz */
     overflow: hidden; /* Elrejtjük a túlcsorduló tartalmat - Ez tartja belül a csíkot */
 }
@@ -162,11 +166,9 @@
 /*===============================================*/
 .pink-btn {
     background-color: #ed34ed; /*Háttér */
-
     padding: 9px 20px; /* Párnázás */
     border: none; /* Nincs keret */
     border-radius: 5px; /* Lekerekített sarkok */
-    cursor: pointer; /* Mutató kéz kurzor */
 }
 
 /*===============================================*/
@@ -174,9 +176,7 @@
     display: block;
     padding: 15px;
     background-color: #6c63ff;
-
     text-align: center;
-    text-decoration: none;
     border-radius: 8px;
 }
 

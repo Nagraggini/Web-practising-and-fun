@@ -289,3 +289,4 @@ npm run build
 A dist mappába lévő index.html-t nyid meg a Live Serverrel.
 Ha a dist mappában nincsen benne az asset, css, js mappa, akkor a package.json-ben rossz a build rész. 
 
+A régi fájlok amiket töröltél azok benne maradnak a dist mappában, szóval időnként nyugodtan töröld a dist mappát. 

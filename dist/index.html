@@ -15,23 +15,43 @@
     <nav class="header-nav">
         <img src="./assets/icons/unicorn.png" alt="Unicorn" class="unicornImg" width="5%">
         <div class="logo">Nagraggini's page</div>
-        <ul class="nav-links">
+    </nav>
+</header>
+
+        <header>
+    <nav class="header-nav">
+        <img src="./assets/icons/unicorn.png" alt="Unicorn" class="unicornImg" width="10%">
+        <div class="logo">Nagraggini's page</div>
+        <ul class="sidebar">
             <li>
                 <a href="https://nagraggini.github.io/web-practising-and-fun/" target="_blank" rel="noopener noreferrer">Main page</a>
             </li>
             <li>
-                <a href="https://github.com/Nagraggini/nagraggini/blob/main/Andrea_Freud_CV.pdf" target="_blank" rel="noopener noreferrer">About me</a>
+                <a href="https://github.com/Nagraggini/" target="_blank" rel="noopener noreferrer">Visit my GitHub profile</a>
             </li>
-            <li>
-                <a href="../pages/common/settings.html" target="_blank" rel="noopener noreferrer">Settings</a>
+        </ul>
+
+        <ul>
+            <li class="hideOnMobile"><a href="logo">Nagraggini's page</a></li>
+
+            <li class="hideOnMobile">
+                <a href="https://nagraggini.github.io/web-practising-and-fun/" target="_blank" rel="noopener noreferrer">Main page</a>
+            </li>
+            <li class="hideOnMobile">
+                <a href="https://github.com/Nagraggini/" target="_blank" rel="noopener noreferrer">Visit my GitHub profile</a>
+            </li>
+
+            <li class="menu-button" onclick="showSidebar()">
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26">
+                        <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"></path></svg></a>
             </li>
         </ul>
     </nav>
 </header>
 
 
-        <h1>Főoldal</h1>
         <main>
+            <h1>Főoldal</h1>
             <section class="hero">
                 <p>My frontend development journey and projects.</p>
             </section>
@@ -41,42 +61,45 @@
             <section class="modern-projects">
                 <!--Nem minden esetben kell.-->
                 <!--<article></article>-->
-                <a class="simple-blue" href="https://nagraggini-blog.onrender.com/" target="_blank" rel="noopener noreferrer">IT-s blogom kezdőknek (Dinamikus oldal SpringBoot-ban)</a>
-                <a class="simple-blue" href="apps/js-zero-to-expert/guess-my-number/guess-my-number.html" target="_blank" rel="noopener noreferrer">
+                <a class="btn colorful-animated-effect" href="https://nagraggini-blog.onrender.com/" target="_blank" rel="noopener noreferrer">IT-s blogom kezdőknek (Dinamikus oldal SpringBoot-ban)</a>
+                <a class="btn colorful-animated-effect" href="apps/js-zero-to-expert/guess-my-number/guess-my-number.html" target="_blank" rel="noopener noreferrer">
                     Guess my number
                 </a>
 
-                <a class="colorful-border" href="apps/questlog/questlog.html" target="_blank" rel="noopener noreferrer">
+                <a class="btn colorful-animated-effect" href="apps/questlog/questlog.html" target="_blank" rel="noopener noreferrer">
                     Questlog
                 </a>
-                <a class="simple-blue" href="apps/simple-theme-set/simple-theme-set.html" target="_blank" rel="noopener noreferrer">
-                    Set theme
-                </a>
-                <a class="colorful-border" href="https://nagraggini.github.io/project-showcase/" target="_blank" rel="noopener noreferrer">
+
+                <a class="btn colorful-animated-effect" href="https://nagraggini.github.io/project-showcase/" target="_blank" rel="noopener noreferrer">
                     Portfólió
                 </a>
             </section>
             <hr>
             <h3>My old-school projects</h3>
             <section class="old-school-projects">
-                <a class="shine-effect" href="apps/first/first.html" target="_blank" rel="noopener noreferrer">
+                <a class="btn shine-effect" href="apps/first/first.html" target="_blank" rel="noopener noreferrer">
                     Első weboldalam :)
                 </a>
-                <a href="https://codepen.io/Nagraggini"> My works on codepen</a>
-                <hr>
+                <a class="btn shine-effect" href="https://codepen.io/Nagraggini" target="_blank" rel="noopener noreferrer">
+                    My works on codepen</a>
             </section>
+            <hr>
             <h3>Tesztelés</h3>
             <section class="test">
-                <a class="purple-btn zoom-effect" href="apps/job-interview-q-and-a/job-interview-q-and-a.html" target="_blank" rel="noopener noreferrer">
+                <a class="btn shine-effect" href="apps/job-interview-q-and-a/job-interview-q-and-a.html" target="_blank" rel="noopener noreferrer">
                     Állásinterjús kérdések és válaszok
                 </a>
-                <a class="pink-btn zoom-effect" href="/apps/for-a-new-job/for-a-new-job.html" target="_blank" rel="noopener noreferrer">
+                <a class="btn shine-effect" href="/apps/for-a-new-job/for-a-new-job.html" target="_blank" rel="noopener noreferrer">
                     Tematika a tesztelés gyakorlásához
                 </a>
             </section>
             <hr>
-            <!--TODO firework eseményt kéne hozzárendelni külön js-ben.-->
-            <button class="colorful-animated-effect firework">Firework</button>
+            <section class="firework">
+                <!--TODO firework eseményt kéne hozzárendelni külön js-ben.-->
+                <button class="btn shine-effect zoom-effect firework">
+                    Firework
+                </button>
+            </section>
         </main>
         <!--Helyőrző. A components mappában van a html.-->
         <footer>
@@ -87,9 +110,8 @@
             My source code</a>
 
         <p>
-            &copy; <span id="year"></span> Nagraggini (Andrea Freud)
-            <br class="mobile-break">
-            — All rights reserved.
+            &copy; <span id="year"></span> Nagraggini (Andrea Freud) — All
+            rights reserved.
         </p>
     </div>
 </footer>
