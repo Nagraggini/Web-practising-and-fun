@@ -175,6 +175,7 @@ Javítsd ki erre:
 Fontos , hogy a port számnak mindenhol egyeznie kell.
 
 Terminálba: npm install --save-dev servor
+npm start //Ezzel a portokat tudod csekkolni. 
 
 Ezek után még csekkold le, hogy tuti nem a live servert akarja használni playwright.
 Terminálba írd be ezt: npx playwright test
