@@ -1,37 +1,97 @@
 /* main-style.css */
-@import "components/header-component.css";
-@import "components/sidebar-component.css";
-@import "components/footer-component.css";
+/*
 @import "components/button-effects-style.css";
 @import "components/font-style.css";
-@import "components/theme-style.css";
+*/
+/*
 @import "components/background-and-font-color-style.css";
-
-main {
-    /* A 80px egy átlagos érték, állítsd be úgy, 
-       hogy kényelmesen látsszon a cím a fejléc alatt. */
-    padding-top: 100px;
-
-    /* Biztosítjuk, hogy ne lógjon ki a tartalom a széleken */
-    width: 90%;
-    margin: 0 auto;
-}
-
-/* Mobilon lévő fejléc korrigálása. */
-@media (max-width: 768px) {
-    main {
-        padding-top: 80px;
-    }
-}
+*/
 
 /* Minden projekt szekciót Flexbox-szá teszünk */
+
+/*
 .hero,
 .modern-projects,
 .old-school-projects,
 .test {
     display: flex;
-    flex-wrap: wrap; /* Ha nem férnek el egy sorban, törjenek új sorba */
-    gap: 10px; /* Ez a kulcs: fix távolság a gombok között minden irányban */
-    padding: 10px 0; /* Kis hely alul-felül */
-    align-items: center; /* Függőlegesen középre igazítja a különböző magasságú gombokat */
+    flex-wrap: wrap;  Ha nem férnek el egy sorban, törjenek új sorba
+    gap: 10px;  Ez a kulcs: fix távolság a gombok között minden irányban
+    padding: 10px 0;Kis hely alul-felül
+    align-items: center; Függőlegesen középre igazítja a különböző magasságú gombokat
+}
+*/
+
+/*=============================================================*/
+/*Tiszta kezdő pont beállítása.*/
+/*Minden új projektnél ezt érdemes beállítani.*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: white;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+nav li {
+    height: 50px;
+}
+nav a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+nav a:hover {
+    background-color: #f0f0f0;
+}
+nav li:first-child {
+    margin-right: auto;
+}
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.sidebar li {
+    width: 100%;
+}
+.sidebar a {
+    width: 100%;
+}
+.menu-button {
+    display: none;
+}
+@media (max-width: 800px) {
+    .hideOnMobile {
+        display: none;
+    }
+    .menu-button {
+        display: block;
+    }
+}
+@media (max-width: 400px) {
+    .sidebar {
+        width: 100%;
+    }
 }
