@@ -10,7 +10,7 @@ const uiInstance = new UI();
 const eventsInstance = new Events();
 const testInstance = new Test();
 
-//Név és quest lista lekérésése.
+//Név és quest lista lekérésése, valamint évszám beállítása.
 window.addEventListener("load", () => {
     (((window.onload = uiInstance.setName()), uiInstance.displayQuestList()),
         uiInstance.setYear()); //Kiírjuk a quest listát, ha nincs akkor a teszt sort.

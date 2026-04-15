@@ -2,64 +2,173 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Main site</title>
         <link rel="stylesheet" href="./css/main-style.css" />
     </head>
 
     <body>
-        <nav>
-            <ul class="sidebar">
-                <li onclick="hideSidebar()">
-                    <a href="#"
-                        ><svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            height="26"
-                            viewBox="0 96 960 960"
-                            width="26"
-                        >
-                            <path
-                                d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
-                            /></svg
-                    ></a>
-                </li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Forum</a></li>
-            </ul>
-            <ul>
-                <li><a href="#">MY site</a></li>
-                <li class="hideOnMobile"><a href="#">Blog</a></li>
-                <li class="hideOnMobile"><a href="#">Products</a></li>
-                <li class="hideOnMobile"><a href="#">About</a></li>
-                <li class="hideOnMobile"><a href="#">Forum</a></li>
+        <header>
+            <img
+                src="./assets/icons/unicorn.png"
+                alt="Unicorn"
+                class="unicornImg"
+                width="5%"
+            />
+            <nav>
+                <ul class="sidebar">
+                    <li onclick="hideSidebar()">
+                        <a href="#"
+                            ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                height="26"
+                                viewBox="0 96 960 960"
+                                width="26"
+                            >
+                                <path
+                                    d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
+                                /></svg
+                        ></a>
+                    </li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">About me</a></li>
+                    <!--TODO<li><a href="#">Settings</a></li>-->
+                </ul>
+                <ul>
+                    <li><a href="#">Nagraggini's page</a></li>
+                    <li class="hideOnMobile"><a href="#">Projects</a></li>
+                    <li class="hideOnMobile"><a href="#">About me</a></li>
 
-                <li class="menu-button" onclick="showSidebar()">
-                    <a href="#"
-                        ><svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            height="26"
-                            viewBox="0 96 960 960"
-                            width="26"
-                        >
-                            <path
-                                d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"
-                            /></svg
-                    ></a>
-                </li>
-            </ul>
-        </nav>
+                    <!--TODO <li class="hideOnMobile"><a href="#">Settings</a></li>-->
 
+                    <li class="menu-button" onclick="showSidebar()">
+                        <a href="#"
+                            ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                height="26"
+                                viewBox="0 96 960 960"
+                                width="26"
+                            >
+                                <path
+                                    d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"
+                                /></svg
+                        ></a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
         <main>
-            <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Repudiandae magnam rem eveniet tempore expedita maxime odio
-                aspernatur. Eaque earum labore blanditiis nesciunt tempora unde
-                consectetur laboriosam quia, error, minus aut doloremque. Vel
-                blanditiis minus culpa dolores delectus nulla atque quasi,
-                molestias libero, dicta ab at suscipit, animi error vero autem.
-            </p>
+            <h1>Főoldal</h1>
+            <section class="hero">
+                <p>My frontend development journey and projects.</p>
+            </section>
+
+            <h3>My modern projects</h3>
+
+            <section class="modern-projects">
+                <!--Nem minden esetben kell.-->
+                <!--<article></article>-->
+                <a
+                    class="btn colorful-animated-effect"
+                    href="https://nagraggini-blog.onrender.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >IT-s blogom kezdőknek (Dinamikus oldal SpringBoot-ban)</a
+                >
+                <a
+                    class="btn colorful-animated-effect"
+                    href="apps/js-zero-to-expert/guess-my-number/guess-my-number.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Guess my number
+                </a>
+
+                <a
+                    class="btn colorful-animated-effect"
+                    href="apps/questlog/questlog.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Questlog
+                </a>
+
+                <a
+                    class="btn colorful-animated-effect"
+                    href="https://nagraggini.github.io/project-showcase/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Portfólió
+                </a>
+            </section>
+            <hr />
+            <h3>My old-school projects</h3>
+            <section class="old-school-projects">
+                <a
+                    class="btn shine-effect"
+                    href="apps/first/first.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Első weboldalam :)
+                </a>
+                <a
+                    class="btn shine-effect"
+                    href="https://codepen.io/Nagraggini"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    My works on codepen</a
+                >
+            </section>
+            <hr />
+            <h3>Tesztelés</h3>
+            <section class="test">
+                <a
+                    class="btn shine-effect"
+                    href="apps/job-interview-q-and-a/job-interview-q-and-a.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Állásinterjús kérdések és válaszok
+                </a>
+                <a
+                    class="btn shine-effect"
+                    href="/apps/for-a-new-job/for-a-new-job.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Tematika a tesztelés gyakorlásához
+                </a>
+            </section>
+            <hr />
+            <section class="firework">
+                <!--TODO firework eseményt kéne hozzárendelni külön js-ben.-->
+                <button class="btn shine-effect zoom-effect firework">
+                    Firework
+                </button>
+            </section>
         </main>
+
+        <footer>
+            <!--TODO túl nagy a láthatatlan kattintható szövegdoboz.-->
+            <div>
+                <a
+                    href="https://github.com/Nagraggini/web-practising-and-fun/tree/main"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img src="./assets/icons/small-link.png" alt="link" />
+                    My source code</a
+                >
+
+                <p>
+                    &copy; <span id="year"></span> Nagraggini (Andrea Freud) —
+                    All rights reserved.
+                </p>
+            </div>
+        </footer>
         <script>
             function showSidebar() {
                 const sidebar = document.querySelector(".sidebar");
