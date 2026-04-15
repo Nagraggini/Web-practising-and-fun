@@ -9,13 +9,13 @@
 
     <body>
         <header>
-            <img
-                src="./assets/icons/unicorn.png"
-                alt="Unicorn"
-                class="unicornImg"
-                width="5%"
-            />
             <nav>
+                <img
+                    src="./assets/icons/unicorn.png"
+                    alt="Unicorn"
+                    class="unicornImg"
+                    width="5%"
+                />
                 <ul class="sidebar">
                     <li onclick="hideSidebar()">
                         <a href="#"
@@ -30,14 +30,18 @@
                                 /></svg
                         ></a>
                     </li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">About me</a></li>
+                    <li><a href="./index.html">Projects</a></li>
+                    <li><a href="./pages/about-me.html">About me</a></li>
                     <!--TODO<li><a href="#">Settings</a></li>-->
                 </ul>
                 <ul>
                     <li><a href="#">Nagraggini's page</a></li>
-                    <li class="hideOnMobile"><a href="#">Projects</a></li>
-                    <li class="hideOnMobile"><a href="#">About me</a></li>
+                    <li class="hideOnMobile">
+                        <a href="./index.html">Projects</a>
+                    </li>
+                    <li class="hideOnMobile">
+                        <a href="./pages/about-me.html">About me</a>
+                    </li>
 
                     <!--TODO <li class="hideOnMobile"><a href="#">Settings</a></li>-->
 
@@ -58,7 +62,7 @@
             </nav>
         </header>
         <main>
-            <h1>Főoldal</h1>
+            <h1>Main site</h1>
             <section class="hero">
                 <p>My frontend development journey and projects.</p>
             </section>
@@ -68,13 +72,7 @@
             <section class="modern-projects">
                 <!--Nem minden esetben kell.-->
                 <!--<article></article>-->
-                <a
-                    class="btn colorful-animated-effect"
-                    href="https://nagraggini-blog.onrender.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >IT-s blogom kezdőknek (Dinamikus oldal SpringBoot-ban)</a
-                >
+
                 <a
                     class="btn colorful-animated-effect"
                     href="apps/js-zero-to-expert/guess-my-number/guess-my-number.html"
@@ -99,20 +97,12 @@
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    Portfólió
+                    Portfolio
                 </a>
             </section>
             <hr />
             <h3>My old-school projects</h3>
             <section class="old-school-projects">
-                <a
-                    class="btn shine-effect"
-                    href="apps/first/first.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Első weboldalam :)
-                </a>
                 <a
                     class="btn shine-effect"
                     href="https://codepen.io/Nagraggini"
@@ -123,8 +113,15 @@
                 >
             </section>
             <hr />
-            <h3>Tesztelés</h3>
-            <section class="test">
+            <h3>My Hungarian sites</h3>
+            <section class="hungarian-sites">
+                <a
+                    class="btn colorful-animated-effect"
+                    href="https://nagraggini-blog.onrender.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >IT-s blogom kezdőknek (Dinamikus oldal SpringBoot-ban)</a
+                >
                 <a
                     class="btn shine-effect"
                     href="apps/job-interview-q-and-a/job-interview-q-and-a.html"
@@ -143,12 +140,6 @@
                 </a>
             </section>
             <hr />
-            <section class="firework">
-                <!--TODO firework eseményt kéne hozzárendelni külön js-ben.-->
-                <button class="btn shine-effect zoom-effect firework">
-                    Firework
-                </button>
-            </section>
         </main>
 
         <footer>
