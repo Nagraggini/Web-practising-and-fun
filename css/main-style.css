@@ -1,35 +1,39 @@
 /* main-style.css */
-/*
+
 @import "components/button-effects-style.css";
+
 @import "components/font-style.css";
-*/
-/*
+
 @import "components/background-and-font-color-style.css";
-*/
 
 /* Minden projekt szekciót Flexbox-szá teszünk */
 
-/*
 .hero,
 .modern-projects,
 .old-school-projects,
-.test {
+.hungarian-sites {
     display: flex;
-    flex-wrap: wrap;  Ha nem férnek el egy sorban, törjenek új sorba
-    gap: 10px;  Ez a kulcs: fix távolság a gombok között minden irányban
-    padding: 10px 0;Kis hely alul-felül
-    align-items: center; Függőlegesen középre igazítja a különböző magasságú gombokat
+
+    flex-wrap: wrap; /*Ha nem férnek el egy sorban, törjenek új sorba*/
+
+    gap: 10px; /* Ez a kulcs: fix távolság a gombok között minden irányban*/
+
+    padding: 10px 0; /*Kis hely alul-felül*/
+
+    align-items: center; /*Függőlegesen középre igazítja a különböző magasságú gombokat*/
 }
-*/
 
 /*=============================================================*/
 /*Tiszta kezdő pont beállítása.*/
-/*Minden új projektnél ezt érdemes beállítani.*/
 * {
     margin: 0;
     padding: 0;
 }
 
+/*Minden új projektnél ezt érdemes beállítani.*/
+body {
+    min-height: 100vh;
+}
 nav {
     background-color: white;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
