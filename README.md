@@ -265,6 +265,8 @@ Javítsd ezt a fájlt: .github/workflows/static.yml
 
 Hozz létre a projekt gyökérkönyvtárában egy .posthtmlrc-t, a tartalmát nézd meg a fájlban.
 
+Csekkoláshoz írd be a terminálba hogy ls -R
+
 Terminálba:
 npx posthtml index.html -u posthtml-include -o dist/index.html
 
