@@ -122,7 +122,6 @@ function adatlekeres() {
                 const tbody = document.querySelector("table tbody");
                 const ujSor = document.createElement("tr");
                 ujSor.id = idOld; //Egyedi id.
-                // TODO amelyik checkbox checked az legyen áthúzva és bepipálva.
 
                 //A tr-nek van egyedi id-ja.
                 ujSor.innerHTML = `
