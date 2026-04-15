@@ -1,5 +1,5 @@
-![Workflow neve](https://github.com/Nagraggini/web-practising-and-fun/actions/workflows/playwright.yml/badge.svg)
-![Top Language](https://img.shields.io/github/languages/top/Nagraggini/web-practising-and-fun)
+![Workflow neve](https://github.com/Nagraggini/web-projects/actions/workflows/playwright.yml/badge.svg)
+![Top Language](https://img.shields.io/github/languages/top/Nagraggini/web-projects)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 ## Web Practising & Fun
@@ -10,7 +10,7 @@ I use it to improve my skills in HTML, CSS, and JavaScript while building fun an
 
 ## Live Demo
 
-👉 https://nagraggini.github.io/web-practising-and-fun/
+👉 https://nagraggini.github.io/web-projects/
 
 ## IT Blog
 

@@ -4,7 +4,7 @@
 
 # Gamer/geek teendő lista
 
-[Live demo](https://nagraggini.github.io/web-practising-and-fun/web-development/Practising/questlog/questlog.html)
+[Live demo](https://nagraggini.github.io/web-projects/apps/questlog/)
 
 # Házi feladat leírása
 
